@@ -1034,3 +1034,56 @@ Setelah rancangan ini disepakati, materi bisa dipecah menjadi tiga artefak:
 1. **Slide presentasi fasilitator**.
 2. **Modul/handout peserta dan lembar kasus kelompok**.
 3. **Starter kit praktik:** Google Sheet sintetis, template GAS, prompt card, dan checklist testing/deployment.
+
+### Assistant Final Response
+
+Siap, aku lanjutkan. Ini paling pas dibentuk sebagai **satu workshop praktik terpadu**, bukan tiga materi yang berdiri sendiri.
+
+Aku sudah membuat draft materi lengkap di:
+
+[📘 Rancangan Materi Workshop AI + Vibe Coding + Google Apps Script](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/01-rancangan-materi-workshop-ai-dashboard-gas.md)
+
+Konsep utamanya:
+
+> **Masalah kerja → data sintetis → prompt → vibe coding → dashboard → testing → publish dengan GAS → presentasi singkat**
+
+Isi materi yang sudah disusun:
+
+1. Basic AI dan Generative AI.
+2. Keamanan data, etika, dan verifikasi manusia.
+3. Basic prompting.
+4. Vibe coding secara bertanggung jawab.
+5. Dasar Google Sheets → Google Apps Script → dashboard.
+6. Praktik kelompok, testing, dan deployment web app.
+
+Tiga kasus kelompok yang disiapkan:
+
+- Kelompok 1: Dashboard monitoring surat masuk dan disposisi.
+- Kelompok 2: Dashboard agenda dan kegiatan internal.
+- Kelompok 3: Dashboard rekap layanan atau aduan non-sensitif.
+
+Target minimal setiap kelompok:
+
+- prototipe dashboard;
+- tiga kartu ringkasan;
+- satu tabel;
+- satu filter/pencarian;
+- satu grafik;
+- satu hasil/link deployment GAS;
+- satu prompt utama dan dua prompt perbaikan;
+- checklist pengujian;
+- penjelasan batasan prototipe.
+
+Rundown 120 menit juga sudah dibuat. Namun, menurutku **150 menit akan lebih ideal** karena peserta perlu waktu untuk menjalankan kode, menemukan error, memperbaiki prompt, dan melakukan deployment. Kalau tetap 120 menit, panitia perlu menyiapkan starter code, dataset sintetis, dan template dashboard sebelum acara.
+
+Catatan penting: target workshop sebaiknya bukan aplikasi pemerintahan siap produksi, melainkan **prototipe dashboard internal berbasis data latihan yang berfungsi dan dapat dipresentasikan**. Jangan memakai NIK, nomor KK, alamat rinci, nomor telepon, dokumen rahasia, password, token, atau data warga asli.
+
+Aku juga sudah memperbarui `CANVAS.md`, `STATE.md`, dan `MEMORY.md`, mencatat percakapan di `HISTORY.md`, serta membuat checkpoint Git lokal:
+
+`c423016 feat(pkm-smt3): add AI dashboard GAS workshop curriculum`
+
+Tahap berikutnya paling logis adalah memecah rancangan ini menjadi:
+
+1. slide presentasi fasilitator;
+2. modul/handout peserta dan lembar kasus;
+3. starter kit praktik: Google Sheet sintetis, template GAS, prompt card, dan checklist testing/deployment.
