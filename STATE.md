@@ -40,3 +40,11 @@
 - Status: proposed; menunggu keputusan tim atas durasi, platform AI, starter code, dan kasus final.
 
 - Outline deck fokus ChatGPT → GAS: `materials/workshop/02-outline-deck-chat-to-gas.md`
+
+## Browser Screenshot Progress — 2026-09-25
+
+- Chrome pada project Apps Script latihan terverifikasi menampilkan zoom **110%**.
+- Capture resolusi penuh berhasil disimpan untuk editor `Code.gs` dan menu **Tambahkan file**.
+- Capture awal berukuran 132 × 136 px ditandai sebagai tidak layak untuk deck; versi resolusi penuh diprioritaskan.
+- Project Apps Script latihan masih kosong dan belum diberi kode custom, belum dibuat `Index.html`, belum di-deploy, dan belum diubah pengaturannya.
+- Menunggu konfirmasi pengguna sebelum mengetik kode demo sintetis serta membuat file HTML cloud.

@@ -1725,3 +1725,41 @@ Aku akan ambil screenshot asli dari browser dan pastikan zoom-nya **110%** sebel
 
 - Dua panggilan screenshot tab Google Sheets melalui browser extension menghasilkan `Page.captureScreenshot returned no data`; screenshot belum tersimpan dan zoom 110% belum terverifikasi. Tidak mengulang capture tanpa perubahan kondisi.
 - Status bridge browser Workspace: profil otomatisasi tertutup. Akan membuka profil yang ditentukan skill, lalu memakai UI Chrome untuk verifikasi zoom dan screenshot. Tab dokumen pribadi yang tidak terkait tidak dibuka atau diubah.
+
+## 2026-09-25 — Capture screenshot step-by-step browser untuk deck workshop
+
+### User
+
+aku mau step by step nya kamu ss langsung dari browser yah biar nyata dan browsernya di set dulu zoom nya jadi 110% biar keliatan di deck nyaa
+
+coba bikin kan yah
+
+### Assistant Action
+
+Melanjutkan workflow capture browser untuk materi workshop ChatGPT → Google Apps Script. Target capture menggunakan browser nyata dengan zoom 110%; sebelum mengubah isi project Apps Script atau membuat file cloud baru, diperlukan konfirmasi eksplisit pengguna. Status: in progress.
+
+### Assistant Action — pembaruan capture
+
+- Membaca ulang konteks project dan aturan workspace sebelum melanjutkan.
+- Menggunakan jendela Google Chrome nyata yang menampilkan editor Apps Script latihan. Accessibility tree memverifikasi tombol zoom **110%**.
+- Menyimpan capture resolusi penuh melalui browser ke:
+  - `materials/workshop/browser-screenshots/02-gas-editor-codegs-110-full.jpg` (2054 × 1126 px)
+  - `materials/workshop/browser-screenshots/03-add-html-file-menu-110-full.jpg` (2054 × 1126 px)
+- Menemukan bahwa capture awal bernama `.png` sebenarnya berformat JPEG dan berukuran 132 × 136 px; capture tersebut tidak diprioritaskan untuk deck.
+- Menu **Tambahkan file** berhasil dibuka dan menampilkan pilihan **Skrip** serta **HTML**. Tidak memilih HTML atau membuat file baru karena langkah tersebut mengubah project cloud dan memerlukan konfirmasi eksplisit.
+- Terjadi kegagalan teknis saat mencoba mengambil screenshot tambahan setelah window handle berubah (`cgWindowNotFound`) dan saat mencoba menekan tombol Escape (`keyNotFound("ESC")`). Jendela berhasil ditemukan kembali, dan menu masih terlihat tanpa perubahan pada project.
+- `CANVAS.md` dan `STATE.md` diperbarui dengan gallery serta status blocker.
+
+Status: implemented untuk capture resolusi penuh awal; pembuatan `Index.html` dan pengisian kode masih menunggu konfirmasi.
+
+### Assistant
+
+Aku sudah mulai bikin capture step-by-step langsung dari Chrome dan zoom-nya sudah terverifikasi **110%**.
+
+Yang sudah tersimpan dalam resolusi penuh:
+
+- [Screenshot editor `Code.gs`](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/browser-screenshots/02-gas-editor-codegs-110-full.jpg)
+- [Screenshot menu Tambahkan file](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/browser-screenshots/03-add-html-file-menu-110-full.jpg)
+- [Folder semua screenshot browser](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/browser-screenshots)
+
+Aku belum memasukkan kode atau membuat `Index.html`, karena itu akan mengubah project Apps Script cloud. Boleh aku lanjut mengetik kode demo sintetis dan membuat file `Index.html` di project latihan tersebut? Aku tidak akan memakai data pribadi, mengubah project lain, membagikan project, atau melakukan deployment publik tanpa konfirmasi terpisah.
