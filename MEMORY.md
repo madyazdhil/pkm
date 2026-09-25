@@ -1,0 +1,44 @@
+# Project Memory
+
+## User Preferences
+
+- Menginginkan dokumen proposal, presentasi, dan materi PkM yang terstruktur, rapi, dan siap digunakan.
+- Pembagian peran Yazid dalam PkM: Penanggung jawab materi ke-2 (*Pembuatan aplikasi / dashboard pelayanan sederhana*).
+
+## Key Facts and Terminology
+
+- **Judul PkM (Resmi Terpilih):** Workshop Pemanfaatan Generative AI dan Dashboard Interaktif dalam Peningkatan Efisiensi Administrasi di Kantor Kecamatan Tambun Selatan (Diperbarui dari draf awal pasca-survei).
+- **Mitra:** Kantor Kecamatan Tambun Selatan, Kabupaten Bekasi (Jl. Sultan Hasanudin No. 251, Tambun).
+- **Ketua Tim:** Muharam Syam Nugraha (NIM: 251012000047).
+- **Anggota Tim (7 Orang):** Muharam Syam Nugraha, Ahmad Yazid Hilmi, Taufik, Deni, Sanusi, Idris, Riduan.
+- **Folder Sumber External:** `/Users/yazidhilmi/Documents/Edu/College/Semester 3/PKM` (Tersinkronisasi via symlink `source-docs/`).
+- Syarat administratif khusus MTI UNPAM (kelulusan, luaran wajib, portal, jumlah anggota, dan sertifikat) belum boleh dianggap pasti tanpa pedoman/konfirmasi resmi.
+- Contoh publikasi Teknik Informatika UNPAM memberi pola pelaksanaan yang berguna, tetapi bukan pengganti pedoman terbaru.
+
+## Timeline Utama
+
+- **24 Agustus 2026 (10.00-12.00):** Survei 1 (Silaturahmi, pengantaran proposal awal & surat izin, pengamatan layanan).
+- **2 September 2026 (10.00-12.00):** Survei 2 (Penandatanganan Perjanjian Kerjasama/MoU bermaterai & penyerahan proposal final + rundown).
+- **Hari H Pelaksanaan (tentatif 2 jam):** Pelatihan aparatur di Kantor Kecamatan Tambun Selatan.
+
+## Decisions
+
+| Date | Decision | Rationale |
+| --- | --- | --- |
+| 2026-08-13 | Folder kuliah PKM disinkronkan via symlink `source-docs/`. | Menjaga agar perubahan berkas di folder perkuliahan langsung dapat diakses oleh agent. |
+| 2026-08-13 | Materi Yazid dikhususkan pada demonstrasi & praktik prototipe dashboard pelayanan berbasis AI. | Sesuai pembagian peran dalam notulen pertemuan tim. |
+| 2026-08-13 | Riset dibedakan antara fakta terverifikasi, dokumen tim, contoh praktik, dan hal yang perlu konfirmasi. | Mencegah contoh lama atau asumsi umum diperlakukan sebagai aturan MTI terbaru. |
+| 2026-09-05 | Judul PkM diubah menjadi *"Workshop Pemanfaatan Generative AI dan Dashboard Interaktif dalam Peningkatan Efisiensi Administrasi di Kantor Kecamatan Tambun Selatan"*. | Temuan survei lapangan menunjukkan layanan loket sudah baik; kebutuhan riil adalah efisiensi workflow kerja internal dan pembuatan dashboard internal/pemetaan data. |
+
+## Durable Constraints
+
+- Semua materi AI harus mengedepankan prinsip keamanan data (privasi data masyarakat) dan perlunya verifikasi manual keluaran AI.
+- Formulir survei/evaluasi PkM harus mematuhi UU PDP (UU No. 27/2022): Nama dibuat Opsional/Anonim, Jabatan berupa demografi umum, dan menyertakan *Informed Consent / Privacy Disclaimer* di bagian atas form.
+
+
+
+## Decisions / Proposals – 2026-09-25
+
+- **Format materi:** diarahkan menjadi satu workshop terpadu, bukan tiga pelatihan terpisah: common core basic AI + keamanan data + prompting, lalu praktik tiga kelompok dengan vibe coding dan Google Apps Script. Status: proposed.
+- **Target output:** setiap kelompok membuat prototipe dashboard internal berbasis data sintetis, melakukan pengujian, dan mencoba deployment sebagai web app. Status: proposed.
+- **Kasus awal:** monitoring surat/disposisi, agenda/kegiatan internal, dan rekap layanan/aduan non-sensitif. Status: proposed, perlu konfirmasi kebutuhan mitra.

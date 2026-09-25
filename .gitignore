@@ -1,0 +1,20 @@
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Dependencies and build output
+node_modules/
+.build/
+DerivedData/
+dist/
+build/
+
+# Local secrets and temporary files
+.env
+.env.*
+*.log
+.tmp/
+tmp/
+output/
