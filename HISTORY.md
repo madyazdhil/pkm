@@ -1702,3 +1702,26 @@ Perubahan sudah dicatat di `CANVAS.md`, `STATE.md`, `MEMORY.md`, dan `HISTORY.md
 - :codex-followup[Buat slide deck final]{Buat file PPTX final dari outline deck ChatGPT ke GAS dengan desain workshop yang mudah dipahami aparatur kecamatan.}
 - :codex-followup[Buat starter kit GAS]{Buat starter project berisi `Code.gs`, `Index.html`, tiga dataset sintetis, dan checklist testing untuk tiga kelompok.}
 - :codex-followup[Buat modul peserta]{Ubah outline ini menjadi handout praktik peserta yang berisi langkah ChatGPT, GAS, debugging, dan deployment.}
+
+---
+
+## 2026-09-25 (follow-up: browser screenshots)
+
+### User
+
+"aku mau step by step nya kamu ss langsung dari browser yah biar nyata dan browsernya di set dulu zoom nya jadi 110% biar keliatan di deck nyaa
+
+coba bikin kan yah"
+
+### Assistant Action
+
+Incoming request recorded before substantive work. Active context remains `projects/pkm-smt3/`. Planned work: use the authenticated local browser to capture realistic step-by-step Google Apps Script workflow screenshots at 110% browser zoom for inclusion in the workshop deck. Scope will focus on the browser-visible setup flow and avoid exposing private account data or secrets.
+
+### Assistant (progress)
+
+Aku akan ambil screenshot asli dari browser dan pastikan zoom-nya **110%** sebelum capture. Untuk contoh di deck, aku akan pakai data latihan saja, tanpa menampilkan dokumen atau data pribadi.
+
+### Failed Attempt
+
+- Dua panggilan screenshot tab Google Sheets melalui browser extension menghasilkan `Page.captureScreenshot returned no data`; screenshot belum tersimpan dan zoom 110% belum terverifikasi. Tidak mengulang capture tanpa perubahan kondisi.
+- Status bridge browser Workspace: profil otomatisasi tertutup. Akan membuka profil yang ditentukan skill, lalu memakai UI Chrome untuk verifikasi zoom dan screenshot. Tab dokumen pribadi yang tidak terkait tidak dibuka atau diubah.
