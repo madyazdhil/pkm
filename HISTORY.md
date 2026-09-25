@@ -1812,3 +1812,29 @@ File terbaru:
 - [Menu deployment](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/browser-screenshots/09-deployment-menu-110-full.jpg)
 
 Capture halaman dashboard yang benar-benar tampil di browser membutuhkan test deployment atau deployment web app. Aku belum menjalankan langkah itu karena deployment dan pengaturan akses adalah tindakan terpisah. Status: demo dan capture editor sudah selesai; render dashboard menunggu konfirmasi deployment.
+
+### Assistant — exact response for this turn
+
+Lanjut ya. Demo di project Apps Script latihan sudah terisi dan capture browser-nya sudah ditambah. Zoom Chrome tetap **110%**.
+
+Yang sudah selesai:
+
+- `Code.gs` berisi fungsi `doGet()`.
+- `Index.html` sudah dibuat dan diisi dashboard latihan dengan data sintetis.
+- Nama file sudah dipastikan `Index.html`.
+- Screenshot editor `Code.gs`, editor `Index.html`, bagian awal kode HTML, dan menu deployment sudah disimpan.
+- Menu deployment hanya dibuka untuk screenshot. Aku belum membuat deployment publik dan belum mengubah sharing.
+
+File terbaru:
+
+- [Code.gs final](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/browser-screenshots/10-codegs-final-110-full.jpg)
+- [Index.html](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/browser-screenshots/11-index-html-top-110-full.jpg)
+- [Editor Index.html](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/browser-screenshots/08-editor-index-html-110-full.jpg)
+- [Menu deployment](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/browser-screenshots/09-deployment-menu-110-full.jpg)
+- [Gallery dan status capture](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/CANVAS.md)
+
+Capture halaman dashboard yang benar-benar tampil di browser membutuhkan test deployment atau deployment web app. Aku belum menjalankan langkah itu karena deployment dan pengaturan akses adalah tindakan terpisah. Status: demo dan capture editor sudah selesai; render dashboard menunggu konfirmasi deployment.
+
+- :codex-followup[Test deployment sintetis]{Lanjutkan ke `Uji deployment` untuk menampilkan dashboard di browser memakai data sintetis saja, tanpa membuat akses publik.}
+- :codex-followup[Rapikan screenshot untuk deck]{Pilih capture terbaik, beri nama urut berdasarkan slide, dan siapkan caption singkat untuk tiap screenshot.}
+- :codex-followup[Buat handout praktik]{Ubah alur screenshot ini menjadi panduan peserta dari ChatGPT, Code.gs, Index.html, testing, sampai deployment.}
