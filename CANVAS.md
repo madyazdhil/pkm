@@ -28,3 +28,17 @@ Browser capture untuk deck workshop dilakukan melalui Google Chrome pada project
 ### Capture berikutnya
 
 Pembuatan file `Index.html`, penempelan kode sintetis, pengujian dashboard, dan capture menu deployment menunggu konfirmasi eksplisit sebelum project cloud latihan diubah. Status: in progress.
+
+### Capture setelah project latihan diisi
+
+- [Editor `Code.gs` final, zoom 110%](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/browser-screenshots/10-codegs-final-110-full.jpg)
+- [Editor `Index.html`, zoom 110%](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/browser-screenshots/08-editor-index-html-110-full.jpg)
+- [Bagian awal kode `Index.html`, zoom 110%](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/browser-screenshots/11-index-html-top-110-full.jpg)
+- [Menu deployment GAS, zoom 110%](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/browser-screenshots/09-deployment-menu-110-full.jpg)
+
+Demo cloud yang digunakan:
+
+- `Code.gs` berisi fungsi minimal `doGet()` yang menyajikan `Index.html`.
+- `Index.html` berisi dashboard statis dengan data sintetis: kartu ringkasan, rekap kategori, dan tabel monitoring.
+- Tidak ada Google Sheet warga, credential, token, sharing, atau deployment publik yang diubah.
+- Capture hasil dashboard yang sudah ter-render di browser belum dibuat karena deployment belum dilakukan.

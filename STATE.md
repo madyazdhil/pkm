@@ -48,3 +48,13 @@
 - Capture awal berukuran 132 × 136 px ditandai sebagai tidak layak untuk deck; versi resolusi penuh diprioritaskan.
 - Project Apps Script latihan masih kosong dan belum diberi kode custom, belum dibuat `Index.html`, belum di-deploy, dan belum diubah pengaturannya.
 - Menunggu konfirmasi pengguna sebelum mengetik kode demo sintetis serta membuat file HTML cloud.
+
+## Demo GAS dan Capture Lanjutan — 2026-09-25
+
+- Konfirmasi `cont` diperlakukan sebagai izin melanjutkan pengisian project Apps Script latihan.
+- `Code.gs` berhasil disimpan dengan fungsi minimal:
+  `function doGet() { return HtmlService.createHtmlOutputFromFile('Index');}`
+- File `Index.html` berhasil dibuat dan namanya diperbaiki menjadi `Index.html` setelah sempat salah ketik sementara.
+- `Index.html` berisi dashboard statis berbasis data sintetis dengan kartu total, rekap kategori, dan tabel monitoring.
+- Capture baru berhasil disimpan untuk editor `Index.html`, bagian awal `Index.html`, `Code.gs` final, dan menu deployment pada zoom **110%**.
+- Deployment publik, perubahan sharing, dan pengujian URL web app belum dilakukan. Capture halaman dashboard ter-render menunggu konfirmasi deployment/test yang terpisah.
