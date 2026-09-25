@@ -2,7 +2,7 @@
 
 - Last updated: 2026-09-25
 - Status: In progress
-- Current focus: Menyusun materi workshop terpadu basic AI, prompting, vibe coding, dashboard Google Apps Script, dan praktik tiga kasus kelompok.
+- Current focus: Memfokuskan deck pada alur ChatGPT melalui chat → dua file GAS (`Code.gs` dan `Index.html`) → testing → publish web app, dengan Codex hanya sebagai pengenalan lanjutan.
 
 ## Completed
 
@@ -17,9 +17,9 @@
 1. **Konfirmasi desain workshop dengan tim:**
    - Menetapkan durasi final (120 atau 150 menit), platform AI utama, dan pembagian fasilitator.
 2. **Menyiapkan starter kit praktik:**
-   - Membuat tiga Google Sheet berisi data sintetis, satu starter project Google Apps Script, prompt card, dan checklist pengujian.
-3. **Finalisasi materi presentasi dan modul peserta:**
-   - Mengubah rancangan materi menjadi slide, lembar kasus kelompok, dan panduan deployment singkat.
+   - Membuat tiga Google Sheet berisi data sintetis, satu starter project Google Apps Script, prompt card dua-file, dan checklist pengujian.
+3. **Finalisasi deck dan modul peserta:**
+   - Mengubah outline deck ChatGPT → GAS menjadi slide final, lembar kasus kelompok, dan panduan deployment singkat.
 4. **Penyelarasan dokumen proposal:**
    - Menyesuaikan judul, tujuan, metode, indikator keberhasilan, dan pembagian materi agar konsisten dengan format workshop.
 
@@ -38,3 +38,5 @@
 
 - Draft rancangan materi workshop: `materials/workshop/01-rancangan-materi-workshop-ai-dashboard-gas.md`
 - Status: proposed; menunggu keputusan tim atas durasi, platform AI, starter code, dan kasus final.
+
+- Outline deck fokus ChatGPT → GAS: `materials/workshop/02-outline-deck-chat-to-gas.md`

@@ -42,3 +42,6 @@
 - **Format materi:** diarahkan menjadi satu workshop terpadu, bukan tiga pelatihan terpisah: common core basic AI + keamanan data + prompting, lalu praktik tiga kelompok dengan vibe coding dan Google Apps Script. Status: proposed.
 - **Target output:** setiap kelompok membuat prototipe dashboard internal berbasis data sintetis, melakukan pengujian, dan mencoba deployment sebagai web app. Status: proposed.
 - **Kasus awal:** monitoring surat/disposisi, agenda/kegiatan internal, dan rekap layanan/aduan non-sensitif. Status: proposed, perlu konfirmasi kebutuhan mitra.
+
+- **Fokus deck:** praktik utama memakai ChatGPT melalui chat. Peserta diminta menghasilkan dua file GAS, `Code.gs` dan `Index.html`, lalu menempatkan kode tersebut di Apps Script. JavaScript browser dan CSS dapat berada di dalam `Index.html` pada level pemula. Codex hanya dikenalkan sebagai opsi lanjutan untuk bekerja langsung dengan file/project coding. Status: proposed.
+- **Alur teknis utama:** Google Sheets → Google Apps Script → `Code.gs` + `Index.html` → testing → deployment web app. Status: proposed.

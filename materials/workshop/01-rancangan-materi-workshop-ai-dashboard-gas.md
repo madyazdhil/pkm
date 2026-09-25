@@ -10,7 +10,9 @@
 
 > Judul resmi kegiatan tetap: **Workshop Pemanfaatan Generative AI dan Dashboard Interaktif dalam Peningkatan Efisiensi Administrasi di Kantor Kecamatan Tambun Selatan.**
 >
-> Judul materi yang lebih mudah dipahami peserta: **Dari Ide Kerja ke Dashboard Internal: Praktik Basic AI, Vibe Coding, dan Google Apps Script.**
+> Judul materi yang lebih mudah dipahami peserta: **Dari ChatGPT ke Dashboard Internal: Mengenal Generative AI, Google Apps Script, dan Vibe Coding.**
+>
+> **Fokus deck:** peserta belajar memakai ChatGPT melalui chat untuk merancang dan menghasilkan dua file utama, lalu menempatkan file tersebut di Google Apps Script. Codex dikenalkan hanya sebagai gambaran alat lanjutan untuk alur kerja coding berbasis aplikasi/editor, bukan sebagai alat praktik utama workshop.
 
 ---
 
@@ -38,12 +40,15 @@ Setelah mengikuti workshop, peserta diharapkan mampu:
 1. Menjelaskan pengertian dasar AI dan Generative AI dengan bahasa sederhana.
 2. Mengidentifikasi contoh pekerjaan administratif yang dapat dibantu AI.
 3. Membedakan data contoh yang aman digunakan untuk latihan dan data pribadi/rahasia yang tidak boleh dimasukkan ke layanan AI publik.
-4. Menyusun prompt dengan unsur peran, tujuan, konteks, data, batasan, format keluaran, dan kriteria keberhasilan.
-5. Mengikuti alur *vibe coding* untuk membuat atau memperbaiki prototipe secara bertahap.
-6. Menjelaskan hubungan Google Sheets, Google Apps Script, dan halaman dashboard.
-7. Membuat dashboard sederhana yang memiliki kartu ringkasan, tabel, filter, dan minimal satu visualisasi.
-8. Mempublikasikan prototipe melalui Google Apps Script sesuai pengaturan akses yang aman.
-9. Menguji hasil AI dan aplikasi secara manual sebelum dipakai sebagai dasar pekerjaan.
+4. Menjelaskan perbedaan penggunaan ChatGPT melalui chat dan Codex melalui lingkungan coding.
+5. Menyusun prompt dengan unsur peran, tujuan, konteks, data, batasan, format keluaran, dan kriteria keberhasilan.
+6. Meminta ChatGPT menghasilkan dua file dasar untuk prototipe GAS: `Code.gs` dan `Index.html`.
+7. Membuka Google Apps Script, membuat project, menambahkan file, dan menempelkan kode dari chat.
+8. Mengikuti alur *vibe coding* untuk membuat atau memperbaiki prototipe secara bertahap.
+9. Menjelaskan hubungan Google Sheets, Google Apps Script, dan halaman dashboard.
+10. Membuat dashboard sederhana yang memiliki kartu ringkasan, tabel, filter, dan minimal satu visualisasi.
+11. Mempublikasikan prototipe melalui Google Apps Script sesuai pengaturan akses yang aman.
+12. Menguji hasil AI dan aplikasi secara manual sebelum dipakai sebagai dasar pekerjaan.
 
 ---
 
@@ -83,13 +88,17 @@ Setiap kelompok minimal menghasilkan:
 
 | Waktu | Sesi | Isi dan aktivitas | Output |
 |---|---|---|---|
-| 0–10 menit | Pembukaan dan orientasi | Tujuan workshop, pembagian kelompok, pengenalan tiga kasus | Peserta memahami tantangan kelompok |
-| 10–30 menit | Basic AI untuk pekerjaan administrasi | AI vs Generative AI, contoh pemanfaatan, keterbatasan, verifikasi manusia, keamanan data | Peserta mampu menyebutkan peluang dan risiko AI |
-| 30–45 menit | Basic prompting | Struktur prompt, contoh prompt buruk dan prompt yang lebih baik | Setiap kelompok memiliki prompt awal |
-| 45–60 menit | Demo vibe coding dan GAS | Fasilitator menunjukkan alur dari Google Sheet ke dashboard, perubahan fitur, dan cara membaca error | Peserta memahami alur teknis |
-| 60–100 menit | Praktik kelompok | Kelompok membangun dashboard dari template dan data kasus | Prototipe dashboard versi minimum |
-| 100–112 menit | Uji dan publish | Memeriksa fitur, memperbaiki error, melakukan deployment web app | Link/hasil deployment dan checklist uji |
-| 112–120 menit | Demo singkat dan penutup | Masing-masing kelompok menyampaikan masalah, fitur, dan satu batasan solusi | Refleksi, dokumentasi, dan evaluasi |
+| Waktu | Sesi | Isi dan aktivitas | Output |
+|---|---|---|---|
+| 0–8 menit | Pembukaan dan orientasi | Tujuan workshop, pembagian kelompok, pengenalan tiga kasus | Peserta memahami tantangan kelompok |
+| 8–23 menit | Generative AI untuk pekerjaan administrasi | AI dan Generative AI, contoh pemanfaatan, keterbatasan, verifikasi manusia, keamanan data | Peserta memahami peluang dan risiko AI |
+| 23–33 menit | ChatGPT dan Codex | Chat sebagai ruang tanya-jawab/pembuatan kode; Codex sebagai opsi lanjutan di lingkungan coding | Peserta memahami alat yang dipakai dan tidak dipakai |
+| 33–45 menit | Mengenal Google Apps Script | Cara membuka GAS, project, `Code.gs`, `Index.html`, dan fungsi `doGet()` | Peserta dapat menemukan editor GAS |
+| 45–58 menit | Prompting untuk dua file GAS | Prompt yang meminta keluaran terpisah untuk `Code.gs` dan `Index.html` | Setiap kelompok memiliki prompt awal |
+| 58–68 menit | Demo ChatGPT ke GAS | Menyalin kode, membuat file, menjalankan, membaca error, dan mencoba web app | Peserta memahami alur teknis |
+| 68–105 menit | Praktik kelompok | Kelompok membangun dashboard dari template dan data kasus | Prototipe dashboard versi minimum |
+| 105–115 menit | Uji dan publish | Memeriksa fitur, memperbaiki error, melakukan deployment web app | Link/hasil deployment dan checklist uji |
+| 115–120 menit | Demo singkat dan penutup | Kelompok menyampaikan masalah, fitur, dan satu batasan solusi | Refleksi, dokumentasi, dan evaluasi |
 
 ### Catatan durasi
 
@@ -146,7 +155,23 @@ Checklist singkat sebelum memakai AI:
 4. Siapa yang bertanggung jawab atas hasil akhirnya?
 5. Apakah dashboard hanya dibagikan kepada pihak yang berhak melihatnya?
 
-### Materi 3 – Basic Prompting
+### Materi 3 – ChatGPT dan Codex dalam Workshop
+
+Deck perlu memberi batas yang jelas agar peserta tidak bingung dengan banyaknya alat AI:
+
+| Alat | Cara berinteraksi | Peran dalam workshop |
+|---|---|---|
+| **ChatGPT melalui chat** | Peserta menjelaskan kebutuhan dan meminta kode melalui percakapan | **Alat utama praktik:** merancang dashboard, menghasilkan dua file, menjelaskan kode, dan memperbaiki error |
+| **Codex** | Peserta bekerja bersama agen coding di ChatGPT, editor, atau terminal | **Pengenalan singkat:** contoh alur lanjutan ketika sudah memiliki folder proyek dan ingin AI membantu mengedit atau menguji file secara langsung |
+| **Google Apps Script** | Peserta menempatkan, menjalankan, dan mempublikasikan kode | **Lingkungan eksekusi:** tempat kode terhubung ke Google Sheets dan menjadi web app |
+
+Kalimat sederhana untuk deck:
+
+> **ChatGPT membantu kita menulis dan memahami kode melalui chat. Google Apps Script menjalankan kode tersebut. Codex adalah pilihan lanjutan ketika pekerjaan coding dilakukan langsung pada file dan lingkungan pengembangan.**
+
+Workshop ini sengaja berfokus pada chat karena peserta perlu memahami alur dasar terlebih dahulu: menjelaskan masalah, meminta file, menyalin kode, menjalankan, dan memperbaiki.
+
+### Materi 4 – Basic Prompting untuk GAS
 
 Formula prompt yang dipakai dalam workshop:
 
@@ -174,7 +199,7 @@ Sajikan jawaban sebagai checklist implementasi yang mudah diikuti pemula.
 
 Peserta kemudian belajar mengembangkan prompt secara bertahap, bukan meminta aplikasi lengkap dalam satu perintah.
 
-### Materi 4 – Vibe Coding yang Bertanggung Jawab
+### Materi 5 – Vibe Coding yang Bertanggung Jawab
 
 Definisi kerja yang digunakan dalam workshop:
 
@@ -200,7 +225,47 @@ Aturan penting:
 - Perubahan dilakukan satu fitur dalam satu waktu.
 - Jangan menaruh password, token, atau data rahasia di prompt maupun kode.
 
-### Materi 5 – Dasar Google Apps Script untuk Dashboard
+### Materi 6 – Mengenal Google Apps Script untuk Dashboard
+
+#### Apa itu Google Apps Script?
+
+Google Apps Script adalah lingkungan berbasis JavaScript untuk mengotomatisasi dan memperluas Google Workspace. Dalam workshop, GAS dipakai sebagai tempat untuk membaca data dari Google Sheets, menjalankan logika sederhana, dan menyajikan dashboard melalui browser.
+
+#### Cara membuka Google Apps Script
+
+Peserta dapat membuka GAS dengan salah satu cara berikut:
+
+1. **Dari Google Sheets:** buka spreadsheet latihan, pilih **Extensions → Apps Script**.
+2. **Dari Google Drive:** pilih **New → More → Google Apps Script**.
+3. **Dari halaman Apps Script:** buka `script.google.com`, lalu pilih **New project**.
+
+Untuk workshop, jalur yang paling mudah adalah membuka Google Sheet latihan lalu memilih **Extensions → Apps Script**, sehingga project langsung terkait dengan spreadsheet sumber data.
+
+#### Dua file yang diminta dari ChatGPT
+
+Pada tahap pemula, deck jangan menyebutnya sebagai “upload dua file”. Istilah yang lebih tepat adalah **meminta ChatGPT menghasilkan dua potongan kode, lalu membuat/menempelkan kode tersebut ke dua file di Apps Script**:
+
+1. **`Code.gs`**
+   - berisi kode server-side Apps Script;
+   - berisi `doGet()` untuk menyajikan halaman;
+   - membaca data dari Google Sheets;
+   - menghitung ringkasan atau melayani permintaan dari halaman dashboard.
+
+2. **`Index.html`**
+   - berisi struktur halaman dashboard;
+   - dapat memuat CSS;
+   - dapat memuat JavaScript yang berjalan di browser melalui tag `<script>`;
+   - menampilkan kartu, tabel, filter, dan grafik.
+
+Untuk workshop dasar, **JavaScript tidak perlu dibuat sebagai file terpisah**. JavaScript browser dapat ditempatkan di dalam `Index.html`. File tambahan seperti `Script.html` baru dikenalkan bila peserta sudah memahami struktur dasar.
+
+#### Cara memasukkan dua file ke Apps Script
+
+1. Buka project Apps Script.
+2. Pada file `Code.gs`, hapus contoh kode yang tidak diperlukan lalu tempel kode server dari ChatGPT.
+3. Pilih **Add a file → HTML**, beri nama `Index`, lalu tempel kode HTML, CSS, dan JavaScript dari ChatGPT.
+4. Simpan project.
+5. Jalankan fungsi yang diperlukan atau gunakan **Deploy → New deployment → Web app** saat siap diuji.
 
 Arsitektur sederhana yang diperkenalkan:
 
@@ -323,7 +388,37 @@ Fitur lanjutan seperti login khusus, integrasi API eksternal, notifikasi otomati
 
 ## 8. Contoh Prompt Praktik Bertahap
 
-### 8.1 Prompt untuk merancang solusi
+### 8.1 Prompt untuk meminta dua file GAS dari ChatGPT
+
+```text
+Bertindak sebagai mentor Google Apps Script untuk pemula.
+
+Saya ingin membuat prototipe dashboard internal menggunakan Google Sheets dan
+Google Apps Script. Gunakan data sintetis dengan kolom: tanggal, unit, kategori,
+status, dan jumlah.
+
+Buat solusi paling sederhana dengan dua file berikut:
+
+1. Code.gs
+   - fungsi doGet() untuk membuka Index.html;
+   - fungsi getDashboardData() untuk membaca data dari Sheet aktif;
+   - hasil data dikirim ke halaman dalam format yang mudah dipakai.
+
+2. Index.html
+   - HTML untuk judul, tiga kartu ringkasan, tabel, dan satu filter;
+   - CSS sederhana agar mudah dibaca;
+   - JavaScript browser di dalam tag <script> untuk memanggil fungsi server;
+   - jangan memakai library eksternal.
+
+Tampilkan jawaban dalam dua blok kode terpisah dengan label yang jelas:
+CODE.GS dan INDEX.HTML. Setelah kode, berikan langkah penempatan kode ke Apps
+Script, cara menjalankan, dan checklist pengujian. Jangan memakai data pribadi,
+API key, password, atau token.
+```
+
+**Catatan fasilitator:** minta peserta menyalin `Code.gs` dan `Index.html` sebagai dua bagian terpisah. Jangan menempelkan kode HTML ke file `.gs` atau kode Apps Script ke file `.html`.
+
+### 8.2 Prompt untuk merancang solusi
 
 ```text
 Bantu saya mengubah kebutuhan berikut menjadi rancangan dashboard minimum.
@@ -343,7 +438,7 @@ Tentukan:
 Gunakan data sintetis dan jelaskan alasan setiap komponen.
 ```
 
-### 8.2 Prompt untuk membuat perubahan kecil
+### 8.3 Prompt untuk membuat perubahan kecil
 
 ```text
 Pada dashboard yang sudah ada, tambahkan filter berdasarkan status persiapan.
@@ -351,7 +446,7 @@ Jangan mengubah struktur kolom Google Sheet dan jangan menghapus fitur yang suda
 berjalan. Jelaskan file/fungsi yang diubah dan berikan langkah pengujian.
 ```
 
-### 8.3 Prompt untuk memperbaiki error
+### 8.4 Prompt untuk memperbaiki error
 
 ```text
 Saya mendapat error berikut saat menjalankan web app:
@@ -366,7 +461,7 @@ Analisis penyebab paling mungkin. Berikan perbaikan sekecil mungkin, jelaskan al
 perubahan, dan berikan tiga langkah untuk menguji bahwa perbaikan berhasil.
 ```
 
-### 8.4 Prompt untuk melakukan pemeriksaan keamanan
+### 8.5 Prompt untuk melakukan pemeriksaan keamanan
 
 ```text
 Tinjau prototipe dashboard ini dari sisi keamanan data dan privasi.
@@ -386,26 +481,46 @@ Fasilitator sebaiknya tidak langsung menunjukkan aplikasi yang terlalu sempurna.
 
 1. Menampilkan Google Sheet dengan data sintetis.
 2. Menjelaskan masalah kerja dalam satu kalimat.
-3. Meminta AI merancang dashboard minimum.
-4. Meminta AI membuat struktur file dan fungsi utama.
-5. Menyalin hasil ke template Apps Script yang sudah disiapkan.
-6. Menjalankan dashboard dan menunjukkan hasil awal.
-7. Menambahkan satu fitur kecil, misalnya filter status.
-8. Menunjukkan contoh error yang wajar dan cara meminta AI memperbaikinya.
-9. Menjalankan pengujian singkat.
-10. Menunjukkan proses deployment dan cara mencatat link.
+3. Membuka ChatGPT dan memperlihatkan prompt yang meminta dua file.
+4. Menjelaskan perbedaan `Code.gs` dan `Index.html`.
+5. Membuka Google Apps Script dari menu Extensions di Google Sheets.
+6. Menempelkan kode server ke `Code.gs`.
+7. Membuat file HTML bernama `Index` dan menempelkan kode `Index.html`.
+8. Menjalankan atau menguji fungsi yang diperlukan.
+9. Menunjukkan hasil dashboard awal.
+10. Meminta ChatGPT menambahkan satu fitur kecil, misalnya filter status.
+11. Menunjukkan contoh error yang wajar dan cara meminta AI memperbaikinya.
+12. Menjalankan pengujian singkat.
+13. Menunjukkan proses deployment dan cara mencatat link.
 
 Dengan pola ini, peserta belajar bahwa membuat aplikasi dengan AI bukan sekadar satu kali menekan tombol generate.
 
 ---
 
-## 10. Kebutuhan Persiapan Panitia
+## 10. Checklist Troubleshooting Dasar
+
+| Gejala | Pemeriksaan pertama |
+|---|---|
+| Halaman web app kosong | Pastikan nama file pada `createHtmlOutputFromFile('Index')` sama dengan nama file HTML `Index` |
+| Muncul error fungsi tidak ditemukan | Pastikan fungsi berada di `Code.gs` dan nama fungsi pada pemanggilan sama persis |
+| Data tidak tampil | Periksa nama sheet, nama kolom, dan izin akses ke spreadsheet |
+| Kode HTML masuk ke `Code.gs` | Pindahkan markup HTML ke file `Index.html` |
+| JavaScript tidak berjalan | Periksa tag `<script>`, kurung/koma, serta pesan error di browser |
+| Deployment tidak bisa dibuka | Periksa jenis deployment, akun yang menjalankan, dan siapa yang diberi akses |
+| Peserta melihat akun Google yang salah | Gunakan satu akun Google atau jendela incognito khusus untuk latihan |
+
+Peserta diarahkan untuk mengirimkan **pesan error lengkap, nama fungsi, tindakan terakhir, dan struktur file** ke ChatGPT. Jangan hanya menulis “error” tanpa konteks.
+
+## 11. Kebutuhan Persiapan Panitia
 
 ### Sebelum hari pelaksanaan
 
 - menyiapkan tiga dataset sintetis;
 - membuat satu template Google Sheet per kelompok;
 - membuat satu starter project Google Apps Script yang sudah dapat menampilkan halaman dasar;
+- menyiapkan screenshot atau panduan singkat lokasi menu **Extensions → Apps Script**;
+- menyiapkan prompt ChatGPT yang meminta output `Code.gs` dan `Index.html` secara terpisah;
+- menyiapkan contoh `Code.gs` dan `Index.html` yang sudah diuji;
 - menguji deployment menggunakan akun yang akan digunakan;
 - menyiapkan prompt card satu halaman;
 - menyiapkan checklist uji dan checklist keamanan;
@@ -429,27 +544,32 @@ Dengan pola ini, peserta belajar bahwa membuat aplikasi dengan AI bukan sekadar 
 
 ---
 
-## 11. Rancangan Struktur Slide
+## 12. Rancangan Struktur Slide
 
 1. Judul dan tujuan workshop.
 2. Masalah administrasi yang ingin dibantu.
 3. Apa itu AI dan Generative AI?
-4. Apa yang dapat dan tidak dapat dilakukan AI?
-5. Keamanan data dan verifikasi manusia.
-6. Struktur prompt yang baik.
-7. Contoh prompt buruk dan prompt yang diperbaiki.
-8. Apa itu *vibe coding*?
-9. Arsitektur Google Sheets → Apps Script → Dashboard.
-10. Demo pembuatan dan perbaikan dashboard.
-11. Instruksi tiga kasus kelompok.
-12. Checklist dashboard minimum.
-13. Deployment dan pengaturan akses.
-14. Presentasi singkat hasil kelompok.
-15. Refleksi dan langkah penggunaan yang aman.
+4. Contoh AI untuk pekerjaan aparatur.
+5. Batasan AI, keamanan data, dan verifikasi manusia.
+6. ChatGPT sebagai ruang kerja berbasis chat.
+7. ChatGPT dan Codex: dua alur penggunaan yang berbeda.
+8. Apa itu Google Apps Script?
+9. Cara membuka Google Apps Script dari Google Sheets, Drive, atau halaman Apps Script.
+10. Struktur project GAS: `Code.gs` dan `Index.html`.
+11. Di mana JavaScript dan CSS diletakkan?
+12. Prompt ChatGPT untuk menghasilkan dua file GAS.
+13. Demo menyalin kode ChatGPT ke Apps Script.
+14. Menjalankan, membaca error, dan meminta perbaikan.
+15. Arsitektur Google Sheets, Apps Script, dan dashboard.
+16. Deployment sebagai web app dan pengaturan akses.
+17. Instruksi tiga kasus kelompok.
+18. Checklist dashboard minimum.
+19. Presentasi singkat hasil kelompok.
+20. Refleksi dan langkah penggunaan yang aman.
 
 ---
 
-## 12. Indikator Keberhasilan Workshop
+## 13. Indikator Keberhasilan Workshop
 
 Indikator yang dapat digunakan dalam proposal dan evaluasi:
 
@@ -464,7 +584,7 @@ Indikator yang dapat digunakan dalam proposal dan evaluasi:
 
 ---
 
-## 13. Keputusan Desain yang Perlu Disepakati Tim
+## 14. Keputusan Desain yang Perlu Disepakati Tim
 
 Bagian ini masih **under discussion** dan perlu diputuskan sebelum slide/modul final dibuat:
 
@@ -478,7 +598,14 @@ Bagian ini masih **under discussion** dan perlu diputuskan sebelum slide/modul f
 
 ---
 
-## 14. Rekomendasi Utama
+## 15. Referensi Teknis untuk Catatan Presenter
+
+- [Google Developers: Script Projects](https://developers.google.com/apps-script/guides/projects) – struktur project, file `.gs` dan `.html`, serta cara membuat project dari Drive atau Google Sheets.
+- [Google Developers: HTML Service](https://developers.google.com/apps-script/guides/html) – HTML dapat memuat CSS dan JavaScript sisi browser; `doGet()` digunakan untuk menyajikan halaman web app.
+- [Google Developers: Web Apps](https://developers.google.com/apps-script/guides/web) – langkah deployment dan pengaturan akses web app.
+- [OpenAI: Codex](https://openai.com/codex/) – pengenalan Codex sebagai coding agent di ChatGPT, editor, dan terminal.
+
+## 16. Rekomendasi Utama
 
 Bentuk paling aman dan realistis untuk kegiatan ini adalah:
 
