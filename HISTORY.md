@@ -1838,3 +1838,20 @@ Capture halaman dashboard yang benar-benar tampil di browser membutuhkan test de
 - :codex-followup[Test deployment sintetis]{Lanjutkan ke `Uji deployment` untuk menampilkan dashboard di browser memakai data sintetis saja, tanpa membuat akses publik.}
 - :codex-followup[Rapikan screenshot untuk deck]{Pilih capture terbaik, beri nama urut berdasarkan slide, dan siapkan caption singkat untuk tiap screenshot.}
 - :codex-followup[Buat handout praktik]{Ubah alur screenshot ini menjadi panduan peserta dari ChatGPT, Code.gs, Index.html, testing, sampai deployment.}
+
+## 2026-09-25 — Melanjutkan ke uji deployment sintetis
+
+### User
+
+cont
+
+### Assistant Action
+
+Pengguna melanjutkan workflow capture browser. Konteks aktif tetap `projects/pkm-smt3/`. Akan membuka alur **Uji deployment** pada project Apps Script latihan untuk menampilkan dashboard berbasis data sintetis di browser, tanpa membuat deployment publik atau mengubah sharing/access. Jika Google meminta otorisasi tambahan atau tindakan yang mengubah akses, workflow akan dihentikan sebelum konfirmasi tersebut.
+
+### Failed Attempt — membuka Uji deployment
+
+- Menu **Deploy** berhasil dibuka dan menampilkan `Deployment baru`, `Kelola deployment`, serta `Uji deployment`.
+- Beberapa percobaan memilih `Uji deployment` tidak membuka halaman baru atau panel tambahan. Project latihan belum memiliki deployment yang bisa diuji.
+- Tidak ada deployment baru, perubahan sharing, atau perubahan akses yang dibuat.
+- Karena langkah berikutnya memerlukan pembuatan deployment cloud baru, berhenti sebelum aksi tersebut dan meminta konfirmasi tepat sebelum membuat endpoint.

@@ -58,3 +58,9 @@
 - `Index.html` berisi dashboard statis berbasis data sintetis dengan kartu total, rekap kategori, dan tabel monitoring.
 - Capture baru berhasil disimpan untuk editor `Index.html`, bagian awal `Index.html`, `Code.gs` final, dan menu deployment pada zoom **110%**.
 - Deployment publik, perubahan sharing, dan pengujian URL web app belum dilakukan. Capture halaman dashboard ter-render menunggu konfirmasi deployment/test yang terpisah.
+
+## Deployment Test Blocker — 2026-09-25
+
+- Menu **Deploy → Uji deployment** sudah disiapkan pada browser zoom 110%, tetapi item belum membuka halaman karena project belum memiliki deployment yang dapat diuji.
+- Membuat deployment baru akan membuat endpoint deployment pada akun Google. Ini adalah perubahan cloud yang memerlukan konfirmasi tepat sebelum aksi.
+- Browser dibiarkan pada menu deployment agar alur dapat dilanjutkan setelah konfirmasi pengguna.
