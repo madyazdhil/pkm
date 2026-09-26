@@ -2300,3 +2300,23 @@ Teks teknis internal tersebut sudah dihapus dari semua slide (Slide 10, 15, 16, 
 - 🖥️ **[Buka Slide 16 (Editor Code.gs Besar)](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html#slide-16)**
 - 🖥️ **[Buka Slide 17 (Tambah Index.html)](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html#slide-17)**
 - 🧪 **Status QA:** Lulus otomatis 100% (`PASS: HTML deck QA`) pada resolusi 1440×810 dan 1280×720 tanpa overflow.
+
+## 2026-09-26 — Upload deck ke GitHub personal (madyazdhil/pkm) dan aktivasi GitHub Pages
+
+### User
+
+upload deck nya kesini 
+https://github.com/madyazdhil/pkm.git
+
+paek github pribadi aja yah 
+
+kasi aku link page nya yah yang bisa di share si ppt nya
+
+### Assistant Action
+
+Akan menyiapkan remote GitHub personal `git@github.com-personal:madyazdhil/pkm.git`, memastikan struktur deck siap untuk GitHub Pages (menyediakan `index.html` yang langsung membuka deck workshop tanpa perlu klik subfolder), melakukan push ke branch `main`, dan memberikan link GitHub Pages yang dapat langsung dibagikan untuk presentasi.
+
+### Status
+
+In progress.
+

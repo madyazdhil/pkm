@@ -105,3 +105,12 @@ Penjelasan kode juga tersedia di [README deck](file:///Users/yazidhilmi/Document
 - 🔍 **Screenshot Lebih Besar & Jelas:**
   - Porsi kolom gambar diperlebar dari 58% menjadi ~64% slide width, dan frame screenshot diperbesar hingga tinggi 350–380px tanpa cropping.
 - 🧪 **Hasil Pengujian QA:** Lulus otomatis 100% pada resolusi 1440×810 dan 1280×720.
+
+## GitHub Repository & Live Pages Links — 26 September 2026
+
+- 📦 **Remote Repository GitHub Pribadi:** [github.com/madyazdhil/pkm](https://github.com/madyazdhil/pkm) (Remote SSH: `git@github.com-personal:madyazdhil/pkm.git`)
+- 🌐 **Link GitHub Pages (Siap Dibagikan / Presentasi):**
+  - **Link Utama (Root):** [https://madyazdhil.github.io/pkm/](https://madyazdhil.github.io/pkm/)
+  - **Link Langsung File Deck:** [https://madyazdhil.github.io/pkm/materials/workshop/html-deck/ai-dashboard-gas-workshop.html](https://madyazdhil.github.io/pkm/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+  - **Link Langsung Slide Tertentu:** [https://madyazdhil.github.io/pkm/#slide-10](https://madyazdhil.github.io/pkm/#slide-10)
+- 🚀 **Fitur Auto-Redirect:** Root `index.html` otomatis meneruskan pengunjung ke file deck workshop lengkap dengan slide hash aktif, serta dilengkapi file `.nojekyll`.

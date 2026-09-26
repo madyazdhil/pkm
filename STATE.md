@@ -133,3 +133,17 @@
   - Memindahkan kotak pengingat (quote) pada slide 19 ke kolom teks kiri agar gambar menu deployment dapat tampil maksimal.
 - **Verifikasi QA:**
   - Pengujian visual Playwright dan automated assertions via `scripts/qa_html_deck.py` lulus 100% (`PASS: HTML deck QA`) pada 1440×810 dan 1280×720.
+
+## GitHub Remote Push & GitHub Pages Setup — 2026-09-26
+
+- **Personal GitHub Remote Configured:**
+  - Remote ditautkan ke akun pribadi: `git@github.com-personal:madyazdhil/pkm.git`.
+  - Berhasil diautentikasi dengan SSH host alias `github.com-personal`.
+- **GitHub Pages Entry Point:**
+  - Menambahkan `index.html` pada root repository dengan auto-redirect instan (termasuk preservasi hash `#slide-NN`) ke deck presentasi.
+  - Menambahkan `index.html` dan `.nojekyll` di folder `materials/workshop/html-deck/` agar seluruh rute URL langsung membuka deck tanpa halaman 404.
+  - URL publik yang dapat dibagikan:
+    - Root link: `https://madyazdhil.github.io/pkm/`
+    - Direct deck link: `https://madyazdhil.github.io/pkm/materials/workshop/html-deck/ai-dashboard-gas-workshop.html`
+- **Pembersihan Git Tracking:**
+  - Mengabaikan symlink lokal `source-docs` dari pelacakan Git agar tidak menjadi symlink rusak (broken link) di GitHub.
