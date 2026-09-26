@@ -1968,3 +1968,35 @@ In progress.
 ### Status
 
 Implemented and verified locally; menunggu umpan balik visual berikutnya bila diperlukan.
+
+### Assistant — exact response for accessibility revision
+
+Sudah aku perbaiki tiga masalahnya:
+
+1. **Deck selalu mulai dari slide judul**
+   - Sebelumnya browser bisa membawa hash slide terakhir sehingga deck terlihat langsung di penutup.
+   - Sekarang file selalu membuka `01 / 28`, termasuk jika sebelumnya URL menyimpan `#slide-28`.
+
+2. **Tema diganti menjadi terang dan lebih aman untuk proyektor**
+   - Background sekarang putih/hijau sangat muda.
+   - Teks memakai kontras lebih tinggi.
+   - Kontrol navigasi dan panel catatan juga ikut dibuat terang.
+
+3. **Teks diperbesar untuk peserta yang lebih senior**
+   - Body text, lead, daftar, tabel, callout, caption screenshot, dan label kode diperbesar.
+   - Slide yang padat diberi spacing khusus agar tetap muat pada ukuran proyektor 1280 × 720.
+
+File yang sudah diperbarui:
+
+- [Buka deck HTML](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+- [README deck](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/README.md)
+
+Verifikasi:
+
+- `python3 scripts/qa_html_deck.py` → `PASS: HTML deck QA`
+- 28 slide tetap lulus tanpa overflow pada viewport 1440 × 810 dan 1280 × 720.
+- Semua gambar termuat.
+- Navigasi keyboard, notes, overview, dan pembukaan `file://` tetap bekerja.
+- Dibuka tanpa hash dan dengan hash `#slide-28`, keduanya kembali ke cover.
+
+Checkpoint lokal terbaru: `41ce5a7 fix(pkm-smt3): improve projector readability`.
