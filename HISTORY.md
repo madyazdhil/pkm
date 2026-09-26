@@ -2090,3 +2090,70 @@ Silakan tutup tab deck yang lama, lalu buka ulang file terbaru:
 
 QA: `PASS: HTML deck QA`.
 Checkpoint lokal: `52ab1ab fix(pkm-smt3): normalize slide navigation labels`.
+
+## 2026-09-26 — Investigasi dan perbaikan bug slide reload kembali ke slide akhir
+
+### User
+
+ini oon banget belum di baikin dia mas akok dia ke palinh akhir sih tampilannya pas reliad
+
+### Assistant Action
+
+Akan memeriksa implementasi JavaScript pada `ai-dashboard-gas-workshop.html`, khususnya bagaimana penanganan hash URL, event `hashchange`, event `load` / `DOMContentLoaded`, `localStorage`, atau scroll position saat reload browser yang menyebabkan slide melonjak ke slide paling akhir.
+
+### Failed Attempt / Diagnosis (Sesi Sebelumnya)
+
+- Assistant pada turn sebelumnya berasumsi masalah berasal dari URL hash `#slide-28` atau label teks `END` pada slide penutup.
+- Asumsi tersebut keliru. Pengujian komputasi style menunjukkan bahwa rule CSS `.closing` (slide 28) dan `.cover` (slide 1) memiliki aturan `display: grid;` tanpa pembatas `.active`.
+- Karena didefinisikan setelah `.slide { display: none }` dan slide 28 berada di akhir urutan DOM dengan `position: absolute; inset: 0`, maka slide 28 secara permanen berstatus `display: grid` dan menutupi (occlude) seluruh slide aktif lainnya di layar.
+- QA sebelumnya lolos palsu (false positive) karena hanya mengecek teks counter dan atribut DOM `.slide.active`, tanpa mengecek elemen visual riil yang dirender di layar (`elementFromPoint`).
+
+### Assistant Action — CSS display isolation & reload hash fix
+
+1. **CSS display isolation**:
+   - Menambahkan aturan ketat `body:not(.overview) .slide:not(.active) { display: none !important; }`.
+   - Mengubah `.slide.active.cover` dan `.slide.active.closing` menjadi satu-satunya pemicu `display: grid`.
+   - Menghapus `display: grid` tanpa syarat dari aturan umum `.cover` dan `.closing`.
+2. **Hash & Reload Restoration**:
+   - Memperbaiki parsing hash `const initial = location.hash.match(/slide-(\d+)/); render(initial ? Number(initial[1]) - 1 : 0, false);`.
+   - Membuka file tanpa hash otomatis mulai dari cover (01 / 28); reload saat berada di slide 3 tetap berada di slide 3 tanpa kembali ke cover atau slide akhir.
+3. **QA Enhancement**:
+   - `scripts/qa_html_deck.py` diperluas dengan assertion visual nyata `document.elementFromPoint(width/2, height/2)` dan validasi bahwa hanya ada tepat 1 slide dengan `display !== 'none'`.
+   - Pengujian lulus `PASS: HTML deck QA` untuk viewport 1440×810 dan 1280×720.
+
+### Status
+
+Implemented and verified locally.
+
+### Assistant — exact response
+
+Maaf banget, sebelumnya analisanya salah diagnosa. Masalahnya bukan di URL hash atau teks END, melainkan ada **bug CSS tumpukan (layering overlay)** yang fatal:
+
+### Penyebab Sebenarnya (Kenapa Selalu Tampil Penutup):
+1. Di dalam CSS, class `.closing` (slide 28) dan `.cover` (slide 1) diberi properti `display: grid;` secara langsung tanpa pembatas `.active`.
+2. Karena rule `.closing` ditulis setelah `.slide { display: none }`, CSS menimpa aturan sembunyikan slide.
+3. Dan karena slide 28 adalah elemen HTML paling bawah di dalam DOM dengan posisi `absolute`, **Slide 28 (Penutup) selalu tampil 100% menutupi semua slide lainnya di layar**.
+4. Saat kamu klik Next ke slide 3, counter di bawah memang berubah jadi `03 / 28`, tapi mata kamu tetap melihat Slide Penutup karena slide 28 nempel di atasnya.
+5. Begitu juga pas reload, yang kelihatan tetap Slide Penutup karena bug CSS tersebut.
+6. Assistant sebelumnya tidak sadar karena script tesnya cuma ngecek atribut teks DOM, bukan ngecek tampilan visual yang dilihat mata di layar.
+
+---
+
+### Perbaikan yang Sudah Diterapkan:
+1. **Kunci Slide Non-Aktif:**
+   - Ditambahkan aturan tegas: `body:not(.overview) .slide:not(.active) { display: none !important; }`.
+   - Properti `display: grid` pada cover dan penutup kini **hanya aktif** jika memiliki class `.active` (`.slide.active.closing` & `.slide.active.cover`).
+2. **Reload & Hash Bekerja Sempurna:**
+   - Jika deck dibuka baru (tanpa hash), selalu mulai dari **Slide 01 / 28**.
+   - Jika kamu sedang di Slide 03 / 28 lalu tekan **Reload**, deck tetap bertahan di **Slide 03 / 28** (tidak loncat ke cover, apalagi ke penutup).
+3. **Verifikasi Visual Playwright:**
+   - Script QA `scripts/qa_html_deck.py` sudah diupgrade untuk mengetes `elementFromPoint` di tengah layar:
+     - Slide 1: hanya Cover yang tampil.
+     - Slide 3: benar-benar menampilkan *"Masalah kerja yang ingin dibantu"*.
+     - Reload di Slide 3: tetap *"Masalah kerja yang ingin dibantu"* (03 / 28).
+     - Slide 28: hanya tampil saat kamu benar-benar navigasi sampai akhir.
+
+Silakan buka atau refresh file deck terbaru:
+- [Buka deck HTML](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+
+

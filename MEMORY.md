@@ -64,7 +64,9 @@
 - Materi dibawakan oleh dua orang: Pak Syam membaca basic AI, Generative AI, verifikasi, dan keamanan data; Yazid memandu ChatGPT prompting, GAS, dua file, testing, deployment, dan praktik dashboard.
 - Deck harus menampilkan ownership badge kecil di bagian atas setiap slide: `S`, `Y`, atau `↔`.
 
-## Navigation bug lesson — 2026-09-26
+## Navigation and visual overlay bug lesson — 2026-09-26
 
-- Avoid a literal `END` label in the closing slide because stale browser/hash state can make the deck look stuck there. Use stable `NN / total` labels on every slide.
-- QA must reproduce the exact user path, not only inspect the internal `render()` function.
+- Avoid literal `END` labels in slides; use stable `NN / total` numbers across all slides.
+- Root cause of deck appearing permanently on closing slide: `.closing` and `.cover` had unconditional `display: grid` in CSS (declared after `.slide { display: none }`), making slide 28 (`.closing`) permanently active and rendered on top of every other slide in the DOM.
+- QA must assert visual occlusion (`elementFromPoint` at center of screen) and count of visible slides (`display !== 'none' === 1`), not just check `.slide.active` DOM attributes.
+- On reload, URL hash `#slide-NN` is safely respected, and fresh load without hash starts at slide 1.

@@ -96,3 +96,11 @@
 - User reported that attempting to reach slide 3 still showed an `END` presentation.
 - Root cause addressed: the closing slide had a literal `END` label while other slide labels were partly stale, which made the active slide state confusing when the browser/hash was stale. All 28 slides now use stable `NN / 28` labels; the closing slide is `28 / 28`.
 - Added an explicit QA path for two Next clicks from cover to slide 3. It passes and lands on `Masalah kerja yang ingin dibantu`, `03 / 28`.
+
+## Slide reload / permanent closing overlay fix — 2026-09-26
+
+- User reported that the presentation still showed the closing slide when reloaded or navigating.
+- True root cause discovered: `.closing` and `.cover` CSS classes had unconditional `display: grid` rules defined after `.slide { display: none }`. Because `.slide.closing` is the last child in the DOM, it was rendered with `display: grid` on top of every active slide at all times.
+- Fixed: removed unconditional `display: grid` from `.cover` and `.closing`; added `.slide.active.closing { display: grid }` and `body:not(.overview) .slide:not(.active) { display: none !important }`.
+- Script updated to properly read URL hash on reload (`location.hash.match(/slide-(\d+)/)`), so navigating to slide 3 and reloading correctly remains on slide 3.
+- QA script `scripts/qa_html_deck.py` enhanced with visual occlusion testing (`elementFromPoint` at center of screen) and strict assertion that exactly 1 slide has `display !== 'none'`. All tests pass.

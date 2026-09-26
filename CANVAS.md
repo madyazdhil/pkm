@@ -74,3 +74,10 @@ Penjelasan kode juga tersedia di [README deck](file:///Users/yazidhilmi/Document
 
 - Semua slide kini menampilkan nomor stabil `01 / 28` sampai `28 / 28`; label `END` yang membingungkan sudah dihapus.
 - QA mencakup jalur pengguna cover → klik Next dua kali → slide 3 dan memverifikasi judul serta nomor `03 / 28`.
+
+## Visual Overlay & Reload Fix — 26 September 2026
+
+- Memperbaiki bug kritis tampilan: aturan `.closing` dan `.cover` di CSS sebelumnya memiliki `display: grid` tanpa scoped `.active`, sehingga slide 28 (Penutup) selalu tampil menutupi slide aktif di bawahnya pada DOM.
+- Diperbaiki dengan mengunci semua slide non-aktif ke `display: none !important` dan hanya menerapkan `display: grid` pada `.slide.active.closing` serta `.slide.active.cover`.
+- Navigasi hash `#slide-NN` dan reload browser kini bekerja stabil dan mempertahankan slide aktif.
+- Script [qa_html_deck.py](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/scripts/qa_html_deck.py) diperluas untuk menguji oklusi visual riil (`elementFromPoint`) dan lulus tanpa error.

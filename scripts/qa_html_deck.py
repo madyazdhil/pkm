@@ -24,19 +24,35 @@ with sync_playwright() as p:
 
         # Navigation from first slide through the closing slide and back one step.
         page.goto(URL, wait_until="networkidle")
+        # Ensure ONLY ONE slide is visible at any given time (no background/overlay bleed)
+        assert page.evaluate("() => [...document.querySelectorAll('.slide')].filter(s => window.getComputedStyle(s).display !== 'none').length") == 1
+        assert page.evaluate("() => document.elementFromPoint(window.innerWidth/2, window.innerHeight/2).closest('.slide').dataset.title") == "Dari ChatGPT ke Dashboard Internal"
+
         for _ in range(count - 1):
             page.keyboard.press("ArrowRight")
         assert page.locator("#counter").inner_text() == "28 / 28"
         assert page.locator(".slide.active").get_attribute("data-title") == "Penutup"
         assert page.locator(".slide.active .slide-no").inner_text() == "28 / 28"
+        assert page.evaluate("() => document.elementFromPoint(window.innerWidth/2, window.innerHeight/2).closest('.slide').dataset.title") == "Penutup"
         page.keyboard.press("ArrowLeft")
         assert page.locator(".slide.active").get_attribute("data-title") == "Sumber teknis dan provenance"
+        assert page.evaluate("() => document.elementFromPoint(window.innerWidth/2, window.innerHeight/2).closest('.slide').dataset.title") == "Sumber teknis dan provenance"
+
         # Reproduce the user path: cover -> slide 3 via two next clicks.
         page.goto(URL, wait_until="networkidle")
         page.locator("#next").click(); page.locator("#next").click()
         assert page.locator("#counter").inner_text() == "03 / 28"
         assert page.locator(".slide.active").get_attribute("data-title") == "Masalah kerja yang ingin dibantu"
         assert page.locator(".slide.active .slide-no").inner_text() == "03 / 28"
+        # Must be visibly shown to user eyes (not covered by slide 28!)
+        assert page.evaluate("() => document.elementFromPoint(window.innerWidth/2, window.innerHeight/2).closest('.slide').dataset.title") == "Masalah kerja yang ingin dibantu"
+        assert page.evaluate("() => [...document.querySelectorAll('.slide')].filter(s => window.getComputedStyle(s).display !== 'none').length") == 1
+
+        # Test reload: on reload, slide 3 must persist and remain visible!
+        page.reload(wait_until="networkidle")
+        assert page.locator("#counter").inner_text() == "03 / 28"
+        assert page.evaluate("() => document.elementFromPoint(window.innerWidth/2, window.innerHeight/2).closest('.slide').dataset.title") == "Masalah kerja yang ingin dibantu"
+        assert page.evaluate("() => [...document.querySelectorAll('.slide')].filter(s => window.getComputedStyle(s).display !== 'none').length") == 1
 
         # Notes must be populated and overview must activate.
         page.goto(URL, wait_until="networkidle")
