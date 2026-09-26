@@ -2028,3 +2028,17 @@ In progress.
 ### Status
 
 Implemented and verified locally.
+
+### Assistant — exact response for speaker-label revision
+
+Sudah aku tambahkan kode kecil di bagian atas setiap slide supaya langsung terlihat bagian Pak Syam dan bagian Yazid.
+
+- `S / PAK SYAM · BASIC AI` → slide basic AI, Generative AI, verifikasi manusia, dan keamanan data.
+- `Y / YAZID · PRAKTIK DASHBOARD` → slide ChatGPT prompting, GAS, `Code.gs`, `Index.html`, testing, deployment, dan praktik dashboard.
+- `↔ / BERSAMA` → pembuka, referensi, dan penutup.
+
+Legenda juga sudah ditambahkan di cover dan README deck. QA tetap lulus dengan hasil `PASS: HTML deck QA`.
+
+File deck: [ai-dashboard-gas-workshop.html](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+
+Checkpoint lokal: `fb193b5 feat(pkm-smt3): label workshop speaker ownership`.
