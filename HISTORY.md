@@ -1900,3 +1900,43 @@ Aku lanjutkan sampai deck HTML-nya jadi. Screenshot browser yang sudah ada akan 
 - Pemindaian nama file HTML di luar project sempat terjadi tanpa kebutuhan. Tidak membaca isinya atau menggunakannya untuk konteks/deck; penelusuran berikut dibatasi ke project ini.
 - Koreksi klaim turn sebelumnya: penyebab `Uji deployment` tidak bereaksi belum diketahui. Dokumentasi Google menyediakan alur Test deployments dengan URL `/dev`; tidak menyebut keharusan memiliki deployment publik terlebih dahulu.
 - Versi awal deck HTML telah dibuat. Belum final: perlu crop screenshot aman, perbaikan konten, numbering, scaling, dan pengujian navigasi/cetak.
+
+### Assistant — exact response for completed deck turn
+
+Sudah selesai, deck HTML workshop-nya sudah jadi dan sudah aku cek.
+
+File utama:
+
+- [Buka deck HTML — 28 slide](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+- [README dan kontrol presentasi](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/README.md)
+- [Manifest provenance screenshot](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/assets/CAPTURE-MANIFEST.md)
+- [Script QA deck](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/scripts/qa_html_deck.py)
+
+Yang sudah masuk:
+
+- basic AI, Generative AI, verifikasi manusia, dan keamanan data;
+- fokus praktik ChatGPT melalui chat;
+- pengenalan singkat ChatGPT vs Codex vs Google Apps Script;
+- cara membuka GAS;
+- perbedaan `Code.gs`/`Kode.gs` dan `Index.html`;
+- posisi CSS dan JavaScript untuk pemula;
+- prompt yang meminta dua blok kode terpisah;
+- copy-paste, testing, troubleshooting, dan alur deployment;
+- arsitektur dashboard minimum;
+- tiga kasus praktik kelompok;
+- rubrik hasil, rancangan alur workshop, share-out, referensi, dan catatan presenter.
+
+Screenshot Apps Script asli sudah dimasukkan dari capture Chrome zoom **110%**. Screenshot menu deployment diberi keterangan yang jujur: itu panduan UI, bukan bukti deployment publik sudah berhasil. Tidak ada deployment atau sharing Google yang diubah.
+
+Verifikasi yang lulus:
+
+- `python3 scripts/qa_html_deck.py` → `PASS: HTML deck QA`;
+- 28 slide, seluruh gambar termuat;
+- navigasi keyboard/tombol, counter, notes presenter, overview, dan hash slide bekerja;
+- tidak ada overflow pada viewport presentasi 1440×810 dan 1280×720;
+- deck dapat dibuka langsung memakai `file://`;
+- mode print juga sudah diuji.
+
+Checkpoint lokal: `6478254 feat(pkm-smt3): finish HTML workshop deck`.
+
+Status: **implemented and verified locally**.
