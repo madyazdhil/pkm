@@ -52,3 +52,10 @@ Demo cloud yang digunakan:
 - 🧪 **QA script:** [qa_html_deck.py](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/scripts/qa_html_deck.py)
 
 Deck berisi 28 slide dan dapat dibuka langsung melalui `file://`. Capture browser berasal dari Chrome zoom 110% dan hanya dipakai sebagai bukti langkah UI Apps Script. Deck tidak mengklaim deployment web app berhasil karena URL deployment belum tersedia.
+
+## Accessibility revision — 26 September 2026
+
+- Deck now starts consistently on the title slide instead of restoring a stale hash to the closing slide.
+- Theme changed from dark to light/high contrast for projector readability.
+- Typography increased for body copy, lists, tables, callouts, captions, and code labels, with targeted spacing adjustments for 1280×720 projection.
+- QA remains green via [qa_html_deck.py](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/scripts/qa_html_deck.py).

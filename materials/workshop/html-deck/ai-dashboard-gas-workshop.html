@@ -69,6 +69,52 @@
     .overview .stage{width:min(96vw,1600px);aspect-ratio:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-content:start}.overview .slide{position:relative;display:block!important;inset:auto!important;aspect-ratio:16/9;padding:16px;border-radius:10px;cursor:pointer;transform:none!important;animation:none!important}.overview .slide:before,.overview .slide:after,.overview .topline,.overview .footer-note{display:none}.overview h1{font-size:18px}.overview h2{font-size:17px}.overview h3{font-size:12px}.overview p,.overview .lead,.overview .list,.overview .flow,.overview .two-col,.overview .browser-shot,.overview .case-grid,.overview .architecture,.overview .timeline,.overview .rubric,.overview .shareout,.overview .closing{display:none}.overview .slide.active{outline:2px solid var(--lime)}.overview .controls{display:none}
     @media(max-height:760px) and (min-width:901px){.cover-art{min-height:260px}.browser-shot.tall{height:300px}.browser-shot.medium{height:260px}.architecture{margin-top:30px}.mock-dashboard{margin-top:20px!important}.section-head{margin-top:12px}.two-col,.step-layout{margin-top:24px!important}.slide[data-title="Deployment sebagai web app"] .quote{margin-top:12px!important}}
     @media(max-width:900px){body{overflow:auto}.deck-shell{padding:8px;display:block}.stage{width:100%;aspect-ratio:auto}.slide{position:relative;inset:auto!important;display:none;min-height:calc(100vh - 16px);border-radius:12px;padding:58px 28px 60px}.slide.active{display:block}.slide:after{left:28px;right:28px}.topline{left:28px;right:28px}.footer-note{left:28px}.cover,.two-col,.step-layout,.shareout,.rubric{grid-template-columns:1fr}.cover-art{min-height:280px;order:-1}.flow,.timeline{grid-template-columns:1fr 1fr}.flow-step:not(:last-child):after,.flow-step:not(:last-child):before,.arch-node:not(:last-child):after,.arch-node:not(:last-child):before{display:none}.architecture,.case-grid{grid-template-columns:1fr}.split-callout{grid-template-columns:1fr}.controls{bottom:8px}.overview .stage{display:block}.overview .slide{margin-bottom:10px}.overview .slide.active{outline:0}}
+    /* Projector-first accessibility theme: light canvas, high contrast, larger type */
+    :root{
+      --ink:#17353a; --muted:#50696e; --bg:#edf3f1; --panel:#ffffff;
+      --line:#c5d5d6; --teal:#087c75; --lime:#5f7f0a; --coral:#bd4b3b;
+      --yellow:#9a6500; --blue:#245c9c; --white:#ffffff; --shadow:0 22px 55px rgba(32,67,70,.18);
+    }
+    body{background:#dfe9e6;color:var(--ink);color-scheme:light}
+    .deck-shell{background:radial-gradient(circle at 12% 8%,rgba(8,124,117,.12),transparent 32%),radial-gradient(circle at 86% 86%,rgba(95,127,10,.10),transparent 30%),#e8f0ed}
+    .slide{background:linear-gradient(135deg,#ffffff 0%,#f6faf8 58%,#eef6f2 100%);border-color:#b7cccd}
+    .slide:before{background:linear-gradient(90deg,transparent 0 78%,rgba(8,124,117,.045) 78% 78.1%,transparent 78.1%)}
+    .slide:after{background:rgba(80,105,110,.25)}
+    .topline{color:#527075}.slide-no{color:#6a8185}.footer-note{color:#678084}.footer-note strong{color:#35575d}
+    .lead{font-size:clamp(21px,1.7vw,29px);color:#2d4b50;line-height:1.34}
+    .small{font-size:16px;color:#50696e;line-height:1.5}
+    .accent{color:#087c75}.lime{color:#5f7f0a}.coral{color:#bd4b3b}.yellow{color:#9a6500}.blue{color:#245c9c}
+    .rule{background:#087c75}.rule.lime{background:#5f7f0a}
+    .big-statement{color:#17353a}.big-number{color:#087c75}
+    .list{gap:16px}.list li{font-size:23px;line-height:1.26;color:#24464b}.list li:before{background:#087c75;box-shadow:0 0 0 5px rgba(8,124,117,.12)}
+    .list.compact li{font-size:20px}.list.compact li:before{background:#087c75}
+    .quote{background:#e9f4ef;border-left-color:#5f7f0a;color:#173b3e;font-size:28px}.quote small{color:#557277}
+    .tag,.pill{border-color:#8bb7b4;color:#17645f;background:#f4fbf9}
+    .flow-step,.arch-node,.callout,.case,.time,.mock-dashboard{background:#ffffff;border-color:#b9ced0;color:#17353a;box-shadow:0 5px 16px rgba(35,76,78,.06)}
+    .flow-step .no,.arch-node .mini,.step-no,.code-label b{color:#087c75}.flow-step strong,.arch-node h3,.case h3,.time h3,.callout h3{color:#17353a}.flow-step span,.arch-node p,.case p,.case ul,.time p{color:#4d666a}
+    .flow-step:not(:last-child):after{background:#087c75}.flow-step:not(:last-child):before{border-color:#087c75}
+    .definition{border-bottom-color:#c5d5d6}.definition dt{color:#087c75;font-size:17px}.definition dd{color:#24464b;font-size:22px}
+    .callout p,.callout li{color:#36565a;font-size:20px}.callout.warn{border-top-color:#bd4b3b}
+    .tool-table{font-size:19px}.tool-table th{color:#087c75;font-size:14px;border-bottom-color:#6ea09d}.tool-table td{color:#315459;border-bottom-color:#c5d5d6;line-height:1.32}.tool-table td:first-child{color:#17353a}
+    .browser-shot{border-color:#7ea5a6;background:#f2f7f6}.shot-caption{color:#557277;font-size:14px}.shot-caption b{color:#24464b}
+    .step-copy p{font-size:21px;color:#2d4b50}.step-copy .list li{font-size:19px}.step-no{font-size:15px}.step-no b{background:#5f7f0a;color:#fff}
+    .code{background:#eef5f3;border-color:#b4cacc;color:#173b3e;font-size:17px}.code.small{font-size:15px}.code .kw{color:#1a5aa5}.code .fn{color:#517500}.code .str{color:#b3422f}.code .cm{color:#557277}.code .tagx{color:#087c75}.code .attr{color:#9a6500}.code-label{color:#557277;font-size:14px}
+    .code-sheet{background:#f4faf7;color:#173b3e;border-color:#9cbdbc;box-shadow:20px 24px 0 rgba(42,84,85,.12)}.code-sheet + .code-sheet{background:#eef7f0;color:#355b2b;box-shadow:0 24px 0 rgba(42,84,85,.10)}
+    .case-grid{gap:20px}.case{min-height:300px}.case .case-no{color:#587277;font-size:14px}.case p{font-size:18px}.case strong{color:#17353a;font-size:16px}.case ul{font-size:16px}
+    .rubric-item{border-bottom-color:#c5d5d6}.rubric-item strong{font-size:20px;color:#17353a}.rubric-item span{font-size:16px;color:#557277}.check{background:#e6f2c6;color:#5f7f0a}
+    .mock-top span,.mock-stat span{color:#557277}.mock-stats{gap:10px}.mock-stat{background:#edf7f3;border-color:#bed4d1}.mock-stat b{color:#087c75}.mock-table{border-color:#bed4d1}.mock-row{border-bottom-color:#d3e0df;color:#315459}.mock-row.head{color:#087c75}
+    .time{border-top-color:#087c75}.time b{color:#17353a;font-size:16px}.time p{font-size:16px}.share-step{border-bottom-color:#c5d5d6}.share-step strong{font-size:20px;color:#17353a}.share-step span{font-size:16px;color:#557277}.share-step b{border-color:#087c75;color:#087c75}
+    .controls{border-color:#8eaeaf;background:rgba(255,255,255,.94);box-shadow:0 8px 28px rgba(33,69,72,.20)}.controls button{color:#315459}.controls button:hover{background:#e4f2ef;color:#087c75}.controls .counter{color:#35575d}.controls .divider{background:#b7cccd}.controls .hint{color:#678084}
+    .notes-panel{border-color:#8eaeaf;background:rgba(255,255,255,.98);box-shadow:0 20px 70px rgba(33,69,72,.23)}.notes-panel h3{color:#087c75}.notes-panel p{color:#36565a}
+    .slide[data-title="Deployment sebagai web app"]{padding-bottom:30px}
+    @media(max-height:760px) and (min-width:901px){
+      .lead{font-size:21px}.list li{font-size:21px}.definition dd{font-size:20px}.callout p,.callout li{font-size:18px}.tool-table{font-size:17px}.step-copy p{font-size:19px}
+      .slide[data-title="Hasil yang dibawa pulang"] .quote{padding:12px 18px;font-size:23px}
+      .slide[data-title="Deployment sebagai web app"] .step-layout{margin-top:16px!important}
+      .slide[data-title="Deployment sebagai web app"] .browser-shot.medium{height:220px}
+      .slide[data-title="Deployment sebagai web app"] .quote{margin-top:4px!important;padding:8px 14px;font-size:18px;line-height:1.18}
+      .slide[data-title="Rubrik dashboard minimum"] .rubric-item{padding:11px 0}
+    }
     @media print{body{overflow:visible;background:white}.deck-shell{display:block;padding:0;background:white}.stage{width:auto;aspect-ratio:auto;filter:none}.slide,.slide.active{position:relative;display:block!important;inset:auto;page-break-after:always;width:100vw;height:56.25vw;min-height:0;border-radius:0;border:0;box-shadow:none}.controls,.notes-panel{display:none!important}.slide:after{display:none}}
   </style>
 </head>
@@ -468,7 +514,8 @@ sekecil mungkin dan tiga langkah pengujian.</pre></div></div>
         else if(e.key === 'Escape' && isOverview){ exitOverview(); }
       });
       window.addEventListener('hashchange', () => { const match = location.hash.match(/slide-(\d+)/); if(match) render(Number(match[1]) - 1, false); });
-      const initial = location.hash.match(/slide-(\d+)/); render(initial ? Number(initial[1]) - 1 : 0, false);
+      // Always start at the title slide when the local file is opened. Navigation may still update the hash during this session.
+      render(0, false);
     })();
   </script>
 </body>

@@ -1,7 +1,7 @@
 # Deck HTML — Dari ChatGPT ke Dashboard Internal
 
-Buka `ai-dashboard-gas-workshop.html` langsung di browser. Deck tidak membutuhkan
-server atau koneksi internet untuk navigasi inti. Screenshot browser disimpan di
+Buka `ai-dashboard-gas-workshop.html` langsung di browser. Deck selalu mulai dari slide judul saat dibuka dan tidak membutuhkan
+server atau koneksi internet untuk navigasi inti. Deck memakai tema terang dengan kontras tinggi agar lebih terbaca saat diproyeksikan. Screenshot browser disimpan di
 `assets/` dan berasal dari capture Apps Script pada zoom Chrome 110%.
 
 ## Kontrol

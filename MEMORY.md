@@ -52,3 +52,9 @@
 - Format final sengaja HTML lokal, bukan PPTX, agar dapat dibuka langsung di browser; README menyimpan kontrol keyboard, notes presenter, overview, fullscreen, dan print.
 - Capture Apps Script nyata pada Chrome zoom 110% dipakai sebagai evidence langkah editor/menu. Provenance dan crop tercatat pada `materials/workshop/html-deck/assets/CAPTURE-MANIFEST.md`.
 - Deployment tetap dijelaskan sebagai alur panduan; jangan menyebut deployment publik berhasil tanpa URL/hasil halaman yang terbukti.
+
+## Deck accessibility feedback — 2026-09-26
+
+- Default deck opening must always be the cover slide; do not restore a stale closing-slide hash on initial load.
+- Projector use requires a light/high-contrast theme rather than the earlier dark theme.
+- Audience includes senior participants; prefer larger body text, table text, captions, and callouts even if a few dense slides need tighter spacing.

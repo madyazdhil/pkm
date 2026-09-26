@@ -74,3 +74,10 @@
 - QA browser lokal lulus melalui `scripts/qa_html_deck.py` pada viewport 1440×810 dan 1280×720: 28 slide, seluruh image load, tidak ada overflow, navigasi maju/mundur, notes, dan overview bekerja.
 - QA `file://` juga lulus untuk membuka deck langsung tanpa server.
 - Status: implemented and verified locally. Tidak ada deployment/access Google yang diubah.
+
+## Feedback pass — 2026-09-26
+
+- User reported that the deck appeared to open directly on the closing slide, was too dark for projector use, and needed larger text for a more senior audience.
+- Fixed startup behavior: the local deck now always opens on the title slide, even if the browser URL previously retained `#slide-28`.
+- Reworked the visual theme to a light projector-first palette with higher contrast and larger body/callout/table text.
+- Re-ran browser QA at 1440×810 and 1280×720. All 28 slides remain within the viewport, images load, and keyboard/notes/overview behavior passes.

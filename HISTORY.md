@@ -1940,3 +1940,31 @@ Verifikasi yang lulus:
 Checkpoint lokal: `6478254 feat(pkm-smt3): finish HTML workshop deck`.
 
 Status: **implemented and verified locally**.
+
+## 2026-09-26 — Feedback tampilan deck dari pengguna
+
+### User
+
+1/ ini dia kok langsung penutuup yah kaya ya ada yang salah adari menampilkan datanya
+2/ ini dia kok gelap yah kalo pake proyektor dia kan kalo gelap jadi ga kebaca tolong yah
+3/ ini kayany apsertanya udah tua jadi teksnya gedean aja yah
+
+### Assistant Action
+
+Akan memperbaiki tiga hal pada deck HTML: memastikan deck selalu membuka slide pertama saat dibuka, mengubah tema gelap menjadi tema terang dengan kontras yang lebih aman untuk proyektor, serta memperbesar tipografi dan kontrol baca untuk peserta yang lebih senior. Setelah itu akan menjalankan ulang QA overflow dan navigasi.
+
+### Status
+
+In progress.
+
+### Assistant Action — accessibility revision
+
+- Deck startup diubah agar selalu memanggil slide 1 saat file dibuka; hash `#slide-28` yang tertinggal tidak lagi membuat deck langsung tampil di penutup.
+- Tema dark diganti menjadi tema terang/high-contrast untuk proyektor.
+- Ukuran teks body, lead, list, tabel, callout, caption, dan kode diperbesar. Slide padat diberi aturan spacing khusus agar tetap muat pada 1280×720.
+- QA browser dijalankan ulang melalui `python3 scripts/qa_html_deck.py` dan lulus.
+- Verifikasi tambahan membuka file tanpa hash dan dengan `#slide-28`; keduanya mulai di cover `01 / 28`.
+
+### Status
+
+Implemented and verified locally; menunggu umpan balik visual berikutnya bila diperlukan.
