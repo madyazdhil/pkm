@@ -93,3 +93,15 @@ Penjelasan kode juga tersedia di [README deck](file:///Users/yazidhilmi/Document
   - Mengganti CSS screenshot menjadi `object-fit: contain` dan membersihkan margin hitam pada screenshot editor.
   - Memperbaiki rendering bullet list di CSS agar tag bold dan inline code tidak tumpang tindih.
 - 🧪 **Verifikasi:** Lulus seluruh pengujian otomatis [qa_html_deck.py](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/scripts/qa_html_deck.py) pada resolusi 1440×810 dan 1280×720 tanpa overflow.
+
+## Real Browser Screenshot, Caption Cleanup & Enlarged Slide Images — 26 September 2026
+
+- 🌐 **Real Browser Screenshot Google Sheets:**
+  - Asset [01-google-sheets-extensions-apps-script.png](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/assets/01-google-sheets-extensions-apps-script.png) kini menggunakan tangkapan layar langsung dari Google Sheets asli pada browser Chrome (bukan render CSS tiruan).
+  - Dilengkapi panah petunjuk dan badge langkah 1 (menu Ekstensi) dan langkah 2 (Apps Script) dengan penempatan akurat.
+- 🧹 **Pembersihan Caption Teknis:**
+  - Menghapus label `Capture browser, zoom 110%` dari semua slide praktik (Slide 10, 15, 16, 17, 19).
+  - Diganti dengan keterangan praktis bagi peserta workshop.
+- 🔍 **Screenshot Lebih Besar & Jelas:**
+  - Porsi kolom gambar diperlebar dari 58% menjadi ~64% slide width, dan frame screenshot diperbesar hingga tinggi 350–380px tanpa cropping.
+- 🧪 **Hasil Pengujian QA:** Lulus otomatis 100% pada resolusi 1440×810 dan 1280×720.

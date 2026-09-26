@@ -2224,5 +2224,79 @@ Slide 10 (*"Membuka Apps Script dari Spreadsheet"*) kini dirombak total agar pes
 - 🖼️ **[Lihat Screenshot Panduan Visual Spreadsheet ke Apps Script](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/assets/01-google-sheets-extensions-apps-script.png)**
 - 🧪 **Hasil Pengujian QA:** Lulus otomatis (`PASS: HTML deck QA`) pada resolusi proyektor standar (1440×810 dan 1280×720) tanpa overflow.
 
+## 2026-09-26 — Penghapusan caption teknis zoom 110%, pembesaran gambar, dan pengambilan real browser screenshot
 
+### User
 
+iningapain sih ada ininya Capture browser, zoom 110% hapus aja sama gambarnya kekecilim sama in ikenapa kamu bikin pake css sih kampung buakaja browser ss sendiri
+
+### Assistant Action
+
+1. **Pengambilan Tangkapan Layar Asli (Real Browser Screenshot) dari Google Sheets:**
+   - Menghubungkan Playwright via CDP ke Chrome profile pengguna yang sedang berjalan (`http://127.0.0.1:9222`).
+   - Membuka spreadsheet kosong nyata di Google Sheets, mengklik menu **Ekstensi** (akun berbahasa Indonesia), dan menunggu dropdown **Apps Script** terbuka secara riil.
+   - Mengambil tangkapan layar browser asli resolusi tinggi, memotong ke area toolbar dan menu (960 × 310 px).
+   - Menambahkan badge petunjuk langkah dan panah presisi:
+     - `Langkah 1: Klik menu "Ekstensi"` (dengan panah mengarah ke menu Ekstensi di menubar)
+     - `Langkah 2: Klik "Apps Script"` (dengan sorotan hijau dan panah mengarah langsung ke baris Apps Script pada dropdown)
+   - Mengganti aset `materials/workshop/html-deck/assets/01-google-sheets-extensions-apps-script.png` dengan tangkapan layar browser asli tersebut.
+
+2. **Penghapusan Caption Teknis "Capture browser, zoom 110%":**
+   - Menghapus seluruh label teknis internal yang tidak perlu (`Capture browser, zoom 110% • ...`) pada Slide 10, 15, 16, 17, dan 19.
+   - Menggantinya dengan caption deskriptif yang fokus pada fungsi materi praktik:
+     - Slide 10: *Langkah 2 klik: Buka Spreadsheet ➔ klik menu Ekstensi (Extensions) ➔ pilih Apps Script.*
+     - Slide 15: *Editor Code.gs: tempat menempelkan fungsi server Google Apps Script.*
+     - Slide 16: *Panel Files: klik tanda tambah (+) lalu pilih HTML untuk membuat file tampilan.*
+     - Slide 17: *Editor Index.html: tempat kode HTML, CSS, dan JavaScript antarmuka dashboard.*
+     - Slide 19: *Menu Deploy: pilih New deployment → Web app untuk mempublikasikan dashboard.*
+
+3. **Pembesaran Ukuran Gambar/Screenshot di Seluruh Slide:**
+   - Memperlebar kolom gambar pada `.step-layout` dari rasio `0.82fr 1.18fr` menjadi `0.72fr 1.28fr` (porsi lebar gambar meningkat menjadi ~64% slide width).
+   - Menaikkan tinggi frame `.browser-shot.editor` dan `.browser-shot.medium` menjadi 350–380px tanpa ruang kosong (letterboxing).
+   - Memindahkan kotak pengingat (quote) pada Slide 19 ke kolom teks kiri agar gambar menu deployment dapat tampil maksimal.
+
+4. **Verifikasi QA:**
+   - Menjalankan `python3 projects/pkm-smt3/scripts/qa_html_deck.py`: seluruh 28 slide lulus (`PASS: HTML deck QA`) pada resolusi 1440×810 dan 1280×720 tanpa overflow.
+   - Memperbarui `CAPTURE-MANIFEST.md`, `STATE.md`, dan `CANVAS.md`.
+
+### Status
+
+Implemented and verified locally.
+
+### Assistant — exact response
+
+Semua masukan sudah langsung diperbaiki tuntas:
+
+---
+
+### 1. Menggunakan Tangkapan Layar Asli (Real Browser Screenshot)
+- **Bukan lagi render CSS mock:** Saya langsung membuka browser Chrome asli ke Google Sheets baru via CDP, membuka menu **Ekstensi**, dan menangkap antarmuka Google Sheets asli saat menu **Apps Script** aktif terbuka.
+- **Visual Panah yang Presisi:**
+  - 🟢 **Langkah 1:** Panah menunjuk tepat ke menu baris atas **"Ekstensi"** *(atau Extensions jika akun bahasa Inggris)*.
+  - 🟢 **Langkah 2:** Panah menunjuk tepat ke baris **"Apps Script"** lengkap dengan icon resminya dan kotak sorotan hijau.
+- File baru yang sudah tersimpan: [01-google-sheets-extensions-apps-script.png](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/assets/01-google-sheets-extensions-apps-script.png).
+
+---
+
+### 2. Teks "Capture browser, zoom 110%" Dihapus Total
+Teks teknis internal tersebut sudah dihapus dari semua slide (Slide 10, 15, 16, 17, 19). Keterangan di bawah gambar kini bersih, ramah peserta, dan langsung menjelaskan fungsinya:
+- **Slide 10:** *Langkah 2 klik: Buka Spreadsheet ➔ klik menu Ekstensi (Extensions) ➔ pilih Apps Script.*
+- **Slide 15:** *Editor Code.gs: tempat menempelkan fungsi server Google Apps Script.*
+- **Slide 16:** *Panel Files: klik tanda tambah (+) lalu pilih HTML untuk membuat file tampilan.*
+- **Slide 17:** *Editor Index.html: tempat kode HTML, CSS, dan JavaScript antarmuka dashboard.*
+- **Slide 19:** *Menu Deploy: pilih New deployment → Web app untuk mempublikasikan dashboard.*
+
+---
+
+### 3. Ukuran Gambar Diperbesar Signifikan
+- Porsi kolom gambar diperlebar hingga **~64% dari lebar slide** (kolom teks dibuat lebih ramping dan efisien).
+- Tinggi frame screenshot dinaikkan menjadi **350px – 380px** sehingga antarmuka kode dan menu Google Apps Script tampil jauh lebih besar, jelas, dan terbaca dari kejauhan tanpa terpotong.
+- Kotak catatan di slide deployment dipindahkan ke kolom teks kiri sehingga gambar screenshot menu deployment bisa tampil leluasa di kanan.
+
+---
+
+### 4. Tinjau Hasil Pembaruan:
+- 🖥️ **[Buka Slide 10 (Panduan Buka Apps Script dari Sheets)](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html#slide-10)**
+- 🖥️ **[Buka Slide 16 (Editor Code.gs Besar)](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html#slide-16)**
+- 🖥️ **[Buka Slide 17 (Tambah Index.html)](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html#slide-17)**
+- 🧪 **Status QA:** Lulus otomatis 100% (`PASS: HTML deck QA`) pada resolusi 1440×810 dan 1280×720 tanpa overflow.

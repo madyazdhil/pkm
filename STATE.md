@@ -118,3 +118,18 @@
 - **Penyesuaian Responsif 720p:**
   - Menyelaraskan padding dan ukuran font pada slide *Hasil yang dibawa pulang* dan *Membuka Apps Script* di breakpoint `max-height: 760px`.
   - QA otomatis (`scripts/qa_html_deck.py`) lulus 100% pada resolusi 1440×810 dan 1280×720 tanpa overflow.
+
+## Real Browser Screenshot, Caption Cleanup & Enlarged Slide Images — 2026-09-26
+
+- **Tangkapan Layar Riil dari Browser (Bukan CSS Mockup):**
+  - Mengambil screenshot langsung dari Google Sheets asli pada browser Chrome (sesi terautentikasi via CDP) dengan menu **Ekstensi** dan item **Apps Script** terbuka secara riil.
+  - Memperbarui asset `01-google-sheets-extensions-apps-script.png` dengan screenshot asli 960 × 310 px, dilengkapi badge petunjuk langkah 1 dan langkah 2 serta panah penunjuk presisi ke menu dan item dropdown.
+- **Pembersihan Caption Teknis:**
+  - Menghapus seluruh label teknis internal yang membingungkan peserta (seperti `Capture browser, zoom 110% • ...`) pada slide 10, 15, 16, 17, dan 19.
+  - Mengganti caption menjadi ringkasan fungsi yang informatif dan relevan dengan materi praktik peserta.
+- **Pembesaran Ukuran Gambar Screenshot (Enlarged Images):**
+  - Mengubah layout kolom `.step-layout` menjadi `0.72fr 1.28fr` sehingga area screenshot meningkat menjadi ~64% lebar slide.
+  - Menyesuaikan tinggi frame `.browser-shot.editor` dan `.browser-shot.medium` menjadi 350-380px tanpa ruang kosong (letterboxing).
+  - Memindahkan kotak pengingat (quote) pada slide 19 ke kolom teks kiri agar gambar menu deployment dapat tampil maksimal.
+- **Verifikasi QA:**
+  - Pengujian visual Playwright dan automated assertions via `scripts/qa_html_deck.py` lulus 100% (`PASS: HTML deck QA`) pada 1440×810 dan 1280×720.
