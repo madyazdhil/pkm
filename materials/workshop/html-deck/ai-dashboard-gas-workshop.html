@@ -25,7 +25,7 @@
     @keyframes fade{from{opacity:.25;transform:translateY(4px)}to{opacity:1;transform:none}}
     .slide:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 0 78%,rgba(67,214,197,.04) 78% 78.1%,transparent 78.1%)}
     .slide:after{content:"";position:absolute;left:72px;right:72px;bottom:23px;height:1px;background:rgba(157,176,181,.19)}
-    .topline{position:absolute;left:72px;right:72px;top:25px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font:700 12px/1 var(--mono);letter-spacing:.11em;text-transform:uppercase}
+    .topline{position:absolute;left:72px;right:72px;top:25px;display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;color:var(--muted);font:700 12px/1 var(--mono);letter-spacing:.11em;text-transform:uppercase}
     .kicker{color:var(--teal)}
     .slide-no{color:#6c858a}
     h1,h2,h3,p{margin:0} h1{font-size:clamp(38px,5.1vw,78px);line-height:.98;letter-spacing:-.055em;max-width:880px} h2{font-size:clamp(29px,3vw,48px);line-height:1.02;letter-spacing:-.04em;max-width:920px} h3{font-size:22px;line-height:1.1;letter-spacing:-.02em}
@@ -69,6 +69,13 @@
     .overview .stage{width:min(96vw,1600px);aspect-ratio:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-content:start}.overview .slide{position:relative;display:block!important;inset:auto!important;aspect-ratio:16/9;padding:16px;border-radius:10px;cursor:pointer;transform:none!important;animation:none!important}.overview .slide:before,.overview .slide:after,.overview .topline,.overview .footer-note{display:none}.overview h1{font-size:18px}.overview h2{font-size:17px}.overview h3{font-size:12px}.overview p,.overview .lead,.overview .list,.overview .flow,.overview .two-col,.overview .browser-shot,.overview .case-grid,.overview .architecture,.overview .timeline,.overview .rubric,.overview .shareout,.overview .closing{display:none}.overview .slide.active{outline:2px solid var(--lime)}.overview .controls{display:none}
     @media(max-height:760px) and (min-width:901px){.cover-art{min-height:260px}.browser-shot.tall{height:300px}.browser-shot.medium{height:260px}.architecture{margin-top:30px}.mock-dashboard{margin-top:20px!important}.section-head{margin-top:12px}.two-col,.step-layout{margin-top:24px!important}.slide[data-title="Deployment sebagai web app"] .quote{margin-top:12px!important}}
     @media(max-width:900px){body{overflow:auto}.deck-shell{padding:8px;display:block}.stage{width:100%;aspect-ratio:auto}.slide{position:relative;inset:auto!important;display:none;min-height:calc(100vh - 16px);border-radius:12px;padding:58px 28px 60px}.slide.active{display:block}.slide:after{left:28px;right:28px}.topline{left:28px;right:28px}.footer-note{left:28px}.cover,.two-col,.step-layout,.shareout,.rubric{grid-template-columns:1fr}.cover-art{min-height:280px;order:-1}.flow,.timeline{grid-template-columns:1fr 1fr}.flow-step:not(:last-child):after,.flow-step:not(:last-child):before,.arch-node:not(:last-child):after,.arch-node:not(:last-child):before{display:none}.architecture,.case-grid{grid-template-columns:1fr}.split-callout{grid-template-columns:1fr}.controls{bottom:8px}.overview .stage{display:block}.overview .slide{margin-bottom:10px}.overview .slide.active{outline:0}}
+    /* Compact speaker ownership codes */
+    .owner-badge{display:inline-flex;align-items:center;gap:7px;justify-self:center;padding:6px 9px;border-radius:999px;font:800 11px/1 var(--mono);letter-spacing:.04em;white-space:nowrap;border:1px solid currentColor;background:#fff}
+    .owner-badge b{display:grid;place-items:center;width:19px;height:19px;border-radius:50%;font:900 11px/1 var(--mono);color:#fff}
+    .owner-syam{color:#a55d00;background:#fff8e8;border-color:#dfb86b}.owner-syam b{background:#b86a00}
+    .owner-yazid{color:#087c75;background:#eaf7f3;border-color:#8bb7b4}.owner-yazid b{background:#087c75}
+    .owner-shared{color:#526b70;background:#f2f6f5;border-color:#b9caca}.owner-shared b{background:#526b70}
+    .role-legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:19px}.role-chip{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border-radius:999px;font:800 12px/1 var(--mono);letter-spacing:.04em;border:1px solid}.role-chip b{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;color:#fff;font-size:11px}.role-chip.syam{color:#a55d00;background:#fff8e8;border-color:#dfb86b}.role-chip.syam b{background:#b86a00}.role-chip.yazid{color:#087c75;background:#eaf7f3;border-color:#8bb7b4}.role-chip.yazid b{background:#087c75}.role-chip.shared{color:#526b70;background:#f2f6f5;border-color:#b9caca}.role-chip.shared b{background:#526b70}
     /* Projector-first accessibility theme: light canvas, high contrast, larger type */
     :root{
       --ink:#17353a; --muted:#50696e; --bg:#edf3f1; --panel:#ffffff;
@@ -129,6 +136,7 @@
           <div class="rule"></div>
           <p class="lead">Belajar memakai Generative AI melalui chat, menyusun dua file Google Apps Script, lalu menguji prototipe dashboard dengan data sintetis.</p>
           <div class="pill-row"><span class="tag">ChatGPT</span><span class="tag">Google Apps Script</span><span class="tag">Vibe coding</span></div>
+          <div class="role-legend" aria-label="Kode pembicara"><span class="role-chip syam"><b>S</b> PAK SYAM · BASIC AI</span><span class="role-chip yazid"><b>Y</b> YAZID · PRAKTIK DASHBOARD</span></div>
         </div>
         <div class="cover-art" aria-label="Ilustrasi dua file kode">
           <div class="halo"></div>
@@ -475,6 +483,27 @@ sekecil mungkin dan tiga langkah pengujian.</pre></div></div>
       let current = 0;
       let isOverview = false;
 
+      const owners = [
+        'shared','shared','syam','syam','syam','syam',
+        'yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid',
+        'yazid','yazid','yazid','yazid','yazid','yazid','shared','shared'
+      ];
+      const ownerLabels = {
+        syam: {letter:'S', text:'PAK SYAM · BASIC AI'},
+        yazid: {letter:'Y', text:'YAZID · PRAKTIK DASHBOARD'},
+        shared: {letter:'↔', text:'BERSAMA'}
+      };
+      slides.forEach((slide, i) => {
+        const owner = ownerLabels[owners[i] || 'shared'];
+        const top = slide.querySelector('.topline');
+        if(top && owner){
+          const badge = document.createElement('span');
+          badge.className = 'owner-badge owner-' + (owners[i] || 'shared');
+          badge.innerHTML = '<b>' + owner.letter + '</b> ' + owner.text;
+          badge.setAttribute('aria-label', owner.text);
+          top.insertBefore(badge, top.querySelector('.slide-no'));
+        }
+      });
       function safeIndex(n){ return Math.max(0, Math.min(slides.length - 1, n)); }
       function slideHash(n){ return '#slide-' + (n + 1); }
       function updateNotes(){

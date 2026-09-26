@@ -2000,3 +2000,31 @@ Verifikasi:
 - Dibuka tanpa hash dan dengan hash `#slide-28`, keduanya kembali ke cover.
 
 Checkpoint lokal terbaru: `41ce5a7 fix(pkm-smt3): improve projector readability`.
+
+## 2026-09-26 — Pembagian pembicara dalam deck
+
+### User
+
+ah ini materi workshop yang ngerjain ada 2 -? yazid nanti yang praktik pembuatan dashboard sederhana nanti yang basic ai itu dia pak Syam yang akan mmembacakan coba dong dikasi kode kecil aja supaya tau man ayang yazid mana yang pa syam
+
+### Assistant Action
+
+Akan menambahkan penanda pembicara kecil dan konsisten di deck: **S / PAK SYAM** untuk bagian Basic AI, Generative AI, verifikasi, dan keamanan data; **Y / YAZID** untuk bagian ChatGPT prompting, GAS, dua file, testing, deployment, dan praktik dashboard; serta **BERSAMA** untuk pembuka/penutup. Label dibuat terlihat tetapi tidak mengambil ruang utama slide.
+
+### Status
+
+In progress.
+
+### Assistant Action — speaker labels
+
+- Menambahkan badge kecil di top bar setiap slide agar pembagian pembicara terlihat langsung.
+- Pembagian yang diterapkan:
+  - `S / PAK SYAM · BASIC AI`: slide 3–6, mencakup pengantar AI, Generative AI, verifikasi, dan keamanan data.
+  - `Y / YAZID · PRAKTIK DASHBOARD`: slide 7–26, mencakup ChatGPT prompting, GAS, dua file, copy-paste, testing, deployment, arsitektur, kasus, rubrik, rundown, dan share-out.
+  - `↔ / BERSAMA`: cover, referensi, dan penutup.
+- README deck diperbarui dengan legenda kode pembicara.
+- QA browser lulus: `PASS: HTML deck QA`.
+
+### Status
+
+Implemented and verified locally.

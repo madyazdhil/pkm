@@ -58,3 +58,8 @@
 - Default deck opening must always be the cover slide; do not restore a stale closing-slide hash on initial load.
 - Projector use requires a light/high-contrast theme rather than the earlier dark theme.
 - Audience includes senior participants; prefer larger body text, table text, captions, and callouts even if a few dense slides need tighter spacing.
+
+## Speaker division — 2026-09-26
+
+- Materi dibawakan oleh dua orang: Pak Syam membaca basic AI, Generative AI, verifikasi, dan keamanan data; Yazid memandu ChatGPT prompting, GAS, dua file, testing, deployment, dan praktik dashboard.
+- Deck harus menampilkan ownership badge kecil di bagian atas setiap slide: `S`, `Y`, atau `↔`.

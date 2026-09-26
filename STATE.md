@@ -81,3 +81,12 @@
 - Fixed startup behavior: the local deck now always opens on the title slide, even if the browser URL previously retained `#slide-28`.
 - Reworked the visual theme to a light projector-first palette with higher contrast and larger body/callout/table text.
 - Re-ran browser QA at 1440×810 and 1280×720. All 28 slides remain within the viewport, images load, and keyboard/notes/overview behavior passes.
+
+## Speaker ownership labels — 2026-09-26
+
+- Deck diberi badge pembicara pada setiap slide agar mudah dibawakan oleh dua orang.
+- `S / PAK SYAM · BASIC AI`: slide 3–6.
+- `Y / YAZID · PRAKTIK DASHBOARD`: slide 7–26.
+- `↔ / BERSAMA`: pembuka, referensi, dan penutup.
+- README deck menjelaskan arti kode tersebut.
+- QA browser tetap lulus setelah badge ditambahkan.

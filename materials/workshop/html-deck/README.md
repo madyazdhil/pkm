@@ -13,6 +13,15 @@ server atau koneksi internet untuk navigasi inti. Deck memakai tema terang denga
 - `Esc`: keluar dari overview
 - Tombol di bawah layar: navigasi yang sama
 
+
+## Kode pembicara
+
+- `S / PAK SYAM · BASIC AI`: slide pengantar AI, Generative AI, verifikasi manusia, dan keamanan data.
+- `Y / YAZID · PRAKTIK DASHBOARD`: slide prompting, Google Apps Script, dua file, testing, deployment, dan praktik dashboard.
+- `↔ / BERSAMA`: pembuka, referensi, dan penutup.
+
+Kode pembicara muncul di bagian atas setiap slide agar fasilitator cepat membedakan bagian Pak Syam dan Yazid.
+
 ## Catatan penggunaan
 
 - Materi deployment membedakan panduan umum dari langkah yang benar-benar terbukti.

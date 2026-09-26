@@ -59,3 +59,13 @@ Deck berisi 28 slide dan dapat dibuka langsung melalui `file://`. Capture browse
 - Theme changed from dark to light/high contrast for projector readability.
 - Typography increased for body copy, lists, tables, callouts, captions, and code labels, with targeted spacing adjustments for 1280×720 projection.
 - QA remains green via [qa_html_deck.py](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/scripts/qa_html_deck.py).
+
+## Speaker ownership — 26 September 2026
+
+Deck sekarang memiliki kode pembicara di bagian atas setiap slide:
+
+- `S / PAK SYAM · BASIC AI`
+- `Y / YAZID · PRAKTIK DASHBOARD`
+- `↔ / BERSAMA`
+
+Penjelasan kode juga tersedia di [README deck](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/README.md).
