@@ -1869,3 +1869,34 @@ Yang sudah aman:
 - Browser dibiarkan di menu deployment untuk dilanjutkan.
 
 Boleh aku klik **Deployment baru** dan membuat satu deployment khusus latihan? Ini akan membuat endpoint pada project Apps Script akunmu. Aku akan tetap memakai data sintetis, tidak membagikan project, dan berhenti jika Google meminta otorisasi tambahan atau pengaturan akses publik.
+
+## 2026-09-25 — Melanjutkan sampai deck HTML selesai
+
+### User
+
+cont
+
+### Assistant Action
+
+Melanjutkan pekerjaan utama untuk menyelesaikan deck HTML workshop, bukan berhenti pada status capture browser. Akan menyusun presentasi lokal yang dapat dibuka di browser dengan materi basic AI, prompting melalui chat, Google Apps Script, dua file `Code.gs`/`Index.html`, alur testing dan deployment, serta praktik tiga kasus kelompok. Screenshot browser yang tersedia akan digunakan secara selektif dengan caption dan provenance yang jujur; tidak akan mengklaim deployment web app berhasil bila belum ada buktinya.
+
+### Status
+
+In progress; deck HTML belum dibuat pada awal turn ini.
+
+### User goal carried forward
+
+continue untill html ppt is done
+
+### Assistant — progress response
+
+Aku lanjutkan sampai deck HTML-nya jadi. Screenshot browser yang sudah ada akan aku masukkan ke langkah praktik dengan potongan yang lebih terbaca. Bagian deployment tetap aku bedakan antara panduan dan langkah yang benar-benar sudah diuji.
+
+### Failed Attempt / Corrections
+
+- Pembacaan tiga reference skill sempat memakai parent directory yang salah. Path diperbaiki ke `skills/presentations/`; instruksi berhasil dibaca.
+- Image viewer menolak image input. Tidak mengklaim inspeksi visual manual. Verifikasi layout akan memakai browser geometry, OCR capture, dan render screenshot yang disimpan untuk tinjauan pengguna.
+- OCR awal memakai tesseract tidak tersedia. Tidak menyimpulkan screenshot kosong. Beralih ke macOS Vision untuk menilai batas crop.
+- Pemindaian nama file HTML di luar project sempat terjadi tanpa kebutuhan. Tidak membaca isinya atau menggunakannya untuk konteks/deck; penelusuran berikut dibatasi ke project ini.
+- Koreksi klaim turn sebelumnya: penyebab `Uji deployment` tidak bereaksi belum diketahui. Dokumentasi Google menyediakan alur Test deployments dengan URL `/dev`; tidak menyebut keharusan memiliki deployment publik terlebih dahulu.
+- Versi awal deck HTML telah dibuat. Belum final: perlu crop screenshot aman, perbaikan konten, numbering, scaling, dan pengujian navigasi/cetak.

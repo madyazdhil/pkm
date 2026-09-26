@@ -42,3 +42,13 @@ Demo cloud yang digunakan:
 - `Index.html` berisi dashboard statis dengan data sintetis: kartu ringkasan, rekap kategori, dan tabel monitoring.
 - Tidak ada Google Sheet warga, credential, token, sharing, atau deployment publik yang diubah.
 - Capture hasil dashboard yang sudah ter-render di browser belum dibuat karena deployment belum dilakukan.
+
+
+## HTML Workshop Deck — 26 September 2026
+
+- ✅ **Deck HTML final:** [ai-dashboard-gas-workshop.html](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+- 📖 **Petunjuk penggunaan:** [README.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/README.md)
+- 🧾 **Manifest provenance capture:** [CAPTURE-MANIFEST.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/assets/CAPTURE-MANIFEST.md)
+- 🧪 **QA script:** [qa_html_deck.py](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/scripts/qa_html_deck.py)
+
+Deck berisi 28 slide dan dapat dibuka langsung melalui `file://`. Capture browser berasal dari Chrome zoom 110% dan hanya dipakai sebagai bukti langkah UI Apps Script. Deck tidak mengklaim deployment web app berhasil karena URL deployment belum tersedia.

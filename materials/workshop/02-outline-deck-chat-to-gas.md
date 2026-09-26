@@ -458,3 +458,14 @@ Referensi teknis resmi:
 - [Google Developers – HTML Service](https://developers.google.com/apps-script/guides/html)
 - [Google Developers – Web Apps](https://developers.google.com/apps-script/guides/web)
 - [OpenAI Developers – Code generation and Codex](https://developers.openai.com/api/docs/guides/code-generation)
+
+---
+
+## Status output — 26 September 2026
+
+Outline ini sudah diwujudkan menjadi deck HTML 28 slide:
+
+- [Deck HTML workshop](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+- [README deck](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/README.md)
+
+Catatan: materi deployment dibawakan sebagai panduan dengan batasan yang jujur. Capture menu deployment tidak diperlakukan sebagai bukti deployment publik berhasil.

@@ -64,3 +64,13 @@
 - Menu **Deploy → Uji deployment** sudah disiapkan pada browser zoom 110%, tetapi item belum membuka halaman karena project belum memiliki deployment yang dapat diuji.
 - Membuat deployment baru akan membuat endpoint deployment pada akun Google. Ini adalah perubahan cloud yang memerlukan konfirmasi tepat sebelum aksi.
 - Browser dibiarkan pada menu deployment agar alur dapat dilanjutkan setelah konfirmasi pengguna.
+
+## HTML Deck Completion — 2026-09-26
+
+- Deck HTML workshop selesai dibuat di `materials/workshop/html-deck/ai-dashboard-gas-workshop.html`.
+- Isi deck: 28 slide berbahasa Indonesia tentang basic AI, verifikasi, keamanan data, ChatGPT melalui chat, Codex sebagai pengenalan lanjutan, GAS, Code.gs/Kode.gs, Index.html, CSS/JavaScript di HTML, prompt dua file, copy-paste, testing, deployment, arsitektur, tiga kasus kelompok, rubrik, rundown, share-out, dan referensi.
+- Capture browser nyata pada zoom 110% diturunkan ke `materials/workshop/html-deck/assets/` dengan manifest provenance. Capture deployment diberi catatan bahwa menu bukan bukti URL deployment berhasil.
+- Deck memiliki navigasi tombol/keyboard, counter, overview, notes presenter, fullscreen, hash slide, dan print stylesheet.
+- QA browser lokal lulus melalui `scripts/qa_html_deck.py` pada viewport 1440×810 dan 1280×720: 28 slide, seluruh image load, tidak ada overflow, navigasi maju/mundur, notes, dan overview bekerja.
+- QA `file://` juga lulus untuk membuka deck langsung tanpa server.
+- Status: implemented and verified locally. Tidak ada deployment/access Google yang diubah.

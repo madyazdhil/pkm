@@ -45,3 +45,10 @@
 
 - **Fokus deck:** praktik utama memakai ChatGPT melalui chat. Peserta diminta menghasilkan dua file GAS, `Code.gs` dan `Index.html`, lalu menempatkan kode tersebut di Apps Script. JavaScript browser dan CSS dapat berada di dalam `Index.html` pada level pemula. Codex hanya dikenalkan sebagai opsi lanjutan untuk bekerja langsung dengan file/project coding. Status: proposed.
 - **Alur teknis utama:** Google Sheets → Google Apps Script → `Code.gs` + `Index.html` → testing → deployment web app. Status: proposed.
+
+## HTML deck — 2026-09-26
+
+- Deck HTML workshop 28 slide sudah dibuat dan diverifikasi lokal: `materials/workshop/html-deck/ai-dashboard-gas-workshop.html`.
+- Format final sengaja HTML lokal, bukan PPTX, agar dapat dibuka langsung di browser; README menyimpan kontrol keyboard, notes presenter, overview, fullscreen, dan print.
+- Capture Apps Script nyata pada Chrome zoom 110% dipakai sebagai evidence langkah editor/menu. Provenance dan crop tercatat pada `materials/workshop/html-deck/assets/CAPTURE-MANIFEST.md`.
+- Deployment tetap dijelaskan sebagai alur panduan; jangan menyebut deployment publik berhasil tanpa URL/hasil halaman yang terbukti.
