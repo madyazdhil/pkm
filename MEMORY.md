@@ -63,3 +63,8 @@
 
 - Materi dibawakan oleh dua orang: Pak Syam membaca basic AI, Generative AI, verifikasi, dan keamanan data; Yazid memandu ChatGPT prompting, GAS, dua file, testing, deployment, dan praktik dashboard.
 - Deck harus menampilkan ownership badge kecil di bagian atas setiap slide: `S`, `Y`, atau `↔`.
+
+## Navigation bug lesson — 2026-09-26
+
+- Avoid a literal `END` label in the closing slide because stale browser/hash state can make the deck look stuck there. Use stable `NN / total` labels on every slide.
+- QA must reproduce the exact user path, not only inspect the internal `render()` function.

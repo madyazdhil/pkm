@@ -69,3 +69,8 @@ Deck sekarang memiliki kode pembicara di bagian atas setiap slide:
 - `↔ / BERSAMA`
 
 Penjelasan kode juga tersedia di [README deck](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/README.md).
+
+## Slide navigation correction — 26 September 2026
+
+- Semua slide kini menampilkan nomor stabil `01 / 28` sampai `28 / 28`; label `END` yang membingungkan sudah dihapus.
+- QA mencakup jalur pengguna cover → klik Next dua kali → slide 3 dan memverifikasi judul serta nomor `03 / 28`.

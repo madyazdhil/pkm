@@ -90,3 +90,9 @@
 - `↔ / BERSAMA`: pembuka, referensi, dan penutup.
 - README deck menjelaskan arti kode tersebut.
 - QA browser tetap lulus setelah badge ditambahkan.
+
+## Slide END bug fix — 2026-09-26
+
+- User reported that attempting to reach slide 3 still showed an `END` presentation.
+- Root cause addressed: the closing slide had a literal `END` label while other slide labels were partly stale, which made the active slide state confusing when the browser/hash was stale. All 28 slides now use stable `NN / 28` labels; the closing slide is `28 / 28`.
+- Added an explicit QA path for two Next clicks from cover to slide 3. It passes and lands on `Masalah kerja yang ingin dibantu`, `03 / 28`.

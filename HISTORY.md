@@ -2042,3 +2042,32 @@ Legenda juga sudah ditambahkan di cover dan README deck. QA tetap lulus dengan h
 File deck: [ai-dashboard-gas-workshop.html](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
 
 Checkpoint lokal: `fb193b5 feat(pkm-smt3): label workshop speaker ownership`.
+
+## 2026-09-26 — Bug slide tidak berganti dan tampil END
+
+### User
+
+ini udah aslide 3 cuman tampilannya tampilan end ga berubah ahh ini eror apa si
+
+### Assistant Action
+
+Akan memeriksa bug navigasi deck pada slide 3 dan perilaku badge pembicara. Dugaan awal yang perlu diverifikasi: fungsi startup yang dipaksa kembali ke cover atau error JavaScript yang membuat `render()` tidak berjalan setelah tombol/keyboard digunakan. Akan menguji langsung melalui `file://` dan browser lokal sebelum memperbaiki.
+
+### Status
+
+In progress.
+
+### Failed Attempt / Diagnosis
+
+- QA reproduksi awal menunjukkan fungsi navigasi sebenarnya dapat berpindah ke slide 3 melalui keyboard, tombol Next, dan overview. Jadi bug bukan `render()` yang berhenti.
+- Sumber kebingungan berasal dari label penutup literal `END` dan label nomor slide yang tidak konsisten/stale setelah revisi jumlah slide. Ditambah kemungkinan URL browser menyimpan hash slide terakhir.
+
+### Assistant Action — navigation correction
+
+- Semua label slide dinormalisasi menjadi `01 / 28` sampai `28 / 28`; label `END` dihapus.
+- QA ditambah dengan jalur eksplisit cover → dua klik Next → slide 3.
+- QA lulus: slide ketiga tampil sebagai `Masalah kerja yang ingin dibantu`, counter `03 / 28`, dan label slide `03 / 28`.
+
+### Status
+
+Implemented and verified locally.
