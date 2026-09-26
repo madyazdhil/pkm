@@ -49,15 +49,15 @@
     .section-head{margin-top:18px}.section-head .lead{margin-top:16px}
     .big-number{font:800 clamp(72px,10vw,148px)/.8 var(--mono);letter-spacing:-.09em;color:var(--teal)}
     .big-statement{font-size:clamp(30px,3.2vw,54px);line-height:1.02;letter-spacing:-.045em;max-width:600px}.big-statement em{font-style:normal;color:var(--lime)}
-    .list{display:grid;gap:15px;margin:0;padding:0;list-style:none}.list li{display:grid;grid-template-columns:22px 1fr;gap:12px;font-size:20px;line-height:1.23;color:#d9e3e4}.list li:before{content:"";width:9px;height:9px;margin-top:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px rgba(67,214,197,.11)}
-    .list.compact{gap:10px}.list.compact li{font-size:17px}.list.compact li:before{width:7px;height:7px;margin-top:7px}
+    .list{display:grid;gap:15px;margin:0;padding:0;list-style:none}.list li{position:relative;padding-left:26px;font-size:20px;line-height:1.32;color:#d9e3e4;display:block}.list li:before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px rgba(67,214,197,.11)}
+    .list.compact{gap:10px}.list.compact li{font-size:17px;padding-left:22px}.list.compact li:before{width:7px;height:7px;top:7px}
     .quote{border-left:3px solid var(--lime);padding:18px 22px;background:rgba(199,239,114,.065);font-size:25px;line-height:1.18;color:#f0f6da}.quote small{display:block;margin-top:13px;color:var(--muted);font:13px/1.3 var(--mono)}
     .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.pill{padding:9px 13px;border:1px solid #31555a;color:#c4d3d5;border-radius:999px;font:14px/1 var(--mono)}
     .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;align-items:center;margin-top:42px}.flow-step{position:relative;min-height:125px;padding:22px 22px 18px;background:#102326;border:1px solid #294d52}.flow-step:not(:last-child):after{content:"";position:absolute;right:-17px;top:50%;width:32px;height:1px;background:var(--teal);z-index:2}.flow-step:not(:last-child):before{content:"";position:absolute;right:-18px;top:calc(50% - 3px);width:7px;height:7px;border-top:1px solid var(--teal);border-right:1px solid var(--teal);transform:rotate(45deg);z-index:2}.flow-step .no{color:var(--teal);font:700 12px/1 var(--mono);margin-bottom:12px}.flow-step strong{display:block;font-size:20px;line-height:1.05}.flow-step span{display:block;margin-top:9px;color:var(--muted);font-size:14px;line-height:1.3}
     .definition{display:grid;grid-template-columns:145px 1fr;gap:22px;align-items:start;padding:18px 0;border-bottom:1px solid var(--line)}.definition:last-child{border-bottom:0}.definition dt{font:700 15px/1.2 var(--mono);color:var(--teal);text-transform:uppercase}.definition dd{margin:0;font-size:20px;line-height:1.25;color:#d8e2e3}
     .split-callout{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}.callout{padding:23px 24px;border-top:3px solid var(--teal);background:#102326}.callout.warn{border-top-color:var(--coral)}.callout h3{margin-bottom:12px}.callout p,.callout li{font-size:17px;line-height:1.35;color:#c5d2d4}.callout ul{margin:0;padding-left:20px}
     .tool-table{width:100%;border-collapse:collapse;margin-top:28px;font-size:16px}.tool-table th{text-align:left;color:var(--teal);font:700 12px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.07em;padding:13px 14px;border-bottom:1px solid #467176}.tool-table td{padding:15px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:#cfdbdc;line-height:1.28}.tool-table tr:last-child td{border-bottom:0}.tool-table td:first-child{font-weight:800;color:#eef6f5;width:18%}
-    .browser-shot{position:relative;background:#061012;border:1px solid #3a5e63;overflow:hidden}.browser-shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}.browser-shot:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);pointer-events:none}.browser-shot.tall{height:370px}.browser-shot.medium{height:310px}.browser-shot.editor{height:382px}.shot-caption{margin-top:9px;color:#82999d;font:12px/1.35 var(--mono)}.shot-caption b{color:#c8d7d9;font-weight:700}
+    .browser-shot{position:relative;background:#ffffff;border:1px solid #7ea5a6;border-radius:10px;overflow:hidden}.browser-shot img{display:block;width:100%;height:100%;object-fit:contain;background:#f8faf9}.browser-shot:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);pointer-events:none}.browser-shot.tall{height:370px}.browser-shot.medium{height:310px}.browser-shot.editor{height:382px}.shot-caption{margin-top:9px;color:#82999d;font:12px/1.35 var(--mono)}.shot-caption b{color:#c8d7d9;font-weight:700}
     .step-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:32px;align-items:start;margin-top:30px}.step-copy{padding-top:10px}.step-no{display:flex;align-items:center;gap:14px;color:var(--lime);font:700 14px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em}.step-no b{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--lime);color:#122016;font-size:18px}.step-copy h3{margin:22px 0 13px;font-size:30px}.step-copy p{font-size:18px;line-height:1.35;color:#c8d5d7}.step-copy .list{margin-top:20px}.step-copy .list li{font-size:16px}
     .code{margin:0;padding:20px 22px;overflow:auto;background:#061012;border:1px solid #294d52;color:#d8e9d4;font:15px/1.55 var(--mono);white-space:pre-wrap}.code .kw{color:#8db7ff}.code .fn{color:#c7ef72}.code .str{color:#ffb59f}.code .cm{color:#6e9095}.code .tagx{color:#43d6c5}.code .attr{color:#f4d36f}.code.small{font-size:13px;line-height:1.45;padding:16px 18px}.code-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;color:#95afb3;font:700 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}.code-label b{color:var(--lime)}
     .architecture{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;align-items:center;margin-top:44px}.arch-node{min-height:178px;padding:22px;background:#102326;border:1px solid #31575c;position:relative}.arch-node h3{font-size:23px}.arch-node p{margin-top:12px;font-size:16px;line-height:1.35;color:#b9cbcd}.arch-node .mini{color:var(--teal);font:700 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}.arch-node:not(:last-child):after{content:"";position:absolute;right:-25px;top:50%;width:24px;height:1px;background:var(--lime)}.arch-node:not(:last-child):before{content:"";position:absolute;right:-27px;top:calc(50% - 3px);width:7px;height:7px;border-top:1px solid var(--lime);border-right:1px solid var(--lime);transform:rotate(45deg)}
@@ -96,8 +96,8 @@
     .accent{color:#087c75}.lime{color:#5f7f0a}.coral{color:#bd4b3b}.yellow{color:#9a6500}.blue{color:#245c9c}
     .rule{background:#087c75}.rule.lime{background:#5f7f0a}
     .big-statement{color:#17353a}.big-number{color:#087c75}
-    .list{gap:16px}.list li{font-size:23px;line-height:1.26;color:#24464b}.list li:before{background:#087c75;box-shadow:0 0 0 5px rgba(8,124,117,.12)}
-    .list.compact li{font-size:20px}.list.compact li:before{background:#087c75}
+    .list{gap:16px}.list li{font-size:22px;line-height:1.32;color:#24464b;position:relative;padding-left:26px;display:block}.list li:before{background:#087c75;box-shadow:0 0 0 5px rgba(8,124,117,.12);position:absolute;left:0;top:8px}
+    .list.compact li{font-size:18px;line-height:1.32;padding-left:22px}.list.compact li:before{background:#087c75;width:7px;height:7px;top:7px}
     .quote{background:#e9f4ef;border-left-color:#5f7f0a;color:#173b3e;font-size:28px}.quote small{color:#557277}
     .tag,.pill{border-color:#8bb7b4;color:#17645f;background:#f4fbf9}
     .flow-step,.arch-node,.callout,.case,.time,.mock-dashboard{background:#ffffff;border-color:#b9ced0;color:#17353a;box-shadow:0 5px 16px rgba(35,76,78,.06)}
@@ -106,8 +106,8 @@
     .definition{border-bottom-color:#c5d5d6}.definition dt{color:#087c75;font-size:17px}.definition dd{color:#24464b;font-size:22px}
     .callout p,.callout li{color:#36565a;font-size:20px}.callout.warn{border-top-color:#bd4b3b}
     .tool-table{font-size:19px}.tool-table th{color:#087c75;font-size:14px;border-bottom-color:#6ea09d}.tool-table td{color:#315459;border-bottom-color:#c5d5d6;line-height:1.32}.tool-table td:first-child{color:#17353a}
-    .browser-shot{border-color:#7ea5a6;background:#f2f7f6}.shot-caption{color:#557277;font-size:14px}.shot-caption b{color:#24464b}
-    .step-copy p{font-size:21px;color:#2d4b50}.step-copy .list li{font-size:19px}.step-no{font-size:15px}.step-no b{background:#5f7f0a;color:#fff}
+    .browser-shot{border-color:#7ea5a6;background:#ffffff}.browser-shot img{object-fit:contain;background:#ffffff}.shot-caption{color:#557277;font-size:14px}.shot-caption b{color:#24464b}
+    .step-copy p{font-size:21px;color:#2d4b50}.step-copy .list li{font-size:18px;line-height:1.32;padding-left:22px}.step-no{font-size:15px}.step-no b{background:#5f7f0a;color:#fff}
     .code{background:#eef5f3;border-color:#b4cacc;color:#173b3e;font-size:17px}.code.small{font-size:15px}.code .kw{color:#1a5aa5}.code .fn{color:#517500}.code .str{color:#b3422f}.code .cm{color:#557277}.code .tagx{color:#087c75}.code .attr{color:#9a6500}.code-label{color:#557277;font-size:14px}
     .code-sheet{background:#f4faf7;color:#173b3e;border-color:#9cbdbc;box-shadow:20px 24px 0 rgba(42,84,85,.12)}.code-sheet + .code-sheet{background:#eef7f0;color:#355b2b;box-shadow:0 24px 0 rgba(42,84,85,.10)}
     .case-grid{gap:20px}.case{min-height:300px}.case .case-no{color:#587277;font-size:14px}.case p{font-size:18px}.case strong{color:#17353a;font-size:16px}.case ul{font-size:16px}
@@ -119,7 +119,11 @@
     .slide[data-title="Deployment sebagai web app"]{padding-bottom:30px}
     @media(max-height:760px) and (min-width:901px){
       .lead{font-size:21px}.list li{font-size:21px}.definition dd{font-size:20px}.callout p,.callout li{font-size:18px}.tool-table{font-size:17px}.step-copy p{font-size:19px}
-      .slide[data-title="Hasil yang dibawa pulang"] .quote{padding:12px 18px;font-size:23px}
+      .slide[data-title="Hasil yang dibawa pulang"] .two-col{margin-top:16px!important}
+      .slide[data-title="Hasil yang dibawa pulang"] .quote{margin-top:14px!important;padding:8px 16px;font-size:19px}
+      .slide[data-title="Membuka Apps Script"] .step-layout{margin-top:16px!important}
+      .slide[data-title="Membuka Apps Script"] .browser-shot.tall{height:280px}
+      .slide[data-title="Membuka Apps Script"] .quote{margin-top:10px!important;padding:8px 14px;font-size:16px}
       .slide[data-title="Deployment sebagai web app"] .step-layout{margin-top:16px!important}
       .slide[data-title="Deployment sebagai web app"] .browser-shot.medium{height:220px}
       .slide[data-title="Deployment sebagai web app"] .quote{margin-top:4px!important;padding:8px 14px;font-size:18px;line-height:1.18}
@@ -262,9 +266,27 @@
 
       <section class="slide" data-title="Membuka Apps Script">
         <div class="topline"><span class="kicker">09 • Langkah browser</span><span class="slide-no">10 / 28</span></div>
-        <div class="section-head"><h2>Membuka Apps Script dari browser</h2><p class="lead">Untuk latihan, mulai dari spreadsheet yang sudah berisi data sintetis.</p></div>
-        <div class="step-layout"><div class="step-copy"><div class="step-no"><b>1</b> buka project</div><h3>Mulai dari sumber data</h3><p>Buka Google Sheet latihan. Pilih menu <span class="lime">Extensions → Apps Script</span>.</p><ul class="list compact"><li>Pastikan memakai akun Google yang benar</li><li>Jangan memakai file berisi data warga nyata</li><li>Gunakan satu project per kelompok</li></ul></div><div><div class="browser-shot tall"><img src="assets/01-apps-script-home-110.jpg" alt="Capture browser halaman Google Apps Script pada zoom 110 persen"></div><div class="shot-caption"><b>Capture browser, zoom 110%</b> • contoh halaman Apps Script. Periksa kembali akun dan project sebelum mengedit.</div></div></div>
-        <aside class="notes"><p>Capture ini adalah dokumentasi UI browser, bukan bukti bahwa deployment sudah dibuat. Crop atau tampilkan sesuai kebutuhan ketika deck dipresentasikan.</p></aside>
+        <div class="section-head"><h2>Membuka Apps Script dari Spreadsheet</h2><p class="lead">Cukup 2 klik dari Google Sheets (bisa spreadsheet kosong baru atau file latihan).</p></div>
+        <div class="step-layout">
+          <div class="step-copy">
+            <div class="step-no"><b>1</b> BUKA DARI SPREADSHEET</div>
+            <h3>Alur 2 klik di browser</h3>
+            <p>Buka Google Sheets (misalnya ketik <span class="lime">sheets.new</span> atau buka sheet latihan kelompok):</p>
+            <ul class="list compact">
+              <li><b>1. Menu Atas:</b> Klik menu <span class="lime">Extensions</span> (atau <b>Ekstensi</b>).</li>
+              <li><b>2. Pilih Apps Script:</b> Pada dropdown, klik pilihan teratas: <span class="lime">Apps Script</span>.</li>
+              <li><b>3. Editor Terbuka:</b> Tab baru editor Google Apps Script langsung terbuka dan otomatis terhubung ke sheet!</li>
+            </ul>
+            <div class="quote" style="margin-top:16px;padding:10px 16px;font-size:17px;line-height:1.32">
+              💡 <b>Catatan bahasa:</b> Jika akun memakai bahasa Indonesia, menu tertulis <b>Ekstensi ➔ Apps Script</b>.
+            </div>
+          </div>
+          <div>
+            <div class="browser-shot tall"><img src="assets/01-google-sheets-extensions-apps-script.png" alt="Panduan visual membuka Apps Script dari Google Sheets dengan panah petunjuk langkah 1 dan langkah 2"></div>
+            <div class="shot-caption"><b>Panduan visual:</b> Buka Sheet ➔ klik menu <b>Extensions (Ekstensi)</b> ➔ klik <b>Apps Script</b>. Tab editor terbuka otomatis.</div>
+          </div>
+        </div>
+        <aside class="notes"><p>Demonstrasikan langsung di depan peserta: buka tab baru, ketik sheets.new, tunjukkan posisi menu Extensions / Ekstensi di baris atas, lalu klik Apps Script. Tunjukkan bahwa tab editor yang terbuka sudah terikat (container-bound) ke sheet tersebut.</p></aside>
       </section>
 
       <section class="slide" data-title="Dua file dalam satu cerita">

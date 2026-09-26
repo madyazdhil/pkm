@@ -2156,4 +2156,73 @@ Maaf banget, sebelumnya analisanya salah diagnosa. Masalahnya bukan di URL hash 
 Silakan buka atau refresh file deck terbaru:
 - [Buka deck HTML](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
 
+## 2026-09-26 — Perbaikan slide kepotong dan penambahan alur visual panah klik buka spreadsheet ke Apps Script
+
+### User
+
+1/ ini dia kenapa yah dia kok si slide nya kepotong sama ini dai dikasi panah dong di jelasin dong mana yang di klik biar jelas kaya cara buka nya berarti kan bbuka spreadsheet kosong trus dai klik ini itu gitu
+
+### Assistant Action
+
+1. **Investigasi Penyebab Slide & Screenshot Terpotong (Cropping):**
+   - Menganalisis CSS `.browser-shot img` pada `ai-dashboard-gas-workshop.html`. Ditemukan bahwa properti `object-fit: cover` memotong tepi gambar secara agresif jika aspek rasio screenshot berbeda dengan container slide.
+   - Diubah menjadi `object-fit: contain` dengan background `#ffffff`, sehingga seluruh gambar tangkapan layar tampil utuh 100% tanpa ada menu yang terpotong.
+   - Membersihkan artefak margin hitam 46px di sisi kiri file screenshot `02-codegs-editor-110.jpg`, `03-add-html-menu-110.jpg`, `04-index-editor-110.jpg`, dan `06-deployment-menu-110.jpg`.
+   - Mengidentifikasi bug teks bullet yang tumpang tindih pada Slide 17 (`display: grid` pada `<li>` memecah tag `<b>` menjadi sel terpisah). Diperbaiki dengan model bullet `position: relative` dan `padding-left: 26px`.
+
+2. **Pembuatan Panduan Visual Buka Apps Script dari Spreadsheet (Slide 10):**
+   - Merender antarmuka Google Sheets beresolusi tinggi (1200×750) dengan visualisasi spreadsheet nyata (`01-google-sheets-extensions-apps-script.png`).
+   - Menambahkan petunjuk visual mencolok dengan panah tebal dan badge warna:
+     - `Langkah 1: Klik menu "Extensions" ▼ (atau Ekstensi)` ➔ menunjuk menu dropdown di toolbar.
+     - `Langkah 2: Klik Apps Script ➔ Tab editor terbuka otomatis!` ➔ menunjuk item menu teratas pada dropdown.
+   - Memperbarui konten Slide 10 dengan panduan 2-klik yang jelas (buka `sheets.new` ➔ Extensions ➔ Apps Script) serta catatan bilingual (Extensions vs Ekstensi).
+
+3. **Optimasi Responsif & QA Otomatis:**
+   - Menyesuaikan batas tinggi dan margin di breakpoint 720p pada slide *Hasil yang dibawa pulang* dan *Membuka Apps Script*.
+   - Menjalankan `python3 projects/pkm-smt3/scripts/qa_html_deck.py` dan berhasil `PASS: HTML deck QA` untuk seluruh 28 slide pada resolusi 1440×810 dan 1280×720 tanpa overflow.
+   - Memperbarui `CAPTURE-MANIFEST.md`, `STATE.md`, dan `CANVAS.md`.
+
+### Status
+
+Implemented and verified locally.
+
+### Assistant — exact response
+
+Berikut penjelasan penyebab slide/gambar sempat terpotong dan pembaruan visual lengkap dengan panah penunjuk klik yang sudah diterapkan:
+
+---
+
+### 1. Kenapa Gambar / Slide Sempat Terpotong?
+
+Ada **3 faktor penyebab** yang kini sudah diperbaiki tuntas:
+
+1. **CSS `object-fit: cover` pada Screenshot:**
+   - Sebelumnya, gambar di dalam slide menggunakan mode `cover` sehingga browser memotong paksa sisi atas/bawah/samping gambar agar mengisi penuh kotak frame.
+   - **Solusi:** Sudah diganti menjadi `object-fit: contain` dengan latar bersih. Sekarang **seluruh isi screenshot tampil 100% utuh**, tidak ada lagi tombol atau teks menu yang terpotong.
+2. **Artefak Garis Hitam di Tepi Screenshot:**
+   - Screenshot editor Apps Script sebelumnya memiliki sisa garis hitam selebar 46px di tepi kiri hasil crop browser lama. Garis hitam ini sudah dibersihkan dari semua aset screenshot (`02`, `03`, `04`, dan `06`).
+3. **Teks Bullet Bertumpuk (Slide 17):**
+   - Pada slide 17, teks sempat bertumpuk karena aturan CSS `display: grid` pada list item memecah tag `<b>INDEX.HTML</b>` menjadi kolom terpisah. Ini sudah diperbaiki menjadi layout list normal yang rapi.
+
+---
+
+### 2. Panduan Visual Baru dengan Panah Petunjuk (Slide 10)
+
+Slide 10 (*"Membuka Apps Script dari Spreadsheet"*) kini dirombak total agar peserta workshop (termasuk staf senior) bisa langsung paham cara membukanya hanya dalam **2 klik**:
+
+* **Gambar Baru:** [01-google-sheets-extensions-apps-script.png](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/assets/01-google-sheets-extensions-apps-script.png)
+  - Menampilkan tampilan Google Sheets nyata (bisa spreadsheet kosong baru via `sheets.new` atau file spreadsheet latihan).
+  - 🟢 **Langkah 1 (Panah Atas):** Menunjuk langsung ke menu baris atas **"Extensions"** (atau **"Ekstensi"** jika akun berbahasa Indonesia).
+  - 🟠 **Langkah 2 (Panah Menu Dropdown):** Menunjuk langsung ke pilihan teratas di dropdown: **"Apps Script"**.
+  - 💡 **Hasil:** Tab baru editor Google Apps Script langsung terbuka dan otomatis terhubung (*container-bound*) ke spreadsheet tersebut.
+
+---
+
+### 3. File yang Dapat Langsung Ditinjau:
+
+- 🖥️ **[Buka Deck HTML Hasil Perbaikan (Slide 10)](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html#slide-10)**
+- 🖼️ **[Lihat Screenshot Panduan Visual Spreadsheet ke Apps Script](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/assets/01-google-sheets-extensions-apps-script.png)**
+- 🧪 **Hasil Pengujian QA:** Lulus otomatis (`PASS: HTML deck QA`) pada resolusi proyektor standar (1440×810 dan 1280×720) tanpa overflow.
+
+
 

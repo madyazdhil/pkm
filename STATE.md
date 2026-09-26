@@ -104,3 +104,17 @@
 - Fixed: removed unconditional `display: grid` from `.cover` and `.closing`; added `.slide.active.closing { display: grid }` and `body:not(.overview) .slide:not(.active) { display: none !important }`.
 - Script updated to properly read URL hash on reload (`location.hash.match(/slide-(\d+)/)`), so navigating to slide 3 and reloading correctly remains on slide 3.
 - QA script `scripts/qa_html_deck.py` enhanced with visual occlusion testing (`elementFromPoint` at center of screen) and strict assertion that exactly 1 slide has `display !== 'none'`. All tests pass.
+
+## Spreadsheet to Apps Script Visual Guide & Slide Cropping Fix — 2026-09-26
+
+- **Slide 10 Overhaul:** Mengganti screenshot beranda Apps Script dengan visual step-by-step resolusi tinggi (`01-google-sheets-extensions-apps-script.png`) yang menggambarkan Google Sheets nyata lengkap dengan nama dokumen, formula bar, tabel data, menu dropdown *Extensions*, serta badge petunjuk visual dengan panah tebal:
+  - `Langkah 1: Klik menu "Extensions" ▼ (atau Ekstensi)`
+  - `Langkah 2: Klik Apps Script ➔ Tab editor terbuka otomatis!`
+- **Eliminasi Pemotongan Gambar (Slide Cropping):**
+  - Mengubah CSS `.browser-shot img` dari `object-fit: cover` menjadi `object-fit: contain` dengan background terang `#ffffff` sehingga seluruh screenshot/panduan tampil utuh tanpa terpotong di tepi.
+  - Membersihkan artifact garis hitam vertikal 46px pada border kiri screenshot editor Apps Script (`02-codegs-editor-110.jpg`, `03-add-html-menu-110.jpg`, `04-index-editor-110.jpg`, `06-deployment-menu-110.jpg`).
+- **Perbaikan Overlap Teks Bullet List:**
+  - Menghapus aturan `display: grid; grid-template-columns: 22px 1fr` pada `.list li` yang memecah tag inline (`<b>`, `<span>`) menjadi cell terpisah (seperti pada slide 17 `<b>INDEX.HTML</b>`). Diganti dengan penomoran/bullet berbasis `position: relative` dan `padding-left: 26px`.
+- **Penyesuaian Responsif 720p:**
+  - Menyelaraskan padding dan ukuran font pada slide *Hasil yang dibawa pulang* dan *Membuka Apps Script* di breakpoint `max-height: 760px`.
+  - QA otomatis (`scripts/qa_html_deck.py`) lulus 100% pada resolusi 1440×810 dan 1280×720 tanpa overflow.

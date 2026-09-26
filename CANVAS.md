@@ -81,3 +81,15 @@ Penjelasan kode juga tersedia di [README deck](file:///Users/yazidhilmi/Document
 - Diperbaiki dengan mengunci semua slide non-aktif ke `display: none !important` dan hanya menerapkan `display: grid` pada `.slide.active.closing` serta `.slide.active.cover`.
 - Navigasi hash `#slide-NN` dan reload browser kini bekerja stabil dan mempertahankan slide aktif.
 - Script [qa_html_deck.py](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/scripts/qa_html_deck.py) diperluas untuk menguji oklusi visual riil (`elementFromPoint`) dan lulus tanpa error.
+
+## Panduan Visual Sheets ke Apps Script & Fix Slide Cropping — 26 September 2026
+
+- 🖼️ **Panduan Visual Baru:** [01-google-sheets-extensions-apps-script.png](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/assets/01-google-sheets-extensions-apps-script.png)
+  - Menggambarkan alur 2-klik membuka Apps Script dari spreadsheet kosong (`sheets.new` atau file latihan).
+  - Dilengkapi panah petunjuk visual tebal dan badge langkah:
+    1. Klik menu **Extensions** (atau **Ekstensi** dalam bahasa Indonesia).
+    2. Klik pilihan **Apps Script** pada dropdown untuk membuka editor container-bound.
+- 📐 **Fix Screenshot Terpotong (Cropping):**
+  - Mengganti CSS screenshot menjadi `object-fit: contain` dan membersihkan margin hitam pada screenshot editor.
+  - Memperbaiki rendering bullet list di CSS agar tag bold dan inline code tidak tumpang tindih.
+- 🧪 **Verifikasi:** Lulus seluruh pengujian otomatis [qa_html_deck.py](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/scripts/qa_html_deck.py) pada resolusi 1440×810 dan 1280×720 tanpa overflow.
