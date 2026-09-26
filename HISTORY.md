@@ -2071,3 +2071,22 @@ In progress.
 ### Status
 
 Implemented and verified locally.
+
+### Assistant — exact response for slide navigation bug
+
+Sudah aku cek dan perbaiki. Ini bukan fungsi slide 3 yang benar-benar berhenti. Yang membingungkan adalah label `END` pada slide penutup dan nomor slide yang masih tidak konsisten setelah deck berubah menjadi 28 slide. Browser juga bisa menyimpan hash slide terakhir.
+
+Perbaikan:
+
+- label `END` dihapus;
+- semua slide sekarang memakai nomor stabil `01 / 28` sampai `28 / 28`;
+- saat dibuka, deck mulai dari cover;
+- QA sekarang meniru jalur pengguna: cover → klik Next dua kali → slide 3;
+- hasilnya slide 3 tampil sebagai `Masalah kerja yang ingin dibantu`, counter `03 / 28`.
+
+Silakan tutup tab deck yang lama, lalu buka ulang file terbaru:
+
+[ai-dashboard-gas-workshop.html](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+
+QA: `PASS: HTML deck QA`.
+Checkpoint lokal: `52ab1ab fix(pkm-smt3): normalize slide navigation labels`.
