@@ -1,6 +1,6 @@
 # Audit Materi Dashboard untuk Aparatur Kecamatan Tambun Selatan
 
-**Tanggal audit:** 4 Oktober 2026  
+**Tanggal audit:** 3 Oktober 2026  
 **Objek utama:** `materials/workshop/html-deck/ai-dashboard-gas-workshop.html`  
 **Pemilik materi:** Ahmad Yazid Hilmi — Materi 2 / teknis dashboard  
 **Status:** Audit substansi selesai; revisi deck belum diterapkan.
@@ -278,4 +278,4 @@ Audit ini dilakukan dengan membaca dan membandingkan:
 - `source-docs/Meeting Notes PKM.docx`;
 - `source-docs/Proposal Sementara PKM Kecamatan_Tambun_Selatan_2026.docx`.
 
-QA visual otomatis belum dapat dijalankan ulang pada 4 Oktober 2026 karena environment Python tidak memiliki modul `playwright` (`ModuleNotFoundError`). Audit substansi dan struktur tetap dapat diselesaikan dari artefak lokal.
+QA visual otomatis belum dapat dijalankan ulang pada 3 Oktober 2026 karena environment Python tidak memiliki modul `playwright` (`ModuleNotFoundError`). Audit substansi dan struktur tetap dapat diselesaikan dari artefak lokal.

@@ -115,7 +115,7 @@ Penjelasan kode juga tersedia di [README deck](file:///Users/yazidhilmi/Document
   - **Link Langsung Slide Tertentu:** [https://madyazdhil.github.io/pkm/#slide-10](https://madyazdhil.github.io/pkm/#slide-10)
 - 🚀 **Fitur Auto-Redirect:** Root `index.html` otomatis meneruskan pengunjung ke file deck workshop lengkap dengan slide hash aktif, serta dilengkapi file `.nojekyll`.
 
-## Material Audit — 4 Oktober 2026
+## Material Audit — 3 Oktober 2026
 
 - 📋 **Audit kesesuaian audience dan brief:** [MATERIAL_AUDIT.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/MATERIAL_AUDIT.md)
 - Kesimpulan: deck sudah punya fondasi teknis yang sesuai, tetapi perlu dipusatkan pada satu use case dashboard pelayanan, dataset sintetis, KPI, dan praktik yang realistis untuk waktu materi efektif sekitar 80 menit.
