@@ -2507,3 +2507,21 @@ Saya juga memperbarui `STATE.md`, `CANVAS.md`, dan `HISTORY.md`, lalu membuat ch
 `909548a docs(pkm-smt3): add material audience and brief audit`
 
 Belum ada perubahan pada deck HTML-nya. QA visual otomatis juga belum bisa dijalankan ulang karena environment Python saat ini belum memiliki modul `playwright`; audit di atas dilakukan dari seluruh isi deck dan dokumen brief/proposal/notulen lokal.
+
+## 2026-10-03 — Dummy datasets dan implementation plan revisi materi
+
+### User
+
+# Context from my IDE setup:
+
+## Open tabs:
+- MATERIAL_AUDIT.md: projects/pkm-smt3/MATERIAL_AUDIT.md
+
+## My request:
+nah ini sebenernya datanya aku harus siapin datanya 3 data yang xcel gitu nanti aku minta mereka upload ke excel nya masing amsing gitu kan nah abis itu dari data nya itu kita mau biknini dashboardnya yang langsung link gtu jadi bukan pake canvas chat gprt nya
+
+yaudah kayanya bikinin data dumy 100data x 3 excel deh abis itu bikin implementation plan untuk baikin semua hasil audit nya itu
+
+### Status
+
+In progress — create three separate 100-row dummy Excel datasets and a sequential implementation plan addressing the material audit.

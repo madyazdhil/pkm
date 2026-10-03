@@ -119,3 +119,9 @@ Penjelasan kode juga tersedia di [README deck](file:///Users/yazidhilmi/Document
 
 - 📋 **Audit kesesuaian audience dan brief:** [MATERIAL_AUDIT.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/MATERIAL_AUDIT.md)
 - Kesimpulan: deck sudah punya fondasi teknis yang sesuai, tetapi perlu dipusatkan pada satu use case dashboard pelayanan, dataset sintetis, KPI, dan praktik yang realistis untuk waktu materi efektif sekitar 80 menit.
+
+## Dummy Dataset and Implementation Plan — 3 Oktober 2026
+
+- 📊 **Folder dummy Excel:** [outputs/2026-10-03-dummy-datasets/](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/outputs/2026-10-03-dummy-datasets)
+- 📋 **Implementation plan revisi audit:** [02-implementation-plan-audit-remediation-dashboard-data-flow.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/planning/02-implementation-plan-audit-remediation-dashboard-data-flow.md)
+- Alur deliverable yang ditetapkan: Excel → Google Sheets → Google Apps Script → dashboard berbasis link web app.

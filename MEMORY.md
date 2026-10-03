@@ -70,3 +70,10 @@
 - Root cause of deck appearing permanently on closing slide: `.closing` and `.cover` had unconditional `display: grid` in CSS (declared after `.slide { display: none }`), making slide 28 (`.closing`) permanently active and rendered on top of every other slide in the DOM.
 - QA must assert visual occlusion (`elementFromPoint` at center of screen) and count of visible slides (`display !== 'none' === 1`), not just check `.slide.active` DOM attributes.
 - On reload, URL hash `#slide-NN` is safely respected, and fresh load without hash starts at slide 1.
+
+## Dashboard data workflow — 2026-10-03
+
+- Workshop practice is now being redesigned around three separate Excel dummy datasets, each with 100 synthetic rows.
+- Intended flow: upload/convert Excel to Google Sheets → use ChatGPT for prompt and code assistance → run the dashboard in Google Apps Script → share a web app link. Canvas ChatGPT is not the final dashboard output.
+- Primary use case: Dashboard Rekap Layanan Kecamatan. The surat/disposisi and agenda files are alternate group cases.
+- Final dataset artifacts: `outputs/2026-10-03-dummy-datasets/`.

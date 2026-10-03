@@ -1,5 +1,12 @@
 # Project State
 
+## Dummy Dataset and Implementation Plan — 2026-10-03
+
+- Tiga workbook Excel dummy selesai dibuat di `outputs/2026-10-03-dummy-datasets/`, masing-masing 100 baris, dengan sheet `Data` dan `Panduan`.
+- Alur baru yang direncanakan: Excel peserta → Google Sheets → ChatGPT sebagai alat bantu prompt/kode → Google Apps Script → dashboard web berbasis link. Canvas ChatGPT bukan output akhir.
+- Implementation plan revisi audit tersedia di `planning/02-implementation-plan-audit-remediation-dashboard-data-flow.md`.
+- Belum dimulai: revisi deck HTML dan materi pendukung; masih menunggu keputusan apakah peserta memakai Excel masing-masing atau dataset latihan panitia, serta apakah deployment dilakukan semua kelompok atau demo fasilitator.
+
 ## Material Audit — 2026-10-03
 
 - Audit substansi deck `materials/workshop/html-deck/ai-dashboard-gas-workshop.html` selesai dan disimpan di `MATERIAL_AUDIT.md`.
