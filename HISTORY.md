@@ -2349,3 +2349,161 @@ In progress — audit content, audience fit, and alignment with the project brie
 
 Implemented — audit report saved; deck revisions not yet applied.
 
+
+### Assistant — exact response
+
+Sudah saya audit. **Feeling kamu benar:** fondasi teknisnya sudah ada, tetapi materi ini **belum sepenuhnya pas untuk audience karyawan/staf aparatur Kecamatan Tambun Selatan dan belum cukup tajam terhadap brief dashboard pelayanan dari data tertentu.**
+
+## Kesimpulan singkat
+
+| Aspek | Nilai | Catatan |
+|---|---:|---|
+| Tema AI + dashboard | 7/10 | Alur ChatGPT → Apps Script → dashboard sudah jelas. |
+| Kesesuaian audience | 5/10 | Terlalu cepat masuk ke coding dan istilah teknis. |
+| Kesesuaian brief dashboard pelayanan | 6/10 | Belum memilih satu data dan satu use case utama. |
+| Kesiapan untuk waktu pelaksanaan | 4/10 | Target praktik terlalu besar bila waktu materi efektif hanya sekitar 80 menit. |
+| Keamanan data dan verifikasi | 8/10 | Bagian ini sudah kuat. |
+
+**Verdict:** materi saat ini lebih terasa sebagai **“pengantar membuat prototipe dashboard dengan bantuan AI”**, belum menjadi materi yang kuat untuk **“membantu aparatur menampilkan informasi dari data pelayanan tertentu.”**
+
+## Yang sudah bagus
+
+- Sudah memakai konteks Kecamatan Tambun Selatan.
+- Sudah ada alur end-to-end: masalah kerja → prompt → `Code.gs` + `Index.html` → testing → deployment.
+- Sudah menekankan data sintetis, privasi, verifikasi manusia, dan batasan prototipe.
+- Panduan membuka Apps Script dan memasukkan dua file sudah cukup jelas.
+- Ada contoh kasus surat/disposisi, agenda internal, dan rekap layanan.
+- Tidak mengklaim deployment publik berhasil tanpa URL yang benar-benar terbukti.
+
+## Masalah utama yang saya temukan
+
+### 1. Materi masih terlalu tool-centric
+Peserta diperkenalkan berturut-turut dengan Generative AI, prompting, Codex, Google Apps Script, `Code.gs`, `Index.html`, server-side, browser-side, JavaScript, CSS, `doGet()`, deployment, dan web app.
+
+Untuk audience staf kecamatan, ini terlalu banyak jika semuanya dianggap harus dipahami dalam satu sesi. Peserta mungkin bisa mengikuti copy-paste, tetapi belum tentu memahami **bagaimana data pelayanan berubah menjadi informasi yang berguna.**
+
+### 2. Belum ada satu data utama
+Deck memberi tiga pilihan kasus, tetapi belum menetapkan satu contoh utama dari awal sampai akhir. Akibatnya belum terasa jelas:
+
+- data apa yang digunakan;
+- siapa yang mengisi data;
+- siapa yang membaca dashboard;
+- pertanyaan kerja apa yang dijawab;
+- keputusan atau tindak lanjut apa yang dibantu.
+
+### 3. Contoh dashboard belum benar-benar end-to-end
+Slide 21 dan 24 lebih berupa mockup/target tampilan. Yang belum ada adalah satu contoh lengkap:
+
+`Sheet berisi data → tiga KPI → tabel → filter → grafik → kesimpulan yang bisa dibaca staf/pimpinan.`
+
+Untuk audience ini, contoh hasil dashboard justru harus diperlihatkan lebih dulu. Kode cukup menjadi alat di belakangnya.
+
+### 4. Belum cukup spesifik ke “pelayanan kecamatan”
+Kasus surat masuk/disposisi dan agenda internal relevan untuk administrasi, tetapi bukan contoh utama pelayanan masyarakat.
+
+Jika brief utamanya adalah dashboard pelayanan, sebaiknya contoh utama menjadi:
+
+> **Dashboard Rekap Layanan Kecamatan dari Data Google Sheets**
+
+Kasus surat dan agenda dapat menjadi opsi tambahan, bukan pusat materi.
+
+### 5. Target praktik tidak selaras dengan waktu nyata
+Di notulen, acara berlangsung pukul **10.00–12.00**, tetapi materi utama baru dimulai sekitar **10.40–12.00**. Jadi waktu materi efektif kira-kira **80 menit**, sedangkan deck masih mengasumsikan praktik 120 menit dan tiga kelompok membuat dashboard sampai deployment.
+
+Itu terlalu ambisius. Target yang lebih realistis:
+
+- satu demo end-to-end oleh fasilitator;
+- peserta mengubah satu indikator atau satu filter;
+- testing dilakukan bersama;
+- deployment cukup sebagai demo fasilitator atau opsional bila waktu/akses memungkinkan.
+
+### 6. Ada potensi tumpang tindih dengan Materi 1
+Slide AI dasar, verifikasi, keamanan, ChatGPT, dan Codex cukup banyak. Karena Pak Syam sudah memegang Basic AI, bagian Yazid sebaiknya lebih cepat melewati teori lalu fokus ke:
+
+`data → pertanyaan kerja → indikator → dashboard → testing → akses aman`.
+
+Codex juga sebaiknya dipindah ke appendix atau catatan fasilitator. Untuk staf kecamatan, Codex tidak perlu berada di jalur praktik utama.
+
+## Rekomendasi use case utama
+
+### Judul materi yang lebih pas
+
+**Membuat Dashboard Rekap Layanan Kecamatan dari Data Google Sheets**
+
+Subjudul:
+
+**Dengan bantuan ChatGPT dan Google Apps Script, peserta belajar mengubah data latihan menjadi tampilan ringkas yang mudah dibaca.**
+
+### Data sintetis yang digunakan
+
+- tanggal penerimaan;
+- jenis layanan;
+- wilayah umum/kelurahan;
+- kanal penerimaan;
+- status pelayanan;
+- unit penanggung jawab;
+- kategori waktu penyelesaian.
+
+### Pertanyaan kerja
+
+- Berapa jumlah layanan pada periode tertentu?
+- Berapa yang sudah selesai dan masih diproses?
+- Jenis layanan apa yang paling banyak?
+- Unit atau wilayah mana yang perlu diperiksa lebih lanjut?
+- Kapan terakhir data diperbarui?
+
+### Fitur minimum
+
+- tiga kartu: total layanan, selesai, masih diproses;
+- satu filter periode atau status;
+- satu tabel rekap;
+- satu grafik berdasarkan jenis layanan;
+- label “data latihan/sintetis”;
+- tanggal pembaruan data;
+- catatan bahwa dashboard bukan pengganti sistem layanan resmi.
+
+## Prioritas revisi
+
+### Harus diperbaiki sebelum dibawakan
+
+1. Pilih satu use case utama.
+2. Siapkan satu dataset sintetis yang sama untuk demo dan praktik.
+3. Tambahkan data dictionary sederhana: nama kolom, contoh nilai, arti, dan aturan status.
+4. Tampilkan satu dashboard hasil akhir yang nyata, bukan hanya mockup.
+5. Jelaskan definisi setiap KPI agar angka tidak salah ditafsirkan.
+6. Sesuaikan rundown dengan waktu materi efektif sekitar 80 menit.
+7. Jadikan deployment bukan syarat wajib jika akun, izin, atau koneksi belum pasti.
+
+### Sangat disarankan
+
+- Tambahkan slide “siapa memakai dashboard dan untuk keputusan apa?”.
+- Tambahkan contoh sebelum/sesudah: rekap manual versus tampilan dashboard.
+- Pindahkan Codex ke appendix.
+- Kurangi screenshot editor yang berulang.
+- Jadikan prompt panjang sebagai handout, bukan teks yang harus dibaca seluruhnya dari slide.
+- Tambahkan checklist persiapan akun Google, file Sheet, koneksi, dan backup screenshot/video.
+- Gunakan istilah **“dashboard yang dibuat dengan bantuan AI”** agar tidak memberi kesan dashboard tersebut otomatis cerdas/menentukan keputusan.
+
+## Jawaban akhirnya
+
+**Belum sepenuhnya sesuai audience dan brief, tetapi fondasinya sudah bagus.** Yang kurang bukan jumlah slide, melainkan fokus pada hasil kerja nyata.
+
+Pusat ceritanya sebaiknya digeser dari:
+
+> `ChatGPT → dua file kode → Apps Script`
+
+menjadi:
+
+> `Masalah pelayanan → data latihan → indikator yang dibutuhkan → dashboard yang bisa dibaca → verifikasi dan akses aman`
+
+ChatGPT dan Apps Script tetap dipakai, tetapi menjadi **alat untuk mencapai hasil**, bukan menjadi isi utama yang harus dikuasai peserta.
+
+Saya sudah menyimpan audit lengkap di:
+
+[📋 Buka MATERIAL_AUDIT.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/MATERIAL_AUDIT.md)
+
+Saya juga memperbarui `STATE.md`, `CANVAS.md`, dan `HISTORY.md`, lalu membuat checkpoint lokal:
+
+`909548a docs(pkm-smt3): add material audience and brief audit`
+
+Belum ada perubahan pada deck HTML-nya. QA visual otomatis juga belum bisa dijalankan ulang karena environment Python saat ini belum memiliki modul `playwright`; audit di atas dilakukan dari seluruh isi deck dan dokumen brief/proposal/notulen lokal.
