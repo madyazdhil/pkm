@@ -2320,3 +2320,32 @@ Akan menyiapkan remote GitHub personal `git@github.com-personal:madyazdhil/pkm.g
 
 In progress.
 
+
+## 2026-10-04 — Audit materi terhadap audience dan brief
+
+### User
+
+/Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3
+
+i want you to audit this material
+
+this is for karyawan pns kecamatan tambun dalam pembuatan dashboard pelayanan atau penampilan informasi dari data terteentu
+
+taopi aku dari segi materinay ngerasa in imasi kurang coba di audit udah sesauai audience gak sih dan sesuai dengan brief yang aku kasi ?
+
+### Status
+
+In progress — audit content, audience fit, and alignment with the project brief.
+
+### Assistant Action
+
+- Menjalankan audit berbasis artefak lokal terhadap brief project, proposal, notulen rapat, rancangan materi, outline, deck HTML 28 slide, dan QA script.
+- Menemukan mismatch utama: materi masih terlalu berpusat pada tool/coding, belum memilih satu use case/data pelayanan utama, contoh dashboard belum end-to-end, dan rundown deck 120 menit tidak selaras dengan notulen yang memberi waktu materi efektif sekitar 80 menit (10.40–12.00).
+- Menyimpan hasil audit di `projects/pkm-smt3/MATERIAL_AUDIT.md`.
+- Memperbarui `STATE.md` dan `CANVAS.md` dengan status serta prioritas revisi.
+- Mencoba menjalankan QA HTML deck melalui `python3 projects/pkm-smt3/scripts/qa_html_deck.py`; gagal karena environment tidak memiliki modul Python `playwright` (`ModuleNotFoundError`). Ini dicatat sebagai failed attempt; tidak ada perubahan pada deck HTML.
+
+### Status
+
+Implemented — audit report saved; deck revisions not yet applied.
+

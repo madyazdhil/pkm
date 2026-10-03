@@ -1,6 +1,13 @@
 # Project State
 
-- Last updated: 2026-09-25
+## Material Audit — 2026-10-04
+
+- Audit substansi deck `materials/workshop/html-deck/ai-dashboard-gas-workshop.html` selesai dan disimpan di `MATERIAL_AUDIT.md`.
+- Kesimpulan: fondasi deck sesuai tema, tetapi audience-fit dan brief-fit masih parsial; fokus terlalu tool-centric dan belum memilih satu use case/data utama untuk dashboard pelayanan.
+- Prioritas revisi: pilih satu dashboard rekap layanan berbasis data sintetis, tambahkan data dictionary + KPI + contoh hasil end-to-end, pindahkan Codex ke appendix, dan selaraskan rundown dengan waktu materi efektif sekitar 80 menit (10.40–12.00 pada notulen).
+- QA visual otomatis belum dapat dijalankan ulang karena modul Python `playwright` belum tersedia; audit substansi selesai dari artefak lokal.
+
+- Last updated: 2026-10-04
 - Status: In progress
 - Current focus: Memfokuskan deck pada alur ChatGPT melalui chat → dua file GAS (`Code.gs` dan `Index.html`) → testing → publish web app, dengan Codex hanya sebagai pengenalan lanjutan.
 
