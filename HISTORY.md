@@ -2742,3 +2742,9 @@ All local checks passed:
 I did **not** perform Google Drive import, cloud Apps Script editing, deployment, URL generation, or cross-account access testing in this turn. Therefore, no live deployment is being claimed. The facilitator guide now lists those as the remaining pre-workshop verification steps.
 
 A local Git checkpoint was created at commit `4f8b72d`.
+
+### Assistant — final response follow-up appendix (exact)
+
+- :codex-followup[Validate the Google deployment]{prompt="Import the primary dummy workbook into Google Sheets, run setupSpreadsheetId(), deploy the Apps Script web app, and test the URL with the intended access policy."}
+- :codex-followup[Finalize the workshop roles]{prompt="Confirm the final 80-minute timing, Syam/Taufik coordination, facilitator roles, and the follow-up PIC with the PkM team."}
+- :codex-followup[Prepare the participant handout package]{prompt="Package the HTML deck, starter dashboard, three Excel files, worksheet, checklist, and evaluation into one workshop-ready folder or downloadable bundle."}
