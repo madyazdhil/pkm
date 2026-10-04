@@ -2929,3 +2929,71 @@ Continue the locally completed material-remediation work without performing unco
 - Retried with the approved escalated browser command; deck QA then passed at 1440×810 and 1280×720, and local dashboard preview QA passed.
 
 Status: implemented locally; cloud import, `setupSpreadsheetId()`, Web App deployment, and cross-account access test remain pending explicit authorization and real-account verification.
+
+### Assistant [Codex] — final response for continuation — 4 October 2026
+
+Siap, aku lanjutkan dan menutup bagian lokal yang masih tersisa.
+
+## Yang sudah diselesaikan
+
+### 1. Paket workshop siap dibagikan
+
+- [Folder paket workshop](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/outputs/2026-10-04-workshop-bundle)
+- [Arsip ZIP 2,5 MB](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/outputs/pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip)
+- [Panduan mulai cepat](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/outputs/2026-10-04-workshop-bundle/START-HERE.md)
+
+Isi paket:
+
+- deck HTML final 18 slide beserta seluruh asset;
+- starter `Code.gs`, `Index.html`, prompt card, fixture, dan preview lokal;
+- 3 workbook Excel dummy, masing-masing 100 baris;
+- panduan peserta, worksheet, checklist, evaluasi pre/post;
+- preflight fasilitator;
+- status QA dan manifest SHA-256.
+
+### 2. QA akhir
+
+Lulus:
+
+- QA tiga workbook dummy;
+- verifikasi import XLSX, sheet `Data`/`Panduan`, dan formula error;
+- QA starter dashboard: baseline KPI, filter, mutasi status, konfigurasi, dan validasi data;
+- QA deck pada 1440×810 dan 1280×720;
+- QA preview dashboard lokal;
+- ZIP integrity test;
+- pengecekan seluruh asset relatif deck;
+- pengecekan checksum bundle;
+- `git diff --check`.
+
+Percobaan awal QA deck sempat terhenti karena izin proses Chromium di sandbox. Setelah dijalankan dengan akses browser yang disetujui, QA berhasil lulus.
+
+### 3. Dokumentasi proyek
+
+Sudah diperbarui:
+
+- `CANVAS.md`
+- `STATE.md`
+- `MATERIAL_AUDIT.md`
+- `HISTORY.md`
+
+Acceptance criteria audit yang bisa diverifikasi secara lokal sekarang sudah ditandai selesai. Yang tersisa hanya PIC/tindak lanjut final bersama tim dan mitra.
+
+## Yang masih belum diklaim selesai
+
+Belum ada dashboard link Google yang live karena langkah cloud berikut belum dijalankan:
+
+1. import workbook utama ke Google Sheets;
+2. menjalankan `setupSpreadsheetId()` pada project Apps Script nyata;
+3. deploy Web App;
+4. membuka URL nyata;
+5. menguji akses akun yang berwenang dan tidak berwenang.
+
+Jadi materi sudah siap dipakai dengan preview lokal/fallback, tetapi aku belum mengklaim ada URL deployment live.
+
+## Checkpoint Git
+
+Local commit dibuat:
+
+`6a2c8c9 feat(pkm-smt3): package workshop dashboard materials`
+
+Belum dipush ke GitHub karena turn ini belum memberi otorisasi eksplisit untuk menjalankan aksi cloud/deployment atau mempromosikan hasil ke remote.
