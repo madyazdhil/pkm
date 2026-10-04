@@ -4,12 +4,26 @@
 - **Project:** PkM Magister Teknik Informatika UNPAM – Kecamatan Tambun Selatan
 - **Status:** Revised implementation draft
 - **Tanggal pembaruan:** 4 Oktober 2026
-- **Pemateri:** Ahmad Yazid Hilmi — Materi 2 / teknis dashboard
+- **Pemateri:** Muharam Syam Nugraha — teori AI dan prompting; Ahmad Yazid Hilmi — praktik dashboard
 - **Audience:** Aparatur, pegawai, dan staf Kantor Kecamatan Tambun Selatan
-- **Durasi materi efektif:** sekitar 80 menit pada slot 10.40–12.00
-- **Output peserta:** dashboard web berbasis link, bukan canvas percakapan
+- **Durasi kerja:** dua skenario yang perlu dikonfirmasi tim: inti 80 menit atau workshop penuh sekitar 120 menit
+- **Output peserta:** pemahaman teori AI/prompting dan dashboard web berbasis link, bukan canvas percakapan
 
 > **Gagasan utama:** peserta mulai dari file Excel, memahami kolom dan pertanyaan kerja, mengimpor data ke Google Sheets, memakai ChatGPT sebagai bantuan rancangan/kode, menempatkan kode di Google Apps Script, menguji dashboard, lalu membagikan link hanya jika aksesnya sudah diperiksa.
+
+## 1A. Pembagian pemateri
+
+### Pak Syam — teori AI dan prompting
+
+Pak Syam menjelaskan basic AI, Generative AI, contoh pemanfaatan untuk pekerjaan administrasi, batasan AI, verifikasi manusia, keamanan data, dan cara menyusun prompt yang jelas. Bagian teori menggunakan contoh yang dekat dengan pekerjaan aparatur, tetapi tidak meminta peserta memasukkan data warga asli.
+
+### Yazid — praktik dashboard
+
+Yazid memandu alur Excel → Google Sheets → ChatGPT sebagai alat bantu → `Code.gs` + `Index.html` → testing → link web app. Peserta tidak harus menulis kode dari nol. Mereka perlu memahami sumber data, definisi KPI, tempat menempelkan dua file, dan cara memeriksa hasil.
+
+### Serah-terima
+
+Pak Syam menutup teori dengan latihan prompt. Yazid menggunakan prompt tersebut sebagai jembatan menuju dataset dan dashboard latihan.
 
 ## 1. Fokus materi
 
@@ -115,27 +129,48 @@ Untuk latihan:
 - periksa kembali keluaran AI, angka, nama kolom, status, dan tanggal;
 - keputusan administratif tetap berada pada petugas yang berwenang.
 
-## 7. Alur 80 menit
+## 7. Dua skenario durasi
 
-| Durasi | Sesi | Aktivitas | Hasil |
+### Skenario inti 80 menit
+
+Dipakai jika slot materi efektif tetap terbatas. Teori Pak Syam dipadatkan, tetapi tetap menyentuh AI, keamanan, verifikasi, dan formula prompt. Yazid memprioritaskan satu demo end-to-end dan satu perubahan kecil.
+
+| Durasi | Sesi | Pemateri | Hasil |
 |---:|---|---|---|
-| 5 menit | Orientasi | Menjelaskan output berupa dashboard link | Ekspektasi peserta jelas |
-| 8 menit | Masalah kerja | Menunjukkan data Excel yang sulit dibaca cepat | Peserta mengenali kebutuhan |
-| 7 menit | Data aman | Menjelaskan data latihan dan batasan | Peserta tahu data yang aman |
-| 10 menit | Impor Excel | Upload ke Drive, buka dengan Google Sheets, cek sheet `Data` | Sheet siap dipakai |
-| 15 menit | Demo ChatGPT → GAS | Prompt, `Code.gs`, `Index.html`, dan alur penempatan | Peserta melihat proses utuh |
-| 20 menit | Praktik terarah | Kelompok mengubah dataset, filter, atau label | Satu perubahan berhasil diuji |
-| 8 menit | Testing dan akses | Cek KPI, filter, tampilan, dan link/fallback | Hasil tidak hanya terlihat benar |
-| 5 menit | Share-out | Satu atau dua kelompok menunjukkan hasil | Pembelajaran dibagikan |
-| 2 menit | Penutup | Checklist dan PIC tindak lanjut | Ada langkah setelah workshop |
+| 5 menit | Pembukaan dan pembagian peran | Bersama | Ekspektasi peserta jelas |
+| 15 menit | Basic AI, Generative AI, batasan, dan keamanan | Pak Syam | Peserta memahami manfaat dan risiko |
+| 10 menit | Formula prompt dan contoh singkat | Pak Syam | Peserta memiliki struktur prompt |
+| 3 menit | Serah-terima | Bersama | Teori terhubung ke dashboard |
+| 10 menit | Data Excel → Sheets → pertanyaan kerja | Yazid | Sheet dan KPI siap dipakai |
+| 17 menit | Demo ChatGPT → dua file → dashboard | Yazid | Peserta melihat proses utuh |
+| 12 menit | Satu perubahan dan testing | Yazid | Satu fitur diuji |
+| 5 menit | Checklist dan penutup | Bersama | Peserta menyimpan prompt dan batasan |
+| 3 menit | Buffer | Fasilitator | Waktu untuk kendala kecil |
 
-Jika waktu tersedia 120–150 menit penuh, kelompok dapat menambah filter unit atau menguji deployment masing-masing.
+### Skenario workshop penuh sekitar 120 menit
+
+Dipakai jika seluruh sesi dua jam tersedia. Pak Syam dapat memberi contoh teori dan latihan prompt yang lebih bernapas, sedangkan Yazid memberi ruang praktik dan pendampingan.
+
+| Durasi | Sesi | Pemateri | Hasil |
+|---:|---|---|---|
+| 5 menit | Pembukaan dan tujuan | Bersama | Alur dan output dipahami |
+| 30 menit | Basic AI, Generative AI, contoh penggunaan, batasan, verifikasi, keamanan | Pak Syam | Peserta memahami prinsip dan risiko |
+| 15 menit | Formula prompting dan latihan | Pak Syam | Prompt kerja tersusun |
+| 5 menit | Serah-terima | Bersama | Teori dihubungkan ke praktik |
+| 10 menit | Data Excel → Google Sheets → KPI | Yazid | Dataset siap dibaca |
+| 15 menit | Demo ChatGPT → `Code.gs` + `Index.html` | Yazid | Struktur dua file dipahami |
+| 25 menit | Praktik satu perubahan kecil | Yazid + pendamping | Fitur berhasil diubah |
+| 10 menit | Testing dan akses | Yazid | Angka, filter, dan akses diperiksa |
+| 5 menit | Share-out dan penutup | Bersama | Prompt, bukti, dan PIC tersimpan |
+
+Deployment semua kelompok tidak menjadi syarat. Jika akses cloud bermasalah, gunakan preview lokal/screenshot dan catat blocker.
 
 ## 8. Metode fasilitasi
 
 ### Demo fasilitator
 
-1. Tampilkan file Excel dummy.
+1. Pak Syam menyampaikan slide teori dan latihan prompt sesuai `panduan-pemateri-dua-sesi.md`.
+2. Tampilkan file Excel dummy.
 2. Tunjukkan sheet `Panduan`.
 3. Upload atau buka Excel dengan Google Sheets.
 4. Jelaskan pertanyaan kerja dan tiga KPI.

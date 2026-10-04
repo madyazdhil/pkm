@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Dashboard Rekap Layanan Kecamatan</title>
+  <title>Workshop Generative AI dan Dashboard Kecamatan</title>
   <style>
     :root{
       --ink:#eaf1f3; --muted:#9db0b5; --bg:#081315; --panel:#102124;
@@ -134,6 +134,10 @@
     .data-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:32px}.flow-box{padding:18px;border:1px solid #b9ced0;border-radius:12px;background:#fff;box-shadow:0 5px 16px rgba(35,76,78,.06)}.flow-box .mini{color:#087c75;font:700 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}.flow-box h3{margin-top:10px;font-size:22px}.flow-box p{margin-top:8px;color:#557277;font-size:16px;line-height:1.35}.flow-arrow{display:grid;place-items:center;color:#087c75;font-size:30px}.dictionary{width:100%;border-collapse:collapse;margin-top:26px;font-size:16px}.dictionary th{text-align:left;color:#087c75;font:700 12px/1.2 var(--mono);text-transform:uppercase;padding:12px 13px;border-bottom:1px solid #6ea09d}.dictionary td{padding:12px 13px;border-bottom:1px solid #c5d5d6;vertical-align:top;color:#315459;line-height:1.28}.dictionary td:first-child{color:#17353a;font-weight:800;width:22%}.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}.kpi-card{padding:20px;border:1px solid #b9ced0;border-radius:12px;background:#fff;box-shadow:0 5px 16px rgba(35,76,78,.06)}.kpi-card .label{color:#557277;font:700 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em}.kpi-card .number{margin-top:10px;font:800 42px/1 var(--mono);color:#087c75}.kpi-card p{margin-top:10px;color:#36565a;font-size:15px;line-height:1.35}.question-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;margin-top:30px}.question-list{display:grid;gap:12px}.question-item{display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:start;padding:14px 0;border-bottom:1px solid #c5d5d6}.question-item b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#e6f2c6;color:#5f7f0a;font:800 14px/1 var(--mono)}.question-item strong{display:block;color:#17353a;font-size:19px}.question-item span{display:block;margin-top:3px;color:#557277;font-size:15px;line-height:1.3}.upload-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}.upload-step{padding:18px;border:1px solid #b9ced0;border-radius:12px;background:#fff;min-height:170px}.upload-step .step-no{color:#087c75;font:800 13px/1 var(--mono)}.upload-step h3{margin-top:12px;color:#17353a;font-size:22px}.upload-step p{margin-top:9px;color:#557277;font-size:16px;line-height:1.38}.preview-dashboard{margin-top:25px;padding:18px;border:1px solid #9cbdbc;border-radius:12px;background:#fff;box-shadow:0 7px 20px rgba(35,76,78,.08)}.preview-top{display:flex;justify-content:space-between;align-items:baseline}.preview-top strong{font-size:22px}.preview-top span{color:#557277;font:12px/1 var(--mono)}.preview-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px}.preview-card{padding:13px;border:1px solid #bed4d1;border-radius:8px;background:#edf7f3}.preview-card b{display:block;color:#087c75;font:800 27px/1 var(--mono)}.preview-card span{display:block;margin-top:5px;color:#557277;font-size:12px}.preview-body{display:grid;grid-template-columns:.95fr 1.45fr;gap:12px;margin-top:12px}.preview-panel{border:1px solid #bed4d1;border-radius:8px;padding:12px}.preview-panel h4{margin:0 0 9px;color:#17353a;font-size:14px}.preview-bar{display:grid;grid-template-columns:130px 1fr 24px;gap:7px;align-items:center;margin:8px 0;color:#557277;font-size:11px}.preview-bar .track{height:8px;background:#e4efec;border-radius:99px}.preview-bar .fill{height:100%;width:100%;background:#087c75;border-radius:99px}.preview-mini-table{width:100%;border-collapse:collapse;font-size:10px}.preview-mini-table th,.preview-mini-table td{padding:6px;border-top:1px solid #d3e0df;text-align:left}.preview-mini-table th{color:#087c75;text-transform:uppercase;font-size:9px}.mini-note{margin-top:16px;color:#557277;font-size:14px;line-height:1.4}.two-col-tight{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}.prompt-box{margin-top:26px;padding:18px 20px;border:1px solid #b4cacc;border-radius:12px;background:#eef5f3;font:15px/1.48 var(--mono);color:#173b3e;white-space:pre-wrap}.checklist-box{display:grid;gap:10px;margin-top:24px}.checklist-line{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;padding:10px 0;border-bottom:1px solid #c5d5d6}.checklist-line b{color:#087c75;font-size:20px}.checklist-line span{color:#315459;font-size:17px;line-height:1.3}.link-callout{margin-top:26px;padding:20px 22px;border-left:4px solid #087c75;background:#e9f4ef;border-radius:0 10px 10px 0}.link-callout strong{display:block;color:#17353a;font-size:24px}.link-callout p{margin-top:9px;color:#36565a;font-size:17px;line-height:1.4}.case-grid.compact .case{min-height:210px}.case-grid.compact .case p{font-size:16px}.case-grid.compact .case ul{font-size:14px}.timeline.compact{grid-template-columns:repeat(5,1fr);gap:10px}.timeline.compact .time{padding:14px 12px;min-height:150px}.timeline.compact .time h3{font-size:18px}.timeline.compact .time p{font-size:14px}.footer-chip{display:inline-flex;margin-top:17px;padding:8px 11px;border-radius:999px;background:#f4fbf9;border:1px solid #8bb7b4;color:#17645f;font:700 12px/1 var(--mono)}
     @media(max-height:760px) and (min-width:901px){.data-flow{margin-top:22px}.flow-box{padding:13px}.flow-box h3{font-size:18px}.flow-box p{font-size:13px}.dictionary{margin-top:14px;font-size:13px}.dictionary th{padding:8px}.dictionary td{padding:8px}.question-grid{margin-top:18px}.question-item{padding:9px 0}.question-item strong{font-size:16px}.question-item span{font-size:13px}.upload-grid{margin-top:18px;gap:10px}.upload-step{padding:13px;min-height:130px}.upload-step h3{font-size:18px}.upload-step p{font-size:13px}.preview-dashboard{margin-top:14px;padding:12px}.preview-top strong{font-size:17px}.preview-card{padding:9px}.preview-card b{font-size:22px}.preview-body{gap:8px}.preview-panel{padding:8px}.preview-bar{font-size:9px;grid-template-columns:105px 1fr 18px;margin:5px 0}.preview-mini-table{font-size:8px}.preview-mini-table th,.preview-mini-table td{padding:4px}.prompt-box{margin-top:16px;padding:12px;font-size:12px;line-height:1.35}.checklist-box{margin-top:12px;gap:4px}.checklist-line{padding:6px 0}.checklist-line span{font-size:14px}.link-callout{margin-top:16px;padding:13px 15px}.link-callout strong{font-size:18px}.link-callout p{font-size:14px}.case-grid.compact .case{min-height:165px}.case-grid.compact .case p{font-size:13px}.case-grid.compact .case ul{font-size:12px}.timeline.compact .time{min-height:112px;padding:9px 8px}.timeline.compact .time h3{font-size:14px}.timeline.compact .time p{font-size:11px}}
 
+    .slide[data-title="Latihan singkat menyusun prompt"] .section-head .lead{max-width:760px}.slide[data-title="Latihan singkat menyusun prompt"] .two-col-tight{margin-top:20px}.slide[data-title="Latihan singkat menyusun prompt"] .prompt-box{margin-top:16px;padding:13px 16px;font-size:14px;line-height:1.35}.slide[data-title="Latihan singkat menyusun prompt"] .footer-chip{margin-top:12px}
+
+    @media(max-height:760px) and (min-width:901px){.slide[data-title="Latihan singkat menyusun prompt"] .section-head{margin-top:8px}.slide[data-title="Latihan singkat menyusun prompt"] .section-head .lead{font-size:17px}.slide[data-title="Latihan singkat menyusun prompt"] .two-col-tight{margin-top:10px;gap:12px}.slide[data-title="Latihan singkat menyusun prompt"] .quote{padding:10px 14px;font-size:18px}.slide[data-title="Latihan singkat menyusun prompt"] .callout{padding:12px 14px}.slide[data-title="Latihan singkat menyusun prompt"] .callout h3{font-size:18px;margin-bottom:7px}.slide[data-title="Latihan singkat menyusun prompt"] ol{font-size:15px!important;line-height:1.25!important}.slide[data-title="Latihan singkat menyusun prompt"] .prompt-box{margin-top:9px;padding:9px 11px;font-size:14px;line-height:1.25}.slide[data-title="Latihan singkat menyusun prompt"] .footer-chip{margin-top:7px;padding:6px 8px;font-size:12px}}
+
     /* Layout corrections for the 7-node data flow and projector-sized slides. */
     .data-flow{grid-template-columns:repeat(7,minmax(0,1fr));align-items:stretch}
     .data-flow .flow-arrow{min-width:0}
@@ -166,18 +170,18 @@
   </style>
 </head>
 <body>
-  <main class="deck-shell" id="deck" aria-label="Deck workshop dashboard rekap layanan kecamatan">
+  <main class="deck-shell" id="deck" aria-label="Deck workshop Generative AI dan dashboard pelayanan kecamatan">
     <div class="stage">
 
       <section class="slide active cover" data-title="Dashboard Rekap Layanan Kecamatan">
-        <div class="topline"><span class="kicker">Workshop PkM • Materi 2</span><span class="slide-no">01 / 18</span></div>
+        <div class="topline"><span class="kicker">Workshop PkM • Teori + Praktik</span><span class="slide-no">01 / 28</span></div>
         <div>
           <div class="eyebrow">Dari data ke link dashboard</div>
           <h1 style="margin-top:22px">Dashboard <span class="accent">Rekap Layanan</span> Kecamatan</h1>
           <div class="rule"></div>
-          <p class="lead">Mengubah file Excel latihan menjadi tampilan ringkas di Google Sheets, Google Apps Script, dan browser.</p>
+          <p class="lead">Memahami basic AI dan prompting yang aman, lalu mempraktikkan perubahan data Excel menjadi dashboard di Google Sheets, Apps Script, dan browser.</p>
           <div class="pill-row"><span class="tag">Excel</span><span class="tag">Google Sheets</span><span class="tag">Apps Script</span><span class="tag">Link web</span></div>
-          <div class="role-legend" aria-label="Kode pembicara"><span class="role-chip yazid"><b>Y</b> YAZID · PRAKTIK DASHBOARD</span><span class="role-chip shared"><b>↔</b> HASIL AKHIR · LINK DASHBOARD</span></div>
+          <div class="role-legend" aria-label="Kode pembicara"><span class="role-chip syam"><b>S</b> PAK SYAM · TEORI AI</span><span class="role-chip yazid"><b>Y</b> YAZID · PRAKTIK DASHBOARD</span><span class="role-chip shared"><b>↔</b> HASIL AKHIR</span></div>
         </div>
         <div class="cover-art" aria-label="Ilustrasi alur data ke dashboard">
           <div class="halo"></div><div class="code-stack">
@@ -189,8 +193,94 @@
         <aside class="notes"><p>Tekankan sejak awal bahwa ChatGPT hanya membantu merancang dan menulis kode. Hasil yang dibuka peserta adalah dashboard web yang membaca data dari Google Sheets.</p></aside>
       </section>
 
-      <section class="slide" data-title="Hasil yang dibawa pulang">
-        <div class="topline"><span class="kicker">01 • Orientasi</span><span class="slide-no">02 / 18</span></div>
+
+      <section class="slide" data-title="Pembagian materi">
+        <div class="topline"><span class="kicker">01 • Pembagian peran</span><span class="slide-no">02 / 28</span></div>
+        <div class="section-head"><h2>Materi ini dibagi dua: <span class="accent">teori</span> dan <span class="lime">praktik</span></h2><p class="lead">Pak Syam membangun pemahaman AI dan prompting. Yazid mengubah pemahaman itu menjadi dashboard yang bisa diuji.</p></div>
+        <div class="two-col-tight" style="margin-top:28px"><div class="callout" style="border-top-color:#b86a00"><h3><span class="coral">S / Pak Syam</span> · Teori AI</h3><ul class="list compact"><li>Basic AI dan Generative AI</li><li>Contoh pemanfaatan AI untuk kerja administrasi</li><li>Batasan AI dan verifikasi manusia</li><li>Keamanan data dan etika</li><li>Cara menyusun prompt yang jelas</li></ul></div><div class="callout" style="border-top-color:var(--teal)"><h3><span class="accent">Y / Yazid</span> · Praktik dashboard</h3><ul class="list compact"><li>Memeriksa data Excel</li><li>Mengubahnya menjadi Google Sheets</li><li>Menempatkan `Code.gs` dan `Index.html`</li><li>Menguji KPI, filter, dan tampilan</li><li>Menerbitkan hasil menjadi link jika akses siap</li></ul></div></div>
+        <div class="quote" style="margin-top:25px"><b>Teori menjawab:</b> kapan dan bagaimana AI dipakai dengan benar. <b>Praktik menjawab:</b> bagaimana hasilnya dipindahkan menjadi dashboard kerja.</div>
+        <aside class="notes"><p>Jelaskan pembagian panggung sejak awal. Pak Syam tidak hanya menjadi pembuka; beliau memegang blok teori AI dan prompting. Yazid mengambil alih saat peserta sudah memahami cara berpikir dan batas aman penggunaannya.</p></aside>
+      </section>
+
+      <section class="slide" data-title="Basic AI untuk pekerjaan administrasi">
+        <div class="topline"><span class="kicker">02 • Basic AI</span><span class="slide-no">03 / 28</span></div>
+        <div class="section-head"><h2>Basic AI: apa yang sebenarnya dibantu?</h2><p class="lead">AI adalah alat bantu pengolahan pola dan informasi. AI bukan pengganti pemilik proses atau pejabat yang mengambil keputusan.</p></div>
+        <div class="definition" style="margin-top:28px"><dt>AI</dt><dd>Sistem komputer yang membantu mengenali pola, mengikuti aturan, membuat prediksi, atau membantu analisis dari data dan instruksi.</dd></div>
+        <div class="definition"><dt>Contoh kerja</dt><dd>Mengklasifikasikan kategori, merangkum catatan, menemukan pola, menyusun draf, atau membantu merancang tampilan informasi.</dd></div>
+        <div class="definition"><dt>Batas peran</dt><dd>AI membantu menyiapkan bahan. Manusia tetap memeriksa fakta, aturan lokal, dampak keputusan, dan siapa yang berwenang menyetujui.</dd></div>
+        <div class="pill-row"><span class="pill">Aturan</span><span class="pill">Pola</span><span class="pill">Prediksi</span><span class="pill">Rekomendasi</span><span class="pill">Draf</span></div>
+        <aside class="notes"><p>Gunakan bahasa sederhana. AI tidak hanya chatbot. Dalam pekerjaan kantor, AI bisa membantu mengelompokkan, merangkum, menyusun draf, atau membantu membaca data.</p></aside>
+      </section>
+
+      <section class="slide" data-title="Generative AI dan cara kerjanya">
+        <div class="topline"><span class="kicker">03 • Generative AI</span><span class="slide-no">04 / 28</span></div>
+        <div class="section-head"><h2>Generative AI: menghasilkan draf dari konteks</h2><p class="lead">Model generatif menyusun keluaran berdasarkan instruksi dan konteks yang kita berikan. Keluaran yang lancar belum tentu benar.</p></div>
+        <div class="flow" style="margin-top:30px"><div class="flow-step"><div class="no">01 • INPUT</div><strong>Instruksi</strong><span>Tujuan, pertanyaan, dan peran yang diminta.</span></div><div class="flow-step"><div class="no">02 • KONTEKS</div><strong>Data dan contoh</strong><span>Kolom, istilah, format, dan batasan kerja.</span></div><div class="flow-step"><div class="no">03 • OUTPUT</div><strong>Draf</strong><span>Teks, ide, rangkuman, tabel, atau kode.</span></div><div class="flow-step"><div class="no">04 • REVIEW</div><strong>Verifikasi</strong><span>Manusia memeriksa sebelum digunakan.</span></div></div>
+        <div class="two-col-tight"><div class="callout"><h3>Contoh keluaran</h3><ul class="list compact"><li>Draf jawaban informasi layanan</li><li>Ringkasan laporan atau rapat</li><li>Rancangan pertanyaan survei</li><li>Rancangan dashboard dan kode awal</li></ul></div><div class="callout warn"><h3>Jangan disamakan dengan</h3><ul class="list compact"><li>mesin pencari yang selalu memberi sumber;</li><li>pejabat yang mengesahkan dokumen;</li><li>database resmi yang otomatis benar.</li></ul></div></div>
+        <aside class="notes"><p>Tekankan alur input → konteks → output → review. Ini jembatan menuju prompting: jika konteks tidak jelas, hasil juga mudah meleset.</p></aside>
+      </section>
+
+      <section class="slide" data-title="Contoh pemanfaatan AI di kantor kecamatan">
+        <div class="topline"><span class="kicker">04 • Contoh penggunaan</span><span class="slide-no">05 / 28</span></div>
+        <div class="section-head"><h2>AI dapat membantu pekerjaan apa?</h2><p class="lead">Mulai dari tugas yang berulang dan berisiko rendah. Pilih bantuan yang hasilnya mudah diperiksa.</p></div>
+        <table class="tool-table"><thead><tr><th>Situasi kerja</th><th>AI dapat membantu</th><th>Manusia tetap memeriksa</th></tr></thead><tbody><tr><td>Informasi berulang</td><td>Menyusun draf jawaban berdasarkan SOP yang diberikan.</td><td>Ketepatan syarat, bahasa, dan kebijakan terbaru.</td></tr><tr><td>Rekap administrasi</td><td>Membantu mengelompokkan dan merancang ringkasan.</td><td>Definisi kategori, angka, dan data sumber.</td></tr><tr><td>Pelaporan</td><td>Membuat kerangka laporan atau narasi awal.</td><td>Bukti, tanggal, nama kegiatan, dan persetujuan.</td></tr><tr><td>Dashboard</td><td>Membantu merancang KPI, prompt, dan kode prototipe.</td><td>Header, angka, akses, dan kesesuaian proses kerja.</td></tr></tbody></table>
+        <div class="footer-chip">Prinsip: mulai dari draf dan prototipe yang dapat diperiksa</div>
+        <aside class="notes"><p>Pak Syam bisa menambahkan contoh dari pekerjaan peserta. Hindari membuat janji bahwa AI otomatis menyelesaikan seluruh alur administrasi.</p></aside>
+      </section>
+
+      <section class="slide" data-title="Batasan AI dan verifikasi manusia">
+        <div class="topline"><span class="kicker">05 • Batasan AI</span><span class="slide-no">06 / 28</span></div>
+        <div class="section-head"><h2>AI bisa terdengar yakin dan tetap keliru</h2><p class="lead">Keluaran AI adalah bahan kerja. Semakin penting dampaknya, semakin ketat pemeriksaannya.</p></div>
+        <div class="two-col-tight" style="margin-top:28px"><div class="callout warn"><h3>Kesalahan yang mungkin muncul</h3><ul class="list compact"><li>membuat fakta atau rujukan yang tidak ada;</li><li>salah membaca istilah lokal atau status;</li><li>menghitung angka dengan definisi yang keliru;</li><li>memberi kode yang tidak cocok dengan struktur Sheet;</li><li>mengabaikan batas akses dan privasi.</li></ul></div><div class="callout"><h3>Checklist human-in-the-loop</h3><ul class="list compact"><li>Periksa sumber dan angka.</li><li>Bandingkan dengan hitungan manual.</li><li>Uji contoh normal dan contoh error.</li><li>Minta persetujuan pemilik proses.</li><li>Simpan versi/prompt penting untuk ditelusuri.</li></ul></div></div>
+        <div class="quote" style="margin-top:25px">AI membantu mempercepat langkah awal. Tanggung jawab hasil tetap berada pada manusia yang menggunakan dan menyetujuinya.</div>
+        <aside class="notes"><p>Berikan contoh sederhana: AI memberi nama sheet yang tidak ada atau memasukkan status yang tidak dipakai kantor. Kesalahan kecil di awal dapat membuat ringkasan salah.</p></aside>
+      </section>
+
+      <section class="slide" data-title="Keamanan data saat memakai AI">
+        <div class="topline"><span class="kicker">06 • Keamanan data</span><span class="slide-no">07 / 28</span></div>
+        <div class="section-head"><h2>Sebelum mengirim data ke AI, berhenti sebentar</h2><p class="lead">Gunakan data sintetis atau data yang sudah dianonimkan untuk latihan. Ikuti kebijakan organisasi dan kewenangan akses.</p></div>
+        <div class="two-col-tight" style="margin-top:26px"><div class="callout"><h3 class="lime">Relatif aman untuk latihan</h3><ul class="list compact"><li>angka agregat dan data sintetis;</li><li>nama unit samaran seperti Unit A;</li><li>wilayah umum tanpa alamat lengkap;</li><li>kolom yang sudah dianonimkan;</li><li>dokumen publik yang memang boleh dibagikan.</li></ul></div><div class="callout warn"><h3 class="coral">Jangan ditempel ke AI publik</h3><ul class="list compact"><li>NIK, nomor KK, nomor telepon;</li><li>alamat lengkap dan identitas warga;</li><li>isi surat, aduan, atau dokumen rahasia;</li><li>password, token, API key, dan kredensial;</li><li>data mentah yang belum mendapat izin.</li></ul></div></div>
+        <div class="link-callout"><strong>Tiga pertanyaan sebelum klik kirim</strong><p>Apakah data ini boleh dibagikan? Apakah perlu disamarkan? Siapa yang bertanggung jawab jika hasilnya salah?</p></div>
+        <aside class="notes"><p>Jangan memberikan nasihat hukum yang terlalu luas. Sampaikan prinsip kehati-hatian dan arahkan peserta mengikuti kebijakan instansi serta arahan resmi yang berlaku.</p></aside>
+      </section>
+
+      <section class="slide" data-title="Formula prompting yang benar">
+        <div class="topline"><span class="kicker">07 • Prompting</span><span class="slide-no">08 / 28</span></div>
+        <div class="section-head"><h2>Prompt yang benar memberi arah, bukan sekadar perintah</h2><p class="lead">Prompt yang kuat menjelaskan pekerjaan yang ingin dibantu, bahan yang tersedia, batasan, dan bentuk keluaran.</p></div>
+        <div class="upload-grid" style="margin-top:26px"><div class="upload-step"><div class="step-no">01 · PERAN</div><h3>Siapa AI?</h3><p>“Bertindak sebagai mentor Apps Script untuk pemula.”</p></div><div class="upload-step"><div class="step-no">02 · TUJUAN</div><h3>Apa hasilnya?</h3><p>“Buat ringkasan status layanan.”</p></div><div class="upload-step"><div class="step-no">03 · KONTEKS</div><h3>Untuk proses apa?</h3><p>“Dipakai staf untuk rekap mingguan.”</p></div><div class="upload-step"><div class="step-no">04 · DATA</div><h3>Kolom apa?</h3><p>“Tanggal, jenis, status, unit.”</p></div><div class="upload-step"><div class="step-no">05 · BATASAN</div><h3>Apa yang dijaga?</h3><p>“Data sintetis, tanpa library eksternal.”</p></div><div class="upload-step"><div class="step-no">06 · OUTPUT</div><h3>Jawaban seperti apa?</h3><p>“Dua file terpisah dan checklist uji.”</p></div></div>
+        <aside class="notes"><p>Minta Pak Syam mengucapkan formula ini sebagai cara berpikir yang bisa dipakai untuk tugas lain: peran, tujuan, konteks, data, batasan, format output, dan kriteria pemeriksaan.</p></aside>
+      </section>
+
+      <section class="slide" data-title="Prompt buruk versus prompt baik">
+        <div class="topline"><span class="kicker">08 • Contoh prompt</span><span class="slide-no">09 / 28</span></div>
+        <div class="section-head"><h2>Bedakan prompt yang terlalu umum dan prompt yang siap diuji</h2><p class="lead">Bukan berarti prompt harus panjang. Yang penting informasi kuncinya tidak hilang.</p></div>
+        <div class="two-col-tight" style="margin-top:27px"><div class="callout warn"><h3>Kurang membantu</h3><div class="prompt-box" style="margin-top:14px;background:#fff4f0">Buatkan aplikasi pelayanan kecamatan yang bagus.</div><ul class="list compact" style="margin-top:16px"><li>tujuan belum jelas;</li><li>data dan kolom belum disebut;</li><li>tidak ada batasan keamanan;</li><li>format hasil dan cara uji belum diminta.</li></ul></div><div class="callout"><h3>Lebih siap diproses</h3><div class="prompt-box" style="margin-top:14px;background:#eef8f0">Bertindak sebagai mentor AI untuk pemula. Bantu saya membuat ringkasan layanan dari data sintetis dengan kolom Tanggal, Jenis_Layanan, Status, dan Unit. Buat rancangan tiga KPI, satu filter, dan checklist verifikasi. Jangan menggunakan data pribadi.</div><ul class="list compact" style="margin-top:16px"><li>peran dan tujuan jelas;</li><li>kolom tersedia;</li><li>batasan aman;</li><li>hasil dapat diperiksa.</li></ul></div></div>
+        <aside class="notes"><p>Tunjukkan bahwa prompt baik tidak harus memakai istilah teknis. Peserta cukup menjelaskan pekerjaan dan meminta format hasil yang dapat dicek.</p></aside>
+      </section>
+
+      <section class="slide" data-title="Latihan singkat menyusun prompt">
+        <div class="topline"><span class="kicker">09 • Latihan teori</span><span class="slide-no">10 / 28</span></div>
+        <div class="section-head"><h2>Latihan 5 menit: ubah kebutuhan menjadi prompt</h2><p class="lead">Sebelum masuk ke dashboard, peserta belajar memberi instruksi yang bisa dipahami dan diuji.</p></div>
+        <div class="two-col-tight" style="margin-top:28px"><div class="quote"><b>Kebutuhan mentah:</b><br>“Saya ingin pimpinan tahu berapa surat yang belum selesai.”</div><div class="callout"><h3>Lengkapi dengan 5 hal</h3><ol style="margin:0;padding-left:22px;color:#36565a;font-size:19px;line-height:1.55"><li>peran dan tujuan;</li><li>konteks serta kolom;</li><li>batasan data;</li><li>format keluaran;</li><li>cara menguji hasil.</li></ol></div></div>
+        <div class="prompt-box">Peran dan tujuan: ...
+Konteks dan kolom: ...
+Batasan data: ...
+Format output: ...
+Cara uji: ...</div>
+        <div class="footer-chip">Prompt ini dipakai lagi saat praktik dashboard.</div>
+        <aside class="notes"><p>Pak Syam meminta dua atau tiga peserta membacakan prompt mereka. Tidak perlu mengoreksi semua detail; cukup tunjukkan perbedaan antara kebutuhan mentah dan instruksi yang lengkap.</p></aside>
+      </section>
+
+      <section class="slide" data-title="Dari teori ke praktik dashboard">
+        <div class="topline"><span class="kicker">10 • Serah terima</span><span class="slide-no">11 / 28</span></div>
+        <div class="section-head"><h2>Sekarang kita pakai cara berpikir itu untuk dashboard</h2><p class="lead">Yazid akan menunjukkan bagaimana prompt, data, dan verifikasi diterjemahkan menjadi prototipe yang bisa dibuka melalui link.</p></div>
+        <div class="flow" style="margin-top:32px"><div class="flow-step"><div class="no">01 • TANYAKAN</div><strong>Masalah kerja</strong><span>Informasi apa yang ingin dibaca lebih cepat?</span></div><div class="flow-step"><div class="no">02 • SIAPKAN</div><strong>Data</strong><span>Kolom, status, dan batasan yang aman.</span></div><div class="flow-step"><div class="no">03 • MINTA</div><strong>Prompt</strong><span>Instruksi yang jelas kepada ChatGPT.</span></div><div class="flow-step"><div class="no">04 • UJI</div><strong>Dashboard</strong><span>Angka, filter, tampilan, dan akses.</span></div></div>
+        <div class="quote" style="margin-top:28px"><b>Pak Syam:</b> cara berpikir dan batas aman. <b>Yazid:</b> langkah teknis dari Excel sampai dashboard.</div>
+        <aside class="notes"><p>Ini titik serah terima yang eksplisit. Pak Syam menutup teori dengan mengulang formula prompt. Yazid mulai dari data dan menunjukkan hasil akhir sebelum membuka Apps Script.</p></aside>
+      </section>
+
+<section class="slide" data-title="Hasil yang dibawa pulang">
+        <div class="topline"><span class="kicker">11 • Praktik: orientasi</span><span class="slide-no">12 / 28</span></div>
         <div class="section-head"><h2>Hasil yang dibawa pulang</h2><p class="lead">Peserta mengikuti satu alur sederhana dari file Excel sampai link dashboard.</p></div>
         <div class="data-flow">
           <div class="flow-box"><div class="mini">01 • Sumber</div><h3>Excel</h3><p>Data latihan atau data yang sudah diizinkan dan dianonimkan.</p></div><div class="flow-arrow">→</div>
@@ -203,7 +293,7 @@
       </section>
 
       <section class="slide" data-title="Masalah kerja: data ada, informasi belum cepat terbaca">
-        <div class="topline"><span class="kicker">02 • Masalah kerja</span><span class="slide-no">03 / 18</span></div>
+        <div class="topline"><span class="kicker">12 • Praktik: masalah kerja</span><span class="slide-no">13 / 28</span></div>
         <div class="section-head"><h2>Data ada, informasi belum cepat terbaca</h2><p class="lead">Dashboard dimulai dari pertanyaan kerja yang berulang, bukan dari keinginan memakai teknologi baru.</p></div>
         <div class="two-col-tight">
           <div class="callout"><h3>Sebelum</h3><ul class="list compact"><li>Membuka banyak baris satu per satu</li><li>Menghitung status secara manual</li><li>Mengulang rekap saat ada pertanyaan baru</li></ul></div>
@@ -214,14 +304,14 @@
       </section>
 
       <section class="slide" data-title="Dari Excel ke Google Sheets">
-        <div class="topline"><span class="kicker">03 • Impor data</span><span class="slide-no">04 / 18</span></div>
+        <div class="topline"><span class="kicker">13 • Praktik: impor data</span><span class="slide-no">14 / 28</span></div>
         <div class="section-head"><h2>Dari Excel ke Google Sheets</h2><p class="lead">File Excel menjadi sumber data. Dashboard membaca Google Sheets yang sudah diperiksa.</p></div>
         <div class="step-layout" style="margin-top:28px"><div class="step-copy"><div class="step-no"><b>1</b> siapkan sumber</div><h3>Upload dan buka file</h3><p>Unggah Excel ke Google Drive, lalu pilih <b>Open with Google Sheets</b>. Gunakan sheet latihan yang sudah disiapkan panitia.</p><ul class="list compact"><li>Sheet sumber bernama <code>Data</code></li><li>Header tidak diubah</li><li>Tanggal terbaca sebagai tanggal</li><li>Jumlah baris latihan: 100</li></ul><div class="footer-chip">Data latihan • bukan data resmi</div></div><div><div class="browser-shot medium"><img src="assets/dummy-rekap-layanan-data.png" alt="Preview data dummy rekap layanan kecamatan"></div><div class="shot-caption"><b>Contoh sumber:</b> satu baris mewakili satu record layanan latihan.</div></div></div>
         <aside class="notes"><p>Tunjukkan bahwa peserta tidak mulai dari spreadsheet kosong. Mereka harus mengenali sheet Data dan memeriksa header sebelum meminta bantuan AI.</p></aside>
       </section>
 
       <section class="slide" data-title="Data dictionary dan data aman">
-        <div class="topline"><span class="kicker">04 • Kolom dan keamanan</span><span class="slide-no">05 / 18</span></div>
+        <div class="topline"><span class="kicker">14 • Praktik: data dan keamanan</span><span class="slide-no">15 / 28</span></div>
         <div class="section-head"><h2>Data dictionary dan data aman</h2><p class="lead">Nama kolom menjelaskan apa yang dapat dihitung dan apa yang harus disembunyikan.</p></div>
         <table class="dictionary"><thead><tr><th>Kolom</th><th>Contoh</th><th>Dipakai untuk</th></tr></thead><tbody><tr><td><code>Tanggal</code></td><td>2026-01-13</td><td>Filter periode dan pembaruan data</td></tr><tr><td><code>Jenis_Layanan</code></td><td>Surat Keterangan</td><td>Grafik dan rekap kategori</td></tr><tr><td><code>Status</code></td><td>Selesai</td><td>KPI dan penyaring data</td></tr><tr><td><code>Unit_Penanggung_Jawab</code></td><td>Unit B</td><td>Rekap penanggung jawab</td></tr><tr><td><code>Jumlah_Permohonan</code></td><td>1</td><td>Dasar perhitungan total</td></tr></tbody></table>
         <div class="two-col-tight"><div class="callout"><h3 class="lime">Gunakan</h3><p>Data sintetis, angka agregat, nama unit samaran, dan wilayah umum.</p></div><div class="callout warn"><h3 class="coral">Jangan tempel</h3><p>NIK, nomor kontak, alamat lengkap, isi surat, aduan asli, password, token, atau API key.</p></div></div>
@@ -229,14 +319,14 @@
       </section>
 
       <section class="slide" data-title="Siapa memakai dashboard dan untuk pertanyaan apa">
-        <div class="topline"><span class="kicker">05 • Kebutuhan pengguna</span><span class="slide-no">06 / 18</span></div>
+        <div class="topline"><span class="kicker">15 • Praktik: kebutuhan pengguna</span><span class="slide-no">16 / 28</span></div>
         <div class="section-head"><h2>Siapa memakai dashboard dan untuk pertanyaan apa?</h2><p class="lead">Dashboard menjadi berguna ketika informasi dan pembacanya sudah jelas.</p></div>
         <div class="question-grid"><div class="question-list"><div class="question-item"><b>01</b><div><strong>Staf pengelola data</strong><span>Memeriksa apakah data sudah diperbarui dan statusnya konsisten.</span></div></div><div class="question-item"><b>02</b><div><strong>Koordinator atau pimpinan</strong><span>Melihat ringkasan tanpa membuka semua baris data.</span></div></div><div class="question-item"><b>03</b><div><strong>PIC tindak lanjut</strong><span>Menemukan status atau jenis layanan yang perlu diperiksa.</span></div></div></div><div class="callout"><h3>Contoh pertanyaan kerja</h3><ul class="list compact"><li>Berapa layanan yang masuk?</li><li>Berapa yang selesai?</li><li>Mana yang masih diproses?</li><li>Jenis layanan apa yang dominan?</li><li>Kapan data diperbarui?</li></ul></div></div>
         <aside class="notes"><p>Tekankan bahwa dashboard tidak harus menampilkan semua kolom. Dashboard memilih informasi yang membantu pembacanya.</p></aside>
       </section>
 
       <section class="slide" data-title="Dari kolom data ke KPI">
-        <div class="topline"><span class="kicker">06 • Definisi indikator</span><span class="slide-no">07 / 18</span></div>
+        <div class="topline"><span class="kicker">16 • Praktik: KPI</span><span class="slide-no">17 / 28</span></div>
         <div class="section-head"><h2>Dari kolom data ke KPI</h2><p class="lead">Angka dashboard harus memiliki definisi yang bisa dijelaskan.</p></div>
         <div class="kpi-grid"><div class="kpi-card"><div class="label">Total layanan</div><div class="number">100</div><p>Jumlah baris layanan valid; dataset latihan memakai satu permohonan per baris.</p></div><div class="kpi-card"><div class="label">Selesai</div><div class="number">25</div><p>Status bernilai <b>Selesai</b>.</p></div><div class="kpi-card"><div class="label">Masih diproses</div><div class="number">50</div><p>Status <b>Diproses</b> atau <b>Menunggu Dokumen</b>.</p></div></div>
         <div class="quote" style="margin-top:25px">Status <b>Dibatalkan</b> tetap dapat ditampilkan, tetapi tidak dihitung sebagai layanan selesai.</div>
@@ -244,7 +334,7 @@
       </section>
 
       <section class="slide" data-title="Contoh tampilan dashboard akhir">
-        <div class="topline"><span class="kicker">07 • Hasil yang dituju</span><span class="slide-no">08 / 18</span></div>
+        <div class="topline"><span class="kicker">17 • Praktik: hasil</span><span class="slide-no">18 / 28</span></div>
         <div class="section-head"><h2>Contoh tampilan dashboard akhir</h2><p class="lead">Peserta melihat hasil yang ingin dicapai sebelum melihat struktur kode.</p></div>
         <div class="browser-shot local-preview-shot" style="margin-top:24px"><img src="assets/local-dashboard-preview.png" alt="Dashboard lokal dengan tiga KPI, filter, grafik jenis layanan, dan tabel dari 100 data sintetis"></div>
         <div class="shot-caption"><b>Demo lokal teruji:</b> tampilan ini membaca fixture 100 baris dari workbook latihan. Ini bukan URL Google Apps Script live.</div>
@@ -252,7 +342,7 @@
       </section>
 
       <section class="slide" data-title="ChatGPT sebagai alat bantu">
-        <div class="topline"><span class="kicker">08 • Alat bantu AI</span><span class="slide-no">09 / 18</span></div>
+        <div class="topline"><span class="kicker">18 • Praktik: AI sebagai alat bantu</span><span class="slide-no">19 / 28</span></div>
         <div class="section-head"><h2>ChatGPT membantu proses, bukan menjadi dashboard</h2><p class="lead">Percakapan AI digunakan untuk merancang dan menjelaskan kode. Hasil akhir tetap diuji di Google Apps Script.</p></div>
         <div class="two-col-tight"><div class="callout"><h3 class="lime">ChatGPT membantu</h3><ul class="list compact"><li>menyusun KPI dari nama kolom</li><li>membuat `Code.gs` dan `Index.html`</li><li>menjelaskan fungsi kode</li><li>membantu membaca error</li></ul></div><div class="callout warn"><h3 class="coral">Tetap harus dilakukan manusia</h3><ul class="list compact"><li>memastikan data aman</li><li>mendefinisikan status</li><li>menguji angka dan filter</li><li>menentukan akses dan keputusan</li></ul></div></div>
         <div class="link-callout"><strong>Output workshop</strong><p>Dashboard web yang membaca Google Sheets dan dapat dibuka lewat link, bukan tampilan canvas ChatGPT.</p></div>
@@ -260,7 +350,7 @@
       </section>
 
       <section class="slide" data-title="Prompt dashboard berdasarkan kolom Sheet">
-        <div class="topline"><span class="kicker">09 • Prompt card</span><span class="slide-no">10 / 18</span></div>
+        <div class="topline"><span class="kicker">19 • Praktik: prompt dashboard</span><span class="slide-no">20 / 28</span></div>
         <div class="section-head"><h2>Prompt dashboard berdasarkan kolom Sheet</h2><p class="lead">Prompt menyebut data, indikator, batasan, dan bentuk output.</p></div>
         <div class="prompt-box">Bertindak sebagai mentor Google Apps Script untuk pemula.
 
@@ -276,14 +366,14 @@ Tampilkan dua file terpisah: CODE.GS dan INDEX.HTML. Pertahankan nama header. Je
       </section>
 
       <section class="slide" data-title="Membuka Google Apps Script">
-        <div class="topline"><span class="kicker">10 • Langkah browser</span><span class="slide-no">11 / 18</span></div>
+        <div class="topline"><span class="kicker">20 • Praktik: buka Apps Script</span><span class="slide-no">21 / 28</span></div>
         <div class="section-head"><h2>Membuka Google Apps Script dari Google Sheets</h2><p class="lead">Project dibuat dari Sheet agar kode langsung terhubung dengan sumber data.</p></div>
         <div class="step-layout" style="margin-top:25px"><div class="step-copy"><div class="step-no"><b>2</b> buka editor</div><h3>Ekstensi → Apps Script</h3><p>Gunakan Sheet yang sudah berisi data. Buka menu <b>Extensions / Ekstensi</b>, lalu pilih <b>Apps Script</b>.</p><ul class="list compact"><li>Editor terbuka di tab baru</li><li>Project terhubung dengan spreadsheet</li><li>Siapkan file `Code.gs` dan `Index.html`</li></ul><div class="quote" style="margin-top:18px;font-size:19px">Jangan mengubah nama sheet <b>Data</b> sebelum pengujian selesai.</div></div><div><div class="browser-shot tall"><img src="assets/01-google-sheets-extensions-apps-script.png" alt="Google Sheets dengan menu Extensions dan Apps Script terbuka"></div><div class="shot-caption"><b>Jalur visual:</b> buka Sheet → klik Extensions/Ekstensi → pilih Apps Script.</div></div></div>
         <aside class="notes"><p>Tunjukkan screenshot nyata dan sebutkan bahwa label menu dapat tampil dalam bahasa Inggris atau Indonesia.</p></aside>
       </section>
 
       <section class="slide" data-title="Menempatkan Code.gs dan Index.html">
-        <div class="topline"><span class="kicker">11 • Struktur project</span><span class="slide-no">12 / 18</span></div>
+        <div class="topline"><span class="kicker">21 • Praktik: struktur project</span><span class="slide-no">22 / 28</span></div>
         <div class="section-head"><h2>Menempatkan dua file</h2><p class="lead">Peserta menaruh dua potongan kode pada dua tempat yang berbeda.</p></div>
         <div class="two-col-tight"><div class="callout"><h3><code>Code.gs</code></h3><p>Kode pengolah data:</p><ul class="list compact"><li>fungsi `doGet()`</li><li>membaca sheet `Data`</li><li>menghitung KPI</li><li>menyiapkan baris tabel</li></ul></div><div class="callout" style="border-top-color:var(--lime)"><h3><code>Index.html</code></h3><p>Kode tampilan:</p><ul class="list compact"><li>kartu ringkasan</li><li>filter dan grafik</li><li>tabel data</li><li>JavaScript browser</li></ul></div></div>
         <div class="data-flow" style="margin-top:25px"><div class="flow-box"><div class="mini">File 1</div><h3>Tempel Code.gs</h3><p>Ganti contoh kode server.</p></div><div class="flow-arrow">→</div><div class="flow-box"><div class="mini">File 2</div><h3>Buat Index</h3><p>Add a file → HTML → Index.</p></div><div class="flow-arrow">→</div><div class="flow-box"><div class="mini">Hasil</div><h3>Simpan dan uji</h3><p>Pastikan nama file cocok.</p></div></div>
@@ -291,14 +381,14 @@ Tampilkan dua file terpisah: CODE.GS dan INDEX.HTML. Pertahankan nama header. Je
       </section>
 
       <section class="slide" data-title="Dashboard berjalan">
-        <div class="topline"><span class="kicker">12 • Hasil demo</span><span class="slide-no">13 / 18</span></div>
+        <div class="topline"><span class="kicker">22 • Praktik: dashboard berjalan</span><span class="slide-no">23 / 28</span></div>
         <div class="section-head"><h2>Dashboard membaca data dan menampilkannya</h2><p class="lead">Setelah dua file ditempatkan, uji apakah angka dan baris berubah sesuai Sheet.</p></div>
         <div class="two-col-tight"><div class="preview-dashboard" style="margin-top:0"><div class="preview-top"><strong>Dashboard web</strong><span>link / web app</span></div><div class="preview-cards"><div class="preview-card"><b>100</b><span>Total</span></div><div class="preview-card"><b>25</b><span>Selesai</span></div><div class="preview-card"><b>50</b><span>Diproses</span></div></div></div><div class="checklist-box"><div class="checklist-line"><b>01</b><span>Halaman terbuka tanpa error.</span></div><div class="checklist-line"><b>02</b><span>KPI sesuai hitungan manual.</span></div><div class="checklist-line"><b>03</b><span>Tabel menampilkan data `Data`.</span></div><div class="checklist-line"><b>04</b><span>Filter mengubah hasil yang terlihat.</span></div><div class="checklist-line"><b>05</b><span>Tanggal pembaruan tampil.</span></div></div></div>
         <aside class="notes"><p>Jangan menyebut dashboard berhasil hanya karena halaman terbuka. Periksa angka, filter, dan data sumber.</p></aside>
       </section>
 
       <section class="slide" data-title="Satu perubahan kecil">
-        <div class="topline"><span class="kicker">13 • Praktik terarah</span><span class="slide-no">14 / 18</span></div>
+        <div class="topline"><span class="kicker">23 • Praktik: perubahan kecil</span><span class="slide-no">24 / 28</span></div>
         <div class="section-head"><h2>Ubah satu hal, lalu uji</h2><p class="lead">Peserta tidak perlu membangun ulang seluruh aplikasi. Pilih satu perubahan kecil.</p></div>
         <div class="upload-grid"><div class="upload-step"><div class="step-no">Pilihan 1</div><h3>Filter unit</h3><p>Tambahkan penyaring berdasarkan `Unit_Penanggung_Jawab`.</p></div><div class="upload-step"><div class="step-no">Pilihan 2</div><h3>Label KPI</h3><p>Ubah label agar sesuai istilah yang dipakai tim.</p></div><div class="upload-step"><div class="step-no">Pilihan 3</div><h3>Kolom tabel</h3><p>Tambahkan `Kanal` tanpa menghapus kolom lain.</p></div></div>
         <div class="prompt-box">Pada dashboard yang sudah berjalan, tambahkan satu filter berdasarkan Unit_Penanggung_Jawab. Jangan mengubah nama header dan jangan menghapus fitur yang sudah berjalan. Jelaskan file/fungsi yang diubah dan tiga langkah pengujian.</div>
@@ -306,7 +396,7 @@ Tampilkan dua file terpisah: CODE.GS dan INDEX.HTML. Pertahankan nama header. Je
       </section>
 
       <section class="slide" data-title="Testing dan verifikasi">
-        <div class="topline"><span class="kicker">14 • Testing</span><span class="slide-no">15 / 18</span></div>
+        <div class="topline"><span class="kicker">24 • Praktik: testing</span><span class="slide-no">25 / 28</span></div>
         <div class="section-head"><h2>Testing dan verifikasi</h2><p class="lead">Dashboard dapat terlihat benar tetapi tetap memiliki KPI atau filter yang salah.</p></div>
         <div class="two-col-tight"><div class="callout"><h3>Checklist data</h3><ul class="list compact"><li>Header sesuai</li><li>Tanggal terbaca</li><li>Status konsisten</li><li>Baris tidak kosong</li><li>Data tidak sensitif</li></ul></div><div class="callout" style="border-top-color:var(--lime)"><h3>Checklist hasil</h3><ul class="list compact"><li>Hitung KPI secara manual</li><li>Ubah satu record</li><li>Coba filter status</li><li>Periksa tabel dan grafik</li><li>Catat error lengkap</li></ul></div></div>
         <div class="link-callout"><strong>Aturan diagnosis</strong><p>Jika ada error, kirim pesan lengkap, nama fungsi, tindakan terakhir, dan header yang tersedia. Minta perubahan sekecil mungkin.</p></div>
@@ -314,14 +404,14 @@ Tampilkan dua file terpisah: CODE.GS dan INDEX.HTML. Pertahankan nama header. Je
       </section>
 
       <section class="slide" data-title="Menerbitkan dashboard sebagai link">
-        <div class="topline"><span class="kicker">15 • Link web app</span><span class="slide-no">16 / 18</span></div>
+        <div class="topline"><span class="kicker">25 • Praktik: link web app</span><span class="slide-no">26 / 28</span></div>
         <div class="section-head"><h2>Menerbitkan dashboard sebagai link</h2><p class="lead">Deployment membuat project dapat dibuka di browser dengan aturan akses tertentu.</p></div>
         <div class="step-layout" style="margin-top:23px"><div class="step-copy"><div class="step-no"><b>5</b> jalur publish</div><h3>Deploy → Web app</h3><ul class="list compact"><li>Pilih <b>New deployment</b></li><li>Pilih tipe <b>Web app</b></li><li>Periksa akun eksekusi dan akses</li><li>Salin URL dan uji</li><li>Jangan pilih publik tanpa keputusan tim</li></ul><div class="link-callout"><strong>Belum ada URL, belum ada klaim berhasil.</strong><p>Jika akses bermasalah, gunakan screenshot dan catatan blocker sebagai fallback.</p></div></div><div><div class="browser-shot editor"><img src="assets/06-deployment-menu-110.jpg" alt="Menu deployment Google Apps Script"></div><div class="shot-caption"><b>Panduan menu:</b> screenshot menunjukkan jalur menu, bukan bukti link publik aktif.</div></div></div>
         <aside class="notes"><p>Deployment dapat dipengaruhi akun, hak akses, dan kebijakan organisasi. Untuk waktu 80 menit, deployment semua kelompok tidak wajib.</p></aside>
       </section>
 
       <section class="slide" data-title="Checklist hasil kelompok">
-        <div class="topline"><span class="kicker">16 • Praktik kelompok</span><span class="slide-no">17 / 18</span></div>
+        <div class="topline"><span class="kicker">26 • Praktik kelompok</span><span class="slide-no">27 / 28</span></div>
         <div class="section-head"><h2>Checklist hasil kelompok</h2><p class="lead">Nilai proses dan kemampuan menjelaskan alur, bukan banyaknya fitur.</p></div>
         <div class="case-grid compact"><div class="case"><div class="case-no">Kelompok 1</div><h3>Rekap layanan</h3><p>Data layanan, status, unit, dan jenis layanan.</p><strong>Output</strong><ul><li>3 KPI + filter status</li><li>tabel + grafik jenis layanan</li></ul></div><div class="case"><div class="case-no">Kelompok 2</div><h3>Surat dan disposisi</h3><p>Data surat latihan, prioritas, tenggat, dan status.</p><strong>Output</strong><ul><li>status disposisi</li><li>tenggat dan unit tujuan</li></ul></div><div class="case"><div class="case-no">Kelompok 3</div><h3>Agenda internal</h3><p>Data kegiatan, persiapan, lokasi umum, dan peserta rencana.</p><strong>Output</strong><ul><li>status persiapan</li><li>agenda mendatang</li></ul></div></div>
         <div class="two-col-tight"><div class="callout"><h3>Wajib disimpan</h3><ul class="list compact"><li>data source</li><li>prompt utama</li><li>screenshot atau link</li><li>checklist testing</li></ul></div><div class="callout" style="border-top-color:var(--lime)"><h3>Wajib dijelaskan</h3><ul class="list compact"><li>pertanyaan kerja</li><li>definisi KPI</li><li>batasan data</li><li>PIC tindak lanjut</li></ul></div></div>
@@ -329,7 +419,7 @@ Tampilkan dua file terpisah: CODE.GS dan INDEX.HTML. Pertahankan nama header. Je
       </section>
 
       <section class="slide closing" data-title="Langkah setelah workshop">
-        <div class="topline"><span class="kicker">Penutup</span><span class="slide-no">18 / 18</span></div>
+        <div class="topline"><span class="kicker">27 • Penutup</span><span class="slide-no">28 / 28</span></div>
         <div class="section-head"><h2>Langkah setelah workshop</h2><p class="lead">Mulai dari data sintetis, uji satu hal, dan tunjuk PIC yang bertanggung jawab atas data.</p></div>
         <div class="timeline compact"><div class="time"><b>01</b><h3>Data aman</h3><p>Gunakan data yang diizinkan dan dianonimkan.</p></div><div class="time"><b>02</b><h3>KPI jelas</h3><p>Definisikan angka sebelum membuat tampilan.</p></div><div class="time"><b>03</b><h3>Uji</h3><p>Bandingkan hasil dengan hitungan manual.</p></div><div class="time"><b>04</b><h3>Akses</h3><p>Bagikan link hanya kepada pihak yang berhak.</p></div><div class="time"><b>05</b><h3>Tindak lanjut</h3><p>Tentukan PIC dan perubahan berikutnya.</p></div></div>
         <div class="quote" style="margin-top:27px">Dashboard membantu orang membaca data lebih cepat. Verifikasi manusia tetap diperlukan.</div>
@@ -341,7 +431,7 @@ Tampilkan dua file terpisah: CODE.GS dan INDEX.HTML. Pertahankan nama header. Je
 
   <div class="controls" aria-label="Kontrol presentasi">
     <button id="prev" title="Slide sebelumnya" aria-label="Slide sebelumnya">←</button>
-    <span class="counter" id="counter">01 / 18</span>
+    <span class="counter" id="counter">01 / 28</span>
     <button id="next" title="Slide berikutnya" aria-label="Slide berikutnya">→</button>
     <span class="divider"></span>
     <button id="notesBtn" title="Tampilkan catatan presenter" aria-label="Tampilkan catatan presenter">N</button>
@@ -359,8 +449,8 @@ Tampilkan dua file terpisah: CODE.GS dan INDEX.HTML. Pertahankan nama header. Je
       const notesText = document.getElementById('notesText');
       let current = 0;
       let isOverview = false;
-      const owners = ['shared','yazid','yazid','yazid','syam','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','shared','shared'];
-      const ownerLabels = {syam:{letter:'S',text:'PAK SYAM · BASIC AI'},yazid:{letter:'Y',text:'YAZID · PRAKTIK DASHBOARD'},shared:{letter:'↔',text:'BERSAMA'}};
+      const owners = ['shared','shared','syam','syam','syam','syam','syam','syam','syam','syam','shared','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','yazid','shared','shared'];
+      const ownerLabels = {syam:{letter:'S',text:'PAK SYAM · TEORI AI'},yazid:{letter:'Y',text:'YAZID · PRAKTIK DASHBOARD'},shared:{letter:'↔',text:'BERSAMA'}};
       slides.forEach((slide,i)=>{const owner=ownerLabels[owners[i]||'shared'];const top=slide.querySelector('.topline');if(top&&owner){const badge=document.createElement('span');badge.className='owner-badge owner-'+(owners[i]||'shared');badge.innerHTML='<b>'+owner.letter+'</b> '+owner.text;badge.setAttribute('aria-label',owner.text);top.insertBefore(badge,top.querySelector('.slide-no'));}});
       function safeIndex(n){return Math.max(0,Math.min(slides.length-1,n));}
       function slideHash(n){return '#slide-'+(n+1);}

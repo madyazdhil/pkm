@@ -86,4 +86,12 @@
 - The starter Apps Script uses `setupSpreadsheetId()` once, then `SpreadsheetApp.openById()` for the web-app path. It validates the exact primary headers, one request per row, known statuses, duplicate IDs, dates, and numeric fields.
 - Local preview is not cloud evidence. No deployment/access claim is valid until a real URL is opened and tested.
 - Participant support files now include import/deploy guide, worksheet, checklist, pre/post evaluation, and facilitator preflight/access guide.
-- Deck is 18 slides, light/projector-first, with local rendered dashboard evidence on slide 8 and 80-minute target rundown.
+- Deck is now 28 slides, light/projector-first, with a distinct Pak Syam theory block (basic AI, Generative AI, safety, verification, and prompting) followed by Yazid’s dashboard practice block. Local rendered dashboard evidence is in the practical section; the 2-hour split remains a working rundown to confirm with the team.
+
+
+## Speaker split correction — 2026-10-04
+
+- User clarified that the material must be explicitly divided: Pak Syam handles the theory block, while Yazid handles hands-on dashboard practice.
+- The canonical deck was expanded from 18 to 28 slides. Pak Syam owns slides 3–10: Basic AI, Generative AI, use cases, limitations, human verification, data safety, prompting formula, prompt comparison, and a short prompt exercise.
+- Yazid owns slides 12–26: Excel/Sheets, data dictionary, KPI, ChatGPT assistance, Apps Script, two-file structure, testing, and deployment. Slides 1, 2, 11, 27, and 28 are shared/transition/closing.
+- The prior 18-slide version was too compressed for the agreed two-presenter structure.

@@ -2997,3 +2997,56 @@ Local commit dibuat:
 `6a2c8c9 feat(pkm-smt3): package workshop dashboard materials`
 
 Belum dipush ke GitHub karena turn ini belum memberi otorisasi eksplisit untuk menjalankan aksi cloud/deployment atau mempromosikan hasil ke remote.
+
+### User — 2026-10-04
+
+> INI KOK DIA CUMAN 18 SILIDE YAH KEK MANA MAS SYAM MAU NGEJELASIN MAGERI NYA TETNANG BASI C AI TRSU CARA PROMPTING YANG BENAR ETC APA AP ANYA INI SOALNYA INI MAERINYA BAGI 2 AKU YANG PRAKTEK DIA YANG TEORI
+
+Status: requested revision of the workshop deck structure. The 18-slide remediation compressed the material too aggressively and did not leave enough explicit theory slides for Pak Syam; the deck must now clearly separate Syam's theory segment from Yazid's practical dashboard segment, including AI basics and correct prompting.
+
+### Assistant [Codex] — correction progress
+
+Iya, kamu benar—aku salah menganggap deck ini hanya untuk bagian praktikmu. Akibatnya, materi dasar AI dan prompting untuk Mas Syam malah terpangkas.
+
+Aku sedang memperbaikinya menjadi **dua bagian yang jelas: teori AI dan prompting untuk Mas Syam, lalu praktik dashboard untuk kamu**. Bukan sekadar menambah jumlah slide; aku juga menambahkan contoh prompt, latihan singkat, catatan pembicara, dan transisi antarbagian.
+
+#### Execution trace [Codex]
+- Objective: restore the two-presenter brief without losing the validated datasets and dashboard practice.
+- Pre-edit collision check: clean project working tree, no active model variants; continued the same Codex implementation.
+- Canonical deck expanded to 28 slides. Added theory, prompting examples/exercise, handoff, presenter guide and ownership.
+- Initial QA passed after fitting the prompt exercise, but the 11px fallback is being replaced with shorter content and readable text rather than treating overflow-only QA as sufficient.
+- Reconcile scheduling: the user confirmed speaker roles, not an extension to 120 minutes. Keep an 80-minute working scenario and a conditional 120-minute scenario, both subject to team confirmation.
+- Consulted official OpenAI prompting documentation (ChatGPT Learn and API prompt engineering) to check context, output, constraints, examples and iterative refinement.
+
+#### Failed Attempt [Codex]
+- Old-deck extraction initially used unavailable `bs4`; recovered with standard-library HTMLParser without installing dependencies.
+- Document-update script raised TypeError from adding text to a Path; inspected partial writes and completed the missing files with separate text/path variables.
+- QA caught the prompt exercise overflowing at 1440×810, then 1280×720; shortened/restructured layout rather than suppressing the test.
+- One CSS edit used a workspace-relative path from the project cwd, causing FileNotFoundError; corrected the relative path.
+- One validation shell command had unmatched quotes; reran using a quoted heredoc.
+- `git diff --check` found trailing whitespace in deck copies; removed whitespace. Archive manifest must be regenerated after final changes.
+- Official documentation Markdown endpoint returned an internal error; read the matching official HTML page instead.
+
+
+### Continuation implementation — 4 October 2026
+
+#### Implemented [Codex]
+- Expanded the canonical deck from 18 to 28 slides so the two-presenter brief is explicit.
+- Pak Syam now owns slides 3–10: Basic AI, Generative AI, examples for office work, limitations, human verification, data safety, prompting formula, prompt comparison, and a prompt exercise.
+- Yazid now owns slides 12–26: Excel/Sheets, work questions, data dictionary, KPI, ChatGPT as an aid, prompt-to-dashboard, Apps Script, two files, testing, and deployment.
+- Shared slides cover opening, role split, handoff, group checklist, and closing.
+- Added `materials/workshop/panduan-pemateri-dua-sesi.md`.
+- Rewrote `materials/workshop/02-outline-deck-chat-to-gas.md` to match the split.
+- Updated the workshop draft, facilitator preflight, README, audit, plan, state, memory, canvas, and QA expectations.
+- Refreshed the workshop bundle and ZIP archive so it contains the 28-slide deck and presenter materials.
+
+#### Verification
+- `python3 scripts/qa_html_deck.py` — pass at 1440×810 and 1280×720, including navigation, hash reload, notes, overview, print count, and local preview.
+- Dataset QA, XLSX verification, and starter dashboard QA — pass.
+- Static deck check — 28 slide sections, 28 owner entries, theory/practice markers present.
+- `git diff --check` — pass.
+- Bundle checksum and ZIP integrity — pass.
+
+#### Remaining
+- Google Sheets import, cloud Apps Script configuration, deployment URL, and cross-account access remain intentionally pending real-account authorization and verification.
+- Final speaker timing must be confirmed with Pak Syam/Taufik; both 80-minute core and approximately 120-minute full-workshop scenarios are documented.

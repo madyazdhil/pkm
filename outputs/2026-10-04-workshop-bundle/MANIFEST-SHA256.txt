@@ -1,5 +1,5 @@
-c153032642168228e96c6e14b2998b13267bcce946fb674855150763298c35b7  ./01-deck/README.md
-1a968fd0138538469fd1161fb9a26f248e5483c7a6d98fc76c4424a420f72fab  ./01-deck/ai-dashboard-gas-workshop.html
+8f915306941de975189781b2374d8953cce8c994346bd8e8a4793c0b0d7e747e  ./01-deck/README.md
+04d0c47d4e0a2bc8403f03111d6fd58977e968ced00f09ddbf9191f031885bea  ./01-deck/ai-dashboard-gas-workshop.html
 e34e7c93a2758407492dde9ec71187b6fbde45c4ea0f7520409d20ea247f1dd7  ./01-deck/assets/01-apps-script-home-110.jpg
 b4cbfc4549a3a04fa43f6e8571524d1f42eea6227df4ae24ce7640a258112203  ./01-deck/assets/01-google-sheets-extensions-apps-script.png
 d219db71ce290217dbe4fe4506f3412d6ff619b8acc921b00c15ca6e92369246  ./01-deck/assets/02-codegs-editor-110.jpg
@@ -10,7 +10,7 @@ a1766d09857a80e71a9797c745c82a79a7c9265b015211b1d4bbb69ee281fa0b  ./01-deck/asse
 e4b2d14bd8a5478a1b9075683de8dafa3a47418fbcf7b3bc91bdca0edc0362f4  ./01-deck/assets/dummy-rekap-layanan-data.png
 c5e1233de018191a888b3e1a74a2343cb3e728cd4a9fcb270eba0ec8d6e57e8a  ./01-deck/assets/dummy-rekap-layanan-guide.png
 31d562cde6df69531568a9af9a189027897d8e99c16d0aa8ff6fd865562753e8  ./01-deck/assets/local-dashboard-preview.png
-bfe759c7c3c7c04bb96e5d41a3ac11fb9259cef9fa3a48db56b2d0114187aa02  ./01-deck/index.html
+6e653efdb9c0fbec70a86705afac94bf2558d739b420ee0df138bec0c5ea062c  ./01-deck/index.html
 9809df336d321fa3c30067f3c4c3c2ea9d8cd2cc479b18abf6c3e2e81840fdd4  ./02-starter-dashboard/Code.gs
 69058295f8d1228f8d0924e2b7cd9e5d9b8ed3688f11b1b60d90f82a47854cbf  ./02-starter-dashboard/Index.html
 31b689f01bf50561685a4395e6bff2c5bba99effa9086e17ca2ef69b5dbd593d  ./02-starter-dashboard/PROMPT_CARD.md
@@ -28,11 +28,13 @@ b90102fd283e243e0454143b65993442e0ea5457887c72c2e48205b2cdfe48c4  ./03-datasets/
 b8ecc826b5c44d3f6b6d1c4d9fde358f5aac0be060e76b329b7c148787294d17  ./03-datasets/previews/dummy-data-monitoring-surat-disposisi-guide.png
 e4b2d14bd8a5478a1b9075683de8dafa3a47418fbcf7b3bc91bdca0edc0362f4  ./03-datasets/previews/dummy-data-rekap-layanan-kecamatan-data.png
 76d000cefcee78b4a40093e013c71a276e724ac2a31cb1b2ae92cf671817e9c7  ./03-datasets/previews/dummy-data-rekap-layanan-kecamatan-guide.png
+f9c513430872466217ca044d5db2e83c205b73a1d303be40054aa47d19196e27  ./04-participant-kit/02-outline-deck-chat-to-gas.md
 9d1bb2be3fd06917c0f38718c1b7851a4b346646c1fa2a633733c77e0a08cc3b  ./04-participant-kit/checklist-data-dashboard.md
 79a28daea33697a8456742b3daf4e8ff15a86c65d6d2e961a5d42c3f5fc62c3b  ./04-participant-kit/evaluation-pre-post-dashboard.md
-42a83c2a72594fe8fadc3fb5f6cbed9636dec3af0b7097752aa73a75ce78feb8  ./04-participant-kit/facilitator-preflight-and-access.md
+21b1d9bd8c4404d0f1b511335993c622e19152b34f1db21555fda21b9cead677  ./04-participant-kit/facilitator-preflight-and-access.md
+4619ad11a3f511a51eb6b038c0cf1d6a63da2f4b83cf4ed06fdcd6ff786284db  ./04-participant-kit/panduan-pemateri-dua-sesi.md
 af4c7a37931323a8d4e84c519d096ef39b450f7e097c3b5a0408ee11546b44d7  ./04-participant-kit/participant-import-and-deploy-guide.md
 90c0659501fe88b4f350e78cef8273e95491761a6ce5c3ec836d2c063a523524  ./04-participant-kit/participant-worksheet-dashboard.md
-8aa4c0056e4c3ccc1493398104bd4c5aa65cfaa166d7acc81bac73d61cabc612  ./QA-STATUS.md
-707e2e1135cd72ae36a2e35dd531abb970e80f5602013f773cf525073cd5ad7d  ./README.md
-a22a3e3ce4a5f4ff9a9887caf9f66d511ad3d0caa1c890035b214f630d0f4a41  ./START-HERE.md
+51be4f7e9fed41018c249dcf1038f6397193a6345f2a88e0b7ddd3824d4d0271  ./QA-STATUS.md
+9e6b10220d2050a6f1a5ba86524caff5f341d8a7f5b639e071d32f229adc403e  ./README.md
+437421c794d0e113e2950f4fcc78aef770657bfb12f73455da08e2fce9038141  ./START-HERE.md

@@ -16,7 +16,7 @@ Penilaian ringkas:
 | Kesesuaian dengan tema AI + dashboard | 7/10 | Alurnya jelas dari ChatGPT → Apps Script → dashboard. |
 | Kesesuaian dengan audience staf/aparatur kecamatan | 5/10 | Terlalu cepat masuk ke istilah dan struktur coding; konteks kerja nyata masih umum. |
 | Kesesuaian dengan brief “dashboard pelayanan / menampilkan informasi dari data tertentu” | 6/10 | Fitur dashboard disebutkan, tetapi contoh data, pertanyaan kerja, dan tampilan hasil belum cukup konkret. |
-| Kelayakan untuk durasi pelaksanaan | 4/10 | Deck 28 slide dan target praktiknya terlalu besar jika materi efektif hanya sekitar 80 menit. |
+| Kelayakan untuk durasi pelaksanaan | 6/10 | Versi awal terlalu besar untuk slot praktik 80 menit; setelah pembagian teori + praktik, deck 28 slide lebih masuk akal untuk rundown dua jam, tetapi tetap perlu disiplin waktu. |
 | Keamanan dan verifikasi AI | 8/10 | Bagian ini sudah kuat dan bertanggung jawab. |
 | Kesiapan sebagai materi siap dibawakan | 6/10 | Perlu satu use case utama, dataset latihan, starter kit, dan alur praktik yang lebih realistis. |
 
@@ -182,9 +182,9 @@ Subjudul:
 
 Dengan susunan tersebut, peserta belajar inti dashboard tanpa harus membangun aplikasi besar.
 
-## 6. Rekomendasi struktur deck baru
+## 6. Rekomendasi struktur deck baru — rekomendasi audit awal
 
-Deck 28 slide sekarang dapat dipadatkan menjadi sekitar 16–18 slide inti:
+Audit awal menyarankan deck 28 slide dipadatkan menjadi sekitar 16–18 slide inti. Rekomendasi ini kemudian direvisi setelah pembagian pemateri dikonfirmasi; struktur canonical sekarang kembali menjadi 28 slide agar teori Pak Syam dan praktik Yazid sama-sama memiliki ruang.
 
 1. Judul dan hasil belajar.
 2. Masalah kerja: rekap layanan masih perlu dibaca satu per satu.
@@ -282,6 +282,19 @@ QA visual otomatis belum dapat dijalankan ulang pada 3 Oktober 2026 karena envir
 
 ## 11. Penutupan audit setelah eksekusi lokal — 4 Oktober 2026
 
-Remediasi lokal menutup gap utama yang ditemukan dalam audit: satu use case utama, workbook 100 baris yang lebih konsisten, data dictionary, definisi KPI, preview dashboard hasil render, alur dua file Apps Script, validasi data, checklist, worksheet, evaluasi, dan fallback deployment. Deck sekarang berjumlah 18 slide dan lulus QA pada viewport 1440×810 serta 1280×720.
+Remediasi lokal menutup gap utama yang ditemukan dalam audit: satu use case utama, workbook 100 baris yang lebih konsisten, data dictionary, definisi KPI, preview dashboard hasil render, alur dua file Apps Script, validasi data, checklist, worksheet, evaluasi, dan fallback deployment. Setelah umpan balik pembagian pemateri, deck diperluas menjadi 28 slide: blok teori Pak Syam (basic AI, Generative AI, keamanan, verifikasi, dan prompting) lalu blok praktik dashboard Yazid. Versi revisi perlu menjalani QA ulang pada viewport 1440×810 serta 1280×720.
 
 Yang **belum** dapat dinyatakan selesai dari audit adalah import ke Google Sheets pada akun workshop, konfigurasi cloud, deployment web app, dan uji akses lintas akun. Hal tersebut memerlukan aksi pada akun Google dan URL nyata; tidak boleh digantikan oleh screenshot menu atau preview lokal.
+
+
+## 12. Koreksi pembagian pemateri — 4 Oktober 2026
+
+Audit awal terlalu agresif memadatkan deck menjadi 18 slide. Itu membuat bagian teori Pak Syam tentang basic AI, Generative AI, keamanan data, verifikasi manusia, dan prompting tidak memiliki ruang yang cukup.
+
+Revisi canonical:
+
+- **Pak Syam:** slides 3–10 untuk teori dan latihan prompt singkat.
+- **Yazid:** slides 12–26 untuk praktik dashboard dari Excel sampai testing/link.
+- **Bersama:** slides 1–2, 11, 27–28 untuk pembukaan, pembagian peran, serah-terima, checklist, dan penutup.
+
+Status: implemented locally; QA slide-count/layout dan salinan bundle perlu dijalankan ulang.

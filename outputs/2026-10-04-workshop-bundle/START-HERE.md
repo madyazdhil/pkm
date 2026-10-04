@@ -1,25 +1,27 @@
-# Paket Workshop Dashboard Pelayanan Kecamatan
+# Paket Workshop Generative AI + Dashboard Pelayanan Kecamatan
 
 Paket ini adalah bahan siap pakai untuk workshop aparatur/staf Kecamatan Tambun Selatan.
-Alur utama yang diajarkan:
+Sesi dibagi menjadi dua blok:
 
-`Excel → Google Sheets → ChatGPT sebagai alat bantu → Google Apps Script → link dashboard`
+1. **Pak Syam — teori:** basic AI, Generative AI, keamanan data, verifikasi manusia, dan prompting yang benar.
+2. **Yazid — praktik:** Excel → Google Sheets → ChatGPT sebagai alat bantu → Google Apps Script → dashboard yang diuji.
 
 ## Urutan penggunaan fasilitator
 
 1. Buka `01-deck/ai-dashboard-gas-workshop.html` di browser.
-2. Gunakan `03-datasets/dummy-data-rekap-layanan-kecamatan.xlsx` sebagai demo utama.
-3. Ikuti `04-participant-kit/facilitator-preflight-and-access.md` sebelum hari H.
-4. Bagikan `04-participant-kit/participant-import-and-deploy-guide.md`, worksheet, checklist, dan evaluasi kepada peserta.
-5. Gunakan `02-starter-dashboard/` untuk menyalin `Code.gs` dan `Index.html` ke project Apps Script.
-6. Jika deployment cloud belum diuji, gunakan `02-starter-dashboard/preview.html` atau screenshot deck sebagai fallback.
+2. Gunakan slide 3–10 untuk blok teori Pak Syam.
+3. Serahkan ke Yazid pada slide 11, lalu gunakan slide 12–26 untuk praktik dashboard.
+4. Gunakan `03-datasets/dummy-data-rekap-layanan-kecamatan.xlsx` sebagai demo utama.
+5. Ikuti `04-participant-kit/facilitator-preflight-and-access.md` dan `04-participant-kit/panduan-pemateri-dua-sesi.md` sebelum hari H.
+6. Bagikan panduan import/deploy, worksheet, checklist, prompt card, dan evaluasi kepada peserta.
+7. Jika deployment cloud belum diuji, gunakan `02-starter-dashboard/preview.html` atau screenshot deck sebagai fallback.
 
 ## Isi paket
 
-- `01-deck/` — deck HTML 18 slide, README, dan asset screenshot/preview.
-- `02-starter-dashboard/` — Code.gs, Index.html, prompt card, fixture, dan preview lokal.
+- `01-deck/` — deck HTML 28 slide, README, dan asset screenshot/preview.
+- `02-starter-dashboard/` — `Code.gs`, `Index.html`, prompt card, fixture, dan preview lokal.
 - `03-datasets/` — tiga workbook Excel, masing-masing 100 baris dengan sheet `Data` dan `Panduan`.
-- `04-participant-kit/` — panduan import/deploy, worksheet, checklist, evaluasi, dan preflight fasilitator.
+- `04-participant-kit/` — panduan pemateri dua sesi, outline, panduan peserta, worksheet, checklist, evaluasi, dan preflight fasilitator.
 
 ## Batas klaim
 

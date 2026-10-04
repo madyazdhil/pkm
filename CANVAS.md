@@ -51,7 +51,7 @@ Demo cloud yang digunakan:
 - 🧾 **Manifest provenance capture:** [CAPTURE-MANIFEST.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/assets/CAPTURE-MANIFEST.md)
 - 🧪 **QA script:** [qa_html_deck.py](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/scripts/qa_html_deck.py)
 
-Deck sekarang berisi 18 slide dan dapat dibuka langsung melalui `file://`. Capture browser berasal dari Chrome zoom 110% dan hanya dipakai sebagai bukti langkah UI Apps Script. Deck tidak mengklaim deployment web app berhasil karena URL deployment belum tersedia.
+Deck canonical sekarang berisi 28 slide dan dapat dibuka langsung melalui `file://`. Struktur baru memisahkan blok teori Pak Syam dari blok praktik dashboard Yazid. Capture browser berasal dari Chrome zoom 110% dan hanya dipakai sebagai bukti langkah UI Apps Script. Deck tidak mengklaim deployment web app berhasil karena URL deployment belum tersedia.
 
 ## Accessibility revision — 26 September 2026
 
@@ -145,5 +145,14 @@ Cloud status: Google Sheets import, Apps Script configuration, deployment URL, a
 
 - 📦 **Folder paket workshop:** [2026-10-04-workshop-bundle/](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/outputs/2026-10-04-workshop-bundle)
 - 🗜️ **Arsip ZIP siap dibagikan:** [pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/outputs/pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip)
-- Isi paket: deck HTML 18 slide beserta asset, starter Apps Script, tiga workbook dummy 100 baris, handout peserta, worksheet, checklist, evaluasi, preflight fasilitator, status QA, dan manifest checksum.
+- Isi paket: deck HTML 28 slide beserta asset, blok teori dan praktik dengan ownership badge, starter Apps Script, tiga workbook dummy 100 baris, handout peserta, worksheet, checklist, evaluasi, preflight fasilitator, status QA, dan manifest checksum.
 - Status cloud tetap pending: arsip ini tidak mengklaim URL Web App Google yang live sebelum deployment dan akses diuji pada akun nyata.
+
+
+## Speaker split correction — 4 October 2026
+
+- ✅ **Deck 28 slide:** [ai-dashboard-gas-workshop.html](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+- 🟠 **Pak Syam / teori:** slides 3–10 — Basic AI, Generative AI, contoh penggunaan, batasan, verifikasi, keamanan data, prompting, dan latihan prompt.
+- 🟢 **Yazid / praktik:** slides 12–26 — data Excel/Sheets, KPI, prompt dashboard, Apps Script, dua file, testing, dan deployment.
+- ↔ **Bersama:** pembukaan, pembagian peran, serah-terima, checklist kelompok, dan penutup.
+- Alasan revisi: versi 18 slide terlalu padat dan belum memberi ruang yang cukup untuk bagian teori Pak Syam.

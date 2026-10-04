@@ -10,7 +10,7 @@ for (const viewport of viewports) {
   const page = await browser.newPage({ viewport });
   await page.goto(deck, { waitUntil: 'networkidle' });
   const count = await page.locator('.slide').count();
-  if (count !== 18) throw new Error(`${viewport.width}x${viewport.height}: expected 18 slides, got ${count}`);
+  if (count !== 28) throw new Error(`${viewport.width}x${viewport.height}: expected 28 slides, got ${count}`);
   const imageCount = await page.locator('img').count();
   for (let i = 0; i < imageCount; i += 1) {
     const loaded = await page.locator('img').nth(i).evaluate(img => img.complete && img.naturalWidth > 0);
@@ -32,10 +32,10 @@ for (const viewport of viewports) {
 
   await page.locator('#next').click();
   await page.locator('#next').click();
-  if (await page.locator('#counter').innerText() !== '03 / 18') throw new Error('cover → slide 3 counter failed');
-  if (await page.locator('.slide.active').getAttribute('data-title') !== 'Masalah kerja: data ada, informasi belum cepat terbaca') throw new Error('cover → slide 3 title failed');
+  if (await page.locator('#counter').innerText() !== '03 / 28') throw new Error('cover → slide 3 counter failed');
+  if (await page.locator('.slide.active').getAttribute('data-title') !== 'Basic AI untuk pekerjaan administrasi') throw new Error('cover → slide 3 title failed');
   await page.reload({ waitUntil: 'networkidle' });
-  if (await page.locator('#counter').innerText() !== '03 / 18') throw new Error('slide hash reload failed');
+  if (await page.locator('#counter').innerText() !== '03 / 28') throw new Error('slide hash reload failed');
 
   await page.goto(deck, { waitUntil: 'networkidle' });
   await page.keyboard.press('n');
@@ -47,7 +47,7 @@ for (const viewport of viewports) {
 
   await page.emulateMedia({ media: 'print' });
   const printVisible = await page.evaluate(() => [...document.querySelectorAll('.slide')].filter(s => getComputedStyle(s).display !== 'none').length);
-  if (printVisible !== 18) throw new Error(`print view shows ${printVisible}/18 slides`);
+  if (printVisible !== 28) throw new Error(`print view shows ${printVisible}/28 slides`);
   await page.close();
   console.log(`PASS deck ${viewport.width}x${viewport.height}`);
 }

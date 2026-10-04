@@ -3,7 +3,7 @@
 - **Project:** PkM Magister Teknik Informatika UNPAM – Kecamatan Tambun Selatan
 - **Tanggal dibuat:** 3 Oktober 2026
 - **Pelaksanaan lokal:** 4 Oktober 2026
-- **Status:** implemented locally; cloud validation and live deployment remain pending
+- **Status:** two-presenter deck revision implemented and locally verified; cloud validation and live deployment remain pending
 - **Rujukan audit:** [MATERIAL_AUDIT.md](../MATERIAL_AUDIT.md)
 - **Output utama:** materi workshop yang mengajarkan peserta mengunggah/mengonversi data Excel masing-masing ke Google Sheets, lalu membuat dashboard yang dapat dibuka melalui link web app Google Apps Script.
 
@@ -148,9 +148,9 @@ Setelah revisi, peserta non-teknis diharapkan dapat:
 
 ### Tahap 4 — Revisi deck HTML
 
-**Tujuan:** mengubah pusat cerita deck dari kode ke masalah/data/hasil.
+**Tujuan:** mengubah pusat cerita deck dari kode ke masalah/data/hasil, sekaligus memberi ruang yang cukup untuk pembagian teori Pak Syam dan praktik Yazid.
 
-Target struktur sekitar 16–18 slide inti:
+Target struktur canonical setelah koreksi pembagian pemateri: **28 slide** dengan blok teori, serah-terima, dan blok praktik.
 
 1. Judul Materi 2: Dashboard Rekap Layanan Kecamatan.
 2. Hasil yang dibawa pulang.
@@ -171,9 +171,16 @@ Target struktur sekitar 16–18 slide inti:
 17. Checklist hasil kelompok.
 18. Tindak lanjut dan PIC.
 
-Yang dikurangi atau dipindahkan:
+Struktur tambahan setelah koreksi pemateri:
 
-- teori AI dasar yang sudah menjadi Materi 1;
+- slide 2: pembagian teori Pak Syam dan praktik Yazid;
+- slide 3–10: Basic AI, Generative AI, contoh penggunaan, batasan, keamanan, formula prompting, prompt buruk vs baik, dan latihan prompt;
+- slide 11: serah-terima dari teori ke praktik;
+- slide 12–26: alur dashboard Excel → Sheets → ChatGPT → Apps Script → testing → link;
+- slide 27–28: checklist kelompok dan penutup.
+
+Yang tetap dikurangi:
+
 - penjelasan Codex dari jalur praktik utama;
 - screenshot editor yang berulang;
 - tiga kelompok membuat aplikasi penuh sekaligus;
@@ -181,23 +188,23 @@ Yang dikurangi atau dipindahkan:
 
 **Output:** deck HTML revisi dan README yang menjelaskan alur Excel → Sheets → GAS → link.
 
-### Tahap 5 — Revisi rundown 80 menit
+### Tahap 5 — Revisi rundown dua pemateri (rancangan 2 jam)
 
-Notulen saat ini memberi waktu materi utama sekitar **10.40–12.00**, yaitu sekitar 80 menit. Rancangan yang disarankan:
+Rancangan baru membagi sesi menjadi teori Pak Syam dan praktik Yazid. Total kerja diproyeksikan sekitar **120 menit**, tetapi final timing tetap perlu dikonfirmasi tim.
 
-| Durasi | Sesi | Hasil |
-|---:|---|---|
-| 5 menit | Orientasi | Peserta memahami output: dashboard link, bukan Canvas |
-| 8 menit | Masalah kerja dan data | Peserta mengenali kolom dan pertanyaan kerja |
-| 7 menit | Keamanan data | Peserta memahami data yang tidak boleh digunakan |
-| 10 menit | Demo upload/import Excel | Sheet latihan siap dibaca |
-| 15 menit | Demo ChatGPT → dua file | Peserta melihat prompt, `Code.gs`, dan `Index.html` |
-| 20 menit | Praktik terarah | Peserta mengubah satu dataset/filter/KPI |
-| 8 menit | Testing dan akses | Peserta memeriksa data, tampilan, dan akses |
-| 5 menit | Share-out singkat | Satu atau dua kelompok menunjukkan hasil |
-| 2 menit | Penutup | Peserta membawa checklist dan langkah lanjut |
+| Durasi | Sesi | Pemateri | Hasil |
+|---:|---|---|---|
+| 5 menit | Pembukaan dan tujuan | Bersama | Peserta memahami alur dan output |
+| 30 menit | Basic AI, Generative AI, contoh penggunaan, batasan, dan keamanan | Pak Syam | Peserta memahami kapan AI dapat membantu dan apa yang harus dijaga |
+| 15 menit | Formula prompting, contoh prompt, dan latihan singkat | Pak Syam | Peserta memiliki prompt yang berisi peran, tujuan, konteks, data, batasan, output, dan cara uji |
+| 5 menit | Serah-terima ke praktik | Bersama | Prompt teori dihubungkan ke dashboard |
+| 10 menit | Data Excel → Google Sheets → pertanyaan kerja | Yazid | Sheet dan definisi KPI siap dipakai |
+| 15 menit | Demo ChatGPT → `Code.gs` + `Index.html` | Yazid | Peserta memahami lokasi dua file dan alur data |
+| 25 menit | Praktik perubahan kecil | Yazid + pendamping | Satu filter/KPI/label berhasil diubah |
+| 10 menit | Testing dan akses | Yazid | KPI, filter, data aman, dan kebijakan akses diperiksa |
+| 5 menit | Share-out dan penutup | Bersama | Kelompok menyimpan prompt, checklist, dan batasan |
 
-Jika tersedia 120–150 menit penuh, praktik dapat diperpanjang. Jika tidak, deployment oleh semua kelompok tidak dijadikan syarat.
+Jika waktu lebih pendek, pertahankan teori inti, satu demo end-to-end, dan satu perubahan kecil. Deployment semua kelompok tidak dijadikan syarat.
 
 ### Tahap 6 — Testing dan verifikasi
 
@@ -243,7 +250,7 @@ Jika tersedia 120–150 menit penuh, praktik dapat diperpanjang. Jika tidak, dep
 - Dataset surat hanya mengisi `Tanggal_Selesai` untuk status `Selesai`, dan prioritas tidak lagi semuanya `Tinggi`. Dataset agenda memakai pasangan nama/jenis kegiatan yang konsisten dan status yang cocok dengan tanggal acuan 4 Oktober 2026.
 - Starter project Apps Script diperkuat: konfigurasi ID spreadsheet eksplisit, validasi header/ID/tanggal/angka, batas baris jelas, filter default aman, dan UI tidak mempertahankan angka lama saat error.
 - Preview lokal dashboard memakai fixture 100 baris dari workbook utama dan diuji pada browser.
-- Deck dipadatkan menjadi 18 slide, memakai hasil render dashboard lokal pada slide 8, memperbaiki layout flow, 720p overflow, print mode, dan overview handler.
+- Deck awal 18 slide kemudian diperluas menjadi 28 slide setelah koreksi pembagian pemateri. Versi baru menambahkan blok teori Pak Syam, latihan prompting, serah-terima, dan tetap mempertahankan praktik dashboard, hasil render lokal, layout flow, print mode, dan overview handler.
 - Materi pendukung dibuat: panduan peserta, worksheet kelompok, checklist data/dashboard, evaluasi pre/post, dan preflight fasilitator.
 - QA lulus melalui `python3 scripts/qa_html_deck.py` dan `node scripts/qa_starter_dashboard.mjs`.
 
@@ -266,7 +273,7 @@ Plan ini dianggap selesai apabila:
 - [x] Preview dan test harness menguji filter serta perubahan status; praktik cloud nyata tetap perlu diuji fasilitator.
 - [x] Deployment tidak dipresentasikan sebagai berhasil tanpa URL/link yang terbukti.
 - [x] Deck tidak mewajibkan peserta memahami seluruh syntax JavaScript.
-- [x] Waktu praktik dan target output diselaraskan dengan slot 80 menit.
+- [x] Pembagian teori/praktik dan target output diselaraskan dalam rancangan 2 jam; final timing/pembagian menit masih perlu konfirmasi tim.
 - [x] Ada fallback teknis dan checklist keamanan.
 - [x] Hasil revisi deck lulus QA layout, filter preview, print mode, dan dibuka melalui `file://`.
 
@@ -277,7 +284,7 @@ Plan ini dianggap selesai apabila:
 | Peserta mengunggah data warga asli | Risiko privasi | Mulai dari dummy data, beri peringatan, dan minta pemeriksaan kolom sebelum prompt. |
 | Peserta hanya memakai Canvas ChatGPT | Output tidak menjadi dashboard | Tunjukkan bahwa ChatGPT hanya menghasilkan rancangan/kode; hasil akhir dibuat di Google Sheets/GAS dan dibuka lewat link. |
 | Akun Google atau izin berbeda | Praktik macet | Siapkan akun latihan/fasilitator, screenshot, dan satu demo deployment terverifikasi. |
-| Waktu 80 menit tidak cukup | Dashboard tidak selesai | Satu use case utama, satu perubahan kecil, deployment opsional. |
+| Teori dan praktik terlalu padat | Peserta kehilangan konteks atau tidak sempat menguji dashboard | Pisahkan blok Pak Syam/Yazid, gunakan satu use case utama, satu perubahan kecil, deployment opsional. |
 | Header Excel berubah | Kode gagal membaca data | Gunakan data dictionary, instruksi impor, dan validasi nama kolom. |
 | Peserta takut melihat kode | Partisipasi rendah | Gunakan copy-paste terarah, jelaskan fungsi utama, dan ukur keberhasilan dari pemahaman alur. |
 | Dashboard terlihat benar tetapi KPI salah | Keputusan keliru | Hitung KPI manual, ubah satu record, dan cek angka sebelum share-out. |
@@ -299,3 +306,16 @@ Plan ini dianggap selesai apabila:
 - **Selesai:** verifikasi workbook dapat diimpor kembali, sheet `Data`/`Panduan` tersedia, dan tidak ada formula error pada hasil scan.
 - **Selesai secara lokal:** revisi deck HTML, starter dashboard, prompt card, panduan import/deploy, worksheet, checklist, evaluasi, dan preflight fasilitator.
 - **Keputusan kerja:** praktik dimulai dengan file dummy panitia; penggunaan data kantor dan deployment cloud memerlukan konfirmasi akses/izin terpisah.
+
+
+## 10. Koreksi pembagian pemateri — 4 Oktober 2026
+
+Versi 18 slide terlalu memadatkan materi karena menganggap bagian teori AI sudah berada di luar deck. User mengklarifikasi bahwa deck/handout ini akan dipakai dalam satu sesi bersama: Pak Syam menjelaskan teori, sedangkan Yazid memandu praktik.
+
+Keputusan implemented:
+
+- canonical deck menjadi 28 slide;
+- Pak Syam memiliki slides 3–10;
+- Yazid memiliki slides 12–26;
+- slides 1–2, 11, 27–28 menjadi bagian bersama/serah-terima;
+- QA deck dan bundle harus diulang setelah perubahan.

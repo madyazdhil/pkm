@@ -5,7 +5,8 @@ Dokumen ini membantu tim menjaga demo tetap realistis. Isi bagian yang bertanda 
 ## 1. Isi sebelum hari H
 
 - **Tanggal/jam pelaksanaan:** ____________________
-- **Durasi materi Yazid:** ____________________ menit
+- **Durasi teori Pak Syam:** ____________________ menit
+- **Durasi praktik Yazid:** ____________________ menit
 - **Pemateri utama:** ____________________
 - **Pendamping teknis:** ____________________
 - **PIC data/akses:** ____________________
@@ -19,7 +20,7 @@ Jangan menaruh password, token, atau API key pada dokumen ini.
 
 ## 2. T-1 hari
 
-- [ ] Pastikan deck yang dipakai adalah versi 18 slide.
+- [ ] Pastikan deck yang dipakai adalah versi 28 slide dengan blok teori Pak Syam dan blok praktik Yazid.
 - [ ] Buka tiga workbook dummy dan cek sheet `Data` serta `Panduan`.
 - [ ] Pastikan dataset utama menghasilkan total 100, selesai 25, dan masih diproses 50.
 - [ ] Siapkan satu Google Sheet demo dari workbook utama.
@@ -27,6 +28,7 @@ Jangan menaruh password, token, atau API key pada dokumen ini.
 - [ ] Uji dashboard lokal dan, bila dipilih oleh tim, uji deployment cloud dengan akun latihan.
 - [ ] Simpan screenshot fallback jika URL cloud tidak tersedia.
 - [ ] Siapkan prompt card, worksheet, checklist, dan evaluasi pre/post.
+- [ ] Brief Pak Syam untuk slides 3–10 dan Yazid untuk slides 12–26; gunakan catatan presenter pada deck.
 - [ ] Tentukan siapa yang membantu peserta ketika header, izin, atau koneksi bermasalah.
 
 ## 3. T-0 sebelum peserta masuk
@@ -40,16 +42,18 @@ Jangan menaruh password, token, atau API key pada dokumen ini.
 
 ## 4. Urutan demo yang disarankan
 
-1. Tunjukkan masalah kerja dan file Excel.
-2. Tunjukkan `Panduan`, header, status, dan KPI manual.
-3. Jelaskan aturan data aman.
-4. Konversi Excel ke Google Sheets menggunakan **File → Save as Google Sheets** bila diperlukan.
-5. Tunjukkan prompt card.
-6. Tempel `Code.gs` dan `Index.html`.
-7. Jalankan `setupSpreadsheetId()`.
-8. Uji dashboard dan ubah satu status latihan.
-9. Tunjukkan deployment/link hanya bila benar-benar siap.
-10. Arahkan peserta ke worksheet dan checklist.
+1. Pak Syam membawakan slide 3–10: basic AI, keamanan, verifikasi, dan prompting.
+2. Gunakan slide 11 untuk serah-terima teori ke praktik.
+3. Tunjukkan masalah kerja dan file Excel.
+4. Tunjukkan `Panduan`, header, status, dan KPI manual.
+5. Jelaskan aturan data aman.
+6. Konversi Excel ke Google Sheets menggunakan **File → Save as Google Sheets** bila diperlukan.
+7. Tunjukkan prompt card.
+8. Tempel `Code.gs` dan `Index.html`.
+9. Jalankan `setupSpreadsheetId()`.
+10. Uji dashboard dan ubah satu status latihan.
+11. Tunjukkan deployment/link hanya bila benar-benar siap.
+12. Arahkan peserta ke worksheet dan checklist.
 
 ## 5. Matriks status bukti
 

@@ -2,13 +2,15 @@
 
 ## Lulus secara lokal
 
-- Deck HTML diuji pada 1440×810 dan 1280×720.
+- Deck HTML 28 slide diuji pada 1440×810 dan 1280×720.
 - Deck dapat dibuka melalui `file://`, navigasi, hash slide, notes, overview, dan print mode diuji.
+- Slide 3–10 berisi teori Pak Syam; slide 12–26 berisi praktik Yazid; ownership badge dan presenter notes tersedia.
 - Preview dashboard memakai fixture 100 baris.
 - Baseline KPI: total 100, selesai 25, masih diproses 50, dibatalkan 25.
 - Filter status dan jenis layanan diuji.
 - Validasi Apps Script untuk header, ID duplikat, tanggal, angka, batas baris, dan konfigurasi spreadsheet diuji.
 - Tiga workbook memiliki sheet `Data` dan `Panduan`, 100 baris data, dan tidak memiliki formula error pada scan.
+- ZIP integrity test, deck asset reference check, dan SHA-256 manifest lulus.
 
 ## Belum diverifikasi cloud
 
