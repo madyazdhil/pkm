@@ -42,3 +42,12 @@
 1. Perform the cloud validation only when the user explicitly authorizes the Google Workspace actions: import one workbook, configure the bound Apps Script project, and test the deployment/access policy.
 2. Run the workshop using the dummy dataset first; do not introduce real resident data during the training.
 3. Collect each group’s data dictionary, KPI definitions, prompt, test checklist, screenshot/URL, and follow-up PIC.
+
+## Workshop bundle packaging — 4 October 2026
+
+- **Status:** Local workshop package created and verified; cloud deployment/access validation remains pending.
+- **Bundle folder:** `outputs/2026-10-04-workshop-bundle/`
+- **Shareable archive:** `outputs/pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip`
+- **Contents:** 18-slide deck with assets, starter Apps Script project and preview, three 100-row Excel workbooks, participant handouts, facilitator preflight, QA status, and SHA-256 manifest.
+- **Local package checks:** ZIP integrity passed, deck relative assets resolved, source QA artifacts remain green from the prior verified run.
+- **Failed rerun note:** A fresh Playwright deck QA rerun could not launch Chromium in the current macOS sandbox because of a Mach rendezvous permission error; this did not modify the package, and the prior deck QA result remains the applicable verification record.

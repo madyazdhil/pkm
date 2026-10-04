@@ -1,0 +1,22 @@
+{
+  "source": "dummy-data-rekap-layanan-kecamatan.xlsx",
+  "rowCount": 100,
+  "kpis": {
+    "total": 100,
+    "completed": 25,
+    "inProcess": 50
+  },
+  "statusCounts": {
+    "Dibatalkan": 25,
+    "Diproses": 25,
+    "Menunggu Dokumen": 25,
+    "Selesai": 25
+  },
+  "serviceCounts": {
+    "Administrasi Umum": 20,
+    "Informasi Publik": 20,
+    "Pengaduan Non-Sensitif": 20,
+    "Rekomendasi": 20,
+    "Surat Keterangan": 20
+  }
+}

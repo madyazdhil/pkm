@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Rekap Layanan Kecamatan</title>
+  <style>
+    :root{--ink:#17353a;--muted:#5a7075;--teal:#087c75;--soft:#eaf5f1;--line:#d3e1df;--warn:#9a6500;--danger:#bd4b3b;--bg:#f2f7f5;--white:#fff;--shadow:0 12px 34px rgba(26,73,73,.09)}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif} main{max-width:1180px;margin:0 auto;padding:32px 22px 52px}
+    .eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)} h1{margin:9px 0 6px;font-size:34px;line-height:1.1} .subtitle{margin:0;color:var(--muted);font-size:15px;line-height:1.5}.updated{margin-top:8px;color:var(--muted);font-size:12px}
+    .notice{margin:22px 0;padding:12px 14px;border-left:4px solid var(--warn);background:#fff7df;color:#674a08;font-size:13px;line-height:1.45}.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:22px 0}.field{display:grid;gap:6px;min-width:210px}.field label{font-size:12px;color:var(--muted);font-weight:700}.field select{width:100%;padding:10px 11px;border:1px solid #b7ccca;border-radius:8px;background:var(--white);color:var(--ink);font:inherit}.button{padding:10px 15px;border:0;border-radius:8px;background:var(--teal);color:white;font-weight:700;cursor:pointer}.button.secondary{background:#dfece9;color:var(--teal)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--white);box-shadow:var(--shadow)}.card-label{font-size:13px;color:var(--muted)}.card-value{margin-top:8px;font-size:34px;font-weight:800;color:var(--teal)}
+    .grid{display:grid;grid-template-columns:1fr 1.15fr;gap:16px;margin-top:16px}.panel{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--white);box-shadow:var(--shadow)}.panel h2{margin:0 0 14px;font-size:18px}.bars{display:grid;gap:11px}.bar-row{display:grid;grid-template-columns:minmax(120px,1fr) 2fr 40px;gap:10px;align-items:center;font-size:13px}.bar-track{height:13px;border-radius:999px;background:#edf3f1;overflow:hidden}.bar-fill{height:100%;border-radius:999px;background:var(--teal)}.bar-value{text-align:right;font-weight:700}
+    .table-wrap{margin-top:16px;border:1px solid var(--line);border-radius:12px;background:var(--white);box-shadow:var(--shadow);overflow:auto}.table-head{display:flex;justify-content:space-between;align-items:center;padding:18px 18px 12px}.table-head h2{margin:0;font-size:18px}.table-head span{color:var(--muted);font-size:12px}table{width:100%;border-collapse:collapse;min-width:760px}th,td{padding:11px 13px;border-top:1px solid var(--line);text-align:left;font-size:13px;white-space:nowrap}th{background:#eff7f4;color:var(--teal);font-size:11px;text-transform:uppercase;letter-spacing:.04em}td.num{text-align:right}.status{display:inline-flex;padding:4px 8px;border-radius:999px;background:#edf4f2;color:var(--teal);font-size:11px;font-weight:700}.status.warn{background:#fff5d6;color:var(--warn)}.status.danger{background:#fde8e2;color:var(--danger)}.empty{padding:24px;text-align:center;color:var(--muted)}.error{margin:16px 0;padding:12px 14px;border-radius:8px;background:#fde8e2;color:#7d2e24;font-size:13px}.footer{margin-top:18px;color:var(--muted);font-size:12px;line-height:1.5}
+    button:disabled,select:disabled{opacity:.6;cursor:wait}:focus-visible{outline:3px solid #9a6500;outline-offset:3px}
+    @media(max-width:760px){main{padding:24px 14px 44px}h1{font-size:28px}.cards,.grid{grid-template-columns:1fr}.field{min-width:100%}.toolbar .button{width:100%}.bar-row{grid-template-columns:110px 1fr 34px}}
+  </style>
+
+<script>
+const PREVIEW_FIXTURE = {"source": "dummy-data-rekap-layanan-kecamatan.xlsx", "sheet": "Data", "records": [{"ID_Layanan": "LYN-0001", "Tanggal": "2026-01-13", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Email Dinas", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0002", "Tanggal": "2026-01-16", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Loket", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0003", "Tanggal": "2026-01-19", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Form Digital", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0004", "Tanggal": "2026-01-22", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Email Dinas", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0005", "Tanggal": "2026-01-25", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Loket", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0006", "Tanggal": "2026-01-28", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Form Digital", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0007", "Tanggal": "2026-01-31", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Email Dinas", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0008", "Tanggal": "2026-02-03", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Loket", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0009", "Tanggal": "2026-02-06", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Form Digital", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0010", "Tanggal": "2026-02-09", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Email Dinas", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0011", "Tanggal": "2026-02-12", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Loket", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0012", "Tanggal": "2026-02-15", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Form Digital", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0013", "Tanggal": "2026-02-18", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Email Dinas", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0014", "Tanggal": "2026-02-21", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Loket", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0015", "Tanggal": "2026-02-24", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Form Digital", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0016", "Tanggal": "2026-02-27", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Email Dinas", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0017", "Tanggal": "2026-03-02", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Loket", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0018", "Tanggal": "2026-03-05", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Form Digital", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0019", "Tanggal": "2026-03-08", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Email Dinas", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0020", "Tanggal": "2026-03-11", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Loket", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0021", "Tanggal": "2026-03-14", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Form Digital", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0022", "Tanggal": "2026-03-17", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Email Dinas", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0023", "Tanggal": "2026-03-20", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Loket", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0024", "Tanggal": "2026-03-23", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Form Digital", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0025", "Tanggal": "2026-03-26", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Email Dinas", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0026", "Tanggal": "2026-03-29", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Loket", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0027", "Tanggal": "2026-04-01", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Form Digital", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0028", "Tanggal": "2026-04-04", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Email Dinas", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0029", "Tanggal": "2026-04-07", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Loket", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0030", "Tanggal": "2026-04-10", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Form Digital", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0031", "Tanggal": "2026-04-13", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Email Dinas", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0032", "Tanggal": "2026-04-16", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Loket", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0033", "Tanggal": "2026-04-19", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Form Digital", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0034", "Tanggal": "2026-04-22", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Email Dinas", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0035", "Tanggal": "2026-04-25", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Loket", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0036", "Tanggal": "2026-04-28", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Form Digital", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0037", "Tanggal": "2026-05-01", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Email Dinas", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0038", "Tanggal": "2026-05-04", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Loket", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0039", "Tanggal": "2026-05-07", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Form Digital", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0040", "Tanggal": "2026-05-10", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Email Dinas", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0041", "Tanggal": "2026-05-13", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Loket", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0042", "Tanggal": "2026-05-16", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Form Digital", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0043", "Tanggal": "2026-05-19", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Email Dinas", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0044", "Tanggal": "2026-05-22", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Loket", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0045", "Tanggal": "2026-05-25", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Form Digital", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0046", "Tanggal": "2026-05-28", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Email Dinas", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0047", "Tanggal": "2026-05-31", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Loket", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0048", "Tanggal": "2026-06-03", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Form Digital", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0049", "Tanggal": "2026-06-06", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Email Dinas", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0050", "Tanggal": "2026-06-09", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Loket", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0051", "Tanggal": "2026-06-12", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Form Digital", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0052", "Tanggal": "2026-06-15", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Email Dinas", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0053", "Tanggal": "2026-06-18", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Loket", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0054", "Tanggal": "2026-06-21", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Form Digital", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0055", "Tanggal": "2026-06-24", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Email Dinas", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0056", "Tanggal": "2026-06-27", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Loket", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0057", "Tanggal": "2026-06-30", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Form Digital", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0058", "Tanggal": "2026-07-03", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Email Dinas", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0059", "Tanggal": "2026-07-06", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Loket", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0060", "Tanggal": "2026-07-09", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Form Digital", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0061", "Tanggal": "2026-07-12", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Email Dinas", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0062", "Tanggal": "2026-07-15", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Loket", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0063", "Tanggal": "2026-07-18", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Form Digital", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0064", "Tanggal": "2026-07-21", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Email Dinas", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0065", "Tanggal": "2026-07-24", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Loket", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0066", "Tanggal": "2026-07-27", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Form Digital", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0067", "Tanggal": "2026-07-30", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Email Dinas", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0068", "Tanggal": "2026-08-02", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Loket", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0069", "Tanggal": "2026-08-05", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Form Digital", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0070", "Tanggal": "2026-08-08", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Email Dinas", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0071", "Tanggal": "2026-08-11", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Loket", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0072", "Tanggal": "2026-08-14", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Form Digital", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0073", "Tanggal": "2026-08-17", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Email Dinas", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0074", "Tanggal": "2026-08-20", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Loket", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0075", "Tanggal": "2026-08-23", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Form Digital", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0076", "Tanggal": "2026-08-26", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Email Dinas", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0077", "Tanggal": "2026-08-29", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Loket", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0078", "Tanggal": "2026-09-01", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Form Digital", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0079", "Tanggal": "2026-09-04", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Email Dinas", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0080", "Tanggal": "2026-09-07", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Loket", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0081", "Tanggal": "2026-09-10", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Form Digital", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0082", "Tanggal": "2026-09-13", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Email Dinas", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0083", "Tanggal": "2026-09-16", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Loket", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0084", "Tanggal": "2026-09-19", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Form Digital", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0085", "Tanggal": "2026-09-22", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Email Dinas", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0086", "Tanggal": "2026-09-25", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Loket", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0087", "Tanggal": "2026-09-28", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Form Digital", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0088", "Tanggal": "2026-10-01", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Email Dinas", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0089", "Tanggal": "2026-01-07", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Loket", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0090", "Tanggal": "2026-01-10", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Form Digital", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0091", "Tanggal": "2026-01-13", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Email Dinas", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0092", "Tanggal": "2026-01-16", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Loket", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0093", "Tanggal": "2026-01-19", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Form Digital", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0094", "Tanggal": "2026-01-22", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Email Dinas", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0095", "Tanggal": "2026-01-25", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Loket", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0096", "Tanggal": "2026-01-28", "Jenis_Layanan": "Administrasi Umum", "Wilayah_Umum": "Kelurahan B", "Kanal": "Form Digital", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}, {"ID_Layanan": "LYN-0097", "Tanggal": "2026-01-31", "Jenis_Layanan": "Rekomendasi", "Wilayah_Umum": "Kelurahan C", "Kanal": "Email Dinas", "Status": "Selesai", "Unit_Penanggung_Jawab": "Unit C", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Tidak ada catatan khusus"}, {"ID_Layanan": "LYN-0098", "Tanggal": "2026-02-03", "Jenis_Layanan": "Pengaduan Non-Sensitif", "Wilayah_Umum": "Kelurahan D", "Kanal": "Loket", "Status": "Dibatalkan", "Unit_Penanggung_Jawab": "Unit D", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Perlu verifikasi berkas"}, {"ID_Layanan": "LYN-0099", "Tanggal": "2026-02-06", "Jenis_Layanan": "Surat Keterangan", "Wilayah_Umum": "Kelurahan E", "Kanal": "Form Digital", "Status": "Menunggu Dokumen", "Unit_Penanggung_Jawab": "Unit A", "Durasi_Hari": 1, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Menunggu tindak lanjut unit"}, {"ID_Layanan": "LYN-0100", "Tanggal": "2026-02-09", "Jenis_Layanan": "Informasi Publik", "Wilayah_Umum": "Kelurahan A", "Kanal": "Email Dinas", "Status": "Diproses", "Unit_Penanggung_Jawab": "Unit B", "Durasi_Hari": 6, "Jumlah_Permohonan": 1, "Catatan_NonSensitif": "Data latihan"}]};
+let previewValues = [Object.keys(PREVIEW_FIXTURE.records[0]), ...PREVIEW_FIXTURE.records.map(Object.values)];
+const previewProperties = new Map([['DASHBOARD_SPREADSHEET_ID', 'LOCAL_FIXTURE']]);
+const PropertiesService = {getScriptProperties: () => ({getProperty: key => previewProperties.get(key)})};
+const SpreadsheetApp = {openById: () => ({
+  getSpreadsheetTimeZone: () => 'Asia/Jakarta',
+  getSheetByName: () => ({getLastRow: () => previewValues.length, getDataRange: () => ({getValues: () => previewValues})})
+})};
+const Utilities = {formatDate(date, timeZone, format) {
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-CA', {
+    timeZone, year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'
+  }).formatToParts(date).map(part => [part.type, part.value]));
+  return `${parts.year}-${parts.month}-${parts.day}` + (format.includes('HH') ? ` ${parts.hour}:${parts.minute}` : '');
+}};
+// Exact server source follows; only IO is mocked for offline use.
+/** Starter latihan rekap layanan. Satu baris = satu permohonan, bukan agregat. */
+const CONFIG = {
+  SHEET_NAME: 'Data',
+  SPREADSHEET_ID_PROPERTY: 'DASHBOARD_SPREADSHEET_ID',
+  MAX_DATA_ROWS: 2000,
+  MAX_TABLE_ROWS: 100,
+};
+const HEADERS = [
+  'ID_Layanan', 'Tanggal', 'Jenis_Layanan', 'Wilayah_Umum', 'Kanal',
+  'Status', 'Unit_Penanggung_Jawab', 'Durasi_Hari', 'Jumlah_Permohonan',
+  'Catatan_NonSensitif',
+];
+const STATUSES = ['Selesai', 'Diproses', 'Menunggu Dokumen', 'Dibatalkan'];
+
+/** Jalankan sekali dari editor yang dibuka lewat Sheet milik Anda. */
+function setupSpreadsheetId() {
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  if (!spreadsheet) throw new Error('Buka Apps Script dari Google Sheet latihan, lalu jalankan setupSpreadsheetId() dari editor.');
+  if (!spreadsheet.getSheetByName(CONFIG.SHEET_NAME)) throw new Error('Sheet "Data" tidak ditemukan.');
+  PropertiesService.getScriptProperties().setProperty(CONFIG.SPREADSHEET_ID_PROPERTY, spreadsheet.getId());
+  return 'Sumber tersimpan. Sekarang jalankan getDashboardData atau buka URL uji.';
+}
+
+function doGet() {
+  return HtmlService.createHtmlOutputFromFile('Index')
+    .setTitle('Dashboard Rekap Layanan Kecamatan')
+    .addMetaTag('viewport', 'width=device-width, initial-scale=1');
+}
+
+function getDashboardData(filters) {
+  filters = filters || {};
+  const id = PropertiesService.getScriptProperties().getProperty(CONFIG.SPREADSHEET_ID_PROPERTY);
+  if (!id) throw new Error('Sumber data belum dikonfigurasi. Jalankan setupSpreadsheetId() sekali dari editor Apps Script.');
+  // getActiveSpreadsheet() tidak digunakan dalam jalur web app.
+  const spreadsheet = SpreadsheetApp.openById(id);
+  const sheet = spreadsheet.getSheetByName(CONFIG.SHEET_NAME);
+  if (!sheet) throw new Error('Sheet "Data" tidak ditemukan. Gunakan file Google Sheets hasil konversi.');
+  if (sheet.getLastRow() - 1 > CONFIG.MAX_DATA_ROWS) {
+    throw new Error('Data melebihi batas latihan 2000 baris. Tidak ada baris yang dipotong diam-diam.');
+  }
+  const values = sheet.getDataRange().getValues();
+  const timezone = spreadsheet.getSpreadsheetTimeZone();
+  return calculateDashboard_(values, filters, timezone);
+}
+
+/** Fungsi yang sama dipakai pada GAS, pengujian Node, dan preview lokal. */
+function calculateDashboard_(values, filters, timezone) {
+  filters = filters || {};
+  if (!values.length || !values[0].some(value => value !== '')) throw new Error('Sheet Data kosong, termasuk header.');
+  const headers = values[0].map(value => String(value == null ? '' : value).trim());
+  const missing = HEADERS.filter(header => !headers.includes(header));
+  if (missing.length) throw new Error('Header wajib belum ditemukan: ' + missing.join(', '));
+  if (headers.filter(Boolean).length !== new Set(headers.filter(Boolean)).size) throw new Error('Header duplikat ditemukan.');
+  const index = Object.fromEntries(HEADERS.map(header => [header, headers.indexOf(header)]));
+  const seen = new Set();
+  const records = [];
+  values.slice(1).forEach((row, offset) => {
+    if (!row.some(value => value !== '' && value !== null && value !== undefined)) return;
+    const sourceRow = offset + 2;
+    const read = header => row[index[header]];
+    const text = header => String(read(header) == null ? '' : read(header)).trim();
+    const id = text('ID_Layanan');
+    if (!id || !text('Jenis_Layanan') || !text('Status')) throw new Error('Baris ' + sourceRow + ' belum lengkap: ID, jenis layanan, dan status wajib diisi.');
+    if (seen.has(id)) throw new Error('ID duplikat ditemukan pada baris ' + sourceRow + '.');
+    seen.add(id);
+    if (!STATUSES.includes(text('Status'))) throw new Error('Status tidak dikenal pada baris ' + sourceRow + '. Gunakan Selesai, Diproses, Menunggu Dokumen, atau Dibatalkan.');
+    if (typeof read('Jumlah_Permohonan') !== 'number' || read('Jumlah_Permohonan') !== 1) {
+      throw new Error('Jumlah_Permohonan pada baris ' + sourceRow + ' harus angka 1: satu baris = satu permohonan.');
+    }
+    const duration = read('Durasi_Hari');
+    if (typeof duration !== 'number' || !Number.isInteger(duration) || duration < 0) throw new Error('Durasi_Hari pada baris ' + sourceRow + ' harus bilangan bulat ≥ 0.');
+    records.push({
+      id,
+      date: formatDate_(read('Tanggal'), sourceRow, timezone),
+      service: text('Jenis_Layanan'), area: text('Wilayah_Umum'),
+      status: text('Status'), unit: text('Unit_Penanggung_Jawab'), duration,
+    });
+  });
+  if (records.length > CONFIG.MAX_DATA_ROWS) throw new Error('Data melebihi batas latihan 2000 baris.');
+  const filtered = records.filter(row => (!filters.status || row.status === filters.status) && (!filters.service || row.service === filters.service));
+  const byService = new Map();
+  filtered.forEach(row => byService.set(row.service, (byService.get(row.service) || 0) + 1));
+  return {
+    ok: true,
+    message: records.length ? '' : 'Sheet memiliki header, tetapi belum ada baris data.',
+    lastLoadedAt: Utilities.formatDate(new Date(), timezone, 'yyyy-MM-dd HH:mm') + ' (' + timezone + ')',
+    rowCount: records.length, filteredRowCount: filtered.length,
+    tableTruncated: filtered.length > CONFIG.MAX_TABLE_ROWS,
+    options: {
+      statuses: [...new Set(records.map(row => row.status))].sort(),
+      services: [...new Set(records.map(row => row.service))].sort(),
+    },
+    kpis: {
+      total: filtered.length,
+      completed: filtered.filter(row => row.status === 'Selesai').length,
+      inProcess: filtered.filter(row => ['Diproses', 'Menunggu Dokumen'].includes(row.status)).length,
+      cancelled: filtered.filter(row => row.status === 'Dibatalkan').length,
+    },
+    // Semua kategori ditampilkan agar jumlah grafik tetap dapat direkonsiliasi.
+    byService: [...byService].map(([label, value]) => ({ label, value }))
+      .sort((a, b) => b.value - a.value || a.label.localeCompare(b.label)),
+    rows: filtered.slice(0, CONFIG.MAX_TABLE_ROWS),
+  };
+}
+
+function formatDate_(value, sourceRow, timezone) {
+  if (Object.prototype.toString.call(value) === '[object Date]' && !isNaN(value)) {
+    return Utilities.formatDate(value, timezone, 'yyyy-MM-dd');
+  }
+  // CSV cadangan dapat menghasilkan string ISO; jangan terima tanggal ambigu.
+  const text = String(value == null ? '' : value).trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(text)) {
+    const parsed = new Date(text + 'T00:00:00Z');
+    if (!isNaN(parsed) && parsed.toISOString().slice(0, 10) === text) return text;
+  }
+  throw new Error('Tanggal pada baris ' + sourceRow + ' tidak valid. Gunakan nilai tanggal atau teks yyyy-mm-dd.');
+}
+
+function runner(success, failure) {
+  return {
+    withSuccessHandler(fn) { return runner(fn, failure); },
+    withFailureHandler(fn) { return runner(success, fn); },
+    getDashboardData(filters) {
+      setTimeout(() => {
+        try { success(getDashboardData(filters)); } catch (error) { failure(error); }
+      }, 60);
+    }
+  };
+}
+window.google = {script: {run: runner(null, null)}};
+window.previewTest = {setRows: rows => { previewValues = rows; }, reset: () => {
+  previewValues = [Object.keys(PREVIEW_FIXTURE.records[0]), ...PREVIEW_FIXTURE.records.map(Object.values)];
+}, getRows: () => structuredClone(previewValues)};
+</script>
+</head>
+<body>
+<main><div class="notice"><strong>PREVIEW LOKAL / OFFLINE.</strong> Sumber: 100 baris dummy dari Excel, bukan Sheet cloud. Filter berfungsi, tetapi perubahan di Google Sheets tidak tersinkron ke preview ini. Unggah hanya Code.gs dan Index.html ke Apps Script.</div>
+  <div class="eyebrow">Dashboard latihan · Kecamatan Tambun Selatan</div>
+  <h1>Rekap Layanan Kecamatan</h1>
+  <p class="subtitle">Tampilan ringkas untuk membaca status layanan dari Sheet <strong>Data</strong>. Gunakan data sintetis selama workshop.</p>
+  <div class="updated" id="updated" role="status" aria-live="polite">Memuat data…</div>
+  <div class="notice">Dashboard ini membantu pemantauan. Angka tetap perlu diperiksa oleh petugas yang berwenang sebelum dipakai untuk laporan atau keputusan resmi.</div>
+
+  <section class="toolbar" aria-label="Penyaring data">
+    <div class="field"><label for="statusFilter">Status pelayanan</label><select id="statusFilter"><option value="">Semua status</option></select></div>
+    <div class="field"><label for="serviceFilter">Jenis layanan</label><select id="serviceFilter"><option value="">Semua jenis layanan</option></select></div>
+    <button class="button" id="refresh">Muat ulang data</button>
+    <button class="button secondary" id="reset">Reset filter</button>
+  </section>
+
+  <div id="error" class="error" role="alert" hidden></div>
+  <section class="cards" aria-label="Ringkasan layanan">
+    <div class="card"><div class="card-label">Total layanan</div><div class="card-value" id="total">–</div></div>
+    <div class="card"><div class="card-label">Selesai</div><div class="card-value" id="completed">–</div></div>
+    <div class="card"><div class="card-label">Masih diproses</div><div class="card-value" id="inProcess">–</div></div>
+  </section>
+
+  <p class="footer" id="reconciliation" aria-live="polite"></p>
+  <section class="grid">
+    <div class="panel"><h2>Jenis layanan</h2><div class="bars" id="bars"><div class="empty">Belum ada data.</div></div></div>
+    <div class="panel"><h2>Cara membaca dashboard</h2><p class="subtitle">Gunakan filter untuk mempersempit data. Periksa definisi status dan periode sumber sebelum menyimpulkan hasil. “Terakhir dimuat” adalah waktu mengambil data, bukan waktu petugas mengeditnya.</p><div class="footer"><strong>Data:</strong> sheet <code>Data</code> pada Google Sheets.<br><strong>Logika:</strong> <code>Code.gs</code> membaca dan menghitung data.<br><strong>Tampilan:</strong> <code>Index.html</code> menyajikan kartu, filter, grafik, dan tabel.</div></div>
+  </section>
+
+  <section class="table-wrap"><div class="table-head"><h2>Data layanan</h2><span id="rowCount">0 baris</span></div><table><thead><tr><th>ID</th><th>Tanggal</th><th>Jenis layanan</th><th>Wilayah umum</th><th>Status</th><th>Unit</th><th>Durasi hari</th></tr></thead><tbody id="rows"><tr><td colspan="7" class="empty">Memuat data…</td></tr></tbody></table></section>
+  <div class="footer">Data latihan/sintetis. Jangan mengganti dengan NIK, nomor kontak, alamat lengkap, isi surat, aduan asli, password, token, atau dokumen rahasia.</div>
+</main>
+<script>
+  const state = { data: null, requestId: 0, loading: false };
+  const $ = id => document.getElementById(id);
+  const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+  const formatNumber = value => new Intl.NumberFormat('id-ID').format(Number(value || 0));
+  function setLoading(isLoading){
+    state.loading = isLoading;
+    document.body.setAttribute('aria-busy', String(isLoading));
+    $('refresh').disabled = isLoading;
+    $('reset').disabled = isLoading;
+    $('statusFilter').disabled = isLoading;
+    $('serviceFilter').disabled = isLoading;
+  }
+  function clearDashboard(message){
+    $('total').textContent = '–'; $('completed').textContent = '–'; $('inProcess').textContent = '–';
+    $('bars').innerHTML = '<div class="empty">Belum ada data untuk ditampilkan.</div>';
+    $('rows').innerHTML = '<tr><td colspan="7" class="empty">Belum ada data untuk ditampilkan.</td></tr>';
+    $('rowCount').textContent = '0 baris'; $('reconciliation').textContent = '';
+    $('updated').textContent = message || 'Data belum berhasil dimuat';
+  }
+  function loadData(){
+    const requestId = ++state.requestId;
+    $('error').hidden = true;
+    clearDashboard('Memuat data…');
+    setLoading(true);
+    google.script.run
+      .withSuccessHandler(data => { if(requestId !== state.requestId) return; setLoading(false); render(data); })
+      .withFailureHandler(error => { if(requestId !== state.requestId) return; setLoading(false); showError(error); })
+      .getDashboardData({ status: $('statusFilter').value, service: $('serviceFilter').value });
+  }
+  function showError(error){
+    const message = error?.message || String(error);
+    state.data = null;
+    clearDashboard('Data belum berhasil dimuat');
+    $('error').textContent = message;
+    $('error').hidden = false;
+  }
+  function fillSelect(id, values, placeholder){
+    const select = $(id); const previous = select.value;
+    select.innerHTML = `<option value="">${placeholder}</option>` + values.map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join('');
+    if(values.includes(previous)) select.value = previous;
+  }
+  function statusClass(status){ if(status === 'Dibatalkan') return 'danger'; if(status === 'Menunggu Dokumen') return 'warn'; return ''; }
+  function render(data){
+    state.data = data;
+    if(!data || !data.ok) { showError({message:data?.message || 'Data belum tersedia.'}); return; }
+    $('error').hidden = true;
+    $('reconciliation').textContent = data.message || `Total = selesai + masih diproses + dibatalkan (${data.kpis.cancelled}). Semua kartu, tabel, dan grafik mengikuti filter.`;
+    fillSelect('statusFilter', data.options.statuses, 'Semua status'); fillSelect('serviceFilter', data.options.services, 'Semua jenis layanan');
+    $('total').textContent = formatNumber(data.kpis.total); $('completed').textContent = formatNumber(data.kpis.completed); $('inProcess').textContent = formatNumber(data.kpis.inProcess);
+    const truncation = data.tableTruncated ? ' · tabel dibatasi 100 baris' : '';
+    $('updated').textContent = `Terakhir dimuat: ${data.lastLoadedAt} · ${formatNumber(data.filteredRowCount)} dari ${formatNumber(data.rowCount)} baris${truncation}`;
+    const max = Math.max(...data.byService.map(item => item.value), 1);
+    $('bars').innerHTML = data.byService.length ? data.byService.map(item => `<div class="bar-row"><span>${escapeHtml(item.label)}</span><div class="bar-track"><div class="bar-fill" style="width:${Math.round(item.value/max*100)}%"></div></div><span class="bar-value">${formatNumber(item.value)}</span></div>`).join('') : '<div class="empty">Tidak ada data sesuai filter.</div>';
+    $('rows').innerHTML = data.rows.length ? data.rows.map(row => `<tr><td>${escapeHtml(row.id)}</td><td>${escapeHtml(row.date)}</td><td>${escapeHtml(row.service)}</td><td>${escapeHtml(row.area)}</td><td><span class="status ${statusClass(row.status)}">${escapeHtml(row.status)}</span></td><td>${escapeHtml(row.unit)}</td><td class="num">${formatNumber(row.duration)}</td></tr>`).join('') : '<tr><td colspan="7" class="empty">Tidak ada data sesuai filter.</td></tr>';
+    $('rowCount').textContent = `${formatNumber(data.rows.length)} baris ditampilkan${data.tableTruncated ? ' dari hasil terfilter' : ''}`;
+  }
+  $('refresh').addEventListener('click', loadData); $('statusFilter').addEventListener('change', loadData); $('serviceFilter').addEventListener('change', loadData); $('reset').addEventListener('click', () => { $('statusFilter').value=''; $('serviceFilter').value=''; loadData(); });
+  loadData();
+</script>
+</body>
+</html>

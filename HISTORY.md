@@ -2889,3 +2889,43 @@ No remote push was performed.
 - :codex-followup[Validate the Google deployment]{prompt="Import the primary dummy workbook into Google Sheets, run setupSpreadsheetId(), deploy the Apps Script web app, and test the URL with the intended access policy."}
 - :codex-followup[Finalize the workshop roles]{prompt="Confirm the final 80-minute timing, Syam/Taufik coordination, facilitator roles, and the follow-up PIC with the PkM team."}
 - :codex-followup[Prepare the participant handout package]{prompt="Package the HTML deck, starter dashboard, three Excel files, worksheet, checklist, and evaluation into one workshop-ready folder or downloadable bundle."}
+
+### User — 2026-10-04
+
+> cont
+
+Status: requested continuation of the current PKM-smt3 material-remediation work. No cloud authorization or new implementation scope was specified.
+
+### Continuation work — 4 October 2026
+
+#### Objective
+Continue the locally completed material-remediation work without performing unconfirmed Google Workspace actions. The practical next deliverable selected from the prior follow-up list was a workshop-ready participant bundle.
+
+#### Discovery / collision check
+- Checked project Git status and recent history before modifying files.
+- No model-specific variant files (`gemini`, `codex`, `claude`, or `variant`) were present.
+- Existing working tree was clean apart from the current turn's required history append.
+
+#### Implemented
+- Created `outputs/2026-10-04-workshop-bundle/` with:
+  - 18-slide HTML deck and relative assets;
+  - starter Apps Script project, fixtures, prompt card, README, and local preview;
+  - three 100-row Excel workbooks and previews;
+  - participant guide, worksheet, checklist, evaluation, and facilitator preflight;
+  - `START-HERE.md`, `QA-STATUS.md`, `README.md`, and `MANIFEST-SHA256.txt`.
+- Created `outputs/pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip`.
+- Updated `STATE.md` and `CANVAS.md` with the bundle links and cloud-status boundary.
+
+#### Verification
+- ZIP integrity test passed with `unzip -t`.
+- All deck-local relative asset references in the copied HTML resolved.
+- SHA-256 manifest generated for the bundle contents and verified with `shasum -a 256 -c`.
+- Existing local dataset, workbook, and starter-dashboard QA had passed before packaging.
+
+#### Failed Attempt [Codex]
+- A fresh `python3 scripts/qa_html_deck.py` rerun was attempted after packaging.
+- It failed before test execution because Playwright Chromium terminated on macOS with `MachPortRendezvousServer ... Permission denied (1100)`.
+- This is an environment/browser-launch failure, not a package-content failure. The prior deck QA record remains valid for the unchanged source deck; package-specific static reference and ZIP checks passed.
+- Retried with the approved escalated browser command; deck QA then passed at 1440×810 and 1280×720, and local dashboard preview QA passed.
+
+Status: implemented locally; cloud import, `setupSpreadsheetId()`, Web App deployment, and cross-account access test remain pending explicit authorization and real-account verification.

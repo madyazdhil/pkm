@@ -1,6 +1,6 @@
 # Project Canvas: PkM Magister Teknik Informatika UNPAM (Kecamatan Tambun Selatan)
 
-- Last updated: 2026-09-25
+- Last updated: 2026-10-04
 - Artifact status: Active
 
 ## Working Output & Synced Artifacts
@@ -27,7 +27,7 @@ Browser capture untuk deck workshop dilakukan melalui Google Chrome pada project
 
 ### Capture berikutnya
 
-Pembuatan file `Index.html`, penempelan kode sintetis, pengujian dashboard, dan capture menu deployment menunggu konfirmasi eksplisit sebelum project cloud latihan diubah. Status: in progress.
+Capture dan artefak lokal sudah tersedia. Import Google Sheets, konfigurasi Apps Script cloud, deployment, dan uji akses tetap menunggu otorisasi serta verifikasi pada akun nyata.
 
 ### Capture setelah project latihan diisi
 
@@ -44,14 +44,14 @@ Demo cloud yang digunakan:
 - Capture hasil dashboard yang sudah ter-render di browser belum dibuat karena deployment belum dilakukan.
 
 
-## HTML Workshop Deck — 26 September 2026
+## HTML Workshop Deck — versi final lokal, 4 Oktober 2026
 
 - ✅ **Deck HTML final:** [ai-dashboard-gas-workshop.html](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
 - 📖 **Petunjuk penggunaan:** [README.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/README.md)
 - 🧾 **Manifest provenance capture:** [CAPTURE-MANIFEST.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/assets/CAPTURE-MANIFEST.md)
 - 🧪 **QA script:** [qa_html_deck.py](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/scripts/qa_html_deck.py)
 
-Deck berisi 28 slide dan dapat dibuka langsung melalui `file://`. Capture browser berasal dari Chrome zoom 110% dan hanya dipakai sebagai bukti langkah UI Apps Script. Deck tidak mengklaim deployment web app berhasil karena URL deployment belum tersedia.
+Deck sekarang berisi 18 slide dan dapat dibuka langsung melalui `file://`. Capture browser berasal dari Chrome zoom 110% dan hanya dipakai sebagai bukti langkah UI Apps Script. Deck tidak mengklaim deployment web app berhasil karena URL deployment belum tersedia.
 
 ## Accessibility revision — 26 September 2026
 
@@ -140,3 +140,10 @@ Penjelasan kode juga tersedia di [README deck](file:///Users/yazidhilmi/Document
 - ✅ **Facilitator preflight/access:** [facilitator-preflight-and-access.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/facilitator-preflight-and-access.md)
 
 Cloud status: Google Sheets import, Apps Script configuration, deployment URL, and cross-account access are intentionally **pending** until tested in the real Google account environment.
+
+## Workshop-ready bundle — 4 October 2026
+
+- 📦 **Folder paket workshop:** [2026-10-04-workshop-bundle/](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/outputs/2026-10-04-workshop-bundle)
+- 🗜️ **Arsip ZIP siap dibagikan:** [pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/outputs/pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip)
+- Isi paket: deck HTML 18 slide beserta asset, starter Apps Script, tiga workbook dummy 100 baris, handout peserta, worksheet, checklist, evaluasi, preflight fasilitator, status QA, dan manifest checksum.
+- Status cloud tetap pending: arsip ini tidak mengklaim URL Web App Google yang live sebelum deployment dan akses diuji pada akun nyata.

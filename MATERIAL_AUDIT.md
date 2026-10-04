@@ -235,16 +235,16 @@ Deck 28 slide sekarang dapat dipadatkan menjadi sekitar 16–18 slide inti:
 
 Materi sebaiknya belum dianggap final sebelum semua poin berikut terpenuhi:
 
-- [ ] Ada satu use case utama yang disetujui mitra/tim.
-- [ ] Ada dataset sintetis yang sama dengan yang dipakai dalam demo.
-- [ ] Ada screenshot atau demo dashboard hasil akhir yang benar-benar sesuai dataset.
-- [ ] Setiap KPI memiliki definisi dan sumber kolom yang jelas.
-- [ ] Peserta dapat mengikuti alur tanpa harus membuat kode dari nol.
-- [ ] Codex tidak mengganggu jalur praktik utama.
-- [ ] Rundown deck sesuai dengan waktu materi efektif.
-- [ ] Deployment tidak dijadikan syarat kelulusan praktik jika akses akun/jaringan belum pasti.
-- [ ] Ada checklist keamanan dan checklist pengujian yang dapat dibawa pulang.
-- [ ] Ada rencana tindak lanjut: PIC, template, dan siapa yang mengelola data/dashboard.
+- [x] Satu use case utama dipakai dalam demo lokal: rekap layanan kecamatan; persetujuan kebutuhan final mitra tetap perlu dikonfirmasi.
+- [x] Ada dataset sintetis yang sama dengan yang dipakai dalam demo.
+- [x] Ada preview/dashboard hasil render yang sesuai dengan dataset utama.
+- [x] Setiap KPI memiliki definisi dan sumber kolom yang jelas.
+- [x] Peserta dapat mengikuti alur tanpa harus membuat kode dari nol.
+- [x] Codex tidak mengganggu jalur praktik utama.
+- [x] Rundown deck diselaraskan dengan waktu materi efektif sekitar 80 menit.
+- [x] Deployment tidak dijadikan syarat kelulusan praktik jika akses akun/jaringan belum pasti.
+- [x] Ada checklist keamanan dan checklist pengujian yang dapat dibawa pulang.
+- [ ] Rencana tindak lanjut final, PIC pengelola, dan kebijakan akses belum dikonfirmasi bersama tim/mitra.
 
 ## 9. Kesimpulan akhir
 
