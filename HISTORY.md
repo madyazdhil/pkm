@@ -2818,3 +2818,74 @@ No remote push was performed.
 - :codex-followup[Validate the Google deployment]{prompt="Import the primary dummy workbook into Google Sheets, run setupSpreadsheetId(), deploy the Apps Script web app, and test the URL with the intended access policy."}
 - :codex-followup[Finalize the workshop roles]{prompt="Confirm the final 80-minute timing, Syam/Taufik coordination, facilitator roles, and the follow-up PIC with the PkM team."}
 - :codex-followup[Prepare the participant handout package]{prompt="Package the HTML deck, starter dashboard, three Excel files, worksheet, checklist, and evaluation into one workshop-ready folder or downloadable bundle."}
+
+### Assistant — final response for current turn (exact)
+
+Executed the approved implementation plan locally for `projects/pkm-smt3`.
+
+## Delivered
+
+### 1. Three corrected Excel datasets
+
+Each workbook contains 100 synthetic records plus `Data` and `Panduan` sheets:
+
+- Rekap layanan kecamatan: :codex-file-citation{path="/Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/outputs/2026-10-03-dummy-datasets/dummy-data-rekap-layanan-kecamatan.xlsx" purpose="output"}
+- Monitoring surat/disposisi: :codex-file-citation{path="/Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/outputs/2026-10-03-dummy-datasets/dummy-data-monitoring-surat-disposisi.xlsx" purpose="output"}
+- Agenda kegiatan internal: :codex-file-citation{path="/Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/outputs/2026-10-03-dummy-datasets/dummy-data-agenda-kegiatan-internal.xlsx" purpose="output"}
+
+I also corrected the defects found during validation: the guide no longer overwrites a field name, surat completion dates now match their status, surat priorities vary, and agenda names/types/statuses are coherent.
+
+### 2. Starter dashboard
+
+- [Starter Dashboard Apps Script](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/starter-dashboard/)
+- [Local dashboard preview](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/starter-dashboard/preview.html)
+
+The starter now uses `setupSpreadsheetId()` once, then `SpreadsheetApp.openById()` for the web-app path. It validates headers, IDs, statuses, dates, numeric values, and row limits. The UI also clears stale numbers when a load fails.
+
+The local preview uses the real `Index.html`, the same `Code.gs` calculation path, and the 100-row synthetic fixture. It is explicitly a local preview, not a live Google deployment.
+
+### 3. Revised workshop material
+
+- [Final 18-slide HTML deck](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+- [Participant import/deployment guide](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/participant-import-and-deploy-guide.md)
+- [Group worksheet](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/participant-worksheet-dashboard.md)
+- [Participant checklist](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/checklist-data-dashboard.md)
+- [Pre/post evaluation](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/evaluation-pre-post-dashboard.md)
+- [Facilitator preflight and access guide](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/facilitator-preflight-and-access.md)
+
+The deck now centers the audience on this workflow:
+
+`Excel → Google Sheets → ChatGPT as an aid → Apps Script → tested dashboard link`
+
+It uses the rekap layanan case as the main demo, keeps the other two files as group variations, and treats deployment as optional unless the URL and access policy are actually tested.
+
+### 4. Plan and project records
+
+- [Updated implementation plan](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/planning/02-implementation-plan-audit-remediation-dashboard-data-flow.md)
+- [Updated material audit](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/MATERIAL_AUDIT.md)
+- `STATE.md`, `MEMORY.md`, and `CANVAS.md` updated.
+
+## Verification passed
+
+- Deck QA at 1440×810 and 1280×720.
+- Local dashboard KPI/filter test: 100 total, 25 completed, 50 in process.
+- Apps Script calculation tests for filters, status mutation, configuration, and invalid data.
+- Three-workbook structure and semantic checks.
+- XLSX import and formula-error scan.
+- `file://` startup, navigation, hash, notes, overview, and print checks.
+- `git diff --check`.
+
+## Still pending
+
+I did not perform Google Drive import, cloud Apps Script editing, deployment, URL generation, or cross-account access testing. Therefore, I am not claiming that a live dashboard link exists yet. Those steps are documented in the facilitator guide for the real Google account environment.
+
+Local Git checkpoints:
+
+- `4f8b72d feat(pkm-smt3): execute dashboard material remediation`
+- `4e01406 docs(pkm-smt3): capture final handoff response`
+
+No remote push was performed.
+
+- :codex-followup[Validate the Google deployment]{prompt="Import the primary dummy workbook into Google Sheets, run setupSpreadsheetId(), deploy the Apps Script web app, and test the URL with the intended access policy."}
+- :codex-followup[Finalize the workshop roles]{prompt="Confirm the final 80-minute timing, Syam/Taufik coordination, facilitator roles, and the follow-up PIC with the PkM team."}
+- :codex-followup[Prepare the participant handout package]{prompt="Package the HTML deck, starter dashboard, three Excel files, worksheet, checklist, and evaluation into one workshop-ready folder or downloadable bundle."}
