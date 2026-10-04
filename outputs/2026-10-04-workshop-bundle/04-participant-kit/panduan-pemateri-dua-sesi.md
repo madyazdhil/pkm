@@ -9,15 +9,17 @@ Materi tidak dibawakan sebagai satu blok coding panjang. Sesi dibagi menjadi:
 
 ## Pembagian slide dan waktu
 
-| Bagian | Slide | Pemateri | Waktu kerja |
-|---|---:|---|---:|
-| Pembukaan | 1–2 | Bersama | 5 menit |
-| Teori AI dan prompting | 3–10 | Pak Syam | 45 menit |
-| Serah-terima | 11 | Bersama | 5 menit |
-| Praktik dashboard | 12–26 | Yazid | 60–65 menit |
-| Checklist dan penutup | 27–28 | Bersama | 5–10 menit |
+| Bagian | Slide | Pemateri | Skenario 80 menit | Skenario 120 menit |
+|---|---:|---|---:|---:|
+| Pembukaan | 1–2 | Bersama | 5 | 5 |
+| Teori AI dan prompting | 3–10 | Pak Syam | 25 | 45 |
+| Serah-terima | 11 | Bersama | 3 | 5 |
+| Praktik dashboard | 12–26 | Yazid | 39 | 60 |
+| Checklist dan penutup | 27–28 | Bersama | 5 | 5 |
+| Cadangan | — | Pendamping | 3 | 0 |
+| **Total** | | | **80** | **120** |
 
-Total rancangan: sekitar 120 menit. Jika waktu berubah, pertahankan teori inti, satu demo dashboard, satu perubahan kecil, dan testing.
+Kedua skenario masih perlu konfirmasi tim. Angka 120 menit bukan keputusan memperpanjang slot. Untuk 80 menit, gunakan starter yang sudah disiapkan, satu demo, dan satu perubahan kecil. Teori serta prompting tetap mendapat waktu tersendiri.
 
 ## Catatan untuk Pak Syam — slide 3–10
 

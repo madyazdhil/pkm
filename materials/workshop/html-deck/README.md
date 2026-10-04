@@ -5,7 +5,7 @@ Buka `ai-dashboard-gas-workshop.html` langsung di browser. Deck final berisi **2
 1. **Pak Syam — teori AI dan prompting**: basic AI, Generative AI, contoh penggunaan, batasan, verifikasi manusia, keamanan data, etika, serta cara menyusun prompt yang benar.
 2. **Yazid — praktik dashboard**: Excel → Google Sheets → prompt → `Code.gs` + `Index.html` → testing → link web app.
 
-Deck selalu mulai dari slide judul saat dibuka dan tidak membutuhkan server atau koneksi internet untuk navigasi inti. Tema terang dengan kontras tinggi dipakai agar lebih terbaca saat diproyeksikan. Screenshot/browser evidence disimpan di `assets/`. Deck membedakan screenshot Google UI nyata dari preview lokal berbasis data sintetis.
+Bukaan tanpa hash dimulai dari slide judul; tautan `#slide-N` dan reload mempertahankan slide yang dipilih. Deck tidak membutuhkan server atau koneksi internet untuk navigasi inti. Tema terang dengan kontras tinggi dipakai agar lebih terbaca saat diproyeksikan. Screenshot/browser evidence disimpan di `assets/`. Deck membedakan screenshot Google UI nyata dari preview lokal berbasis data sintetis.
 
 ## Materi pendamping
 
@@ -17,14 +17,21 @@ Deck selalu mulai dari slide judul saat dibuka dan tidak membutuhkan server atau
 - `Y / YAZID · PRAKTIK DASHBOARD`: slide 12–26, dari orientasi data sampai testing dan deployment.
 - `↔ / BERSAMA`: pembukaan, pembagian peran, serah-terima teori ke praktik, checklist kelompok, dan penutup.
 
-## Rancangan alur 2 jam
+## Durasi: menunggu konfirmasi tim
 
-- sekitar 35 menit: teori Pak Syam;
-- sekitar 5 menit: serah-terima dan demo tujuan;
-- sekitar 70 menit: praktik dashboard bersama Yazid;
-- sekitar 10 menit: checklist/share-out/penutup.
+Pembagian pemateri sudah jelas, tetapi belum ada persetujuan memperpanjang slot materi.
 
-Durasi ini adalah rancangan kerja yang dapat disesuaikan dengan rundown final tim.
+| Bagian | Skenario inti 80 menit | Jika tersedia 120 menit penuh |
+|---|---:|---:|
+| Pembukaan, slide 1–2 | 5 | 5 |
+| Teori dan prompting Pak Syam, slide 3–10 | 25 | 45 |
+| Serah-terima, slide 11 | 3 | 5 |
+| Praktik Yazid, slide 12–26 | 39 | 60 |
+| Checklist dan penutup, slide 27–28 | 5 | 5 |
+| Cadangan untuk kendala | 3 | 0 |
+| **Total** | **80** | **120** |
+
+Skenario 80 menit mempertahankan teori dasar dan prompting. Kurangi pengembangan fitur atau deployment kelompok, bukan menghapus bagian Pak Syam. Jadwal rinci ada di panduan pemateri dan rancangan materi.
 
 ## Kontrol
 

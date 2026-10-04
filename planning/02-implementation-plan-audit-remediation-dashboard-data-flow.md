@@ -152,24 +152,34 @@ Setelah revisi, peserta non-teknis diharapkan dapat:
 
 Target struktur canonical setelah koreksi pembagian pemateri: **28 slide** dengan blok teori, serah-terima, dan blok praktik.
 
-1. Judul Materi 2: Dashboard Rekap Layanan Kecamatan.
-2. Hasil yang dibawa pulang.
-3. Masalah kerja: data sudah ada tetapi sulit dibaca cepat.
-4. Contoh file Excel dan cara mengunggahnya.
-5. Data dictionary dan aturan data aman.
-6. Siapa pengguna dashboard dan pertanyaan kerja.
-7. Dari kolom data ke KPI.
-8. Contoh dashboard hasil akhir.
-9. ChatGPT sebagai alat bantu rancangan/kode.
-10. Prompt dashboard berdasarkan kolom Sheet.
-11. Membuka Apps Script dari Google Sheets.
-12. Menempatkan `Code.gs` dan `Index.html`.
-13. Menjalankan dashboard dan membaca hasil.
-14. Mengubah satu filter atau KPI.
-15. Menguji data, tampilan, dan akses.
-16. Menerbitkan dashboard menjadi link web app.
-17. Checklist hasil kelompok.
-18. Tindak lanjut dan PIC.
+1. Dashboard Rekap Layanan Kecamatan.
+2. Pembagian materi.
+3. Basic AI untuk pekerjaan administrasi.
+4. Generative AI dan cara kerjanya.
+5. Contoh pemanfaatan AI di kantor kecamatan.
+6. Batasan AI dan verifikasi manusia.
+7. Keamanan data saat memakai AI.
+8. Formula prompting yang benar.
+9. Prompt buruk versus prompt baik.
+10. Latihan singkat menyusun prompt.
+11. Dari teori ke praktik dashboard.
+12. Hasil yang dibawa pulang.
+13. Masalah kerja: data ada, informasi belum cepat terbaca.
+14. Dari Excel ke Google Sheets.
+15. Data dictionary dan data aman.
+16. Siapa memakai dashboard dan untuk pertanyaan apa.
+17. Dari kolom data ke KPI.
+18. Contoh tampilan dashboard akhir.
+19. ChatGPT sebagai alat bantu.
+20. Prompt dashboard berdasarkan kolom Sheet.
+21. Membuka Google Apps Script.
+22. Menempatkan Code.gs dan Index.html.
+23. Dashboard berjalan.
+24. Satu perubahan kecil.
+25. Testing dan verifikasi.
+26. Menerbitkan dashboard sebagai link.
+27. Checklist hasil kelompok.
+28. Langkah setelah workshop.
 
 Struktur tambahan setelah koreksi pemateri:
 
@@ -188,9 +198,9 @@ Yang tetap dikurangi:
 
 **Output:** deck HTML revisi dan README yang menjelaskan alur Excel → Sheets → GAS → link.
 
-### Tahap 5 — Revisi rundown dua pemateri (rancangan 2 jam)
+### Tahap 5 — Rundown dua pemateri: skenario 80 dan 120 menit
 
-Rancangan baru membagi sesi menjadi teori Pak Syam dan praktik Yazid. Total kerja diproyeksikan sekitar **120 menit**, tetapi final timing tetap perlu dikonfirmasi tim.
+User mengonfirmasi pembagian teori/praktik, bukan tambahan durasi. Skenario inti **80 menit**: pembukaan 5, teori/prompting Pak Syam 25, serah-terima 3, praktik Yazid 39, checklist/penutup 5, cadangan 3. Jadwal di bawah hanya berlaku **jika 120 menit penuh tersedia** dan disetujui tim.
 
 | Durasi | Sesi | Pemateri | Hasil |
 |---:|---|---|---|
@@ -318,4 +328,4 @@ Keputusan implemented:
 - Pak Syam memiliki slides 3–10;
 - Yazid memiliki slides 12–26;
 - slides 1–2, 11, 27–28 menjadi bagian bersama/serah-terima;
-- QA deck dan bundle harus diulang setelah perubahan.
+- QA deck dan bundle sudah diulang setelah perubahan dan lulus.

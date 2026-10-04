@@ -3137,3 +3137,53 @@ Belum ada deployment Google live yang diklaim. Yang direvisi dan diverifikasi se
 - :codex-followup[Konfirmasi durasi workshop]{prompt="Pilih skenario inti 80 menit atau workshop penuh sekitar 120 menit, lalu sesuaikan rundown final dengan Pak Syam dan tim."}
 - :codex-followup[Review bagian teori Pak Syam]{prompt="Baca slide 3–10 dan panduan pemateri dua sesi, lalu tandai contoh teori AI atau prompting yang ingin ditambah atau diubah."}
 - :codex-followup[Uji deployment live]{prompt="Import workbook utama ke Google Sheets, konfigurasi setupSpreadsheetId(), deploy Web App, dan uji URL dengan kebijakan akses yang disepakati."}
+
+
+#### Final reconciliation [Codex]
+- Reconciled README, outline, presenter guide and plan: 80-minute core and conditional 120-minute schedule; no duration extension approved. Removed stale 18-slide list from the active plan.
+- Refreshed bundle and ZIP without deleting folders. SHA-256 and ZIP integrity pass.
+- Corrected stale audit QA status and preserved original audit score instead of assigning a new score without a fresh audit.
+
+#### Failed Attempt [Codex]
+- Screenshot capture succeeded, but `view_image` rejected visual inspection because image inputs were unavailable. No human-style visual review is claimed; layout/navigation tests are automated evidence only.
+- A targeted demo-list renumber replacement matched no text; replaced the exact subsection and verified numbering 1–15.
+
+
+### Assistant [Codex] — final response actually sent
+
+Iya, kamu benar. **Aku salah memahami cakupan deck-nya.** Waktu audit, aku memperlakukannya sebagai materi praktikmu saja dan menganggap teori Mas Syam ada di materi terpisah. Akibatnya, bagian basic AI dan prompting malah terpangkas. Maaf, itu tidak sesuai pembagian yang kamu maksud.
+
+**Sudah aku perbaiki langsung menjadi 28 slide dalam satu deck**, dengan pembagian berikut:
+
+| Slide | Pemateri | Isi |
+|---|---|---|
+| 1–2 | Bersama | Pembukaan dan pembagian materi |
+| **3–10** | **Mas Syam** | **Teori AI, keamanan, verifikasi, dan prompting** |
+| 11 | Bersama | Transisi dari teori ke praktik |
+| **12–26** | **Kamu / Yazid** | **Praktik data Excel sampai dashboard** |
+| 27–28 | Bersama | Checklist hasil dan penutup |
+
+### Bagian Mas Syam sekarang berisi
+
+1. Pengertian dasar AI dan hubungannya dengan pekerjaan administrasi.
+2. Generative AI dan alur instruksi → konteks → keluaran → pemeriksaan.
+3. Contoh penggunaan AI di kantor kecamatan.
+4. Keterbatasan AI dan pentingnya pemeriksaan manusia.
+5. Keamanan data yang boleh dan tidak boleh digunakan.
+6. Cara menyusun prompt: tujuan, konteks, data, batasan, serta bentuk keluaran.
+7. Perbandingan prompt terlalu umum dengan prompt yang lebih jelas.
+8. Latihan singkat menyusun prompt sebelum masuk ke praktikmu.
+
+Ada **penanda pembicara di setiap slide**, catatan presenter lewat tombol **N**, dan panduan untuk pergantian pemateri. Jadi Mas Syam punya bagian mengajar yang utuh, bukan hanya satu slide pengantar.
+
+### Buka hasil revisinya
+
+- [Deck revisi 28 slide](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+- [Panduan pemateri Mas Syam dan Yazid](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/panduan-pemateri-dua-sesi.md)
+- [Implementation plan yang sudah dikoreksi](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/planning/02-implementation-plan-audit-remediation-dashboard-data-flow.md)
+
+Paket ZIP juga sudah diperbarui. **Durasi tidak otomatis aku ubah menjadi dua jam**: tersedia skenario 80 menit dan opsi 120 menit jika memang mendapat slot penuh. Kalau waktunya terbatas, yang dikurangi adalah perluasan fitur praktik, bukan menghilangkan teori Mas Syam.
+
+- :codex-followup[Naskah bicara Mas Syam]{prompt="Buat naskah bicara natural untuk Mas Syam pada slide 3–10, dengan contoh pekerjaan kecamatan dan pertanyaan interaktif untuk peserta."}
+- :codex-followup[Handout latihan prompting]{prompt="Buat handout peserta satu halaman untuk latihan prompting pada slide 10, lengkap dengan contoh dan ruang mengisi prompt."}
+- :codex-followup[Simulasi rundown 80 menit]{prompt="Simulasikan rundown 80 menit untuk Mas Syam dan Yazid, tandai batas waktu setiap bagian dan langkah praktik yang bisa dilewati jika tertinggal."}

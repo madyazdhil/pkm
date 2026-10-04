@@ -1,4 +1,4 @@
-8f915306941de975189781b2374d8953cce8c994346bd8e8a4793c0b0d7e747e  ./01-deck/README.md
+c1b6522676b75f22c0e12008681b8e3ddb50968b56c27c6c993090c7eb4e85d5  ./01-deck/README.md
 04d0c47d4e0a2bc8403f03111d6fd58977e968ced00f09ddbf9191f031885bea  ./01-deck/ai-dashboard-gas-workshop.html
 e34e7c93a2758407492dde9ec71187b6fbde45c4ea0f7520409d20ea247f1dd7  ./01-deck/assets/01-apps-script-home-110.jpg
 b4cbfc4549a3a04fa43f6e8571524d1f42eea6227df4ae24ce7640a258112203  ./01-deck/assets/01-google-sheets-extensions-apps-script.png
@@ -28,11 +28,11 @@ b90102fd283e243e0454143b65993442e0ea5457887c72c2e48205b2cdfe48c4  ./03-datasets/
 b8ecc826b5c44d3f6b6d1c4d9fde358f5aac0be060e76b329b7c148787294d17  ./03-datasets/previews/dummy-data-monitoring-surat-disposisi-guide.png
 e4b2d14bd8a5478a1b9075683de8dafa3a47418fbcf7b3bc91bdca0edc0362f4  ./03-datasets/previews/dummy-data-rekap-layanan-kecamatan-data.png
 76d000cefcee78b4a40093e013c71a276e724ac2a31cb1b2ae92cf671817e9c7  ./03-datasets/previews/dummy-data-rekap-layanan-kecamatan-guide.png
-f9c513430872466217ca044d5db2e83c205b73a1d303be40054aa47d19196e27  ./04-participant-kit/02-outline-deck-chat-to-gas.md
+8ada55d7268552613250195f64e260e9399e8ea7909d0eb53a6304d24a6b5809  ./04-participant-kit/02-outline-deck-chat-to-gas.md
 9d1bb2be3fd06917c0f38718c1b7851a4b346646c1fa2a633733c77e0a08cc3b  ./04-participant-kit/checklist-data-dashboard.md
 79a28daea33697a8456742b3daf4e8ff15a86c65d6d2e961a5d42c3f5fc62c3b  ./04-participant-kit/evaluation-pre-post-dashboard.md
 21b1d9bd8c4404d0f1b511335993c622e19152b34f1db21555fda21b9cead677  ./04-participant-kit/facilitator-preflight-and-access.md
-4619ad11a3f511a51eb6b038c0cf1d6a63da2f4b83cf4ed06fdcd6ff786284db  ./04-participant-kit/panduan-pemateri-dua-sesi.md
+ce3f98da4ab2286aa9b91d4d3769973d18eadb9b0a130e93a71049f5a8fc5e17  ./04-participant-kit/panduan-pemateri-dua-sesi.md
 af4c7a37931323a8d4e84c519d096ef39b450f7e097c3b5a0408ee11546b44d7  ./04-participant-kit/participant-import-and-deploy-guide.md
 90c0659501fe88b4f350e78cef8273e95491761a6ce5c3ec836d2c063a523524  ./04-participant-kit/participant-worksheet-dashboard.md
 51be4f7e9fed41018c249dcf1038f6397193a6345f2a88e0b7ddd3824d4d0271  ./QA-STATUS.md

@@ -50,7 +50,7 @@
 - **Shareable archive:** `outputs/pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip`
 - **Contents:** 28-slide deck with assets, explicit theory/practice speaker split, starter Apps Script project and preview, three 100-row Excel workbooks, participant handouts, facilitator preflight, QA status, and SHA-256 manifest.
 - **Local package checks:** ZIP integrity passed, deck relative assets resolved, source QA artifacts remain green from the prior verified run.
-- **Failed rerun note:** A fresh Playwright deck QA rerun could not launch Chromium in the current macOS sandbox because of a Mach rendezvous permission error; this did not modify the package, and the prior deck QA result remains the applicable verification record.
+- **Browser rerun:** initial sandbox launch failed; approved retry passed. The revised 28-slide deck also passed automated QA.
 
 
 ## Speaker split revision — 4 October 2026
@@ -61,7 +61,7 @@
   - Pak Syam: slides 3–10, theory and prompt exercise;
   - Yazid: slides 12–26, dashboard practice;
   - shared: slides 1–2, 11, 27–28.
-- Working rundown is now a 2-hour split: theory, transition, demo/practice, testing/deployment, share-out, and closing. Final minutes still need team confirmation.
+- Working rundown has an 80-minute core and a conditional 120-minute full-slot scenario. The user has not approved a duration extension.
 
 
 ## Verification after speaker split — 4 October 2026

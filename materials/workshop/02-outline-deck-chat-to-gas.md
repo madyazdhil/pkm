@@ -6,7 +6,7 @@
 - **Tanggal pembaruan:** 4 Oktober 2026
 - **Audience:** Aparatur, pegawai, dan staf Kantor Kecamatan Tambun Selatan
 - **Pemateri:** Muharam Syam Nugraha — teori AI dan prompting; Ahmad Yazid Hilmi — praktik dashboard
-- **Durasi kerja:** rancangan sekitar 120 menit; final timing perlu dikonfirmasi tim
+- **Durasi kerja:** skenario inti 80 menit; skenario 120 menit hanya jika slot penuh tersedia dan disepakati tim
 - **Output:** peserta memahami prinsip AI/prompting lalu mengikuti prototipe dashboard yang dibuka melalui link web app Google Apps Script
 
 ## Pembagian pembicara
@@ -84,6 +84,10 @@ ChatGPT membantu menyusun rancangan, prompt, kode, dan diagnosis. Canvas ChatGPT
 | 28 | Langkah setelah workshop | Bersama | Mulai dari data aman, KPI jelas, uji, akses, dan PIC. |
 
 ## Rundown presenter
+
+**Skenario inti 80 menit:** pembukaan 5, teori/prompting Pak Syam 25, serah-terima 3, praktik Yazid 39, penutup 5, cadangan 3 menit. Teori tidak dihapus demi mengejar praktik.
+
+**Skenario 120 menit jika tersedia penuh:**
 
 | Durasi | Sesi | Pemateri | Hasil |
 |---:|---|---|---|

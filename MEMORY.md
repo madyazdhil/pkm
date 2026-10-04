@@ -61,7 +61,7 @@
 
 ## Speaker division — 2026-09-26
 
-- Materi dibawakan oleh dua orang: Pak Syam membaca basic AI, Generative AI, verifikasi, dan keamanan data; Yazid memandu ChatGPT prompting, GAS, dua file, testing, deployment, dan praktik dashboard.
+- Materi dibawakan oleh dua orang: Pak Syam menjelaskan basic AI, Generative AI, verifikasi, keamanan data, dan prinsip prompting; Yazid menerapkan prompting saat praktik GAS, dua file, testing, deployment, dan dashboard.
 - Deck harus menampilkan ownership badge kecil di bagian atas setiap slide: `S`, `Y`, atau `↔`.
 
 ## Navigation and visual overlay bug lesson — 2026-09-26
@@ -86,7 +86,7 @@
 - The starter Apps Script uses `setupSpreadsheetId()` once, then `SpreadsheetApp.openById()` for the web-app path. It validates the exact primary headers, one request per row, known statuses, duplicate IDs, dates, and numeric fields.
 - Local preview is not cloud evidence. No deployment/access claim is valid until a real URL is opened and tested.
 - Participant support files now include import/deploy guide, worksheet, checklist, pre/post evaluation, and facilitator preflight/access guide.
-- Deck is now 28 slides, light/projector-first, with a distinct Pak Syam theory block (basic AI, Generative AI, safety, verification, and prompting) followed by Yazid’s dashboard practice block. Local rendered dashboard evidence is in the practical section; the 2-hour split remains a working rundown to confirm with the team.
+- Deck is now 28 slides, light/projector-first, with a distinct Pak Syam theory block (basic AI, Generative AI, safety, verification, and prompting) followed by Yazid’s dashboard practice block. Local rendered dashboard evidence is in the practical section; 80-minute and conditional 120-minute scenarios remain unconfirmed; never infer a longer slot from the number of slides.
 
 
 ## Speaker split correction — 2026-10-04
