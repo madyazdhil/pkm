@@ -3205,3 +3205,56 @@ Status: requested. Need create a practical Markdown speaking script for Pak Syam
 - **Implemented:** linked the new script from the presenter guide, deck README, project canvas, workshop bundle README/START-HERE, and copied the revised artifacts into the shareable bundle.
 - **Verification:** `python3 scripts/qa_html_deck.py` passed at 1440×810 and 1280×720, including local dashboard preview. The first browser QA attempt failed because Chromium could not start in sandbox; the approved retry passed. `git diff --check`, SHA-256 manifest verification, and ZIP integrity passed.
 - **Status:** implemented and locally verified. No Google Cloud deployment was performed or claimed.
+
+### Assistant [Codex] — response sent
+
+Sudah, aku buatkan **1 file Markdown khusus** yang isinya bukan cuma outline, tapi **kalimat yang bisa langsung Mas Syam dan kamu ucapkan ke Bapak/Ibu** selama workshop.
+
+### File utama
+
+- [Naskah bicara Mas Syam + Yazid](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/naskah-bicara-pemateri-dua-sesi.md)
+
+Isinya mencakup:
+
+- pembukaan bersama;
+- kalimat slide 2 tentang pembagian kelompok;
+- naskah Mas Syam untuk slide 3–10;
+- latihan prompting;
+- handoff Mas Syam ke kamu;
+- naskah praktik kamu untuk slide 12–26;
+- instruksi yang harus disampaikan ke tiap kelompok;
+- kalimat testing, deployment, dan penutup;
+- versi jika waktu hanya 80 menit atau tersedia 120 menit;
+- kalimat yang sebaiknya dihindari supaya tidak membuat klaim berlebihan tentang AI atau deployment.
+
+### Slide 2 juga sudah diubah
+
+Sekarang slide 2 secara eksplisit menyampaikan:
+
+> “Pembagian kelompok sudah dilakukan sebelum materi dimulai. Silakan Bapak dan Ibu tetap duduk bersama kelompok masing-masing.”
+
+Slide tersebut juga menampilkan tiga kasus kelompok:
+
+1. Rekap layanan
+2. Surat dan disposisi
+3. Agenda internal
+
+Slide 2 tetap menjelaskan pembagian pemateri:
+
+- Mas Syam: teori AI, keamanan data, verifikasi, dan prompting.
+- Yazid: praktik Excel, Google Sheets, Apps Script, testing, dan link dashboard.
+
+### Artefak yang sudah diperbarui
+
+- [Deck HTML terbaru](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+- [Panduan pemateri ringkas](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/panduan-pemateri-dua-sesi.md)
+- [Paket workshop ZIP terbaru](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/outputs/pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip)
+
+### Verifikasi
+
+- QA deck lulus pada 1440×810 dan 1280×720.
+- Slide 2 tidak overflow.
+- Manifest SHA-256 bundle lulus.
+- ZIP integrity lulus.
+- Perubahan sudah dibuatkan local commit: `20df252 feat(pkm-smt3): add speaker script and group kickoff slide`.
+- Belum ada deployment Google live atau push GitHub pada turn ini.
