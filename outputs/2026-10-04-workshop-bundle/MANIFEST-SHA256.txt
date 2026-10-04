@@ -1,5 +1,5 @@
-c1b6522676b75f22c0e12008681b8e3ddb50968b56c27c6c993090c7eb4e85d5  ./01-deck/README.md
-04d0c47d4e0a2bc8403f03111d6fd58977e968ced00f09ddbf9191f031885bea  ./01-deck/ai-dashboard-gas-workshop.html
+096d9e1bce006048f150e53ad134dbf086a8338d7f9f63634e7a5e74f6d99825  ./01-deck/README.md
+92bc316a4edbc3c93650a3a82b36f647a88270a2af6a2b0fdb420974a0a283d8  ./01-deck/ai-dashboard-gas-workshop.html
 e34e7c93a2758407492dde9ec71187b6fbde45c4ea0f7520409d20ea247f1dd7  ./01-deck/assets/01-apps-script-home-110.jpg
 b4cbfc4549a3a04fa43f6e8571524d1f42eea6227df4ae24ce7640a258112203  ./01-deck/assets/01-google-sheets-extensions-apps-script.png
 d219db71ce290217dbe4fe4506f3412d6ff619b8acc921b00c15ca6e92369246  ./01-deck/assets/02-codegs-editor-110.jpg
@@ -32,9 +32,10 @@ e4b2d14bd8a5478a1b9075683de8dafa3a47418fbcf7b3bc91bdca0edc0362f4  ./03-datasets/
 9d1bb2be3fd06917c0f38718c1b7851a4b346646c1fa2a633733c77e0a08cc3b  ./04-participant-kit/checklist-data-dashboard.md
 79a28daea33697a8456742b3daf4e8ff15a86c65d6d2e961a5d42c3f5fc62c3b  ./04-participant-kit/evaluation-pre-post-dashboard.md
 21b1d9bd8c4404d0f1b511335993c622e19152b34f1db21555fda21b9cead677  ./04-participant-kit/facilitator-preflight-and-access.md
-ce3f98da4ab2286aa9b91d4d3769973d18eadb9b0a130e93a71049f5a8fc5e17  ./04-participant-kit/panduan-pemateri-dua-sesi.md
+0568eadb2756330496a1c12277453e2931d255c82653d1bcea447339d81a9422  ./04-participant-kit/naskah-bicara-pemateri-dua-sesi.md
+442b94b72eae913ae512fb6aa5cbe614d474b02bb8710511332d8b5150b1b139  ./04-participant-kit/panduan-pemateri-dua-sesi.md
 af4c7a37931323a8d4e84c519d096ef39b450f7e097c3b5a0408ee11546b44d7  ./04-participant-kit/participant-import-and-deploy-guide.md
 90c0659501fe88b4f350e78cef8273e95491761a6ce5c3ec836d2c063a523524  ./04-participant-kit/participant-worksheet-dashboard.md
-51be4f7e9fed41018c249dcf1038f6397193a6345f2a88e0b7ddd3824d4d0271  ./QA-STATUS.md
-9e6b10220d2050a6f1a5ba86524caff5f341d8a7f5b639e071d32f229adc403e  ./README.md
-437421c794d0e113e2950f4fcc78aef770657bfb12f73455da08e2fce9038141  ./START-HERE.md
+a5937a6cd534bd5152d633e8baa7efa945b92561eaade083b6211b03ebcbecab  ./QA-STATUS.md
+dc29a65a39fc443f88324933cb0b9f206e4d57a46524f332dd950a849c1a5630  ./README.md
+7746b5a3f30651d2dd54f325e8b69c2f4075203abdb990588384becc4d1023e3  ./START-HERE.md

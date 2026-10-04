@@ -73,3 +73,11 @@
 - QA passed after tightening the prompt exercise for both 1440×810 and 1280×720.
 - The workshop outline now documents both an 80-minute compressed scenario and a full approximately 120-minute scenario.
 - The workshop bundle was refreshed with the new deck, presenter guide, outline, facilitator guide, manifest, and ZIP archive.
+
+
+## Speaker script and group assignment correction — 4 October 2026
+
+- **Status:** Implemented locally and QA verified.
+- Added [naskah-bicara-pemateri-dua-sesi.md](materials/workshop/naskah-bicara-pemateri-dua-sesi.md), a direct-reading talk track for Mas Syam and Yazid addressed to Bapak/Ibu, including slide-by-slide language, participant prompts, handoffs, and 80/120-minute variants.
+- Revised slide 2 in the canonical deck to state that group division has already been completed, ask participants to remain with their assigned group, and show the three practice cases: rekap layanan, surat/disposisi, and agenda internal.
+- Updated the shareable workshop bundle with the revised deck, presenter guide, and speaker script.

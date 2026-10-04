@@ -96,3 +96,7 @@ Kedua skenario masih perlu konfirmasi tim. Angka 120 menit bukan keputusan mempe
 - Materi ini mengajarkan prototipe dan alur kerja, bukan sistem pelayanan produksi.
 - Deployment publik tidak boleh disebut berhasil tanpa URL nyata dan pengujian akses.
 - Keputusan penggunaan data nyata harus mengikuti kebijakan organisasi, kewenangan, dan aturan yang berlaku.
+
+## Naskah bicara siap ucap
+
+Untuk kalimat yang dapat langsung disampaikan kepada Bapak/Ibu pada setiap slide, gunakan [naskah bicara pemateri dua sesi](naskah-bicara-pemateri-dua-sesi.md). Naskah tersebut juga memuat instruksi slide 2 bahwa pembagian kelompok sudah dilakukan, contoh kalimat interaksi, handoff Mas Syam–Yazid, serta pilihan kalimat untuk skenario 80 menit dan 120 menit.

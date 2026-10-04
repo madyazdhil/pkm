@@ -10,6 +10,7 @@ Bukaan tanpa hash dimulai dari slide judul; tautan `#slide-N` dan reload mempert
 ## Materi pendamping
 
 - [Panduan pemateri dua sesi](../04-participant-kit/panduan-pemateri-dua-sesi.md)
+- [Naskah bicara siap ucap untuk Mas Syam dan Yazid](../04-participant-kit/naskah-bicara-pemateri-dua-sesi.md)
 
 ## Pembagian presenter
 

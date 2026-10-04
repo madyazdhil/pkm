@@ -13,6 +13,7 @@ Sesi dibagi menjadi dua blok:
 3. Serahkan ke Yazid pada slide 11, lalu gunakan slide 12–26 untuk praktik dashboard.
 4. Gunakan `03-datasets/dummy-data-rekap-layanan-kecamatan.xlsx` sebagai demo utama.
 5. Ikuti `04-participant-kit/facilitator-preflight-and-access.md` dan `04-participant-kit/panduan-pemateri-dua-sesi.md` sebelum hari H.
+   Gunakan `04-participant-kit/naskah-bicara-pemateri-dua-sesi.md` sebagai kalimat siap ucap untuk Mas Syam dan Yazid.
 6. Bagikan panduan import/deploy, worksheet, checklist, prompt card, dan evaluasi kepada peserta.
 7. Jika deployment cloud belum diuji, gunakan `02-starter-dashboard/preview.html` atau screenshot deck sebagai fallback.
 

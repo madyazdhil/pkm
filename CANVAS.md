@@ -12,6 +12,7 @@
 - 📊 **Laporan Hasil Riset Aturan PkM UNPAM:** [RESEARCH.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/RESEARCH.md)
 - 🧩 **Rancangan Materi Workshop AI + Vibe Coding + GAS:** [01-rancangan-materi-workshop-ai-dashboard-gas.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/01-rancangan-materi-workshop-ai-dashboard-gas.md)
 - 🖥️ **Outline Deck ChatGPT ke GAS:** [02-outline-deck-chat-to-gas.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/02-outline-deck-chat-to-gas.md)
+- 🗣️ **Naskah bicara siap ucap Mas Syam + Yazid:** [naskah-bicara-pemateri-dua-sesi.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/naskah-bicara-pemateri-dua-sesi.md)
 - 🔍 **Laporan Audit Awal Proposal:** [PROPOSAL_REVIEW.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/PROPOSAL_REVIEW.md)
 
 ## Browser Screenshot Gallery — 25 September 2026

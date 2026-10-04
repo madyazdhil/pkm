@@ -3187,3 +3187,21 @@ Paket ZIP juga sudah diperbarui. **Durasi tidak otomatis aku ubah menjadi dua ja
 - :codex-followup[Naskah bicara Mas Syam]{prompt="Buat naskah bicara natural untuk Mas Syam pada slide 3–10, dengan contoh pekerjaan kecamatan dan pertanyaan interaktif untuk peserta."}
 - :codex-followup[Handout latihan prompting]{prompt="Buat handout peserta satu halaman untuk latihan prompting pada slide 10, lengkap dengan contoh dan ruang mengisi prompt."}
 - :codex-followup[Simulasi rundown 80 menit]{prompt="Simulasikan rundown 80 menit untuk Mas Syam dan Yazid, tandai batas waktu setiap bagian dan langkah praktik yang bisa dilewati jika tertinggal."}
+
+## User request — 4 October 2026
+
+> ini kasi sebua h md yang aku sam amas syam harus bilang apa aja gitu loh untuk bapak ibu
+>
+> sama ada di slide 2 minta pembagian kelompoknya udah jalan gitu
+
+Status: requested. Need create a practical Markdown speaking script for Pak Syam and Yazid addressed to the participants, and revise slide 2 so it states that group division is already underway.
+
+## Implementation — 4 October 2026 [Codex]
+
+- **Objective:** provide a direct-reading Markdown script for Mas Syam and Yazid, and make slide 2 explicitly state that group division has already been completed.
+- **Files inspected:** canonical HTML deck, presenter guide, bundle README/START-HERE, project state/canvas, and latest project history.
+- **Implemented:** created `materials/workshop/naskah-bicara-pemateri-dua-sesi.md` with slide-by-slide wording for Bapak/Ibu, participant questions, group instructions, handoffs, safety language, and 80/120-minute variants.
+- **Implemented:** revised slide 2 in `materials/workshop/html-deck/ai-dashboard-gas-workshop.html` to state “Pembagian kelompok sudah dilakukan”, ask participants to remain in assigned groups, and show the three practice cases.
+- **Implemented:** linked the new script from the presenter guide, deck README, project canvas, workshop bundle README/START-HERE, and copied the revised artifacts into the shareable bundle.
+- **Verification:** `python3 scripts/qa_html_deck.py` passed at 1440×810 and 1280×720, including local dashboard preview. The first browser QA attempt failed because Chromium could not start in sandbox; the approved retry passed. `git diff --check`, SHA-256 manifest verification, and ZIP integrity passed.
+- **Status:** implemented and locally verified. No Google Cloud deployment was performed or claimed.
