@@ -3050,3 +3050,84 @@ Aku sedang memperbaikinya menjadi **dua bagian yang jelas: teori AI dan promptin
 #### Remaining
 - Google Sheets import, cloud Apps Script configuration, deployment URL, and cross-account access remain intentionally pending real-account authorization and verification.
 - Final speaker timing must be confirmed with Pak Syam/Taufik; both 80-minute core and approximately 120-minute full-workshop scenarios are documented.
+
+### Assistant [Codex] — final response for speaker split correction — 4 October 2026
+
+Iya, kamu benar. **Versi 18 slide terlalu pendek** untuk pembagian materi seperti ini karena bagian teori Pak Syam tentang basic AI, Generative AI, keamanan data, verifikasi, dan prompting jadi terlalu sedikit.
+
+Sudah aku revisi menjadi **28 slide** dengan pembagian yang jelas:
+
+## Bagian Pak Syam — teori AI dan prompting
+
+**Slide 3–10:**
+
+- Basic AI untuk pekerjaan administrasi;
+- pengertian dan cara kerja Generative AI;
+- contoh pemanfaatan AI di kantor kecamatan;
+- batasan AI dan risiko output yang salah;
+- verifikasi manusia / human-in-the-loop;
+- keamanan data dan data yang tidak boleh ditempel ke AI publik;
+- formula prompting yang benar;
+- contoh prompt buruk vs prompt yang lebih baik;
+- latihan mengubah kebutuhan kerja menjadi prompt.
+
+## Bagian Yazid — praktik dashboard
+
+**Slide 12–26:**
+
+- masalah kerja dan tujuan dashboard;
+- Excel → Google Sheets;
+- data dictionary;
+- siapa pengguna dashboard dan pertanyaan kerja;
+- definisi KPI;
+- ChatGPT sebagai alat bantu;
+- prompt dashboard berdasarkan header Sheet;
+- membuka Apps Script;
+- perbedaan `Code.gs` dan `Index.html`;
+- menjalankan dashboard;
+- mengubah satu fitur kecil;
+- testing KPI/filter/tampilan;
+- deployment menjadi link jika akses sudah siap.
+
+## Bagian bersama
+
+- **Slide 1–2:** pembukaan dan pembagian peran;
+- **Slide 11:** serah-terima teori ke praktik;
+- **Slide 27:** checklist hasil kelompok;
+- **Slide 28:** penutup dan tindak lanjut.
+
+## File yang sudah diperbarui
+
+- [Deck final 28 slide](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+- [Panduan pemateri dua sesi](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/panduan-pemateri-dua-sesi.md)
+- [Outline deck terbaru](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/02-outline-deck-chat-to-gas.md)
+- [Paket workshop ZIP terbaru](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/outputs/pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip)
+
+## Durasi
+
+Aku tidak memaksakan bahwa sesi harus 120 menit. Sekarang sudah ada dua skenario:
+
+- **Skenario inti 80 menit:** teori Pak Syam dipadatkan, lalu Yazid melakukan satu demo end-to-end dan satu perubahan kecil.
+- **Skenario penuh sekitar 120 menit:** Pak Syam mendapat ruang teori/prompting yang lebih cukup dan Yazid punya waktu praktik lebih panjang.
+
+Final durasi tetap perlu disepakati dengan Pak Syam dan tim.
+
+## Verifikasi
+
+QA lulus pada:
+
+- 1440×810;
+- 1280×720;
+- navigasi dan hash reload;
+- notes presenter;
+- overview;
+- print mode;
+- preview dashboard lokal;
+- dataset dan starter dashboard;
+- checksum serta ZIP bundle.
+
+Local checkpoint dibuat:
+
+`c0e362c feat(pkm-smt3): restore theory and practice speaker split`
+
+Belum ada deployment Google live yang diklaim. Yang direvisi dan diverifikasi sekarang adalah materi lokal serta paket workshop-nya.
