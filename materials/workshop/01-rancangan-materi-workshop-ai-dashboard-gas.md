@@ -171,19 +171,19 @@ Deployment semua kelompok tidak menjadi syarat. Jika akses cloud bermasalah, gun
 
 1. Pak Syam menyampaikan slide teori dan latihan prompt sesuai `panduan-pemateri-dua-sesi.md`.
 2. Tampilkan file Excel dummy.
-2. Tunjukkan sheet `Panduan`.
-3. Upload atau buka Excel dengan Google Sheets.
-4. Jelaskan pertanyaan kerja dan tiga KPI.
-5. Buka ChatGPT dan tempel prompt card.
-6. Tunjukkan dua output kode secara terpisah.
-7. Buka Apps Script dari menu Extensions/Ekstensi.
-8. Tempel `Code.gs`.
-9. Buat file HTML bernama `Index`.
-10. Tempel `Index.html`.
-11. Uji dashboard.
-12. Ubah satu filter atau label.
-13. Periksa ulang KPI.
-14. Tunjukkan deployment/link hanya jika benar-benar dapat diuji.
+3. Tunjukkan sheet `Panduan`.
+4. Upload atau buka Excel dengan Google Sheets.
+5. Jelaskan pertanyaan kerja dan tiga KPI.
+6. Buka ChatGPT dan tempel prompt card.
+7. Tunjukkan dua output kode secara terpisah.
+8. Buka Apps Script dari menu Extensions/Ekstensi.
+9. Tempel `Code.gs`.
+10. Buat file HTML bernama `Index`.
+11. Tempel `Index.html`.
+12. Uji dashboard.
+13. Ubah satu filter atau label.
+14. Periksa ulang KPI.
+15. Tunjukkan deployment/link hanya jika benar-benar dapat diuji.
 
 ### Praktik kelompok
 

@@ -297,4 +297,4 @@ Revisi canonical:
 - **Yazid:** slides 12–26 untuk praktik dashboard dari Excel sampai testing/link.
 - **Bersama:** slides 1–2, 11, 27–28 untuk pembukaan, pembagian peran, serah-terima, checklist, dan penutup.
 
-Status: implemented locally; QA slide-count/layout dan salinan bundle perlu dijalankan ulang.
+Status: implemented locally and verified; QA slide-count/layout, presenter split, and refreshed bundle checks passed.
