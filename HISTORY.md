@@ -3131,3 +3131,9 @@ Local checkpoint dibuat:
 `c0e362c feat(pkm-smt3): restore theory and practice speaker split`
 
 Belum ada deployment Google live yang diklaim. Yang direvisi dan diverifikasi sekarang adalah materi lokal serta paket workshop-nya.
+
+#### Suggested next actions included in final response
+
+- :codex-followup[Konfirmasi durasi workshop]{prompt="Pilih skenario inti 80 menit atau workshop penuh sekitar 120 menit, lalu sesuaikan rundown final dengan Pak Syam dan tim."}
+- :codex-followup[Review bagian teori Pak Syam]{prompt="Baca slide 3–10 dan panduan pemateri dua sesi, lalu tandai contoh teori AI atau prompting yang ingin ditambah atau diubah."}
+- :codex-followup[Uji deployment live]{prompt="Import workbook utama ke Google Sheets, konfigurasi setupSpreadsheetId(), deploy Web App, dan uji URL dengan kebijakan akses yang disepakati."}
