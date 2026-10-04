@@ -77,3 +77,13 @@
 - Intended flow: upload/convert Excel to Google Sheets → use ChatGPT for prompt and code assistance → run the dashboard in Google Apps Script → share a web app link. Canvas ChatGPT is not the final dashboard output.
 - Primary use case: Dashboard Rekap Layanan Kecamatan. The surat/disposisi and agenda files are alternate group cases.
 - Final dataset artifacts: `outputs/2026-10-03-dummy-datasets/`.
+
+
+## Dashboard material remediation — 2026-10-04
+
+- The approved audit plan was executed locally. The workshop now centers on one primary case: Dashboard Rekap Layanan Kecamatan.
+- Three synthetic workbooks remain the practice sources: each has 100 rows, `Data`, and `Panduan`. The primary baseline is total 100, completed 25, in process 50, cancelled 25.
+- The starter Apps Script uses `setupSpreadsheetId()` once, then `SpreadsheetApp.openById()` for the web-app path. It validates the exact primary headers, one request per row, known statuses, duplicate IDs, dates, and numeric fields.
+- Local preview is not cloud evidence. No deployment/access claim is valid until a real URL is opened and tested.
+- Participant support files now include import/deploy guide, worksheet, checklist, pre/post evaluation, and facilitator preflight/access guide.
+- Deck is 18 slides, light/projector-first, with local rendered dashboard evidence on slide 8 and 80-minute target rundown.

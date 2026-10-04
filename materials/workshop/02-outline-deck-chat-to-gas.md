@@ -1,471 +1,243 @@
 # Outline Deck Workshop
-## Dari ChatGPT ke Dashboard Internal dengan Google Apps Script
+## Dashboard Rekap Layanan Kecamatan dari Data Excel
 
 - **Project:** PkM Magister Teknik Informatika UNPAM – Kecamatan Tambun Selatan
-- **Status:** Draft / proposed
-- **Tanggal:** 25 September 2026
-- **Audiens:** Aparatur/staf Kantor Kecamatan Tambun Selatan
-- **Fokus:** Generative AI melalui chat, dua file dasar GAS, praktik dashboard, dan deployment
-- **Batasan:** Codex hanya dikenalkan sebagai konteks lanjutan. Praktik utama memakai ChatGPT melalui chat dan Google Apps Script.
+- **Status:** Revised outline
+- **Tanggal pembaruan:** 4 Oktober 2026
+- **Audience:** Aparatur, pegawai, dan staf Kantor Kecamatan Tambun Selatan
+- **Pemateri:** Ahmad Yazid Hilmi — Materi 2 / teknis dashboard
+- **Durasi materi:** 80 menit (5 + 8 + 7 + 10 + 15 + 20 + 8 + 5 + 2)
+- **Output:** dashboard web yang dibuka melalui link web app Google Apps Script
 
----
+## Cerita utama
 
-## Arah Cerita Deck
+> **Saya memiliki data Excel → saya cek kolomnya → saya ubah menjadi Google Sheets → saya meminta bantuan ChatGPT → saya menempatkan kode di Apps Script → saya menguji dashboard → saya membagikan link yang aksesnya sudah diperiksa.**
 
-Deck membawa peserta melalui satu cerita sederhana:
+ChatGPT membantu menyusun rancangan dan kode. Canvas ChatGPT bukan hasil akhir.
 
-> **Saya punya masalah kerja → saya jelaskan ke ChatGPT → ChatGPT membantu menulis dua file → saya menempatkan kode di GAS → saya menjalankan dan menguji dashboard → saya mempublikasikan prototipe.**
+## Slide 1 — Dashboard Rekap Layanan Kecamatan
 
-Peserta tidak perlu langsung memahami seluruh JavaScript. Mereka perlu memahami **alur kerja, struktur file, cara meminta bantuan AI, dan cara memeriksa hasilnya**.
+**Pesan utama:** Materi ini menunjukkan cara mengubah data latihan menjadi dashboard web yang mudah dibaca.
 
----
+**Catatan presenter:** Jelaskan bahwa dashboard dibuat dengan bantuan AI, tetapi hasil akhirnya berjalan di Google Apps Script.
 
-## Slide 1 – Judul Workshop
+## Slide 2 — Hasil yang dibawa pulang
 
-### Judul
+Peserta dapat:
 
-**Dari ChatGPT ke Dashboard Internal**
+- mengimpor Excel ke Google Sheets;
+- mengenali kolom dan pertanyaan kerja;
+- membuat tiga KPI, tabel, filter, dan grafik sederhana;
+- menempatkan dua file kode;
+- menguji hasil dan memahami batasan link akses.
 
-### Subjudul
+**Output:** satu perubahan dashboard yang berhasil diuji, bukan aplikasi produksi.
 
-Praktik Generative AI, Google Apps Script, dan pembuatan prototipe dashboard untuk efisiensi administrasi.
+## Slide 3 — Masalah kerja: data ada, informasi belum cepat terbaca
 
-### Catatan presenter
+Tampilkan perbandingan:
 
-Sampaikan bahwa workshop ini bukan kelas pemrograman penuh. Peserta akan belajar membuat prototipe kecil dengan bantuan AI, lalu memahami cara kerja dan batasannya.
+- sebelum: membuka baris data satu per satu;
+- sesudah: melihat total, selesai, diproses, jenis layanan, dan pembaruan data.
 
----
+**Pertanyaan peserta:** Informasi apa yang paling sering diminta pimpinan atau staf?
 
-## Slide 2 – Hasil yang Akan Dibawa Pulang
+## Slide 4 — Dari Excel ke Google Sheets
 
-Peserta akan:
+Tampilkan file dummy `dummy-data-rekap-layanan-kecamatan.xlsx` dan jelaskan:
 
-- memahami dasar Generative AI;
-- mengetahui contoh pemanfaatan AI untuk pekerjaan administrasi;
-- mengenal Google Apps Script;
-- meminta ChatGPT menghasilkan `Code.gs` dan `Index.html`;
-- menempatkan kode ke project GAS;
-- menjalankan dan menguji dashboard sederhana;
-- mencoba deployment sebagai web app.
+1. unggah ke Google Drive;
+2. pilih **Open with / Buka dengan → Google Sheets**;
+3. jika masih mode Excel/Office, pilih **File → Save as Google Sheets / Simpan sebagai Google Spreadsheet**;
+4. pastikan sheet bernama `Data`;
+5. cek header, tanggal, status, dan jumlah baris.
 
-### Catatan presenter
+**Batasan:** latihan menggunakan data sintetis.
 
-Tekankan bahwa targetnya adalah **prototipe yang berfungsi**, bukan sistem produksi untuk langsung memakai data masyarakat.
+## Slide 5 — Data dictionary dan aturan data aman
 
----
+Tampilkan beberapa kolom:
 
-## Slide 3 – Masalah Kerja yang Ingin Dibantu
+- `Tanggal`;
+- `Jenis_Layanan`;
+- `Status`;
+- `Unit_Penanggung_Jawab`;
+- `Jumlah_Permohonan`.
 
-Contoh situasi:
+Jelaskan bahwa nama header harus dipertahankan agar kode dapat membaca data.
 
-- data sudah ada, tetapi masih dibaca satu per satu;
-- pimpinan membutuhkan ringkasan status pekerjaan;
-- staf ingin melihat data berdasarkan periode, unit, atau status;
-- laporan rutin memerlukan rekap yang berulang;
-- informasi internal belum memiliki tampilan ringkas.
+## Slide 6 — Siapa memakai dashboard dan untuk pertanyaan apa?
 
-### Pertanyaan ke peserta
+Pengguna:
 
-> Pekerjaan apa yang paling sering membutuhkan rekap atau pengecekan berulang?
+- staf pengelola data;
+- koordinator/pimpinan;
+- PIC tindak lanjut.
 
----
+Pertanyaan:
 
-## Slide 4 – AI dan Generative AI
+- berapa layanan yang masuk;
+- mana yang selesai;
+- mana yang masih diproses;
+- jenis layanan apa yang dominan;
+- kapan data diperbarui.
 
-### AI
+## Slide 7 — Dari kolom data ke KPI
 
-Teknologi yang membantu komputer melakukan tugas yang membutuhkan pola, aturan, prediksi, atau analisis.
+Definisi yang digunakan:
 
-### Generative AI
+- Total layanan = jumlah baris layanan valid; dataset latihan memakai satu permohonan per baris.
+- Selesai = status `Selesai`;
+- Masih diproses = status `Diproses` atau `Menunggu Dokumen`;
+- Dibatalkan tidak dihitung sebagai selesai.
 
-Teknologi AI yang dapat menghasilkan teks, ide, ringkasan, gambar, atau kode berdasarkan instruksi pengguna.
+**Catatan:** KPI harus didefinisikan sebelum dashboard dibuat.
 
-### Contoh penggunaan kerja
+## Slide 8 — Contoh tampilan dashboard akhir
 
-- membuat draf surat;
-- merangkum catatan rapat;
-- mengelompokkan informasi;
-- menyusun pertanyaan survei;
-- membantu membuat kode prototipe.
+Gunakan render lokal dari `starter-dashboard/preview.html` yang memakai fixture 100 baris. Beri label bahwa ini bukan deployment cloud live.
 
-### Catatan presenter
+Tampilkan target tampilan:
 
-Berikan contoh yang dekat dengan pekerjaan peserta. Hindari menjelaskan AI hanya sebagai chatbot.
+- tiga kartu KPI;
+- grafik jenis layanan;
+- filter status dan jenis layanan;
+- tabel data;
+- tanggal pembaruan;
+- label data latihan.
 
----
+**Pesan utama:** Peserta melihat hasil yang ingin dicapai sebelum melihat kode.
 
-## Slide 5 – AI Membantu, Manusia Memeriksa
+## Slide 9 — ChatGPT sebagai alat bantu
 
-AI dapat membantu mempercepat pekerjaan, tetapi AI dapat:
+ChatGPT membantu:
 
-- salah memahami konteks;
-- menghasilkan informasi yang keliru;
-- membuat kode yang tidak sesuai struktur data;
-- menampilkan data terlalu rinci;
-- memberi jawaban yang terlihat meyakinkan tetapi belum tentu benar.
+- merancang struktur dashboard;
+- menjelaskan hubungan kolom dan KPI;
+- menghasilkan dua file kode;
+- memperbaiki error dengan konteks lengkap.
 
-### Prinsip penggunaan
+ChatGPT tidak:
 
-> **AI membantu membuat draf. Manusia memeriksa, memperbaiki, dan mengambil keputusan.**
+- mengambil keputusan administratif;
+- menjamin kode benar tanpa pengujian;
+- menjadi tempat dashboard dibuka.
 
----
+## Slide 10 — Prompt dashboard berdasarkan kolom Sheet
 
-## Slide 6 – Data yang Aman untuk Latihan
+Tampilkan prompt card yang menyebut:
 
-### Gunakan
-
+- nama sheet `Data`;
+- nama header;
+- KPI;
+- filter;
+- output dua file;
 - data sintetis;
-- nama samaran;
-- angka agregat;
-- kategori umum;
-- contoh yang tidak merujuk pada warga tertentu.
+- checklist testing.
 
-### Jangan masukkan ke chat AI publik
+## Slide 11 — Membuka Google Apps Script
 
-- NIK dan nomor KK;
-- nomor telepon;
-- alamat lengkap;
-- data kesehatan;
-- password, token, dan API key;
-- dokumen internal yang belum boleh dibagikan.
+Langkah visual:
 
-### Catatan presenter
+1. buka Google Sheets;
+2. klik **Extensions/Ekstensi**;
+3. klik **Apps Script**;
+4. editor terbuka pada tab baru.
 
-Gunakan contoh data seperti `Unit A`, `Surat 001`, atau `Warga Contoh 01`.
+## Slide 12 — Menempatkan dua file
 
----
-
-## Slide 7 – ChatGPT dan Codex
-
-| ChatGPT melalui chat | Codex |
+| File | Fungsi |
 |---|---|
-| Berinteraksi melalui percakapan | Bekerja sebagai coding agent |
-| Cocok untuk belajar, bertanya, merancang, dan meminta kode | Cocok untuk pekerjaan coding pada project dan file |
-| Menjadi alat utama workshop | Diperkenalkan sebagai opsi lanjutan |
-| Peserta menyalin hasil ke GAS | Codex dapat membantu mengedit atau menguji project secara langsung |
+| `Code.gs` | membaca data dari Sheet dan menyediakan `doGet()` |
+| `Index.html` | menampilkan kartu, filter, grafik, tabel, dan JavaScript browser |
 
-### Kalimat kunci
+Peserta tidak harus menulis syntax dari nol.
 
-> **ChatGPT membantu kita berpikir dan menulis kode melalui chat. GAS menjalankan kode tersebut. Codex adalah alur lanjutan untuk bekerja langsung dengan file dan project coding.**
+## Slide 13 — Dashboard berjalan
 
-### Catatan presenter
+Tunjukkan alur pengujian:
 
-Jangan membawa peserta masuk ke dua alat sekaligus. Fokus praktik tetap pada ChatGPT melalui chat.
+- halaman terbuka;
+- KPI tampil;
+- tabel menampilkan baris;
+- filter status bekerja;
+- grafik berubah sesuai filter.
 
----
+## Slide 14 — Satu perubahan kecil
 
-## Slide 8 – Apa Itu Google Apps Script?
+Contoh latihan:
 
-Google Apps Script adalah lingkungan berbasis JavaScript untuk membuat otomasi dan aplikasi yang terhubung dengan Google Workspace.
+- ubah judul dashboard;
+- tambah filter unit;
+- ubah label KPI;
+- tambahkan kolom kanal ke tabel.
 
-Dalam workshop, GAS digunakan untuk:
+Aturan: ubah satu hal, uji, lalu catat hasil.
 
-- membaca data dari Google Sheets;
-- menghitung ringkasan;
-- menampilkan halaman dashboard;
-- menghubungkan logika server dengan tampilan browser;
-- mempublikasikan prototipe sebagai web app.
+## Slide 15 — Testing dan verifikasi
 
-### Analogi sederhana
+Checklist:
 
-- **Google Sheets:** tempat data disimpan.
-- **Google Apps Script:** mesin yang membaca dan mengolah data.
-- **HTML:** halaman yang dilihat pengguna.
+- bandingkan KPI dengan hitungan manual;
+- ubah satu record dan lihat angka berubah;
+- cek header dan status;
+- cek tampilan di browser;
+- catat error lengkap;
+- pastikan data yang tampil tidak sensitif.
 
----
+## Slide 16 — Menerbitkan dashboard sebagai link
 
-## Slide 9 – Cara Membuka Google Apps Script
+Gunakan screenshot menu sebagai panduan jalur, bukan bukti URL aktif. URL hanya boleh disebut berhasil setelah benar-benar dibuka dan diuji.
 
-### Jalur yang direkomendasikan
+Alur:
 
-1. Buka Google Sheet latihan.
-2. Pilih menu **Extensions**.
-3. Pilih **Apps Script**.
-4. Project Apps Script akan terbuka di tab baru.
+1. pilih **Deploy → New deployment**;
+2. pilih **Web app**;
+3. periksa akun eksekusi dan akses;
+4. salin URL;
+5. uji dengan akun yang memiliki hak akses.
 
-### Jalur alternatif
+**Catatan:** Jangan menyebut deployment berhasil tanpa URL yang benar-benar terbuka.
 
-- buka `script.google.com`, lalu pilih **New project**;
-- buka Google Drive, pilih **New → More → Google Apps Script**.
+## Slide 17 — Checklist hasil kelompok
 
-### Catatan presenter
+Setiap kelompok menyimpan:
 
-Untuk latihan kelompok, gunakan jalur dari Google Sheets agar project langsung terhubung dengan spreadsheet sumber data.
+- data source;
+- prompt utama;
+- screenshot atau link;
+- hasil pengujian;
+- satu batasan/risiko;
+- PIC tindak lanjut.
 
----
+## Slide 18 — Langkah setelah workshop
 
-## Slide 10 – Struktur Project GAS
+- mulai dari data sintetis;
+- konfirmasi definisi KPI;
+- tunjuk PIC data;
+- batasi akses dashboard;
+- gunakan data nyata hanya setelah ada izin dan anonimisasi;
+- kembangkan satu fitur pada satu waktu.
 
-Pada tahap pemula, peserta mengenal dua file utama:
+**Penutup:** Dashboard membantu orang membaca data lebih cepat. Verifikasi manusia tetap diperlukan.
 
-```text
-Project GAS
-├── Code.gs
-└── Index.html
-```
+## Rundown presenter
 
-### Penjelasan singkat
+**Total: 80 menit.** Deployment tiap kelompok bersifat opsional; target minimum adalah satu demo end-to-end dan satu perubahan kecil yang berhasil diuji.
 
-- `Code.gs`: kode server-side Apps Script.
-- `Index.html`: tampilan dashboard, CSS, dan JavaScript browser.
+| Durasi | Slide | Fokus |
+|---:|---|---|
+| 5 menit | 1–2 | Orientasi dan output |
+| 8 menit | 3–4 | Masalah dan impor Excel |
+| 7 menit | 5–7 | Data dictionary, keamanan, KPI |
+| 10 menit | 8–10 | Contoh dashboard dan prompt |
+| 15 menit | 11–13 | Demo Apps Script sampai dashboard |
+| 20 menit | 14–15 | Praktik satu perubahan dan testing |
+| 8 menit | 16–17 | Link, akses, dan share-out |
+| 2 menit | 18 | Penutup |
 
-### Catatan penting
+## Ownership presenter
 
-Peserta tidak sedang mengunggah dua file dari komputer. Peserta meminta ChatGPT menghasilkan dua bagian kode, lalu membuat atau menempelkan kode tersebut ke dua file di editor GAS.
-
----
-
-## Slide 11 – File `Code.gs`
-
-`Code.gs` berisi logika yang dijalankan oleh Apps Script.
-
-Contoh tanggung jawabnya:
-
-- membuka halaman melalui `doGet()`;
-- mengambil data dari Google Sheets;
-- menghitung jumlah data;
-- mengirim data ke halaman HTML;
-- menjalankan fungsi server.
-
-### Contoh bentuk sederhana
-
-```javascript
-function doGet() {
-  return HtmlService.createHtmlOutputFromFile('Index');
-}
-```
-
-### Catatan presenter
-
-Tidak perlu membahas seluruh kode. Fokuskan pada hubungan antara `doGet()` dan file `Index.html`.
-
----
-
-## Slide 12 – File `Index.html`
-
-`Index.html` berisi halaman yang tampil di browser.
-
-Di dalamnya dapat terdapat:
-
-- struktur HTML;
-- CSS untuk tampilan;
-- JavaScript browser di dalam tag `<script>`;
-- elemen kartu, tabel, filter, dan grafik.
-
-### Pertanyaan penting
-
-> Apakah JavaScript harus menjadi file terpisah?
-
-### Jawaban untuk workshop dasar
-
-Tidak harus. JavaScript browser dapat ditempatkan di dalam `Index.html`. File HTML tambahan baru dikenalkan jika struktur project sudah lebih kompleks.
-
----
-
-## Slide 13 – Prompt ChatGPT untuk Dua File
-
-### Instruksi inti
-
-Minta ChatGPT:
-
-1. membuat kode `Code.gs`;
-2. membuat kode `Index.html`;
-3. menampilkan keduanya dalam blok kode terpisah;
-4. menjelaskan cara menempatkannya di Apps Script;
-5. memberikan checklist pengujian.
-
-### Prompt ringkas
-
-```text
-Buat prototipe dashboard Google Apps Script menggunakan data sintetis dari Google Sheets.
-
-Tampilkan dua bagian kode secara terpisah:
-1. CODE.GS untuk doGet() dan fungsi membaca data;
-2. INDEX.HTML untuk tampilan dashboard, CSS, dan JavaScript browser.
-
-Jelaskan file mana yang harus dibuat, cara menjalankan, cara menguji, dan cara memperbaiki
-error. Jangan memakai data pribadi, password, token, atau API key.
-```
-
----
-
-## Slide 14 – Dari ChatGPT ke GAS
-
-### Langkah praktik
-
-1. Tulis kebutuhan di ChatGPT.
-2. Minta output `Code.gs` dan `Index.html` secara terpisah.
-3. Salin blok `Code.gs` ke file `Code.gs`.
-4. Pilih **Add a file → HTML**.
-5. Beri nama file `Index`.
-6. Salin blok `Index.html` ke file tersebut.
-7. Simpan project.
-8. Jalankan dan uji.
-
-### Kesalahan yang harus dihindari
-
-- menempelkan HTML ke file `.gs`;
-- menempelkan kode server ke file `.html`;
-- mengubah banyak bagian sekaligus;
-- langsung memakai data warga asli.
-
----
-
-## Slide 15 – Menjalankan dan Membaca Error
-
-### Jika dashboard belum berjalan
-
-Periksa secara berurutan:
-
-1. nama file `Index` sesuai dengan nama file pada `doGet()`;
-2. nama Sheet dan nama kolom sesuai prompt;
-3. fungsi yang dipanggil memang ada di `Code.gs`;
-4. project sudah disimpan;
-5. izin akses sudah diberikan;
-6. pesan error dibaca secara lengkap.
-
-### Prompt perbaikan error
-
-```text
-Saya mendapat error berikut:
-[tempel pesan error lengkap]
-
-File/fungsi yang terkait: [isi]
-Tindakan terakhir: [isi]
-Struktur Sheet: [isi]
-
-Jelaskan penyebab paling mungkin, berikan perubahan sekecil mungkin, dan berikan
-langkah pengujian setelah diperbaiki.
-```
-
----
-
-## Slide 16 – Arsitektur Dashboard
-
-```text
-Google Sheets
-     ↓
-Code.gs
-     ↓
-Index.html
-     ↓
-Dashboard di browser
-```
-
-### Penjelasan
-
-- Google Sheets menyimpan data.
-- `Code.gs` membaca dan mengolah data.
-- `Index.html` menampilkan data.
-- Web app membuat dashboard dapat dibuka melalui link.
-
-### Catatan presenter
-
-Gunakan diagram ini sebagai titik pemahaman utama sebelum peserta masuk ke praktik kelompok.
-
----
-
-## Slide 17 – Fitur Dashboard Minimum
-
-Setiap kelompok membuat:
-
-- tiga kartu ringkasan;
-- satu tabel;
-- satu filter atau pencarian;
-- satu grafik;
-- indikator tanggal pembaruan;
-- catatan bahwa data adalah data latihan.
-
-### Fitur yang belum menjadi target
-
-- login khusus;
-- integrasi API eksternal;
-- notifikasi otomatis;
-- database kompleks;
-- penggunaan data warga asli.
-
----
-
-## Slide 18 – Tiga Kasus Kelompok
-
-### Kelompok 1
-
-Monitoring surat masuk dan disposisi.
-
-### Kelompok 2
-
-Monitoring agenda dan kegiatan internal.
-
-### Kelompok 3
-
-Rekap layanan atau aduan non-sensitif.
-
-### Output yang sama untuk semua kelompok
-
-Setiap kelompok mengumpulkan prototipe, prompt log, link/hasil deployment, dan checklist pengujian.
-
----
-
-## Slide 19 – Publish sebagai Web App
-
-### Alur umum
-
-1. Pastikan `doGet()` berjalan.
-2. Pilih **Deploy**.
-3. Pilih **New deployment**.
-4. Pilih tipe **Web app**.
-5. Periksa siapa yang menjalankan aplikasi.
-6. Periksa siapa yang boleh mengakses.
-7. Deploy.
-8. Salin link hasil deployment.
-9. Uji link pada browser.
-
-### Catatan keamanan
-
-Untuk workshop, gunakan data sintetis. Jangan membuat data sensitif dapat diakses melalui link publik.
-
----
-
-## Slide 20 – Presentasi Hasil Kelompok
-
-Setiap kelompok menyampaikan dalam waktu singkat:
-
-1. masalah kerja yang dipilih;
-2. data yang digunakan;
-3. fitur dashboard;
-4. prompt yang paling membantu;
-5. error atau kendala yang ditemukan;
-6. batasan prototipe;
-7. langkah lanjutan jika solusi ingin dikembangkan.
-
-### Penutup
-
-> **AI membantu mempercepat proses. Aparatur tetap memegang kendali atas data, verifikasi, dan keputusan.**
-
----
-
-## Catatan Teknis untuk Presenter
-
-- Google Apps Script mendukung file kode dengan ekstensi `.gs` dan file HTML dengan ekstensi `.html` dalam satu project.
-- Project dapat dibuat dari Google Sheets melalui **Extensions → Apps Script**, dari Google Drive, atau dari halaman Apps Script.
-- Halaman web app biasanya disajikan melalui fungsi `doGet()`.
-- JavaScript browser dan CSS dapat ditempatkan di file HTML untuk latihan dasar.
-- Deployment perlu diuji dengan akun dan pengaturan akses yang benar.
-
-Referensi teknis resmi:
-
-- [Google Developers – Script Projects](https://developers.google.com/apps-script/guides/projects)
-- [Google Developers – HTML Service](https://developers.google.com/apps-script/guides/html)
-- [Google Developers – Web Apps](https://developers.google.com/apps-script/guides/web)
-- [OpenAI Developers – Code generation and Codex](https://developers.openai.com/api/docs/guides/code-generation)
-
----
-
-## Status output — 26 September 2026
-
-Outline ini sudah diwujudkan menjadi deck HTML 28 slide:
-
-- [Deck HTML workshop](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
-- [README deck](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/README.md)
-
-Catatan: materi deployment dibawakan sebagai panduan dengan batasan yang jujur. Capture menu deployment tidak diperlakukan sebagai bukti deployment publik berhasil.
+- **S / Pak Syam:** basic AI, verifikasi, dan keamanan data pada bagian common core.
+- **Y / Yazid:** data → Sheets → prompt → GAS → dashboard → testing → link.
+- **Bersama:** orientasi, share-out, dan penutup.

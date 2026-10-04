@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Rekap Layanan Kecamatan</title>
+  <style>
+    :root{--ink:#17353a;--muted:#5a7075;--teal:#087c75;--soft:#eaf5f1;--line:#d3e1df;--warn:#9a6500;--danger:#bd4b3b;--bg:#f2f7f5;--white:#fff;--shadow:0 12px 34px rgba(26,73,73,.09)}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif} main{max-width:1180px;margin:0 auto;padding:32px 22px 52px}
+    .eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)} h1{margin:9px 0 6px;font-size:34px;line-height:1.1} .subtitle{margin:0;color:var(--muted);font-size:15px;line-height:1.5}.updated{margin-top:8px;color:var(--muted);font-size:12px}
+    .notice{margin:22px 0;padding:12px 14px;border-left:4px solid var(--warn);background:#fff7df;color:#674a08;font-size:13px;line-height:1.45}.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:22px 0}.field{display:grid;gap:6px;min-width:210px}.field label{font-size:12px;color:var(--muted);font-weight:700}.field select{width:100%;padding:10px 11px;border:1px solid #b7ccca;border-radius:8px;background:var(--white);color:var(--ink);font:inherit}.button{padding:10px 15px;border:0;border-radius:8px;background:var(--teal);color:white;font-weight:700;cursor:pointer}.button.secondary{background:#dfece9;color:var(--teal)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--white);box-shadow:var(--shadow)}.card-label{font-size:13px;color:var(--muted)}.card-value{margin-top:8px;font-size:34px;font-weight:800;color:var(--teal)}
+    .grid{display:grid;grid-template-columns:1fr 1.15fr;gap:16px;margin-top:16px}.panel{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--white);box-shadow:var(--shadow)}.panel h2{margin:0 0 14px;font-size:18px}.bars{display:grid;gap:11px}.bar-row{display:grid;grid-template-columns:minmax(120px,1fr) 2fr 40px;gap:10px;align-items:center;font-size:13px}.bar-track{height:13px;border-radius:999px;background:#edf3f1;overflow:hidden}.bar-fill{height:100%;border-radius:999px;background:var(--teal)}.bar-value{text-align:right;font-weight:700}
+    .table-wrap{margin-top:16px;border:1px solid var(--line);border-radius:12px;background:var(--white);box-shadow:var(--shadow);overflow:auto}.table-head{display:flex;justify-content:space-between;align-items:center;padding:18px 18px 12px}.table-head h2{margin:0;font-size:18px}.table-head span{color:var(--muted);font-size:12px}table{width:100%;border-collapse:collapse;min-width:760px}th,td{padding:11px 13px;border-top:1px solid var(--line);text-align:left;font-size:13px;white-space:nowrap}th{background:#eff7f4;color:var(--teal);font-size:11px;text-transform:uppercase;letter-spacing:.04em}td.num{text-align:right}.status{display:inline-flex;padding:4px 8px;border-radius:999px;background:#edf4f2;color:var(--teal);font-size:11px;font-weight:700}.status.warn{background:#fff5d6;color:var(--warn)}.status.danger{background:#fde8e2;color:var(--danger)}.empty{padding:24px;text-align:center;color:var(--muted)}.error{margin:16px 0;padding:12px 14px;border-radius:8px;background:#fde8e2;color:#7d2e24;font-size:13px}.footer{margin-top:18px;color:var(--muted);font-size:12px;line-height:1.5}
+    button:disabled,select:disabled{opacity:.6;cursor:wait}:focus-visible{outline:3px solid #9a6500;outline-offset:3px}
+    @media(max-width:760px){main{padding:24px 14px 44px}h1{font-size:28px}.cards,.grid{grid-template-columns:1fr}.field{min-width:100%}.toolbar .button{width:100%}.bar-row{grid-template-columns:110px 1fr 34px}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Dashboard latihan · Kecamatan Tambun Selatan</div>
+  <h1>Rekap Layanan Kecamatan</h1>
+  <p class="subtitle">Tampilan ringkas untuk membaca status layanan dari Sheet <strong>Data</strong>. Gunakan data sintetis selama workshop.</p>
+  <div class="updated" id="updated" role="status" aria-live="polite">Memuat data…</div>
+  <div class="notice">Dashboard ini membantu pemantauan. Angka tetap perlu diperiksa oleh petugas yang berwenang sebelum dipakai untuk laporan atau keputusan resmi.</div>
+
+  <section class="toolbar" aria-label="Penyaring data">
+    <div class="field"><label for="statusFilter">Status pelayanan</label><select id="statusFilter"><option value="">Semua status</option></select></div>
+    <div class="field"><label for="serviceFilter">Jenis layanan</label><select id="serviceFilter"><option value="">Semua jenis layanan</option></select></div>
+    <button class="button" id="refresh">Muat ulang data</button>
+    <button class="button secondary" id="reset">Reset filter</button>
+  </section>
+
+  <div id="error" class="error" role="alert" hidden></div>
+  <section class="cards" aria-label="Ringkasan layanan">
+    <div class="card"><div class="card-label">Total layanan</div><div class="card-value" id="total">–</div></div>
+    <div class="card"><div class="card-label">Selesai</div><div class="card-value" id="completed">–</div></div>
+    <div class="card"><div class="card-label">Masih diproses</div><div class="card-value" id="inProcess">–</div></div>
+  </section>
+
+  <p class="footer" id="reconciliation" aria-live="polite"></p>
+  <section class="grid">
+    <div class="panel"><h2>Jenis layanan</h2><div class="bars" id="bars"><div class="empty">Belum ada data.</div></div></div>
+    <div class="panel"><h2>Cara membaca dashboard</h2><p class="subtitle">Gunakan filter untuk mempersempit data. Periksa definisi status dan periode sumber sebelum menyimpulkan hasil. “Terakhir dimuat” adalah waktu mengambil data, bukan waktu petugas mengeditnya.</p><div class="footer"><strong>Data:</strong> sheet <code>Data</code> pada Google Sheets.<br><strong>Logika:</strong> <code>Code.gs</code> membaca dan menghitung data.<br><strong>Tampilan:</strong> <code>Index.html</code> menyajikan kartu, filter, grafik, dan tabel.</div></div>
+  </section>
+
+  <section class="table-wrap"><div class="table-head"><h2>Data layanan</h2><span id="rowCount">0 baris</span></div><table><thead><tr><th>ID</th><th>Tanggal</th><th>Jenis layanan</th><th>Wilayah umum</th><th>Status</th><th>Unit</th><th>Durasi hari</th></tr></thead><tbody id="rows"><tr><td colspan="7" class="empty">Memuat data…</td></tr></tbody></table></section>
+  <div class="footer">Data latihan/sintetis. Jangan mengganti dengan NIK, nomor kontak, alamat lengkap, isi surat, aduan asli, password, token, atau dokumen rahasia.</div>
+</main>
+<script>
+  const state = { data: null, requestId: 0, loading: false };
+  const $ = id => document.getElementById(id);
+  const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+  const formatNumber = value => new Intl.NumberFormat('id-ID').format(Number(value || 0));
+  function setLoading(isLoading){
+    state.loading = isLoading;
+    document.body.setAttribute('aria-busy', String(isLoading));
+    $('refresh').disabled = isLoading;
+    $('reset').disabled = isLoading;
+    $('statusFilter').disabled = isLoading;
+    $('serviceFilter').disabled = isLoading;
+  }
+  function clearDashboard(message){
+    $('total').textContent = '–'; $('completed').textContent = '–'; $('inProcess').textContent = '–';
+    $('bars').innerHTML = '<div class="empty">Belum ada data untuk ditampilkan.</div>';
+    $('rows').innerHTML = '<tr><td colspan="7" class="empty">Belum ada data untuk ditampilkan.</td></tr>';
+    $('rowCount').textContent = '0 baris'; $('reconciliation').textContent = '';
+    $('updated').textContent = message || 'Data belum berhasil dimuat';
+  }
+  function loadData(){
+    const requestId = ++state.requestId;
+    $('error').hidden = true;
+    clearDashboard('Memuat data…');
+    setLoading(true);
+    google.script.run
+      .withSuccessHandler(data => { if(requestId !== state.requestId) return; setLoading(false); render(data); })
+      .withFailureHandler(error => { if(requestId !== state.requestId) return; setLoading(false); showError(error); })
+      .getDashboardData({ status: $('statusFilter').value, service: $('serviceFilter').value });
+  }
+  function showError(error){
+    const message = error?.message || String(error);
+    state.data = null;
+    clearDashboard('Data belum berhasil dimuat');
+    $('error').textContent = message;
+    $('error').hidden = false;
+  }
+  function fillSelect(id, values, placeholder){
+    const select = $(id); const previous = select.value;
+    select.innerHTML = `<option value="">${placeholder}</option>` + values.map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join('');
+    if(values.includes(previous)) select.value = previous;
+  }
+  function statusClass(status){ if(status === 'Dibatalkan') return 'danger'; if(status === 'Menunggu Dokumen') return 'warn'; return ''; }
+  function render(data){
+    state.data = data;
+    if(!data || !data.ok) { showError({message:data?.message || 'Data belum tersedia.'}); return; }
+    $('error').hidden = true;
+    $('reconciliation').textContent = data.message || `Total = selesai + masih diproses + dibatalkan (${data.kpis.cancelled}). Semua kartu, tabel, dan grafik mengikuti filter.`;
+    fillSelect('statusFilter', data.options.statuses, 'Semua status'); fillSelect('serviceFilter', data.options.services, 'Semua jenis layanan');
+    $('total').textContent = formatNumber(data.kpis.total); $('completed').textContent = formatNumber(data.kpis.completed); $('inProcess').textContent = formatNumber(data.kpis.inProcess);
+    const truncation = data.tableTruncated ? ' · tabel dibatasi 100 baris' : '';
+    $('updated').textContent = `Terakhir dimuat: ${data.lastLoadedAt} · ${formatNumber(data.filteredRowCount)} dari ${formatNumber(data.rowCount)} baris${truncation}`;
+    const max = Math.max(...data.byService.map(item => item.value), 1);
+    $('bars').innerHTML = data.byService.length ? data.byService.map(item => `<div class="bar-row"><span>${escapeHtml(item.label)}</span><div class="bar-track"><div class="bar-fill" style="width:${Math.round(item.value/max*100)}%"></div></div><span class="bar-value">${formatNumber(item.value)}</span></div>`).join('') : '<div class="empty">Tidak ada data sesuai filter.</div>';
+    $('rows').innerHTML = data.rows.length ? data.rows.map(row => `<tr><td>${escapeHtml(row.id)}</td><td>${escapeHtml(row.date)}</td><td>${escapeHtml(row.service)}</td><td>${escapeHtml(row.area)}</td><td><span class="status ${statusClass(row.status)}">${escapeHtml(row.status)}</span></td><td>${escapeHtml(row.unit)}</td><td class="num">${formatNumber(row.duration)}</td></tr>`).join('') : '<tr><td colspan="7" class="empty">Tidak ada data sesuai filter.</td></tr>';
+    $('rowCount').textContent = `${formatNumber(data.rows.length)} baris ditampilkan${data.tableTruncated ? ' dari hasil terfilter' : ''}`;
+  }
+  $('refresh').addEventListener('click', loadData); $('statusFilter').addEventListener('change', loadData); $('serviceFilter').addEventListener('change', loadData); $('reset').addEventListener('click', () => { $('statusFilter').value=''; $('serviceFilter').value=''; loadData(); });
+  loadData();
+</script>
+</body>
+</html>

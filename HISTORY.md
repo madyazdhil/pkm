@@ -2638,3 +2638,55 @@ Menurut saya, setelah ini langkah paling tepat adalah merevisi deck berdasarkan 
 - :codex-followup[Revisi deck utama]{prompt="Revisi deck HTML berdasarkan implementation plan, dengan Dashboard Rekap Layanan Kecamatan sebagai demo utama dan alur Excel → Google Sheets → Apps Script → link web app."}
 - :codex-followup[Buat starter project GAS]{prompt="Buat starter project Google Apps Script untuk membaca dataset rekap layanan dan menampilkan dashboard web dengan tiga KPI, tabel, filter status, dan satu grafik."}
 - :codex-followup[Buat modul peserta]{prompt="Buat modul/panduan peserta satu halaman yang menjelaskan upload Excel, buka dengan Google Sheets, prompt ChatGPT, testing, dan cara mendapatkan link dashboard."}
+
+## 2026-10-04 — Execute implementation plan
+
+### User
+
+# Context from my IDE setup:
+
+## Active file: q-n-a/assets/browser-tutorial-annotator/SKILL.md
+
+## Open tabs:
+- SKILL.md: q-n-a/assets/browser-tutorial-annotator/SKILL.md
+- MATERIAL_AUDIT.md: projects/pkm-smt3/MATERIAL_AUDIT.md
+
+## My request:
+okey execute the implementation plan
+
+### Status
+
+In progress — execute the approved implementation plan: revise materials/deck, create the starter Apps Script project and participant guide, run verification, and document remaining blockers.
+
+### Assistant — progress update (exact)
+
+The main materials are now in place. Testing has also caught a few issues in the starter code and datasets, which I’m correcting before the final check. I’m keeping the local demo clearly labelled as a preview—not a live Google deployment—and separating the shared 80-minute event slot from the time available to Yazid.
+
+### Execution trace — local implementation in progress
+
+- Implemented draft 18-slide deck, participant aids, starter Code.gs/Index.html, and a local fixture-backed preview.
+- Baseline extracted from the delivered workbook: 100 requests, 25 completed, 50 in process, 25 cancelled; five service categories with 20 each.
+- Corrected source configuration for the deployed code to use a saved spreadsheet ID, not an active spreadsheet during URL execution.
+- Rebuilt XLSX workbooks to fix overwritten guide field, constant surat priority, completion-date/status mismatch, and agenda category/status inconsistencies.
+- Initial local tests passed at 1440×810 and 1280×720 after correcting overflow; stronger semantic/layout tests are still being added.
+
+### Failed Attempts — same-turn record
+
+- A Python HTML patch failed with a quoting SyntaxError before writing Index.html; reran a corrected patch.
+- BSD `find` does not support `-printf`; used portable file listing afterward.
+- A broad search for the artifact operation marker encountered protected OS folders and was interrupted. Located the marker using targeted runtime/plugin directories instead; future searches must remain scoped.
+- First dataset rebuild resolved a cwd-relative project path twice, creating nested project output. Removed only that generated duplicate and rebuilt into the canonical output directory. Builder path will be anchored to its own file.
+- Headless Chromium initially failed with macOS MachPort permission denied in the sandbox. Retried with approval; local browser launch succeeded. No authenticated browser or cloud state was modified.
+- The first preview service-filter assertion expected 20 while the completed-status filter was still active. Corrected the test setup and reran successfully.
+- Initial workbook semantic test included the Panduan table heading as a field and failed. Inspection confirmed actual field names were intact; test row range will be corrected.
+
+### Execution trace — implementation completed locally
+
+- Corrected dataset builder path anchoring and regenerated canonical workbooks without nested output.
+- Verified all three workbooks: 100 records each, `Data`/`Panduan`, no formula errors; primary baseline 100/25/50; surat and agenda semantics pass.
+- Replaced the starter calculation with a shared strict calculation path: explicit header contract, one row = one request, known statuses, `setupSpreadsheetId()`, `openById()`, and no silent quantity fallback.
+- Rebuilt offline preview from the actual UI plus the same calculation source; refreshed `local-dashboard-preview.png` after final code changes.
+- Added and ran `qa_starter_dashboard.mjs`, `qa_dummy_datasets.py`, and `qa_html_deck.mjs` through the Python compatibility wrapper.
+- Final local QA results: deck 1440×810 pass; deck 1280×720 pass; local dashboard KPI/filter pass; starter calculation validation pass; workbook semantic/formula verification pass.
+- Updated `STATE.md`, `MEMORY.md`, `CANVAS.md`, `MATERIAL_AUDIT.md`, and the existing implementation plan in place.
+- Cloud actions intentionally not executed: no Google Drive import, Apps Script cloud edit, deployment, URL, or cross-account access test.

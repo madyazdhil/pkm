@@ -1,8 +1,10 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { FileBlob, SpreadsheetFile } from '/Users/yazidhilmi/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/@oai/artifact-tool/dist/artifact_tool.mjs';
 
-const dir = path.resolve('projects/pkm-smt3/data/dummy-datasets');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const dir = path.join(root, 'outputs/2026-10-03-dummy-datasets');
 const files = [
   'dummy-data-rekap-layanan-kecamatan.xlsx',
   'dummy-data-monitoring-surat-disposisi.xlsx',

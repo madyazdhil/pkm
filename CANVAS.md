@@ -125,3 +125,18 @@ Penjelasan kode juga tersedia di [README deck](file:///Users/yazidhilmi/Document
 - 📊 **Folder dummy Excel:** [outputs/2026-10-03-dummy-datasets/](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/outputs/2026-10-03-dummy-datasets)
 - 📋 **Implementation plan revisi audit:** [02-implementation-plan-audit-remediation-dashboard-data-flow.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/planning/02-implementation-plan-audit-remediation-dashboard-data-flow.md)
 - Alur deliverable yang ditetapkan: Excel → Google Sheets → Google Apps Script → dashboard berbasis link web app.
+
+
+## Audit remediation execution — 4 October 2026
+
+- ✅ **Implementation plan updated in place:** [02-implementation-plan-audit-remediation-dashboard-data-flow.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/planning/02-implementation-plan-audit-remediation-dashboard-data-flow.md)
+- ✅ **Final local deck:** [ai-dashboard-gas-workshop.html](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+- ✅ **Deck README and provenance:** [README.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/README.md) · [CAPTURE-MANIFEST.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/html-deck/assets/CAPTURE-MANIFEST.md)
+- ✅ **Starter Apps Script:** [starter-dashboard/](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/starter-dashboard/)
+- ✅ **Locally tested dashboard preview:** [preview.html](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/starter-dashboard/preview.html)
+- ✅ **Participant guide:** [participant-import-and-deploy-guide.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/participant-import-and-deploy-guide.md)
+- ✅ **Worksheet:** [participant-worksheet-dashboard.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/participant-worksheet-dashboard.md)
+- ✅ **Evaluation:** [evaluation-pre-post-dashboard.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/evaluation-pre-post-dashboard.md)
+- ✅ **Facilitator preflight/access:** [facilitator-preflight-and-access.md](file:///Users/yazidhilmi/Documents/Edu/Fireside-chat/projects/pkm-smt3/materials/workshop/facilitator-preflight-and-access.md)
+
+Cloud status: Google Sheets import, Apps Script configuration, deployment URL, and cross-account access are intentionally **pending** until tested in the real Google account environment.

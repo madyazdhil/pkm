@@ -2,7 +2,8 @@
 
 - **Project:** PkM Magister Teknik Informatika UNPAM – Kecamatan Tambun Selatan
 - **Tanggal dibuat:** 3 Oktober 2026
-- **Status:** proposed → ready to implement
+- **Pelaksanaan lokal:** 4 Oktober 2026
+- **Status:** implemented locally; cloud validation and live deployment remain pending
 - **Rujukan audit:** [MATERIAL_AUDIT.md](../MATERIAL_AUDIT.md)
 - **Output utama:** materi workshop yang mengajarkan peserta mengunggah/mengonversi data Excel masing-masing ke Google Sheets, lalu membuat dashboard yang dapat dibuka melalui link web app Google Apps Script.
 
@@ -78,12 +79,12 @@ Setelah revisi, peserta non-teknis diharapkan dapat:
 
 **Tujuan:** mengunci alur sebelum deck diedit.
 
-- [ ] Konfirmasi bahwa output peserta adalah dashboard web yang dapat dibuka lewat link, bukan Canvas ChatGPT.
-- [ ] Pilih `Rekap Layanan Kecamatan` sebagai demo utama.
-- [ ] Tentukan apakah peserta mengunggah Excel masing-masing atau memakai file latihan panitia.
-- [ ] Tetapkan opsi aman: untuk pelatihan, peserta memakai dummy data; data nyata hanya boleh digunakan setelah ada izin, anonimisasi, dan pengaturan akses.
-- [ ] Tetapkan pembagian peran: fasilitator konsep, fasilitator teknis, dan pendamping kelompok.
-- [ ] Putuskan apakah deployment dilakukan semua kelompok atau hanya demo fasilitator.
+- [x] Konfirmasi desain materi: output peserta adalah dashboard web yang dapat dibuka lewat link, bukan Canvas ChatGPT.
+- [x] Pilih `Rekap Layanan Kecamatan` sebagai demo utama.
+- [x] Alur latihan ditetapkan: mulai dari file dummy panitia; data kantor masing-masing hanya setelah izin dan anonimisasi.
+- [x] Tetapkan opsi aman: untuk pelatihan, peserta memakai dummy data; data nyata hanya boleh digunakan setelah ada izin, anonimisasi, dan pengaturan akses.
+- [ ] Tetapkan pembagian peran final dengan Syam/Taufik; draft ownership sudah dicantumkan pada deck.
+- [x] Target minimum ditetapkan: satu demo end-to-end dan satu perubahan kecil; deployment semua kelompok opsional.
 
 **Output:** keputusan desain workshop satu halaman.
 
@@ -94,14 +95,14 @@ Setelah revisi, peserta non-teknis diharapkan dapat:
 - [x] Membuat tiga file Excel dummy dengan 100 baris.
 - [x] Menambahkan sheet `Data` yang siap diimpor ke Google Sheets.
 - [x] Menambahkan sheet `Panduan` berisi definisi kolom dan batasan data.
-- [ ] Membuat satu instruksi impor: upload Excel ke Drive → Open with Google Sheets → cek header dan tipe tanggal.
-- [ ] Menambahkan checklist kualitas data:
+- [x] Membuat instruksi impor: upload Excel → Open with Google Sheets → File → Save as Google Sheets bila masih mode Office → cek header dan tipe tanggal.
+- [x] Menambahkan checklist kualitas data:
   - header tidak berubah;
   - tanggal terbaca sebagai tanggal;
   - status memakai pilihan yang konsisten;
   - tidak ada NIK, nomor kontak, alamat lengkap, atau dokumen rahasia;
   - jumlah baris terbaca 100 untuk dataset latihan.
-- [ ] Menyediakan backup CSV atau screenshot bila internet/akun bermasalah.
+- [x] Menyediakan preview/screenshot fallback bila internet/akun bermasalah.
 
 **Output:** tiga Excel latihan, instruksi impor, dan checklist kualitas data.
 
@@ -109,18 +110,18 @@ Setelah revisi, peserta non-teknis diharapkan dapat:
 
 **Tujuan:** memindahkan fokus dari tool ke kebutuhan kerja.
 
-- [ ] Tambahkan slide “Siapa pengguna dashboard?”
-- [ ] Tambahkan slide “Pertanyaan kerja yang ingin dijawab”.
-- [ ] Tambahkan data dictionary ringkas untuk dataset utama.
-- [ ] Definisikan KPI secara eksplisit:
+- [x] Tambahkan slide “Siapa pengguna dashboard?”
+- [x] Tambahkan slide “Pertanyaan kerja yang ingin dijawab”.
+- [x] Tambahkan data dictionary ringkas untuk dataset utama melalui sheet `Panduan` dan worksheet peserta.
+- [x] Definisikan KPI secara eksplisit:
   - total layanan = jumlah baris layanan valid;
   - selesai = jumlah baris dengan status `Selesai`;
   - masih diproses = jumlah baris dengan status `Diproses` atau `Menunggu Dokumen`;
   - dibatalkan tidak dihitung sebagai selesai.
-- [ ] Tampilkan contoh sebelum/sesudah:
+- [x] Tampilkan contoh sebelum/sesudah:
   - sebelum: membaca baris satu per satu;
   - sesudah: melihat total, status, jenis layanan, dan tanggal pembaruan.
-- [ ] Tambahkan catatan bahwa angka dashboard membantu pemantauan, bukan keputusan otomatis.
+- [x] Tambahkan catatan bahwa angka dashboard membantu pemantauan, bukan keputusan otomatis.
 
 **Output:** storyboard dashboard dan definisi KPI.
 
@@ -128,10 +129,10 @@ Setelah revisi, peserta non-teknis diharapkan dapat:
 
 **Tujuan:** mempertahankan praktik kode tetapi menyederhanakan beban kognitif.
 
-- [ ] Ringkas teori AI umum dan koordinasikan dengan Materi 1 Pak Syam.
-- [ ] Pindahkan Codex ke appendix/catatan fasilitator.
-- [ ] Ganti istilah “AI dashboard” menjadi “dashboard yang dibuat dengan bantuan AI”.
-- [ ] Revisi prompt agar meminta:
+- [x] Ringkas teori AI umum dan tandai ownership Pak Syam pada bagian common core.
+- [x] Codex dikeluarkan dari jalur praktik utama; deck fokus pada ChatGPT melalui chat.
+- [x] Ganti framing menjadi “dashboard yang dibuat dengan bantuan AI”.
+- [x] Revisi prompt agar meminta:
   - membaca nama kolom;
   - menyusun rancangan KPI dan filter;
   - menghasilkan `Code.gs` dan `Index.html` terpisah;
@@ -139,9 +140,9 @@ Setelah revisi, peserta non-teknis diharapkan dapat:
   - memakai data sintetis;
   - menjelaskan langkah impor dan testing;
   - tidak mengubah struktur data tanpa persetujuan.
-- [ ] Tambahkan prompt perubahan kecil untuk satu filter atau satu kartu KPI.
-- [ ] Tambahkan prompt troubleshooting yang meminta perbaikan sekecil mungkin.
-- [ ] Tegaskan bahwa ChatGPT hanya membantu merancang/kode; hasil akhir tampil di dashboard web Apps Script.
+- [x] Tambahkan prompt perubahan kecil untuk satu filter atau satu kartu KPI.
+- [x] Tambahkan prompt troubleshooting yang meminta perbaikan sekecil mungkin.
+- [x] Tegaskan bahwa ChatGPT hanya membantu merancang/kode; hasil akhir tampil di dashboard web Apps Script.
 
 **Output:** prompt utama, prompt perubahan kecil, prompt error, dan catatan fasilitator.
 
@@ -202,56 +203,74 @@ Jika tersedia 120–150 menit penuh, praktik dapat diperpanjang. Jika tidak, dep
 
 **Tujuan:** memastikan materi benar-benar dapat diikuti.
 
-- [ ] Uji impor ketiga file Excel ke Google Sheets.
-- [ ] Uji dashboard dengan dataset utama 100 baris.
-- [ ] Uji satu filter periode/status.
-- [ ] Uji KPI terhadap hitungan manual dari dataset.
-- [ ] Uji perubahan satu status dan pastikan angka berubah.
-- [ ] Uji tampilan pada desktop/proyektor.
-- [ ] Uji deployment dengan akun latihan.
-- [ ] Uji link pada akun yang memiliki akses dan akun yang tidak memiliki akses.
-- [ ] Pastikan tidak ada data pribadi atau credential di file, prompt, kode, dan screenshot.
-- [ ] Siapkan fallback jika deployment tidak berhasil: screenshot hasil dashboard + demonstrasi link oleh fasilitator.
+- [ ] Uji impor ketiga file Excel ke Google Sheets pada akun cloud pelatihan (pending; belum ada validasi cloud pada turn ini).
+- [x] Uji preview lokal dengan fixture 100 baris dan KPI 100/25/50.
+- [x] Uji filter status dan jenis layanan pada preview lokal.
+- [x] Uji KPI terhadap manifest expected-dashboard dan test harness Code.gs.
+- [x] Uji mutasi satu status: selesai 25 → 24 dan masih diproses 50 → 51.
+- [x] Uji deck pada 1440×810 dan 1280×720 tanpa overflow.
+- [ ] Uji deployment dengan akun latihan (pending; memerlukan aksi cloud dan URL nyata).
+- [ ] Uji link pada akun yang memiliki akses dan akun yang tidak memiliki akses (pending).
+- [x] Scan manual artefak lokal: data sintetis, tidak ada credential atau data warga nyata.
+- [x] Siapkan fallback preview lokal/screenshot dan aturan klaim deployment.
 
 **Output:** checklist QA teknis dan catatan blocker.
 
 ### Tahap 7 — Evaluasi pembelajaran
 
-- [ ] Buat pre-test/post-test singkat tentang:
+- [x] Buat pre-test/post-test singkat tentang:
   - data yang aman dan tidak aman;
   - arti KPI;
   - alur Excel → Sheets → GAS → link;
   - pentingnya verifikasi hasil AI.
-- [ ] Nilai peserta berdasarkan kemampuan menjelaskan alur, bukan jumlah fitur.
-- [ ] Minta setiap kelompok menyimpan:
+- [x] Instrumen evaluasi menilai pemahaman alur, keamanan, dan verifikasi; fasilitator tetap melakukan observasi proses.
+- [x] Minta setiap kelompok menyimpan:
   - file/data source;
   - prompt utama;
   - screenshot atau link dashboard;
   - checklist pengujian;
   - satu batasan atau risiko.
-- [ ] Minta mitra menentukan PIC dan kemungkinan tindak lanjut.
+- [ ] Minta mitra menentukan PIC dan kemungkinan tindak lanjut pada hari pelaksanaan.
 
 **Output:** instrumen evaluasi dan artefak hasil kelompok.
 
-## 5. Acceptance criteria
+## 5. Hasil eksekusi lokal — 4 Oktober 2026
+
+### Selesai
+
+- Tiga workbook dummy diperbaiki dan dibangun ulang di `outputs/2026-10-03-dummy-datasets/`; generator dan verifier sekarang menunjuk ke folder output yang benar.
+- Panduan workbook tidak lagi menimpa baris kedua field; catatan diletakkan di bawah tabel panduan.
+- Dataset surat hanya mengisi `Tanggal_Selesai` untuk status `Selesai`, dan prioritas tidak lagi semuanya `Tinggi`. Dataset agenda memakai pasangan nama/jenis kegiatan yang konsisten dan status yang cocok dengan tanggal acuan 4 Oktober 2026.
+- Starter project Apps Script diperkuat: konfigurasi ID spreadsheet eksplisit, validasi header/ID/tanggal/angka, batas baris jelas, filter default aman, dan UI tidak mempertahankan angka lama saat error.
+- Preview lokal dashboard memakai fixture 100 baris dari workbook utama dan diuji pada browser.
+- Deck dipadatkan menjadi 18 slide, memakai hasil render dashboard lokal pada slide 8, memperbaiki layout flow, 720p overflow, print mode, dan overview handler.
+- Materi pendukung dibuat: panduan peserta, worksheet kelompok, checklist data/dashboard, evaluasi pre/post, dan preflight fasilitator.
+- QA lulus melalui `python3 scripts/qa_html_deck.py` dan `node scripts/qa_starter_dashboard.mjs`.
+
+### Pending / perlu verifikasi cloud
+
+- Belum melakukan import ke Google Drive/Google Sheets, menjalankan `setupSpreadsheetId()` pada akun cloud, membuat deployment, atau menguji URL lintas akun.
+- Belum mengklaim deployment live berhasil. Fasilitator harus mengisi URL dan aturan akses pada `materials/workshop/facilitator-preflight-and-access.md` setelah pengujian nyata.
+
+## 6. Acceptance criteria
 
 Plan ini dianggap selesai apabila:
 
-- [ ] Tiga file Excel dummy tersedia dan masing-masing memiliki 100 baris data.
-- [ ] Setiap file memiliki sheet `Data` dan `Panduan`.
-- [ ] Ada satu dataset utama yang dipakai dalam demo end-to-end.
-- [ ] Deck menyebutkan dengan jelas bahwa hasil akhir adalah dashboard web berbasis link.
-- [ ] Peserta dapat mengimpor Excel ke Google Sheets tanpa mengubah header.
-- [ ] Peserta memahami minimal tiga KPI dan sumber kolomnya.
-- [ ] Peserta dapat mengikuti penempatan `Code.gs` dan `Index.html`.
-- [ ] Peserta dapat menguji minimal satu filter atau perubahan kecil.
-- [ ] Deployment tidak dipresentasikan sebagai berhasil tanpa URL/link yang terbukti.
-- [ ] Deck tidak mewajibkan peserta memahami seluruh syntax JavaScript.
-- [ ] Waktu praktik dan target output sesuai dengan waktu materi efektif.
-- [ ] Ada fallback teknis dan checklist keamanan.
-- [ ] Hasil revisi deck lulus QA layout dan dibuka ulang melalui `file://`.
+- [x] Tiga file Excel dummy tersedia dan masing-masing memiliki 100 baris data.
+- [x] Setiap file memiliki sheet `Data` dan `Panduan`.
+- [x] Ada satu dataset utama yang dipakai dalam demo end-to-end melalui fixture lokal; validasi cloud masih pending.
+- [x] Deck menyebutkan dengan jelas bahwa hasil akhir adalah dashboard web berbasis link.
+- [x] Panduan peserta menjelaskan impor Excel dan konversi eksplisit ke Google Sheets tanpa mengubah header; impor cloud nyata masih pending.
+- [x] Peserta memahami minimal tiga KPI dan sumber kolomnya melalui deck, worksheet, dan evaluasi.
+- [x] Peserta dapat mengikuti penempatan `Code.gs` dan `Index.html` serta `setupSpreadsheetId()`.
+- [x] Preview dan test harness menguji filter serta perubahan status; praktik cloud nyata tetap perlu diuji fasilitator.
+- [x] Deployment tidak dipresentasikan sebagai berhasil tanpa URL/link yang terbukti.
+- [x] Deck tidak mewajibkan peserta memahami seluruh syntax JavaScript.
+- [x] Waktu praktik dan target output diselaraskan dengan slot 80 menit.
+- [x] Ada fallback teknis dan checklist keamanan.
+- [x] Hasil revisi deck lulus QA layout, filter preview, print mode, dan dibuka melalui `file://`.
 
-## 6. Risiko dan mitigasi
+## 7. Risiko dan mitigasi
 
 | Risiko | Dampak | Mitigasi |
 |---|---|---|
@@ -263,7 +282,7 @@ Plan ini dianggap selesai apabila:
 | Peserta takut melihat kode | Partisipasi rendah | Gunakan copy-paste terarah, jelaskan fungsi utama, dan ukur keberhasilan dari pemahaman alur. |
 | Dashboard terlihat benar tetapi KPI salah | Keputusan keliru | Hitung KPI manual, ubah satu record, dan cek angka sebelum share-out. |
 
-## 7. Urutan file yang akan direvisi setelah plan disetujui
+## 8. Urutan file yang direvisi/ditambah
 
 1. `materials/workshop/html-deck/ai-dashboard-gas-workshop.html`
 2. `materials/workshop/html-deck/README.md`
@@ -273,10 +292,10 @@ Plan ini dianggap selesai apabila:
 6. `CANVAS.md`
 7. `HISTORY.md`
 
-## 8. Status pekerjaan saat plan dibuat
+## 9. Status pekerjaan saat plan dibuat
 
 - **Selesai:** audit substansi audience dan brief.
 - **Selesai:** tiga Excel dummy, masing-masing 100 baris.
 - **Selesai:** verifikasi workbook dapat diimpor kembali, sheet `Data`/`Panduan` tersedia, dan tidak ada formula error pada hasil scan.
-- **Belum dimulai:** revisi deck HTML dan materi pendukung.
-- **Belum diputuskan:** apakah peserta menggunakan Excel masing-masing atau file latihan panitia; deployment semua kelompok atau demo fasilitator.
+- **Selesai secara lokal:** revisi deck HTML, starter dashboard, prompt card, panduan import/deploy, worksheet, checklist, evaluasi, dan preflight fasilitator.
+- **Keputusan kerja:** praktik dimulai dengan file dummy panitia; penggunaan data kantor dan deployment cloud memerlukan konfirmasi akses/izin terpisah.

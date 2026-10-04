@@ -1,9 +1,10 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { SpreadsheetFile, Workbook } from '/Users/yazidhilmi/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/@oai/artifact-tool/dist/artifact_tool.mjs';
 
-const root = path.resolve('projects/pkm-smt3');
-const outDir = path.join(root, 'data', 'dummy-datasets');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const outDir = path.join(root, 'outputs', '2026-10-03-dummy-datasets');
 const previewDir = path.join(outDir, 'previews');
 await fs.mkdir(previewDir, { recursive: true });
 
@@ -104,8 +105,15 @@ function addGuideSheet(workbook, title, purpose, rows) {
   sheet.getRange('C:C').format.columnWidth = 68;
   sheet.getRange('A5:C5').format.rowHeight = 30;
   sheet.getRange(`A6:C${5 + rows.length}`).format.rowHeight = 38;
-  sheet.getRange('A7').values = [['Catatan']];
-  sheet.getRange('A7').format.font = { name: font, size: 10, bold: true, color: colors.text };
+  sheet.getRange('A17:C17').merge();
+  sheet.getRange('A17').values = [['Catatan: gunakan data sintetis selama latihan dan jangan memasukkan data pribadi ke ChatGPT.']];
+  sheet.getRange('A17:C17').format = {
+    fill: colors.green,
+    font: { name: font, size: 10, bold: true, color: colors.text },
+    wrapText: true,
+    verticalAlignment: 'center',
+  };
+  sheet.getRange('A17:C17').format.rowHeight = 34;
 }
 function formatTypedColumns(sheet, headerIndex, rowsCount, format) {
   const col = String.fromCharCode(65 + headerIndex);
@@ -157,7 +165,7 @@ const datasets = [
       ['Prioritas', 'Normal', 'Prioritas latihan: Tinggi, Sedang, atau Normal.'],
       ['Status_Disposisi', 'Selesai', 'Status latihan: Selesai, Diproses, Menunggu Arahan, atau Ditunda.'],
       ['Tenggat', '2026-03-18', 'Tanggal target tindak lanjut.'],
-      ['Tanggal_Selesai', '2026-03-16', 'Kosong bila belum selesai. Dataset dummy sudah diisi untuk kebutuhan latihan.'],
+      ['Tanggal_Selesai', '2026-03-16', 'Tanggal selesai hanya diisi bila Status_Disposisi = Selesai; selain itu harus kosong.'],
       ['Hari_Proses', '4', 'Selisih hari proses pada data latihan.'],
       ['Catatan_NonSensitif', 'Perlu arahan unit', 'Catatan umum tanpa isi surat atau informasi rahasia.'],
     ],
@@ -170,10 +178,11 @@ const datasets = [
       const notes = ['Tidak ada catatan khusus', 'Perlu arahan unit', 'Menunggu disposisi', 'Data latihan'];
       const masuk = dateFor(i, 12);
       const proses = 1 + ((i * 4) % 9);
-      const selesai = addDays(masuk, proses);
+      const status = statuses[(i * 5) % statuses.length];
+      const selesai = status === 'Selesai' ? addDays(masuk, proses) : '';
       const tenggat = addDays(masuk, 3 + ((i * 2) % 8));
       return [
-        `SRT-${String(i + 1).padStart(4, '0')}`, masuk, origins[i % origins.length], types[(i * 2) % types.length], units[(i + 1) % units.length], priorities[(i * 3) % priorities.length], statuses[(i * 5) % statuses.length], tenggat, selesai, proses, notes[i % notes.length],
+        `SRT-${String(i + 1).padStart(4, '0')}`, masuk, origins[i % origins.length], types[(i * 2) % types.length], units[(i + 1) % units.length], priorities[i % priorities.length], status, tenggat, selesai, proses, notes[i % notes.length],
       ];
     },
   },
@@ -184,7 +193,7 @@ const datasets = [
     headers: ['ID_Agenda', 'Tanggal', 'Nama_Kegiatan', 'Unit_Penanggung_Jawab', 'Jenis_Kegiatan', 'Status_Persiapan', 'Lokasi_Umum', 'Peserta_Rencana', 'PIC_Samaran', 'Prioritas', 'Catatan_NonSensitif'],
     guide: [
       ['ID_Agenda', 'AGD-0001', 'ID sintetis unik untuk agenda latihan.'],
-      ['Tanggal', '2026-03-12', 'Tanggal pelaksanaan atau target kegiatan.'],
+      ['Tanggal', '2026-10-12', 'Tanggal pelaksanaan/target kegiatan. Status latihan dibuat konsisten dengan tanggal acuan 2026-10-04.'],
       ['Nama_Kegiatan', 'Rapat Koordinasi', 'Nama generik kegiatan tanpa dokumen rahasia.'],
       ['Unit_Penanggung_Jawab', 'Unit A', 'Unit kerja samaran pemilik kegiatan.'],
       ['Jenis_Kegiatan', 'Rapat Internal', 'Kategori untuk rekap agenda.'],
@@ -196,15 +205,24 @@ const datasets = [
       ['Catatan_NonSensitif', 'Konfirmasi perlengkapan', 'Catatan umum untuk persiapan kegiatan.'],
     ],
     build(i) {
-      const names = ['Rapat Koordinasi', 'Sosialisasi Layanan', 'Evaluasi Bulanan', 'Pelatihan Internal', 'Kegiatan Administrasi'];
+      const activities = [
+        ['Rapat Koordinasi', 'Rapat Internal'],
+        ['Sosialisasi Layanan', 'Sosialisasi'],
+        ['Evaluasi Bulanan', 'Evaluasi'],
+        ['Pelatihan Internal', 'Pelatihan'],
+        ['Kegiatan Administrasi', 'Administrasi'],
+      ];
       const units = ['Unit A', 'Unit B', 'Unit C', 'Unit D'];
-      const types = ['Rapat Internal', 'Sosialisasi', 'Evaluasi', 'Pelatihan', 'Administrasi'];
       const statuses = ['Belum Dimulai', 'Berjalan', 'Siap', 'Selesai'];
       const locations = ['Ruang Rapat 1', 'Aula Kecamatan', 'Ruang Pelayanan', 'Ruang Rapat 2'];
       const priorities = ['Tinggi', 'Sedang', 'Normal'];
       const notes = ['Tidak ada catatan khusus', 'Konfirmasi perlengkapan', 'Menunggu jadwal final', 'Data latihan'];
+      const group = Math.floor(i / 25);
+      const dateOffset = group === 0 ? -3 + (i % 3) : group === 1 ? (i % 7) : group === 2 ? 1 + (i % 16) : 7 + (i % 20);
+      const status = [statuses[3], statuses[1], statuses[2], statuses[0]][group];
+      const activity = activities[i % activities.length];
       return [
-        `AGD-${String(i + 1).padStart(4, '0')}`, dateFor(i, 25), names[(i * 2) % names.length], units[(i + 3) % units.length], types[(i + 1) % types.length], statuses[(i * 3) % statuses.length], locations[i % locations.length], 10 + ((i * 7) % 51), `PIC-${String((i % 12) + 1).padStart(2, '0')}`, priorities[(i * 2) % priorities.length], notes[i % notes.length],
+        `AGD-${String(i + 1).padStart(4, '0')}`, new Date(Date.UTC(2026, 9, 4 + dateOffset)), activity[0], units[(i + 3) % units.length], activity[1], status, locations[i % locations.length], 10 + ((i * 7) % 51), `PIC-${String((i % 12) + 1).padStart(2, '0')}`, priorities[i % priorities.length], notes[i % notes.length],
       ];
     },
   },

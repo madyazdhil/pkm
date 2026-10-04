@@ -18,7 +18,7 @@ Setiap file memiliki:
 ## Alur penggunaan di workshop
 
 1. Peserta mengunggah file Excel ke Google Drive.
-2. Peserta memilih `Open with Google Sheets` atau mengonversi salinan menjadi Google Sheets.
+2. Peserta memilih `Open with / Buka dengan → Google Sheets`. Jika file masih dalam mode Excel/Office, peserta memilih `File → Save as Google Sheets / Simpan sebagai Google Spreadsheet` sebelum membuka Apps Script.
 3. Peserta memeriksa nama header, tanggal, status, dan jumlah baris.
 4. Peserta memakai ChatGPT untuk membantu merancang dashboard dan menghasilkan kode.
 5. Peserta menempatkan kode ke Google Apps Script.

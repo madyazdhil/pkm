@@ -1,8 +1,7 @@
-# Deck HTML — Dari ChatGPT ke Dashboard Internal
+# Deck HTML — Dashboard Rekap Layanan Kecamatan
 
 Buka `ai-dashboard-gas-workshop.html` langsung di browser. Deck selalu mulai dari slide judul saat dibuka dan tidak membutuhkan
-server atau koneksi internet untuk navigasi inti. Deck memakai tema terang dengan kontras tinggi agar lebih terbaca saat diproyeksikan. Screenshot browser disimpan di
-`assets/` dan berasal dari capture Apps Script pada zoom Chrome 110%.
+server atau koneksi internet untuk navigasi inti. Deck memakai tema terang dengan kontras tinggi agar lebih terbaca saat diproyeksikan. Screenshot/browser evidence disimpan di `assets/`. Deck membedakan screenshot Google UI nyata dari preview lokal berbasis data sintetis.
 
 ## Kontrol
 
@@ -24,10 +23,10 @@ Kode pembicara muncul di bagian atas setiap slide agar fasilitator cepat membeda
 
 ## Catatan penggunaan
 
-- Materi deployment membedakan panduan umum dari langkah yang benar-benar terbukti.
+- Materi deployment membedakan panduan umum dari langkah yang benar-benar terbukti. Tidak ada klaim deployment cloud live tanpa URL yang diuji.
 - Screenshot menu deployment tidak dipakai sebagai bukti bahwa deployment publik berhasil.
-- Semua contoh data pada materi bersifat sintetis.
-- Untuk mencetak ke PDF, gunakan `Ctrl/Cmd + P` dan pilih layout landscape.
+- Semua contoh data pada materi bersifat sintetis. Slide 8 memakai hasil render lokal dari `starter-dashboard/preview.html`, bukan screenshot deployment Google.
+- Untuk mencetak ke PDF, gunakan `Ctrl/Cmd + P` dan pilih layout landscape. Print mode menampilkan 18 slide.
 
 ## Provenance
 

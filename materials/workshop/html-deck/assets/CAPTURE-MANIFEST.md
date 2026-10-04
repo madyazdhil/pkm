@@ -17,3 +17,7 @@ No UI was redrawn or fabricated.
 | `06-deployment-menu-110.jpg` | `09-deployment-menu-110-full.jpg` | x=176..1950, y=108..1106 (black border artifact removed) | deployment menu guidance | browser evidence; not proof of successful deployment |
 
 The deck intentionally does not include the 132 × 136 px failed captures. CSS `.browser-shot img` uses `object-fit: contain` with a clean light background so screenshots are never cropped or clipped on any resolution.
+
+| `local-dashboard-preview.png` | `starter-dashboard/preview.html` + `fixtures/rekap-layanan.json` | Local Playwright render, 1440 × 900 viewport | Slide 8: rendered dashboard result from the 100-row synthetic fixture | local synthetic preview; **not** cloud deployment evidence |
+
+The local dashboard preview was verified on October 4, 2026: KPI values were 100 total, 25 completed, and 50 in process; the status and service filters changed the displayed results.

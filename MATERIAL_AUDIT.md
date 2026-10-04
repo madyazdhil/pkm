@@ -3,7 +3,7 @@
 **Tanggal audit:** 3 Oktober 2026  
 **Objek utama:** `materials/workshop/html-deck/ai-dashboard-gas-workshop.html`  
 **Pemilik materi:** Ahmad Yazid Hilmi — Materi 2 / teknis dashboard  
-**Status:** Audit substansi selesai; revisi deck belum diterapkan.
+**Status:** Audit substansi selesai; remediasi lokal dieksekusi pada 4 Oktober 2026. Validasi Google Cloud dan deployment live masih pending.
 
 ## 1. Kesimpulan eksekutif
 
@@ -279,3 +279,9 @@ Audit ini dilakukan dengan membaca dan membandingkan:
 - `source-docs/Proposal Sementara PKM Kecamatan_Tambun_Selatan_2026.docx`.
 
 QA visual otomatis belum dapat dijalankan ulang pada 3 Oktober 2026 karena environment Python tidak memiliki modul `playwright` (`ModuleNotFoundError`). Audit substansi dan struktur tetap dapat diselesaikan dari artefak lokal.
+
+## 11. Penutupan audit setelah eksekusi lokal — 4 Oktober 2026
+
+Remediasi lokal menutup gap utama yang ditemukan dalam audit: satu use case utama, workbook 100 baris yang lebih konsisten, data dictionary, definisi KPI, preview dashboard hasil render, alur dua file Apps Script, validasi data, checklist, worksheet, evaluasi, dan fallback deployment. Deck sekarang berjumlah 18 slide dan lulus QA pada viewport 1440×810 serta 1280×720.
+
+Yang **belum** dapat dinyatakan selesai dari audit adalah import ke Google Sheets pada akun workshop, konfigurasi cloud, deployment web app, dan uji akses lintas akun. Hal tersebut memerlukan aksi pada akun Google dan URL nyata; tidak boleh digantikan oleh screenshot menu atau preview lokal.
