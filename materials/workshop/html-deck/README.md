@@ -59,3 +59,4 @@ Lihat `assets/CAPTURE-MANIFEST.md` untuk daftar sumber capture dan crop. Capture
 - [Buka deck di GitHub Pages](https://madyazdhil.github.io/pkm/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
 - [Buka naskah Markdown](https://madyazdhil.github.io/pkm/materials/workshop/naskah-bicara-pemateri-dua-sesi.md)
 - [Buka naskah dalam tampilan GitHub](https://github.com/madyazdhil/pkm/blob/main/materials/workshop/naskah-bicara-pemateri-dua-sesi.md)
+- [Buka halaman download dataset Excel peserta](https://github.com/madyazdhil/pkm/blob/main/materials/workshop/download-dataset-peserta.md)

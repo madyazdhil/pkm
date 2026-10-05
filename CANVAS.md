@@ -166,3 +166,10 @@ Cloud status: Google Sheets import, Apps Script configuration, deployment URL, a
 - 📦 **Paket lengkap ZIP:** [pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip](https://github.com/madyazdhil/pkm/raw/main/outputs/pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip)
 
 Link deck dan naskah diverifikasi merespons HTTP 200 setelah push pada 5 Oktober 2026.
+
+## Download dataset Excel peserta — 5 October 2026
+
+- 📊 **Halaman download tiga dataset:** [download-dataset-peserta.md](https://github.com/madyazdhil/pkm/blob/main/materials/workshop/download-dataset-peserta.md)
+- **Kelompok 1:** [dummy-data-rekap-layanan-kecamatan.xlsx](https://github.com/madyazdhil/pkm/raw/main/outputs/2026-10-04-workshop-bundle/03-datasets/dummy-data-rekap-layanan-kecamatan.xlsx)
+- **Kelompok 2:** [dummy-data-monitoring-surat-disposisi.xlsx](https://github.com/madyazdhil/pkm/raw/main/outputs/2026-10-04-workshop-bundle/03-datasets/dummy-data-monitoring-surat-disposisi.xlsx)
+- **Kelompok 3:** [dummy-data-agenda-kegiatan-internal.xlsx](https://github.com/madyazdhil/pkm/raw/main/outputs/2026-10-04-workshop-bundle/03-datasets/dummy-data-agenda-kegiatan-internal.xlsx)

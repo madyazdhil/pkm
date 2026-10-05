@@ -3355,3 +3355,9 @@ Kalau mau membagikan semua bahan sekaligus:
 - Repository: [madyazdhil/pkm](https://github.com/madyazdhil/pkm)
 - Link deck dan naskah sudah diverifikasi merespons HTTP 200.
 - Aku tidak membuat Google Docs karena versi Markdown sudah cukup untuk dibaca dan dibagikan lewat GitHub.
+
+## User request — 5 October 2026
+
+> mana spreadsheet excel nya link ny amana yang peserta bsia download juga
+
+Status: requested. Add direct participant-download links for the three Excel dummy datasets, make the links easy to share, and include them in the workshop materials/bundle.

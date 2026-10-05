@@ -91,3 +91,10 @@
 - **Naskah rendered GitHub:** https://github.com/madyazdhil/pkm/blob/main/materials/workshop/naskah-bicara-pemateri-dua-sesi.md
 - **ZIP bundle:** https://github.com/madyazdhil/pkm/raw/main/outputs/pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip
 - HTTP HEAD checks returned 200 for the deck, Markdown file, GitHub blob, and raw Markdown URL.
+
+
+## Participant Excel download links — 5 October 2026
+
+- Added `materials/workshop/download-dataset-peserta.md` with direct download links for all three synthetic Excel workbooks.
+- Copied the page into `outputs/2026-10-04-workshop-bundle/04-participant-kit/`.
+- Links are grouped by participant case: rekap layanan, surat/disposisi, and agenda internal.

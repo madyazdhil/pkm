@@ -30,6 +30,7 @@ e4b2d14bd8a5478a1b9075683de8dafa3a47418fbcf7b3bc91bdca0edc0362f4  ./03-datasets/
 76d000cefcee78b4a40093e013c71a276e724ac2a31cb1b2ae92cf671817e9c7  ./03-datasets/previews/dummy-data-rekap-layanan-kecamatan-guide.png
 8ada55d7268552613250195f64e260e9399e8ea7909d0eb53a6304d24a6b5809  ./04-participant-kit/02-outline-deck-chat-to-gas.md
 9d1bb2be3fd06917c0f38718c1b7851a4b346646c1fa2a633733c77e0a08cc3b  ./04-participant-kit/checklist-data-dashboard.md
+71ea71261c342cf03b1cc8ab7ada083da117b072eac126de74de161c22ba3fc2  ./04-participant-kit/download-dataset-peserta.md
 79a28daea33697a8456742b3daf4e8ff15a86c65d6d2e961a5d42c3f5fc62c3b  ./04-participant-kit/evaluation-pre-post-dashboard.md
 21b1d9bd8c4404d0f1b511335993c622e19152b34f1db21555fda21b9cead677  ./04-participant-kit/facilitator-preflight-and-access.md
 0568eadb2756330496a1c12277453e2931d255c82653d1bcea447339d81a9422  ./04-participant-kit/naskah-bicara-pemateri-dua-sesi.md
@@ -37,5 +38,5 @@ e4b2d14bd8a5478a1b9075683de8dafa3a47418fbcf7b3bc91bdca0edc0362f4  ./03-datasets/
 af4c7a37931323a8d4e84c519d096ef39b450f7e097c3b5a0408ee11546b44d7  ./04-participant-kit/participant-import-and-deploy-guide.md
 90c0659501fe88b4f350e78cef8273e95491761a6ce5c3ec836d2c063a523524  ./04-participant-kit/participant-worksheet-dashboard.md
 a5937a6cd534bd5152d633e8baa7efa945b92561eaade083b6211b03ebcbecab  ./QA-STATUS.md
-dc29a65a39fc443f88324933cb0b9f206e4d57a46524f332dd950a849c1a5630  ./README.md
-7746b5a3f30651d2dd54f325e8b69c2f4075203abdb990588384becc4d1023e3  ./START-HERE.md
+5c61528559d478e7e33e63e6968d2fc888f0e69c75c8517d2210051f07bcd430  ./README.md
+b5a287191103f24b707ff695fa296665d945eba0c13d929865860460b4f35448  ./START-HERE.md
