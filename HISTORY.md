@@ -3258,3 +3258,9 @@ Slide 2 tetap menjelaskan pembagian pemateri:
 - ZIP integrity lulus.
 - Perubahan sudah dibuatkan local commit: `20df252 feat(pkm-smt3): add speaker script and group kickoff slide`.
 - Belum ada deployment Google live atau push GitHub pada turn ini.
+
+## User request — 5 October 2026
+
+> ini up ke github ya slide deck nya sama naskah nya masukin bikinin docs deh atau md aja gapap akasi lin knya yang bisa di share pokonya yayh dua duanya
+
+Status: requested. Push the current canonical workshop deck and speaker script to the personal GitHub remote, and provide shareable links for both artifacts. A Markdown script is acceptable in place of a Google Doc.
