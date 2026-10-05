@@ -3264,3 +3264,48 @@ Slide 2 tetap menjelaskan pembagian pemateri:
 > ini up ke github ya slide deck nya sama naskah nya masukin bikinin docs deh atau md aja gapap akasi lin knya yang bisa di share pokonya yayh dua duanya
 
 Status: requested. Push the current canonical workshop deck and speaker script to the personal GitHub remote, and provide shareable links for both artifacts. A Markdown script is acceptable in place of a Google Doc.
+
+#### Failed Attempt [Codex]
+
+- The first attempt to push the follow-up documentation commit failed because the SSH host `ssh.github.com` could not be resolved in the sandbox environment. Retried with approved network access and pushed successfully.
+
+### Assistant [Codex] — response sent
+
+Sudah aku upload ke GitHub, dan sekarang sudah ada link yang bisa langsung kamu share.
+
+### Link yang bisa dibagikan
+
+**1. Slide deck workshop**
+
+https://madyazdhil.github.io/pkm/materials/workshop/html-deck/ai-dashboard-gas-workshop.html
+
+Ini membuka deck HTML 28 slide langsung di browser.
+
+**2. Naskah bicara Mas Syam + Yazid**
+
+Versi yang nyaman dibaca di GitHub:
+
+https://github.com/madyazdhil/pkm/blob/main/materials/workshop/naskah-bicara-pemateri-dua-sesi.md
+
+Versi file Markdown langsung:
+
+https://madyazdhil.github.io/pkm/materials/workshop/naskah-bicara-pemateri-dua-sesi.md
+
+Versi raw/download:
+
+https://raw.githubusercontent.com/madyazdhil/pkm/main/materials/workshop/naskah-bicara-pemateri-dua-sesi.md
+
+### Paket lengkap
+
+Kalau mau membagikan semua bahan sekaligus:
+
+https://github.com/madyazdhil/pkm/raw/main/outputs/pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip
+
+### Status
+
+- Deck sudah ada di GitHub Pages.
+- Naskah sudah ada di GitHub dan bisa dibaca sebagai Markdown.
+- Commit terakhir yang dipush: `bd72ec4 docs(pkm-smt3): add public workshop share links`.
+- Repository: https://github.com/madyazdhil/pkm
+- Link deck dan naskah sudah diverifikasi merespons HTTP 200.
+- Aku tidak membuat Google Docs karena versi Markdown sudah cukup untuk dibaca dan dibagikan lewat GitHub.
