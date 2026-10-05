@@ -3309,3 +3309,49 @@ https://github.com/madyazdhil/pkm/raw/main/outputs/pkm-smt3-workshop-dashboard-b
 - Repository: https://github.com/madyazdhil/pkm
 - Link deck dan naskah sudah diverifikasi merespons HTTP 200.
 - Aku tidak membuat Google Docs karena versi Markdown sudah cukup untuk dibaca dan dibagikan lewat GitHub.
+
+#### Correction to previous handoff wording — 5 October 2026
+
+- `bd72ec4` is the artifact commit that adds the public share links.
+- `b7cbc99` is the later history-only commit that records the handoff response. The artifact files were already pushed in `bd72ec4`.
+
+### Assistant [Codex] — final response
+
+Sudah aku upload ke GitHub, dan sekarang sudah ada link yang bisa langsung kamu share.
+
+### Link yang bisa dibagikan
+
+**1. Slide deck workshop**
+
+[ Buka slide deck workshop di GitHub Pages ](https://madyazdhil.github.io/pkm/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+
+Ini membuka deck HTML 28 slide langsung di browser.
+
+**2. Naskah bicara Mas Syam + Yazid**
+
+Versi yang nyaman dibaca di GitHub:
+
+[ Buka naskah dalam tampilan GitHub ](https://github.com/madyazdhil/pkm/blob/main/materials/workshop/naskah-bicara-pemateri-dua-sesi.md)
+
+Versi file Markdown langsung:
+
+[ Buka file Markdown langsung ](https://madyazdhil.github.io/pkm/materials/workshop/naskah-bicara-pemateri-dua-sesi.md)
+
+Versi raw/download:
+
+[ Download naskah Markdown ](https://raw.githubusercontent.com/madyazdhil/pkm/main/materials/workshop/naskah-bicara-pemateri-dua-sesi.md)
+
+### Paket lengkap
+
+Kalau mau membagikan semua bahan sekaligus:
+
+[ Download paket workshop ZIP ](https://github.com/madyazdhil/pkm/raw/main/outputs/pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip)
+
+### Status
+
+- Deck sudah ada di GitHub Pages.
+- Naskah sudah ada di GitHub dan bisa dibaca sebagai Markdown.
+- Commit artefak link berbagi: `bd72ec4`.
+- Repository: [madyazdhil/pkm](https://github.com/madyazdhil/pkm)
+- Link deck dan naskah sudah diverifikasi merespons HTTP 200.
+- Aku tidak membuat Google Docs karena versi Markdown sudah cukup untuk dibaca dan dibagikan lewat GitHub.
