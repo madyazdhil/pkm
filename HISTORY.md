@@ -3361,3 +3361,29 @@ Kalau mau membagikan semua bahan sekaligus:
 > mana spreadsheet excel nya link ny amana yang peserta bsia download juga
 
 Status: requested. Add direct participant-download links for the three Excel dummy datasets, make the links easy to share, and include them in the workshop materials/bundle.
+
+### Assistant [Codex] — final response
+
+Iya, kelewat belum aku kasih link Excel-nya. Sekarang sudah aku tambahkan ke GitHub dan sudah aku buatkan satu halaman khusus yang bisa kamu share ke peserta.
+
+### Satu link untuk peserta
+
+[Halaman download dataset Excel peserta](https://github.com/madyazdhil/pkm/blob/main/materials/workshop/download-dataset-peserta.md)
+
+Di halaman itu ada tiga file sesuai kelompok:
+
+### Link download langsung Excel
+
+1. [Kelompok 1 — Rekap Layanan Kecamatan](https://github.com/madyazdhil/pkm/raw/main/outputs/2026-10-04-workshop-bundle/03-datasets/dummy-data-rekap-layanan-kecamatan.xlsx)
+2. [Kelompok 2 — Monitoring Surat dan Disposisi](https://github.com/madyazdhil/pkm/raw/main/outputs/2026-10-04-workshop-bundle/03-datasets/dummy-data-monitoring-surat-disposisi.xlsx)
+3. [Kelompok 3 — Agenda Kegiatan Internal](https://github.com/madyazdhil/pkm/raw/main/outputs/2026-10-04-workshop-bundle/03-datasets/dummy-data-agenda-kegiatan-internal.xlsx)
+
+Ketiga file berisi 100 data sintetis, dengan sheet `Data` dan `Panduan`. Link raw di atas akan langsung mengunduh file `.xlsx`.
+
+### Link lainnya
+
+- [Slide deck workshop](https://madyazdhil.github.io/pkm/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+- [Naskah Mas Syam + Yazid](https://github.com/madyazdhil/pkm/blob/main/materials/workshop/naskah-bicara-pemateri-dua-sesi.md)
+- [Paket lengkap workshop ZIP](https://github.com/madyazdhil/pkm/raw/main/outputs/pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip)
+
+Sudah aku push ke GitHub pada commit `4dda7cd docs(pkm-smt3): add participant Excel download links`. Link halaman download dan ketiga file Excel juga sudah diverifikasi bisa diakses.
