@@ -81,3 +81,13 @@
 - Added [naskah-bicara-pemateri-dua-sesi.md](materials/workshop/naskah-bicara-pemateri-dua-sesi.md), a direct-reading talk track for Mas Syam and Yazid addressed to Bapak/Ibu, including slide-by-slide language, participant prompts, handoffs, and 80/120-minute variants.
 - Revised slide 2 in the canonical deck to state that group division has already been completed, ask participants to remain with their assigned group, and show the three practice cases: rekap layanan, surat/disposisi, and agenda internal.
 - Updated the shareable workshop bundle with the revised deck, presenter guide, and speaker script.
+
+
+## GitHub sharing — 5 October 2026
+
+- **Status:** Pushed to `origin/main` and publicly verified.
+- **Deck:** https://madyazdhil.github.io/pkm/materials/workshop/html-deck/ai-dashboard-gas-workshop.html
+- **Naskah Markdown:** https://madyazdhil.github.io/pkm/materials/workshop/naskah-bicara-pemateri-dua-sesi.md
+- **Naskah rendered GitHub:** https://github.com/madyazdhil/pkm/blob/main/materials/workshop/naskah-bicara-pemateri-dua-sesi.md
+- **ZIP bundle:** https://github.com/madyazdhil/pkm/raw/main/outputs/pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip
+- HTTP HEAD checks returned 200 for the deck, Markdown file, GitHub blob, and raw Markdown URL.

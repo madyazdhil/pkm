@@ -157,3 +157,12 @@ Cloud status: Google Sheets import, Apps Script configuration, deployment URL, a
 - 🟢 **Yazid / praktik:** slides 12–26 — data Excel/Sheets, KPI, prompt dashboard, Apps Script, dua file, testing, dan deployment.
 - ↔ **Bersama:** pembukaan, pembagian peran, serah-terima, checklist kelompok, dan penutup.
 - Alasan revisi: versi 18 slide terlalu padat dan belum memberi ruang yang cukup untuk bagian teori Pak Syam.
+
+## GitHub share links — 5 October 2026
+
+- 🌐 **Deck HTML untuk dibagikan:** [ai-dashboard-gas-workshop.html](https://madyazdhil.github.io/pkm/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+- 🗣️ **Naskah Markdown untuk dibagikan:** [naskah-bicara-pemateri-dua-sesi.md](https://madyazdhil.github.io/pkm/materials/workshop/naskah-bicara-pemateri-dua-sesi.md)
+- 📝 **Naskah versi GitHub:** [buka di GitHub](https://github.com/madyazdhil/pkm/blob/main/materials/workshop/naskah-bicara-pemateri-dua-sesi.md)
+- 📦 **Paket lengkap ZIP:** [pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip](https://github.com/madyazdhil/pkm/raw/main/outputs/pkm-smt3-workshop-dashboard-bundle-2026-10-04.zip)
+
+Link deck dan naskah diverifikasi merespons HTTP 200 setelah push pada 5 Oktober 2026.

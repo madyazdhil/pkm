@@ -53,3 +53,9 @@ Skenario 80 menit mempertahankan teori dasar dan prompting. Kurangi pengembangan
 ## Provenance
 
 Lihat `assets/CAPTURE-MANIFEST.md` untuk daftar sumber capture dan crop. Capture kecil 132 × 136 px tidak dipakai.
+
+## Link berbagi
+
+- [Buka deck di GitHub Pages](https://madyazdhil.github.io/pkm/materials/workshop/html-deck/ai-dashboard-gas-workshop.html)
+- [Buka naskah Markdown](https://madyazdhil.github.io/pkm/materials/workshop/naskah-bicara-pemateri-dua-sesi.md)
+- [Buka naskah dalam tampilan GitHub](https://github.com/madyazdhil/pkm/blob/main/materials/workshop/naskah-bicara-pemateri-dua-sesi.md)
